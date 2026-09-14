@@ -1,5 +1,5 @@
 {
-  "name": "phasecor-temp",
+  "name": "phasecor-healthcare",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@types/animejs": "^3.1.13",
+    "animejs": "^4.5.0",
+    "lucide-react": "^1.46.0",
     "next": "16.3.5",
     "react": "19.2.8",
     "react-dom": "19.2.8"
