@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { animate, stagger } from 'animejs';
 
 interface InteractiveLogoMotifProps {
@@ -52,21 +52,16 @@ const NODES = [
 export default function InteractiveLogoMotif({
   size = 360,
   className = '',
-  showControls = true,
 }: InteractiveLogoMotifProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [activeMode, setActiveMode] = useState<'equilibrium' | 'dispersion' | 'uptake'>('equilibrium');
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Speeds and durations based on active mode
-    const speedMultiplier = activeMode === 'dispersion' ? 0.6 : activeMode === 'uptake' ? 1.8 : 1.0;
-
     // Animate outer ring rotation
     const ringAnim = animate(containerRef.current.querySelectorAll('.motif-ring'), {
       rotate: [0, 360],
-      duration: 35000 / speedMultiplier,
+      duration: 35000,
       loop: true,
       ease: 'linear',
     });
@@ -74,17 +69,17 @@ export default function InteractiveLogoMotif({
     // Animate inner ring counter-rotation
     const innerRingAnim = animate(containerRef.current.querySelectorAll('.motif-inner-ring'), {
       rotate: [360, 0],
-      duration: 25000 / speedMultiplier,
+      duration: 25000,
       loop: true,
       ease: 'linear',
     });
 
     // Node pulse
     const nodeAnim = animate(containerRef.current.querySelectorAll('.motif-node'), {
-      scale: activeMode === 'uptake' ? [0.9, 1.4] : [0.85, 1.25],
-      opacity: activeMode === 'dispersion' ? [0.3, 1] : [0.4, 0.95],
-      delay: stagger(140 / speedMultiplier),
-      duration: 2400 / speedMultiplier,
+      scale: [0.85, 1.25],
+      opacity: [0.4, 0.95],
+      delay: stagger(140),
+      duration: 2400,
       direction: 'alternate',
       loop: true,
       ease: 'easeInOutSine',
@@ -99,27 +94,14 @@ export default function InteractiveLogoMotif({
         // Safe cleanup
       }
     };
-  }, [activeMode]);
-
-  const handleInteractionClick = () => {
-    if (!containerRef.current) return;
-    // Interactive ripple wave on click
-    animate(containerRef.current.querySelectorAll('.motif-node'), {
-      scale: [1, 1.6, 1],
-      delay: stagger(40, { from: 'center' }),
-      duration: 800,
-      ease: 'easeOutElastic(1, .6)',
-    });
-  };
+  }, []);
 
   return (
     <div className="flex flex-col items-center select-none">
       <div
         ref={containerRef}
-        onClick={handleInteractionClick}
-        className={`relative flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-[1.02] ${className}`}
+        className={`relative flex items-center justify-center transition-transform duration-300 ${className}`}
         style={{ width: size, height: size }}
-        title="Click to trigger molecular dispersion ripple"
         suppressHydrationWarning
       >
         <svg
@@ -131,14 +113,14 @@ export default function InteractiveLogoMotif({
         >
           <defs>
             <radialGradient id="tealGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#2D8F7A" stopOpacity="0.2" />
-              <stop offset="60%" stopColor="#2D8F7A" stopOpacity="0.06" />
+              <stop offset="0%" stopColor="#2D8F7A" stopOpacity="0.15" />
+              <stop offset="60%" stopColor="#2D8F7A" stopOpacity="0.04" />
               <stop offset="100%" stopColor="#2D8F7A" stopOpacity="0" />
             </radialGradient>
             <linearGradient id="orbitStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#2D8F7A" stopOpacity="0.4" />
+              <stop offset="0%" stopColor="#2D8F7A" stopOpacity="0.35" />
               <stop offset="50%" stopColor="#3BA68F" stopOpacity="0.15" />
-              <stop offset="100%" stopColor="#1F6959" stopOpacity="0.35" />
+              <stop offset="100%" stopColor="#1F6959" stopOpacity="0.3" />
             </linearGradient>
           </defs>
 
@@ -155,7 +137,7 @@ export default function InteractiveLogoMotif({
               strokeWidth="1.2"
               strokeDasharray="4 8"
             />
-            <circle cx="200" cy="35" r="4.5" fill="#2D8F7A" />
+            <circle cx="200" cy="35" r="4" fill="#2D8F7A" />
             <circle cx="365" cy="200" r="3.5" fill="#3BA68F" />
           </g>
 
@@ -170,7 +152,7 @@ export default function InteractiveLogoMotif({
               strokeDasharray="6 10"
             />
             <circle cx="200" cy="80" r="3.5" fill="#2D8F7A" />
-            <circle cx="80" cy="200" r="4" fill="#1F6959" />
+            <circle cx="80" cy="200" r="3.5" fill="#1F6959" />
           </g>
 
           {/* Innermost Guide Ring */}
@@ -180,7 +162,7 @@ export default function InteractiveLogoMotif({
             r="65"
             stroke="#2D8F7A"
             strokeWidth="0.8"
-            strokeOpacity="0.25"
+            strokeOpacity="0.2"
           />
 
           {/* Mathematical Molecular Nodes */}
@@ -191,7 +173,7 @@ export default function InteractiveLogoMotif({
               cy={node.cy}
               r={node.radius}
               fill="#2D8F7A"
-              className="motif-node origin-center transition-colors duration-300 hover:fill-[#1F6959]"
+              className="motif-node origin-center"
               style={{
                 opacity: node.opacity,
               }}
@@ -199,46 +181,10 @@ export default function InteractiveLogoMotif({
           ))}
 
           {/* Core Center Nucleus */}
-          <circle cx="200" cy="200" r="11" fill="#2D8F7A" />
-          <circle cx="200" cy="200" r="5" fill="#FFFFFF" />
+          <circle cx="200" cy="200" r="10" fill="#2D8F7A" />
+          <circle cx="200" cy="200" r="4.5" fill="#FFFFFF" />
         </svg>
       </div>
-
-      {/* Interactive Micro Telemetry HUD */}
-      {showControls && (
-        <div className="mt-4 flex items-center space-x-1.5 p-1 bg-white/90 backdrop-blur-md rounded-xl border border-[#E3ECE9] shadow-xs text-[11px]">
-          <button
-            onClick={() => setActiveMode('equilibrium')}
-            className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
-              activeMode === 'equilibrium'
-                ? 'bg-[#2D8F7A] text-white'
-                : 'text-[#4C655F] hover:text-[#0E221E]'
-            }`}
-          >
-            Equilibrium
-          </button>
-          <button
-            onClick={() => setActiveMode('dispersion')}
-            className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
-              activeMode === 'dispersion'
-                ? 'bg-[#2D8F7A] text-white'
-                : 'text-[#4C655F] hover:text-[#0E221E]'
-            }`}
-          >
-            Dispersion
-          </button>
-          <button
-            onClick={() => setActiveMode('uptake')}
-            className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
-              activeMode === 'uptake'
-                ? 'bg-[#2D8F7A] text-white'
-                : 'text-[#4C655F] hover:text-[#0E221E]'
-            }`}
-          >
-            Cellular Uptake
-          </button>
-        </div>
-      )}
     </div>
   );
 }

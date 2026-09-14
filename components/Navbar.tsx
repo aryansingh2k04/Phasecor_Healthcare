@@ -8,11 +8,11 @@ import { Menu, X, ArrowUpRight, FileText, ChevronRight } from 'lucide-react';
 import ProductInquiryModal from './ProductInquiryModal';
 
 const NAV_LINKS = [
-  { href: '/', label: 'Overview' },
-  { href: '/products', label: 'Formulations' },
-  { href: '/about', label: 'Science & About' },
-  { href: '/certifications', label: 'Clinical Validation' },
-  { href: '/contact', label: 'Corporate Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About Us' },
+  { href: '/products', label: 'Products' },
+  { href: '/certifications', label: 'Compliance & Quality' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 export default function Navbar() {

@@ -79,35 +79,30 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Corporate & Science */}
+          {/* Corporate & Standards */}
           <div className="space-y-3">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-[#89CEBF]">
-              Corporate & Science
+              Company & Standards
             </h4>
             <ul className="space-y-2 text-sm text-[#C3DAD4]">
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
-                  Corporate Profile
+                  About Us
                 </Link>
               </li>
               <li>
                 <Link href="/about#dual-delivery" className="hover:text-white transition-colors">
-                  Dual Delivery Technology
+                  Dual Delivery Innovation
                 </Link>
               </li>
               <li>
                 <Link href="/certifications" className="hover:text-white transition-colors">
-                  Clinical Trial Reports
-                </Link>
-              </li>
-              <li>
-                <Link href="/certifications#accreditations" className="hover:text-white transition-colors">
-                  Bureau Veritas Audit
+                  Compliance & Quality
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-white transition-colors">
-                  Institutional Partnerships
+                  Contact Us
                 </Link>
               </li>
             </ul>

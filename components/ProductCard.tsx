@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, FileText, ChevronRight, Eye } from 'lucide-react';
+import { ArrowRight, FileText, Eye } from 'lucide-react';
 import { Product } from '@/data/products';
 import ProductInquiryModal from './ProductInquiryModal';
 
@@ -17,15 +17,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <>
-      <div className="group relative bg-white rounded-3xl border border-[#E3ECE9] hover:border-[#2D8F7A]/60 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden">
-        
-        {/* Subtle Precision Corner Crosshairs */}
-        <div className="absolute top-2.5 left-2.5 text-[10px] font-mono text-[#D9EFE9] group-hover:text-[#2D8F7A] transition-colors pointer-events-none select-none">
-          +
-        </div>
-        <div className="absolute bottom-2.5 right-2.5 text-[10px] font-mono text-[#D9EFE9] group-hover:text-[#2D8F7A] transition-colors pointer-events-none select-none">
-          +
-        </div>
+      <div className="group relative bg-white rounded-2xl border border-[#E3ECE9] hover:border-[#2D8F7A]/60 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden">
 
         {/* Top Header */}
         <div className="p-6 pb-2 flex items-center justify-between">
@@ -109,7 +101,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               href={`/products/${product.slug}`}
               className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-semibold text-[#0E221E] bg-[#F8FBFA] hover:bg-[#EEF8F5] hover:text-[#2D8F7A] border border-[#E3ECE9] transition-all group/btn"
             >
-              <span>Monograph</span>
+              <span>View Product</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover/btn:translate-x-0.5" />
             </Link>
             <button
@@ -117,7 +109,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#2D8F7A] hover:bg-[#1F6959] transition-all shadow-xs"
             >
               <FileText className="w-3.5 h-3.5 mr-1.5" />
-              <span>Dossier</span>
+              <span>Inquire</span>
             </button>
           </div>
         </div>

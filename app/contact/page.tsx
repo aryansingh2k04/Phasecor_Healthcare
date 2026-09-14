@@ -311,11 +311,11 @@ export default function ContactPage() {
                       className="inline-flex items-center px-6 py-3 rounded-xl bg-[#2D8F7A] hover:bg-[#1F6959] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm disabled:opacity-50"
                     >
                       {isSubmitting ? (
-                        <span>Transmitting...</span>
+                        <span>Submitting...</span>
                       ) : (
                         <>
                           <Send className="w-3.5 h-3.5 mr-2" />
-                          <span>Transmit Inquiry</span>
+                          <span>Submit Inquiry</span>
                         </>
                       )}
                     </button>
