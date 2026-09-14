@@ -13,6 +13,11 @@
   --color-surface-subtle: #F8FBFA;
   --color-surface-card: #FFFFFF;
   --color-border-subtle: #E3ECE9;
+  --color-phasecor-cream: #F9F9EB;
+  --color-phasecor-teal: #419A85;
+  --color-phasecor-sage: #E4ECE6;
+  --color-phasecor-border: #ECECD8;
+  --color-phasecor-dark: #111111;
   --font-sans: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 

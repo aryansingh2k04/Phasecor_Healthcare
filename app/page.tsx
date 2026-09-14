@@ -11,6 +11,9 @@ import {
 } from 'lucide-react';
 import InteractiveLogoMotif from '@/components/InteractiveLogoMotif';
 import ProductCard from '@/components/ProductCard';
+import PhasecorTrustStrip from '@/components/PhasecorTrustStrip';
+import PhasecorBentoGrid from '@/components/PhasecorBentoGrid';
+import PhasecorSunscreenBanner from '@/components/PhasecorSunscreenBanner';
 import { PRODUCTS } from '@/data/products';
 
 export default function HomePage() {
@@ -83,7 +86,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. CORE FORMULATION PILLARS */}
+      {/* 2. TRUST STANDARDS STRIP (Exact colors & icons from phasecor.com) */}
+      <PhasecorTrustStrip />
+
+      {/* 3. BENTO FORMULATIONS MOSAIC GRID (Recreated 5-tile grid from phasecor.com screenshot) */}
+      <PhasecorBentoGrid />
+
+      {/* 4. ADVANCED UV PROTECTION SPOTLIGHT BANNER */}
+      <PhasecorSunscreenBanner />
+
+      {/* 5. CORE FORMULATION PILLARS */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
@@ -142,7 +154,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. PRODUCT CATALOG SHOWCASE */}
+      {/* 6. PRODUCT CATALOG SHOWCASE */}
       <section className="py-20 bg-[#F8FBFA] border-y border-[#E3ECE9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -175,7 +187,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. INSTITUTIONAL INQUIRY / CORPORATE BANNER */}
+      {/* 7. INSTITUTIONAL INQUIRY / CORPORATE BANNER */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#EEF8F5] rounded-3xl p-8 sm:p-12 border border-[#D9EFE9] flex flex-col lg:flex-row items-center justify-between gap-8">
