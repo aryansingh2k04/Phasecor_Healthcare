@@ -20,6 +20,7 @@ interface ProductDetailClientProps {
 export default function ProductDetailClient({ product }: ProductDetailClientProps) {
   const [selectedImage, setSelectedImage] = useState<'main' | 'detail'>('main');
   const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
+  const [selectedActiveIndex, setSelectedActiveIndex] = useState<number>(0);
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -225,51 +226,77 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
       {/* 4. ACTIVE MOLECULAR INGREDIENTS BREAKDOWN */}
       <section className="py-16 bg-white border-b border-[#E3ECE9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div className="space-y-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">
-              Active Molecule Payload
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0E221E]">
-              Key Active Ingredients & Biological Function
-            </h2>
-            <p className="text-xs sm:text-sm text-[#4C655F] max-w-2xl">
-              Each compound is selected for pharmacological synergy, standardized purity, and proven cutaneous or systemic absorption.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div className="space-y-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A] font-mono">
+                Active Molecule Payload
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0E221E]">
+                Key Active Ingredients & Biological Function
+              </h2>
+              <p className="text-xs sm:text-sm text-[#4C655F] max-w-2xl">
+                Each compound is selected for pharmacological synergy, standardized purity, and proven cutaneous or systemic absorption.
+              </p>
+            </div>
+            <div className="text-xs font-mono text-[#789991]">
+              [CLICK_COMPOUND_TO_INSPECT]
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {product.keyActives.map((active, i) => (
-              <div
-                key={i}
-                className="p-6 rounded-2xl bg-[#F8FBFA] border border-[#E3ECE9] space-y-3 flex flex-col justify-between"
-              >
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-base font-bold text-[#0E221E]">{active.name}</h4>
-                    <FlaskConical className="w-4 h-4 text-[#2D8F7A]" />
+            {product.keyActives.map((active, i) => {
+              const isSelected = selectedActiveIndex === i;
+              return (
+                <div
+                  key={i}
+                  onClick={() => setSelectedActiveIndex(i)}
+                  className={`p-6 rounded-3xl border transition-all cursor-pointer relative group flex flex-col justify-between ${
+                    isSelected
+                      ? 'bg-white border-[#2D8F7A] shadow-md ring-2 ring-[#2D8F7A]/20'
+                      : 'bg-[#F8FBFA] border-[#E3ECE9] hover:border-[#2D8F7A]/50'
+                  }`}
+                >
+                  <div className="absolute top-3 right-3 text-xs font-mono text-[#2D8F7A]/40 group-hover:text-[#2D8F7A]">
+                    +
                   </div>
-                  <span className="text-xs font-semibold text-[#2D8F7A] block">
-                    {active.role}
-                  </span>
-                  <p className="text-xs text-[#4C655F] leading-relaxed pt-1">
-                    {active.mechanism}
-                  </p>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h4 className="text-base font-bold text-[#0E221E] group-hover:text-[#2D8F7A] transition-colors">
+                        {active.name}
+                      </h4>
+                      <FlaskConical className={`w-4 h-4 ${isSelected ? 'text-[#2D8F7A]' : 'text-[#789991]'}`} />
+                    </div>
+                    <span className="text-xs font-semibold text-[#2D8F7A] font-mono block">
+                      {active.role}
+                    </span>
+                    <p className="text-xs text-[#4C655F] leading-relaxed pt-1">
+                      {active.mechanism}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 mt-3 border-t border-[#E3ECE9]/70 flex items-center justify-between text-[11px] font-mono text-[#789991]">
+                    <span>Molecule 0{i + 1}</span>
+                    <span className={isSelected ? 'text-[#2D8F7A] font-bold' : ''}>
+                      {isSelected ? 'Active Selection' : 'Click to Focus'}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* 5. CLINICAL VALIDATION & LABORATORY DATA */}
-      <section className="py-16 bg-[#EEF8F5]/60 border-b border-[#D9EFE9]">
+      <section className="py-16 bg-[#EEF8F5]/60 border-b border-[#D9EFE9] clinical-grid">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between">
             <div className="space-y-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">
-                Laboratory Proof
+              <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A] font-mono">
+                Laboratory Proof & Evaluation
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0E221E]">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0E221E]">
                 Clinical Evaluation & Analytical Metrics
               </h2>
               <p className="text-xs sm:text-sm text-[#4C655F] max-w-xl">
@@ -277,7 +304,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               </p>
             </div>
             <div className="mt-4 md:mt-0">
-              <span className="text-xs font-medium text-[#1F6959] bg-white px-3.5 py-1.5 rounded-lg border border-[#D9EFE9]">
+              <span className="text-xs font-mono font-bold text-[#1F6959] bg-white px-3.5 py-1.5 rounded-xl border border-[#D9EFE9] shadow-xs">
                 {product.clinicalData.laboratory}
               </span>
             </div>
@@ -288,12 +315,15 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             {product.clinicalData.metrics.map((metric, i) => (
               <div
                 key={i}
-                className="bg-white p-6 rounded-2xl border border-[#D9EFE9] shadow-xs text-center space-y-2"
+                className="bg-white p-6 rounded-3xl border border-[#D9EFE9] shadow-xs text-center space-y-2 relative group hover:border-[#2D8F7A] transition-all"
               >
-                <div className="text-2xl sm:text-3xl font-extrabold text-[#2D8F7A]">
+                <div className="absolute top-3 right-3 text-xs font-mono text-[#2D8F7A]/30 group-hover:text-[#2D8F7A]">
+                  +
+                </div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#2D8F7A] font-mono">
                   {metric.value}
                 </div>
-                <div className="text-xs font-bold uppercase tracking-wider text-[#0E221E]">
+                <div className="text-xs font-bold uppercase tracking-wider text-[#0E221E] font-mono">
                   {metric.label}
                 </div>
                 <p className="text-xs text-[#4C655F]">{metric.description}</p>
@@ -304,74 +334,89 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
       </section>
 
       {/* 6. SPECIFICATIONS & ADMINISTRATION */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white border-b border-[#E3ECE9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             
             {/* Administration Protocol */}
-            <div className="space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">
-                Protocol Guidelines
-              </span>
-              <h3 className="text-2xl font-bold text-[#0E221E]">
-                Dosage & Administration Protocol
-              </h3>
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A] font-mono">
+                  Clinical Protocol Guidelines
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0E221E]">
+                  Dosage & Administration Protocol
+                </h3>
+                <p className="text-xs sm:text-sm text-[#4C655F]">
+                  Physician recommended posology and sequential layering instructions for maximum bioavailability.
+                </p>
+              </div>
+
               <ol className="space-y-3 text-xs sm:text-sm text-[#4C655F]">
                 {product.usageInstructions.map((inst, i) => (
-                  <li key={i} className="flex items-start space-x-3 p-3 rounded-xl bg-[#F8FBFA] border border-[#E3ECE9]">
-                    <span className="w-5 h-5 rounded-full bg-[#2D8F7A] text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                      {i + 1}
+                  <li
+                    key={i}
+                    className="flex items-start space-x-3 p-4 rounded-2xl bg-[#F8FBFA] border border-[#E3ECE9] hover:border-[#2D8F7A]/40 transition-colors"
+                  >
+                    <span className="w-6 h-6 rounded-xl bg-[#2D8F7A] text-white flex items-center justify-center font-bold text-xs shrink-0 font-mono">
+                      0{i + 1}
                     </span>
-                    <span>{inst}</span>
+                    <span className="text-[#0E221E] font-medium leading-relaxed">{inst}</span>
                   </li>
                 ))}
               </ol>
             </div>
 
             {/* Specifications Box */}
-            <div className="bg-[#F8FBFA] p-8 rounded-2xl border border-[#E3ECE9] space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">
-                Technical Monograph
-              </span>
-              <h3 className="text-2xl font-bold text-[#0E221E]">
-                Pharmaceutical Specifications
-              </h3>
+            <div className="bg-[#F8FBFA] p-8 rounded-3xl border border-[#E3ECE9] space-y-6 shadow-xs relative">
+              <div className="absolute top-4 right-4 text-xs font-mono text-[#2D8F7A]/30">
+                +
+              </div>
+
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A] font-mono">
+                  Official Monograph
+                </span>
+                <h3 className="text-2xl font-extrabold text-[#0E221E] mt-1">
+                  Pharmaceutical Specifications
+                </h3>
+              </div>
               
-              <div className="space-y-2.5 text-xs">
+              <div className="space-y-3 text-xs">
                 <div className="flex justify-between py-2 border-b border-[#E3ECE9]">
-                  <span className="text-[#789991]">Dosage Form:</span>
+                  <span className="text-[#789991] font-mono">Dosage Form:</span>
                   <strong className="text-[#0E221E]">{product.specifications.dosageForm}</strong>
                 </div>
                 <div className="flex justify-between py-2 border-b border-[#E3ECE9]">
-                  <span className="text-[#789991]">Net Content:</span>
-                  <strong className="text-[#0E221E]">{product.specifications.netContent}</strong>
+                  <span className="text-[#789991] font-mono">Net Content:</span>
+                  <strong className="text-[#0E221E] font-mono">{product.specifications.netContent}</strong>
                 </div>
                 {product.specifications.phRange && (
                   <div className="flex justify-between py-2 border-b border-[#E3ECE9]">
-                    <span className="text-[#789991]">Physiological pH:</span>
-                    <strong className="text-[#0E221E]">{product.specifications.phRange}</strong>
+                    <span className="text-[#789991] font-mono">Physiological pH:</span>
+                    <strong className="text-[#0E221E] font-mono">{product.specifications.phRange}</strong>
                   </div>
                 )}
                 <div className="flex justify-between py-2 border-b border-[#E3ECE9]">
-                  <span className="text-[#789991]">Storage Condition:</span>
+                  <span className="text-[#789991] font-mono">Storage Environment:</span>
                   <strong className="text-[#0E221E]">{product.specifications.storage}</strong>
                 </div>
                 <div className="flex justify-between py-2 border-b border-[#E3ECE9]">
-                  <span className="text-[#789991]">Shelf Life:</span>
+                  <span className="text-[#789991] font-mono">Validated Shelf Life:</span>
                   <strong className="text-[#0E221E]">{product.specifications.shelfLife}</strong>
                 </div>
-                <div className="flex justify-between py-2">
-                  <span className="text-[#789991]">Statutory License Code:</span>
+                <div className="flex justify-between py-2 border-b border-[#E3ECE9]">
+                  <span className="text-[#789991] font-mono">Statutory License Code:</span>
                   <strong className="text-[#0E221E] font-mono">{product.specifications.regulatoryCode}</strong>
                 </div>
               </div>
 
-              <div className="pt-4">
+              <div className="pt-2">
                 <button
                   onClick={() => setInquiryModalOpen(true)}
-                  className="w-full py-3 rounded-xl bg-[#2D8F7A] hover:bg-[#1F6959] text-white text-xs font-semibold uppercase tracking-wider transition-colors shadow-xs"
+                  className="w-full py-3.5 rounded-xl bg-[#2D8F7A] hover:bg-[#1F6959] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-xs"
                 >
-                  Request Commercial Supply / COA
+                  Request Batch Dossier & Commercial Supply
                 </button>
               </div>
             </div>

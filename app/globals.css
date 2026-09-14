@@ -38,10 +38,10 @@ body {
 
 /* Custom scrollbar for clinical feel */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f4;
+  background: #f8fbfa;
 }
 ::-webkit-scrollbar-thumb {
   background: #c3dad4;
@@ -53,15 +53,28 @@ body {
 
 /* Clean glassmorphism */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(45, 143, 122, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(227, 236, 233, 0.8);
 }
 
 .glass-card {
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(227, 236, 233, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(227, 236, 233, 0.9);
+}
+
+/* Subtle scientific grid texture */
+.clinical-grid {
+  background-image: radial-gradient(rgba(45, 143, 122, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Subtle gradient heading text */
+.text-gradient-teal {
+  background: linear-gradient(135deg, #0E221E 30%, #2D8F7A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

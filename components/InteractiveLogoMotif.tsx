@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { animate, stagger } from 'animejs';
 
 interface InteractiveLogoMotifProps {
   size?: number;
   className?: string;
+  showControls?: boolean;
 }
 
 // Precomputed mathematical spiral coordinates with fixed decimal precision to prevent SSR float discrepancies
@@ -51,16 +52,21 @@ const NODES = [
 export default function InteractiveLogoMotif({
   size = 360,
   className = '',
+  showControls = true,
 }: InteractiveLogoMotifProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [activeMode, setActiveMode] = useState<'equilibrium' | 'dispersion' | 'uptake'>('equilibrium');
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Animate outer ring pulse
+    // Speeds and durations based on active mode
+    const speedMultiplier = activeMode === 'dispersion' ? 0.6 : activeMode === 'uptake' ? 1.8 : 1.0;
+
+    // Animate outer ring rotation
     const ringAnim = animate(containerRef.current.querySelectorAll('.motif-ring'), {
       rotate: [0, 360],
-      duration: 35000,
+      duration: 35000 / speedMultiplier,
       loop: true,
       ease: 'linear',
     });
@@ -68,17 +74,17 @@ export default function InteractiveLogoMotif({
     // Animate inner ring counter-rotation
     const innerRingAnim = animate(containerRef.current.querySelectorAll('.motif-inner-ring'), {
       rotate: [360, 0],
-      duration: 25000,
+      duration: 25000 / speedMultiplier,
       loop: true,
       ease: 'linear',
     });
 
-    // Gentle breathing pulsation for nodes
+    // Node pulse
     const nodeAnim = animate(containerRef.current.querySelectorAll('.motif-node'), {
-      scale: [0.85, 1.25],
-      opacity: [0.4, 0.95],
-      delay: stagger(150),
-      duration: 2400,
+      scale: activeMode === 'uptake' ? [0.9, 1.4] : [0.85, 1.25],
+      opacity: activeMode === 'dispersion' ? [0.3, 1] : [0.4, 0.95],
+      delay: stagger(140 / speedMultiplier),
+      duration: 2400 / speedMultiplier,
       direction: 'alternate',
       loop: true,
       ease: 'easeInOutSine',
@@ -93,95 +99,146 @@ export default function InteractiveLogoMotif({
         // Safe cleanup
       }
     };
-  }, []);
+  }, [activeMode]);
+
+  const handleInteractionClick = () => {
+    if (!containerRef.current) return;
+    // Interactive ripple wave on click
+    animate(containerRef.current.querySelectorAll('.motif-node'), {
+      scale: [1, 1.6, 1],
+      delay: stagger(40, { from: 'center' }),
+      duration: 800,
+      ease: 'easeOutElastic(1, .6)',
+    });
+  };
 
   return (
-    <div
-      ref={containerRef}
-      className={`relative flex items-center justify-center select-none ${className}`}
-      style={{ width: size, height: size }}
-      suppressHydrationWarning
-    >
-      <svg
-        viewBox="0 0 400 400"
-        className="w-full h-full"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+    <div className="flex flex-col items-center select-none">
+      <div
+        ref={containerRef}
+        onClick={handleInteractionClick}
+        className={`relative flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-[1.02] ${className}`}
+        style={{ width: size, height: size }}
+        title="Click to trigger molecular dispersion ripple"
         suppressHydrationWarning
       >
-        <defs>
-          <radialGradient id="tealGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#2D8F7A" stopOpacity="0.16" />
-            <stop offset="60%" stopColor="#2D8F7A" stopOpacity="0.05" />
-            <stop offset="100%" stopColor="#2D8F7A" stopOpacity="0" />
-          </radialGradient>
-          <linearGradient id="orbitStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#2D8F7A" stopOpacity="0.35" />
-            <stop offset="50%" stopColor="#3BA68F" stopOpacity="0.1" />
-            <stop offset="100%" stopColor="#1F6959" stopOpacity="0.3" />
-          </linearGradient>
-        </defs>
+        <svg
+          viewBox="0 0 400 400"
+          className="w-full h-full"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          suppressHydrationWarning
+        >
+          <defs>
+            <radialGradient id="tealGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#2D8F7A" stopOpacity="0.2" />
+              <stop offset="60%" stopColor="#2D8F7A" stopOpacity="0.06" />
+              <stop offset="100%" stopColor="#2D8F7A" stopOpacity="0" />
+            </radialGradient>
+            <linearGradient id="orbitStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#2D8F7A" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#3BA68F" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="#1F6959" stopOpacity="0.35" />
+            </linearGradient>
+          </defs>
 
-        {/* Ambient Glow */}
-        <circle cx="200" cy="200" r="180" fill="url(#tealGlow)" />
+          {/* Ambient Glow */}
+          <circle cx="200" cy="200" r="185" fill="url(#tealGlow)" />
 
-        {/* Outer Orbital Orbit Ring */}
-        <g className="motif-ring origin-center">
+          {/* Outer Orbital Orbit Ring */}
+          <g className="motif-ring origin-center">
+            <circle
+              cx="200"
+              cy="200"
+              r="165"
+              stroke="url(#orbitStroke)"
+              strokeWidth="1.2"
+              strokeDasharray="4 8"
+            />
+            <circle cx="200" cy="35" r="4.5" fill="#2D8F7A" />
+            <circle cx="365" cy="200" r="3.5" fill="#3BA68F" />
+          </g>
+
+          {/* Mid Orbital Orbit Ring */}
+          <g className="motif-inner-ring origin-center">
+            <circle
+              cx="200"
+              cy="200"
+              r="120"
+              stroke="url(#orbitStroke)"
+              strokeWidth="1"
+              strokeDasharray="6 10"
+            />
+            <circle cx="200" cy="80" r="3.5" fill="#2D8F7A" />
+            <circle cx="80" cy="200" r="4" fill="#1F6959" />
+          </g>
+
+          {/* Innermost Guide Ring */}
           <circle
             cx="200"
             cy="200"
-            r="165"
-            stroke="url(#orbitStroke)"
-            strokeWidth="1.2"
-            strokeDasharray="4 8"
+            r="65"
+            stroke="#2D8F7A"
+            strokeWidth="0.8"
+            strokeOpacity="0.25"
           />
-          <circle cx="200" cy="35" r="4.5" fill="#2D8F7A" />
-          <circle cx="365" cy="200" r="3.5" fill="#3BA68F" />
-        </g>
 
-        {/* Mid Orbital Orbit Ring */}
-        <g className="motif-inner-ring origin-center">
-          <circle
-            cx="200"
-            cy="200"
-            r="120"
-            stroke="url(#orbitStroke)"
-            strokeWidth="1"
-            strokeDasharray="6 10"
-          />
-          <circle cx="200" cy="80" r="3.5" fill="#2D8F7A" />
-          <circle cx="80" cy="200" r="4" fill="#1F6959" />
-        </g>
+          {/* Mathematical Molecular Nodes */}
+          {NODES.map((node) => (
+            <circle
+              key={node.id}
+              cx={node.cx}
+              cy={node.cy}
+              r={node.radius}
+              fill="#2D8F7A"
+              className="motif-node origin-center transition-colors duration-300 hover:fill-[#1F6959]"
+              style={{
+                opacity: node.opacity,
+              }}
+            />
+          ))}
 
-        {/* Innermost Guide Ring */}
-        <circle
-          cx="200"
-          cy="200"
-          r="65"
-          stroke="#2D8F7A"
-          strokeWidth="0.8"
-          strokeOpacity="0.2"
-        />
+          {/* Core Center Nucleus */}
+          <circle cx="200" cy="200" r="11" fill="#2D8F7A" />
+          <circle cx="200" cy="200" r="5" fill="#FFFFFF" />
+        </svg>
+      </div>
 
-        {/* Mathematical Molecular Nodes */}
-        {NODES.map((node) => (
-          <circle
-            key={node.id}
-            cx={node.cx}
-            cy={node.cy}
-            r={node.radius}
-            fill="#2D8F7A"
-            className="motif-node origin-center transition-all duration-300 hover:fill-[#1F6959]"
-            style={{
-              opacity: node.opacity,
-            }}
-          />
-        ))}
-
-        {/* Core Center Emblem Nucleus */}
-        <circle cx="200" cy="200" r="10" fill="#2D8F7A" />
-        <circle cx="200" cy="200" r="5" fill="#FFFFFF" />
-      </svg>
+      {/* Interactive Micro Telemetry HUD */}
+      {showControls && (
+        <div className="mt-4 flex items-center space-x-1.5 p-1 bg-white/90 backdrop-blur-md rounded-xl border border-[#E3ECE9] shadow-xs text-[11px]">
+          <button
+            onClick={() => setActiveMode('equilibrium')}
+            className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
+              activeMode === 'equilibrium'
+                ? 'bg-[#2D8F7A] text-white'
+                : 'text-[#4C655F] hover:text-[#0E221E]'
+            }`}
+          >
+            Equilibrium
+          </button>
+          <button
+            onClick={() => setActiveMode('dispersion')}
+            className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
+              activeMode === 'dispersion'
+                ? 'bg-[#2D8F7A] text-white'
+                : 'text-[#4C655F] hover:text-[#0E221E]'
+            }`}
+          >
+            Dispersion
+          </button>
+          <button
+            onClick={() => setActiveMode('uptake')}
+            className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
+              activeMode === 'uptake'
+                ? 'bg-[#2D8F7A] text-white'
+                : 'text-[#4C655F] hover:text-[#0E221E]'
+            }`}
+          >
+            Cellular Uptake
+          </button>
+        </div>
+      )}
     </div>
   );
 }

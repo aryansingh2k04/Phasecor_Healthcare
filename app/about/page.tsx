@@ -3,8 +3,11 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Award, FlaskConical, ArrowRight } from 'lucide-react';
 import ProductInquiryModal from '@/components/ProductInquiryModal';
+import AnimatedCounter from '@/components/AnimatedCounter';
+import DualDeliverySimulator from '@/components/DualDeliverySimulator';
+import InteractivePipelineTracker from '@/components/InteractivePipelineTracker';
 
 export default function AboutPage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -12,18 +15,55 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* 1. HERO HEADER */}
-      <section className="relative pt-16 pb-20 bg-gradient-to-b from-[#F8FBFA] to-white border-b border-[#E3ECE9]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-xs uppercase font-bold tracking-widest text-[#2D8F7A]">
-            Corporate Profile & Standards
-          </p>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#0E221E] tracking-tight max-w-3xl mx-auto">
+      <section className="relative pt-20 pb-20 bg-gradient-to-b from-[#F8FBFA] to-white border-b border-[#E3ECE9] overflow-hidden clinical-grid">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+          <div className="inline-flex items-center space-x-2 text-xs font-mono font-bold tracking-widest uppercase text-[#2D8F7A] bg-[#EEF8F5] px-3.5 py-1.5 rounded-full border border-[#D9EFE9]">
+            <span>Corporate Monograph & Analytical Standards</span>
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0E221E] tracking-tight max-w-4xl mx-auto leading-tight">
             Science Before Claims. <br className="hidden sm:inline" />
-            <span className="text-[#2D8F7A]">Precision in Every Formulation.</span>
+            <span className="text-gradient">Precision in Every Formulation.</span>
           </h1>
-          <p className="text-base sm:text-lg text-[#4C655F] max-w-2xl mx-auto leading-relaxed">
+
+          <p className="text-base sm:text-lg text-[#4C655F] max-w-3xl mx-auto leading-relaxed">
             Phasecor Healthcare is dedicated to developing evidence-backed nutricosmetics and dermatological treatments with pharmaceutical-grade stability, zero marketing exaggeration, and independent clinical validation.
           </p>
+
+          {/* Precision Key Performance Metrics */}
+          <div className="pt-8 max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
+            <div className="bg-white/90 backdrop-blur-xs p-4 rounded-2xl border border-[#E3ECE9] shadow-xs relative">
+              <span className="text-[10px] text-[#789991] font-mono uppercase tracking-wider block">Assay Purity</span>
+              <div className="text-2xl font-extrabold text-[#0E221E] font-mono mt-1">
+                <AnimatedCounter value={98.5} decimals={1} suffix="%" />
+              </div>
+              <span className="text-[10px] text-[#2D8F7A] font-medium block mt-0.5">HPLC USP/IP Benchmark</span>
+            </div>
+
+            <div className="bg-white/90 backdrop-blur-xs p-4 rounded-2xl border border-[#E3ECE9] shadow-xs relative">
+              <span className="text-[10px] text-[#789991] font-mono uppercase tracking-wider block">Dermal Irritancy</span>
+              <div className="text-2xl font-extrabold text-[#2D8F7A] font-mono mt-1">
+                <AnimatedCounter value={0.0} decimals={2} />
+              </div>
+              <span className="text-[10px] text-[#4C655F] font-medium block mt-0.5">IS 4011:2018 Zero Irritation</span>
+            </div>
+
+            <div className="bg-white/90 backdrop-blur-xs p-4 rounded-2xl border border-[#E3ECE9] shadow-xs relative">
+              <span className="text-[10px] text-[#789991] font-mono uppercase tracking-wider block">ICH Stability</span>
+              <div className="text-2xl font-extrabold text-[#0E221E] font-mono mt-1">
+                <AnimatedCounter value={24} suffix=" Mo." />
+              </div>
+              <span className="text-[10px] text-[#2D8F7A] font-medium block mt-0.5">40°C / 75% RH Tested</span>
+            </div>
+
+            <div className="bg-white/90 backdrop-blur-xs p-4 rounded-2xl border border-[#E3ECE9] shadow-xs relative">
+              <span className="text-[10px] text-[#789991] font-mono uppercase tracking-wider block">Ethics Approval</span>
+              <div className="text-2xl font-extrabold text-[#0E221E] font-mono mt-1">
+                <AnimatedCounter value={100} suffix="%" />
+              </div>
+              <span className="text-[10px] text-[#4C655F] font-medium block mt-0.5">Independent Ethics Cleared</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -104,22 +144,25 @@ export default function AboutPage() {
 
       {/* 3. SCIENTIFIC SPOTLIGHT: DUAL DELIVERY TECHNOLOGY */}
       <section id="dual-delivery" className="py-20 bg-[#F8FBFA] border-y border-[#E3ECE9]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A] font-mono">
               Proprietary Encapsulation System
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0E221E] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0E221E] tracking-tight">
               Phasecor Dual Delivery Technology
             </h2>
             <p className="text-sm sm:text-base text-[#4C655F]">
-              How our patented multi-compartment delivery architecture overcomes the limitations of traditional oral supplementation.
+              How our multi-compartment delivery architecture overcomes the enzymatic limitations of traditional oral glutathione supplementation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Interactive Pharmacokinetics Simulator */}
+          <DualDeliverySimulator />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
             <div className="bg-white p-8 rounded-2xl border border-[#E3ECE9] shadow-xs space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#EEF8F5] text-[#2D8F7A] flex items-center justify-center font-bold text-lg">
+              <div className="w-12 h-12 rounded-xl bg-[#EEF8F5] text-[#2D8F7A] flex items-center justify-center font-bold text-lg font-mono">
                 01
               </div>
               <h3 className="text-lg font-bold text-[#0E221E]">Phase Separation</h3>
@@ -129,7 +172,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white p-8 rounded-2xl border border-[#E3ECE9] shadow-xs space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#EEF8F5] text-[#2D8F7A] flex items-center justify-center font-bold text-lg">
+              <div className="w-12 h-12 rounded-xl bg-[#EEF8F5] text-[#2D8F7A] flex items-center justify-center font-bold text-lg font-mono">
                 02
               </div>
               <h3 className="text-lg font-bold text-[#0E221E]">Targeted Enteric Release</h3>
@@ -139,7 +182,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white p-8 rounded-2xl border border-[#E3ECE9] shadow-xs space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-[#EEF8F5] text-[#2D8F7A] flex items-center justify-center font-bold text-lg">
+              <div className="w-12 h-12 rounded-xl bg-[#EEF8F5] text-[#2D8F7A] flex items-center justify-center font-bold text-lg font-mono">
                 03
               </div>
               <h3 className="text-lg font-bold text-[#0E221E]">Bio-Recycling Synergy</h3>
@@ -153,120 +196,21 @@ export default function AboutPage() {
 
       {/* 4. CLINICAL QUALITY ASSURANCE PIPELINE */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A] font-mono">
               Quality Assurance Pipeline
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0E221E] tracking-tight">
-              From Active Molecule to Clinical Release
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0E221E] tracking-tight">
+              From Active Molecule to Statutory Batch Release
             </h2>
             <p className="text-sm sm:text-base text-[#4C655F]">
-              Every Phasecor production batch adheres to an unyielding 5-stage pharmaceutical verification pathway.
+              Every Phasecor production batch adheres to an unyielding 5-stage analytical pathway. Click below to inspect assay benchmarks, cleanroom standards, and release criteria.
             </p>
           </div>
 
-          <div className="space-y-6 max-w-4xl mx-auto">
-            {/* Step 1 */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-2xl bg-[#F8FBFA] border border-[#E3ECE9] gap-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 rounded-xl bg-[#2D8F7A] text-white flex items-center justify-center font-bold text-sm shrink-0">
-                  1
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-[#0E221E]">
-                    Pharmacopeial Raw Material Quarantine & Assay
-                  </h4>
-                  <p className="text-xs text-[#4C655F] mt-0.5">
-                    High-Performance Liquid Chromatography (HPLC) verification of active purity (minimum 98%+ benchmark) and ICP-MS clearance for heavy metals (Lead, Arsenic, Mercury).
-                  </p>
-                </div>
-              </div>
-              <span className="text-[11px] px-2.5 py-1 rounded bg-white text-[#1F6959] font-medium border border-[#E3ECE9] shrink-0">
-                Stage 1 Assay
-              </span>
-            </div>
-
-            {/* Step 2 */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-2xl bg-[#F8FBFA] border border-[#E3ECE9] gap-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 rounded-xl bg-[#2D8F7A] text-white flex items-center justify-center font-bold text-sm shrink-0">
-                  2
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-[#0E221E]">
-                    Cleanroom Compounding & Micro-Dispersion
-                  </h4>
-                  <p className="text-xs text-[#4C655F] mt-0.5">
-                    Executed within Class 100,000 cleanroom environments adhering strictly to WHO-GMP and Schedule M technical protocols, maintaining positive air pressure and temperature moderation.
-                  </p>
-                </div>
-              </div>
-              <span className="text-[11px] px-2.5 py-1 rounded bg-white text-[#1F6959] font-medium border border-[#E3ECE9] shrink-0">
-                WHO-GMP Standard
-              </span>
-            </div>
-
-            {/* Step 3 */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-2xl bg-[#F8FBFA] border border-[#E3ECE9] gap-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 rounded-xl bg-[#2D8F7A] text-white flex items-center justify-center font-bold text-sm shrink-0">
-                  3
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-[#0E221E]">
-                    Independent Clinical Safety Trials (Mascot Spincontrol)
-                  </h4>
-                  <p className="text-xs text-[#4C655F] mt-0.5">
-                    Human Repeat Insult Patch Testing under Bureau Veritas ISO 9001:2015 accredited laboratory oversight (IS 4011:2018), evaluating dermal response for 0.00 zero-irritancy scores.
-                  </p>
-                </div>
-              </div>
-              <span className="text-[11px] px-2.5 py-1 rounded bg-white text-[#1F6959] font-medium border border-[#E3ECE9] shrink-0">
-                IS 4011:2018
-              </span>
-            </div>
-
-            {/* Step 4 */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-2xl bg-[#F8FBFA] border border-[#E3ECE9] gap-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 rounded-xl bg-[#2D8F7A] text-white flex items-center justify-center font-bold text-sm shrink-0">
-                  4
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-[#0E221E]">
-                    Accelerated Stability & Dissolution Modeling
-                  </h4>
-                  <p className="text-xs text-[#4C655F] mt-0.5">
-                    Finished dosage forms endure climatic chamber challenge (40°C / 75% RH) to model shelf life and confirm active molecule retention through 18–24 months.
-                  </p>
-                </div>
-              </div>
-              <span className="text-[11px] px-2.5 py-1 rounded bg-white text-[#1F6959] font-medium border border-[#E3ECE9] shrink-0">
-                ICH Stability
-              </span>
-            </div>
-
-            {/* Step 5 */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 rounded-2xl bg-[#F8FBFA] border border-[#E3ECE9] gap-4">
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 rounded-xl bg-[#2D8F7A] text-white flex items-center justify-center font-bold text-sm shrink-0">
-                  5
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-[#0E221E]">
-                    Statutory Batch Release & Certificate of Analysis (COA)
-                  </h4>
-                  <p className="text-xs text-[#4C655F] mt-0.5">
-                    Authorized release under Central FSSAI License 12124999000251 and Cosmetic State Licensing. Complete analytical dossier and COA issued for every finished production lot.
-                  </p>
-                </div>
-              </div>
-              <span className="text-[11px] px-2.5 py-1 rounded bg-white text-[#1F6959] font-medium border border-[#E3ECE9] shrink-0">
-                COA Batch Release
-              </span>
-            </div>
-          </div>
+          {/* Interactive Pipeline Component */}
+          <InteractivePipelineTracker />
         </div>
       </section>
 

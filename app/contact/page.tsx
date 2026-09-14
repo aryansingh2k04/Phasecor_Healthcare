@@ -94,43 +94,84 @@ export default function ContactPage() {
             {/* Left Contact Form Column */}
             <div className="lg:col-span-7 bg-[#F8FBFA] rounded-3xl p-6 sm:p-10 border border-[#E3ECE9] shadow-xs">
               <div className="space-y-2 mb-8">
-                <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A] font-mono">
                   Official Submission Portal
                 </span>
-                <h2 className="text-2xl font-bold text-[#0E221E]">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0E221E]">
                   Submit an Institutional Inquiry
                 </h2>
-                <p className="text-xs text-[#4C655F]">
-                  Please provide your professional credentials and institutional details.
+                <p className="text-xs sm:text-sm text-[#4C655F]">
+                  Select inquiry classification or enter custom professional credentials.
                 </p>
+
+                {/* Fast Intent Selector Chips */}
+                <div className="pt-2 flex flex-wrap gap-2">
+                  {[
+                    { label: 'Clinical Dossier Request', dept: 'Clinical Trials & Documentation', text: 'Requesting complete clinical trial monographs and IS 4011:2018 patch testing documentation.' },
+                    { label: 'Physician Evaluation Kit', dept: 'Medical Affairs & Sample Requests', text: 'Requesting physician evaluation samples and product monographs for clinical review.' },
+                    { label: 'Hospital Formulary Tender', dept: 'Hospital / Clinic Direct Procurement', text: 'Inquiry regarding hospital formulary inclusion and institutional supply terms.' },
+                    { label: 'Distribution Partnership', dept: 'Regional Pharmacy Distribution', text: 'Inquiry regarding authorized regional pharmaceutical distribution rights.' },
+                  ].map((preset) => (
+                    <button
+                      key={preset.label}
+                      type="button"
+                      onClick={() => setFormData({ ...formData, department: preset.dept, message: preset.text })}
+                      className={`text-[11px] px-3 py-1.5 rounded-xl border transition-all ${
+                        formData.department === preset.dept
+                          ? 'bg-[#2D8F7A] text-white border-[#2D8F7A] font-semibold shadow-xs'
+                          : 'bg-white hover:bg-[#EEF8F5] text-[#4C655F] border-[#E3ECE9]'
+                      }`}
+                    >
+                      {preset.label}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {submitted ? (
-                <div className="p-8 text-center bg-white rounded-2xl border border-[#E3ECE9] space-y-4 shadow-sm">
+                <div className="p-8 text-center bg-white rounded-3xl border border-[#E3ECE9] space-y-4 shadow-sm relative">
                   <div className="w-16 h-16 bg-[#EEF8F5] text-[#2D8F7A] rounded-full flex items-center justify-center mx-auto ring-8 ring-[#EEF8F5]/50">
                     <CheckCircle2 className="w-9 h-9" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0E221E]">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#0E221E]">
                     Institutional Request Logged
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#4C655F] max-w-md mx-auto">
-                    Your institutional inquiry has been routed to Phasecor Medical Affairs. You will receive an official response and reference documentation within 24–48 business hours.
+                  <p className="text-xs sm:text-sm text-[#4C655F] max-w-md mx-auto leading-relaxed">
+                    Your institutional inquiry has been routed to Phasecor Medical Affairs. An official response and reference dossier will be transmitted within 24–48 business hours.
                   </p>
-                  <div className="p-4 bg-[#F8FBFA] border border-[#E3ECE9] rounded-xl max-w-xs mx-auto text-left text-xs space-y-1">
-                    <div className="flex justify-between text-[#4C655F]">
-                      <span>Tracking ID:</span>
-                      <strong className="text-[#0E221E] font-mono">{referenceId}</strong>
+                  <div className="p-4 bg-[#F8FBFA] border border-[#E3ECE9] rounded-2xl max-w-sm mx-auto text-left text-xs space-y-2">
+                    <div className="flex justify-between items-center text-[#4C655F]">
+                      <span className="font-mono">Tracking Protocol ID:</span>
+                      <span className="font-mono font-bold text-[#2D8F7A] bg-[#EEF8F5] px-2 py-0.5 rounded border border-[#D9EFE9]">
+                        {referenceId}
+                      </span>
                     </div>
                     <div className="flex justify-between text-[#4C655F]">
-                      <span>Submitted By:</span>
+                      <span>Lead Contact:</span>
                       <strong className="text-[#0E221E]">{formData.name}</strong>
+                    </div>
+                    <div className="flex justify-between text-[#4C655F]">
+                      <span>Routing Department:</span>
+                      <strong className="text-[#0E221E] text-right">{formData.department}</strong>
                     </div>
                   </div>
                   <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-2 text-xs font-semibold text-[#2D8F7A] hover:underline"
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({
+                        name: '',
+                        role: 'Practicing Dermatologist / Physician',
+                        organization: '',
+                        email: '',
+                        phone: '',
+                        city: '',
+                        department: 'Hospital / Clinic Direct Procurement',
+                        message: '',
+                      });
+                    }}
+                    className="mt-2 text-xs font-bold text-[#2D8F7A] hover:underline uppercase tracking-wider font-mono"
                   >
-                    Submit another inquiry
+                    Submit another inquiry &rarr;
                   </button>
                 </div>
               ) : (
