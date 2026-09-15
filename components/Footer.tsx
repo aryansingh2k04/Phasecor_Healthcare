@@ -159,10 +159,10 @@ export default function Footer() {
               </svg>
             </a>
 
-            {/* Back to top circle button */}
+            {/* Back to top square button with subtle rounding */}
             <button
               onClick={scrollToTop}
-              className="w-11 h-11 rounded-full bg-[#ede8d8] text-slate-800 hover:bg-[#2D8F7A] hover:text-white border border-[#dbd5c0] transition-colors flex items-center justify-center shadow-xs ml-2"
+              className="w-11 h-11 rounded-md bg-[#ede8d8] text-slate-800 hover:bg-[#2D8F7A] hover:text-white border border-[#dbd5c0] transition-colors flex items-center justify-center shadow-xs ml-2"
               aria-label="Back to top"
             >
               <ArrowUp className="w-5 h-5" />

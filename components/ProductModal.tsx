@@ -19,14 +19,14 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-md shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
           aria-label="Close details"
         >
           <X className="w-5 h-5" />
@@ -34,7 +34,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
 
         {/* Modal Header */}
         <div className="flex flex-col sm:flex-row gap-6 items-start">
-          <div className="relative w-full sm:w-44 h-52 rounded-2xl bg-[#f9faf9] border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center">
+          <div className="relative w-full sm:w-44 h-52 rounded-md bg-[#f9faf9] border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center">
             <Image
               src={product.detailImage || product.mainImage}
               alt={product.name}
@@ -65,7 +65,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
             {product.keyActives.map((active) => (
               <span
                 key={active}
-                className="px-3 py-1 rounded-full bg-[#f4f8f6] text-slate-800 text-xs font-medium border border-[#dbe7e1]"
+                className="px-3 py-1 rounded-md bg-[#f4f8f6] text-slate-800 text-xs font-medium border border-[#dbe7e1]"
               >
                 {active}
               </span>
@@ -89,7 +89,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
         </div>
 
         {/* How to use */}
-        <div className="p-4 rounded-2xl bg-[#f9faf9] border border-slate-200 space-y-1">
+        <div className="p-4 rounded-md bg-[#f9faf9] border border-slate-200 space-y-1">
           <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
             How To Use
           </h4>
@@ -103,7 +103,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
           <button
             type="button"
             onClick={onClose}
-            className="px-6 py-2.5 rounded-full border border-slate-200 text-xs font-semibold uppercase tracking-wider text-slate-700 hover:bg-slate-50 transition-colors"
+            className="px-6 py-2.5 rounded-md border border-slate-200 text-xs font-semibold uppercase tracking-wider text-slate-700 hover:bg-slate-50 transition-colors"
           >
             Close
           </button>
@@ -113,7 +113,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
               onClose();
               onEnquire(product.id);
             }}
-            className="px-8 py-2.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shadow-sm"
+            className="px-8 py-2.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shadow-sm"
           >
             Enquiry
           </button>

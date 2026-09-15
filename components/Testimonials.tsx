@@ -44,7 +44,7 @@ export default function Testimonials() {
           {reviews.map((rev) => (
             <div
               key={rev.author}
-              className="p-6 rounded-2xl bg-[#f9faf9] border border-slate-200 flex flex-col justify-between space-y-4 hover:border-[#2D8F7A] transition-colors"
+              className="p-6 rounded-md bg-[#f9faf9] border border-slate-200 flex flex-col justify-between space-y-4 hover:border-[#2D8F7A] transition-colors"
             >
               <p className="text-sm text-slate-600 italic leading-relaxed">
                 “{rev.quote}”

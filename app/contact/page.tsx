@@ -48,10 +48,10 @@ function ContactForm() {
   };
 
   return (
-    <div className="p-8 sm:p-10 rounded-3xl bg-[#fbfdfc] border border-slate-200 shadow-sm">
+    <div className="p-8 sm:p-10 rounded-md bg-[#fbfdfc] border border-slate-200 shadow-sm">
       {submitted ? (
         <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
-          <div className="w-16 h-16 rounded-full bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center mx-auto">
+          <div className="w-16 h-16 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center mx-auto">
             <CheckCircle2 className="w-8 h-8" />
           </div>
           <h3 className="text-2xl font-bold text-slate-900">Inquiry Received</h3>
@@ -73,7 +73,7 @@ function ContactForm() {
                   message: "",
                 });
               }}
-              className="px-6 py-2.5 rounded-full border border-slate-300 text-xs font-semibold text-slate-700 hover:border-[#2D8F7A] hover:text-[#2D8F7A] uppercase tracking-wider transition-colors"
+              className="px-6 py-2.5 rounded-md border border-slate-300 text-xs font-semibold text-slate-700 hover:border-[#2D8F7A] hover:text-[#2D8F7A] uppercase tracking-wider transition-colors"
             >
               Send Another Message
             </button>
@@ -93,7 +93,7 @@ function ContactForm() {
                 placeholder="Dr. / Mr. / Ms. Full Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
               />
             </div>
 
@@ -108,7 +108,7 @@ function ContactForm() {
                 placeholder="name@organization.com"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
               />
             </div>
           </div>
@@ -124,7 +124,7 @@ function ContactForm() {
                 placeholder="+91 98765 43210"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
               />
             </div>
 
@@ -136,7 +136,7 @@ function ContactForm() {
                 id="role"
                 value={formData.role}
                 onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
               >
                 <option value="Dermatologist / Physician">Dermatologist / Physician</option>
                 <option value="Clinic / Hospital Formulary">Clinic / Hospital Formulary</option>
@@ -158,7 +158,7 @@ function ContactForm() {
               placeholder="e.g. Niascobutin Serum / Batch COA Request / Distribution"
               value={formData.subject}
               onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
             />
           </div>
 
@@ -173,13 +173,13 @@ function ContactForm() {
               placeholder="Please provide details regarding your inquiry, patient quantities, or institutional requirements..."
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all resize-none"
+              className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all resize-none"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-3.5 rounded-xl bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all shadow-md flex items-center justify-center gap-2"
+            className="w-full py-3.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all shadow-md flex items-center justify-center gap-2"
           >
             <span>Submit Clinical Inquiry</span>
             <Send className="w-3.5 h-3.5" />
@@ -252,8 +252,8 @@ export default function ContactPage() {
 
               {/* Information Cards */}
               <div className="space-y-4">
-                <div className="p-6 rounded-2xl bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
+                <div className="p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
@@ -268,8 +268,8 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
+                <div className="p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
@@ -284,8 +284,8 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
+                <div className="p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
@@ -296,8 +296,8 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
+                <div className="p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
@@ -313,7 +313,7 @@ export default function ContactPage() {
               </div>
 
               {/* Retail store link callout */}
-              <div className="p-6 rounded-2xl bg-[#e8f2ee]/50 border border-[#b5d5cb] space-y-2">
+              <div className="p-6 rounded-md bg-[#e8f2ee]/50 border border-[#b5d5cb] space-y-2">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">
                   Looking for the Retail Storefront?
                 </h4>
@@ -362,7 +362,7 @@ export default function ContactPage() {
               return (
                 <div
                   key={faq.q}
-                  className="rounded-2xl bg-white border border-slate-200 overflow-hidden transition-all"
+                  className="rounded-md bg-white border border-slate-200 overflow-hidden transition-all"
                 >
                   <button
                     type="button"

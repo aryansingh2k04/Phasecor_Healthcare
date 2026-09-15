@@ -120,9 +120,9 @@ export default function CertificationsPage() {
             <div className="lg:col-span-5 flex justify-center">
               <div
                 onClick={() => setCertModalOpen(true)}
-                className="group relative w-full max-w-md rounded-3xl bg-white border border-slate-200 p-6 shadow-xl hover:shadow-2xl hover:border-[#2D8F7A] transition-all duration-300 cursor-pointer overflow-hidden"
+                className="group relative w-full max-w-md rounded-md bg-white border border-slate-200 p-6 shadow-xl hover:shadow-2xl hover:border-[#2D8F7A] transition-all duration-300 cursor-pointer overflow-hidden"
               >
-                <div className="relative w-full h-80 sm:h-96 rounded-2xl bg-[#fbfdfc] border border-slate-100 overflow-hidden flex items-center justify-center">
+                <div className="relative w-full h-80 sm:h-96 rounded-md bg-[#fbfdfc] border border-slate-100 overflow-hidden flex items-center justify-center">
                   <Image
                     src="/images/certificates/certificate.jpg"
                     alt="Phasecor Quality Certification"
@@ -130,7 +130,7 @@ export default function CertificationsPage() {
                     className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/30 transition-colors flex items-center justify-center">
-                    <span className="opacity-0 group-hover:opacity-100 px-5 py-2.5 rounded-full bg-white text-slate-900 text-xs font-bold shadow-lg transition-opacity duration-200 flex items-center gap-2">
+                    <span className="opacity-0 group-hover:opacity-100 px-5 py-2.5 rounded-md bg-white text-slate-900 text-xs font-bold shadow-lg transition-opacity duration-200 flex items-center gap-2">
                       <Eye className="w-4 h-4 text-[#2D8F7A]" />
                       Click to View Document
                     </span>
@@ -162,7 +162,7 @@ export default function CertificationsPage() {
               </p>
 
               <div className="space-y-4 pt-2">
-                <div className="p-4 rounded-2xl bg-[#f7faf8] border border-[#e1ece7] flex items-start gap-3">
+                <div className="p-4 rounded-md bg-[#f7faf8] border border-[#e1ece7] flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#2D8F7A] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
@@ -174,7 +174,7 @@ export default function CertificationsPage() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-[#f7faf8] border border-[#e1ece7] flex items-start gap-3">
+                <div className="p-4 rounded-md bg-[#f7faf8] border border-[#e1ece7] flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-[#2D8F7A] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
@@ -210,11 +210,11 @@ export default function CertificationsPage() {
             {certifications.map((cert) => (
               <div
                 key={cert.title}
-                className="p-8 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-4"
+                className="p-8 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#e8f2ee] text-[#2D8F7A] tracking-wider uppercase">
+                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-[#e8f2ee] text-[#2D8F7A] tracking-wider uppercase">
                       {cert.badge}
                     </span>
                     <FileCheck2 className="w-4 h-4 text-[#2D8F7A]" />
@@ -260,7 +260,7 @@ export default function CertificationsPage() {
               return (
                 <div
                   key={stage.step}
-                  className="p-6 rounded-2xl bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-4 flex flex-col justify-between"
+                  className="p-6 rounded-md bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-4 flex flex-col justify-between"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
@@ -284,7 +284,7 @@ export default function CertificationsPage() {
           onClick={() => setCertModalOpen(false)}
         >
           <div
-            className="relative max-w-3xl w-full bg-white rounded-3xl p-6 shadow-2xl space-y-4"
+            className="relative max-w-3xl w-full bg-white rounded-md p-6 shadow-2xl space-y-4"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -295,13 +295,13 @@ export default function CertificationsPage() {
               <button
                 type="button"
                 onClick={() => setCertModalOpen(false)}
-                className="p-1.5 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100"
+                className="p-1.5 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-100"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="relative w-full h-[70vh] rounded-xl overflow-hidden bg-slate-50">
+            <div className="relative w-full h-[70vh] rounded-md overflow-hidden bg-slate-50">
               <Image
                 src="/images/certificates/certificate.jpg"
                 alt="Quality Certification Detail"

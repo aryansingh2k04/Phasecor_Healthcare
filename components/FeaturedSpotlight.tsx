@@ -17,7 +17,7 @@ export default function FeaturedSpotlight({ onOpenDetails, onEnquire }: Featured
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Column: Image Banner */}
           <div className="lg:col-span-6 relative">
-            <div className="relative w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+            <div className="relative w-full h-80 sm:h-96 rounded-md overflow-hidden border border-slate-200 shadow-md">
               <Image
                 src="/images/bento/uvothera_banner.png"
                 alt="Uvothera Sunscreen Banner"
@@ -45,14 +45,14 @@ export default function FeaturedSpotlight({ onOpenDetails, onEnquire }: Featured
               <button
                 type="button"
                 onClick={() => onEnquire(uvothera.id)}
-                className="px-8 py-3.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all shadow-sm"
+                className="px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all shadow-sm"
               >
                 Enquiry
               </button>
               <button
                 type="button"
                 onClick={() => onOpenDetails(uvothera.id)}
-                className="px-8 py-3.5 rounded-full border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all"
+                className="px-8 py-3.5 rounded-md border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all"
               >
                 Details
               </button>

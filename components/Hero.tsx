@@ -216,13 +216,13 @@ export default function Hero() {
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
               <Link
                 href="/products"
-                className="px-8 py-3.5 rounded-full bg-[#2D8F7A] text-white text-sm font-semibold tracking-wide hover:bg-[#237362] transition-all duration-200 shadow-lg shadow-[#2D8F7A]/25 hover:shadow-xl hover:shadow-[#2D8F7A]/40 active:scale-95"
+                className="px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-sm font-semibold tracking-wide hover:bg-[#237362] transition-all duration-200 shadow-lg shadow-[#2D8F7A]/25 hover:shadow-xl hover:shadow-[#2D8F7A]/40 active:scale-95"
               >
                 Explore Products
               </Link>
               <Link
                 href="/about"
-                className="px-8 py-3.5 rounded-full bg-white/5 border border-white/30 text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#071714] transition-all duration-200 backdrop-blur-md active:scale-95"
+                className="px-8 py-3.5 rounded-md bg-white/5 border border-white/30 text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#071714] transition-all duration-200 backdrop-blur-md active:scale-95"
               >
                 Discover Our Mission
               </Link>

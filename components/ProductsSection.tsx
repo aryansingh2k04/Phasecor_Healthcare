@@ -55,7 +55,7 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
         <div className="pt-12 flex justify-center">
           <Link
             href="/products"
-            className="px-8 py-3.5 rounded-full bg-slate-900 text-white hover:bg-[#2D8F7A] text-xs font-semibold tracking-wider uppercase transition-all inline-flex items-center gap-2 shadow-sm"
+            className="px-8 py-3.5 rounded-md bg-slate-900 text-white hover:bg-[#2D8F7A] text-xs font-semibold tracking-wider uppercase transition-all inline-flex items-center gap-2 shadow-sm"
           >
             <span>Explore All Formulations &amp; Pipeline</span>
             <ArrowRight className="w-4 h-4" />

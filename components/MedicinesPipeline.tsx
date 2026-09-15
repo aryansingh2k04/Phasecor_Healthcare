@@ -60,7 +60,7 @@ export default function MedicinesPipeline() {
           {pipelineMedicines.map((item) => (
             <div
               key={item.title}
-              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-4"
+              className="p-7 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-4"
             >
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <span className="text-xs font-semibold text-[#2D8F7A]">
@@ -89,7 +89,7 @@ export default function MedicinesPipeline() {
         </div>
 
         {/* Collaboration Callout */}
-        <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-10 p-6 sm:p-8 rounded-md bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center sm:text-left">
             <h3 className="text-base font-bold text-slate-900">
               Clinical &amp; Research Partnerships
@@ -100,7 +100,7 @@ export default function MedicinesPipeline() {
           </div>
           <Link
             href="/contact"
-            className="px-6 py-3 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shrink-0 inline-flex items-center gap-2"
+            className="px-6 py-3 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shrink-0 inline-flex items-center gap-2"
           >
             <span>Inquire in R&D</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

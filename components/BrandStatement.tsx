@@ -27,7 +27,7 @@ export default function BrandStatement() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
         {/* Header with Tagline & Statement */}
         <div className="max-w-4xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-md bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
             <span>Our Healthcare Philosophy</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
@@ -45,9 +45,9 @@ export default function BrandStatement() {
             return (
               <div
                 key={pillar.title}
-                className="p-8 rounded-3xl bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1"
+                className="p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1"
               >
-                <div className="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20">
+                <div className="w-14 h-14 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20">
                   <Icon className="w-7 h-7 text-white" />
                 </div>
                 <div className="space-y-2">

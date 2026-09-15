@@ -27,14 +27,14 @@ export default function AboutSection() {
 
             {/* Mission & Vision */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-5 rounded-xl bg-white border border-slate-200 space-y-2">
+              <div className="p-5 rounded-md bg-white border border-slate-200 space-y-2">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">Our Mission</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   To create thoughtful, science-backed formulations that strengthen skin over time, not overnight, focusing on purposeful formulas and long-term health.
                 </p>
               </div>
 
-              <div className="p-5 rounded-xl bg-white border border-slate-200 space-y-2">
+              <div className="p-5 rounded-md bg-white border border-slate-200 space-y-2">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">Our Vision</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   To become a trusted healthcare brand known for integrity, simplicity, and lasting results, built through consistency rather than trends.
@@ -45,7 +45,7 @@ export default function AboutSection() {
 
           {/* Right Column Image */}
           <div className="lg:col-span-6 flex justify-center">
-            <div className="relative w-full max-w-lg h-80 sm:h-96 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+            <div className="relative w-full max-w-lg h-80 sm:h-96 rounded-md overflow-hidden border border-slate-200 shadow-md">
               <Image
                 src="/images/bento/uvothera_banner.png"
                 alt="Phasecor Philosophy"

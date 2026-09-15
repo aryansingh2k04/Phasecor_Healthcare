@@ -77,7 +77,7 @@ export default function ProductsPage() {
                       if (el) el.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
-                  className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all duration-200 ${
+                  className={`px-5 py-2.5 rounded-md text-xs font-semibold tracking-wider uppercase transition-all duration-200 ${
                     selectedCategory === cat.id
                       ? "bg-[#2D8F7A] text-white shadow-sm"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
@@ -123,8 +123,8 @@ export default function ProductsPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-2xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
+            <div className="p-6 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
+              <div className="w-12 h-12 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
                 <Activity className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold text-slate-900">UTI &amp; Renal Health</h3>
@@ -133,8 +133,8 @@ export default function ProductsPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-2xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
+            <div className="p-6 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
+              <div className="w-12 h-12 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
                 <Sparkles className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold text-slate-900">Cellular Bioenergetics</h3>
@@ -143,8 +143,8 @@ export default function ProductsPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-2xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
+            <div className="p-6 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
+              <div className="w-12 h-12 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
                 <Pill className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold text-slate-900">Joint &amp; Bone Density</h3>
@@ -153,8 +153,8 @@ export default function ProductsPage() {
               </p>
             </div>
 
-            <div className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-2xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
+            <div className="p-6 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
+              <div className="w-12 h-12 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <h3 className="text-base font-bold text-slate-900">Women’s PCOS Care</h3>
@@ -186,14 +186,14 @@ export default function ProductsPage() {
             {MEDICINE_PIPELINE.map((item) => (
               <div
                 key={item.name}
-                className="p-8 rounded-3xl bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300 space-y-5 flex flex-col justify-between"
+                className="p-8 rounded-md bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300 space-y-5 flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-bold text-[#2D8F7A] uppercase tracking-wider">
                       {item.therapeuticArea}
                     </span>
-                    <span className="text-[11px] font-semibold text-slate-500 px-3 py-1 rounded-full bg-slate-100">
+                    <span className="text-[11px] font-semibold text-slate-500 px-3 py-1 rounded-md bg-slate-100">
                       {item.deliveryMethod}
                     </span>
                   </div>

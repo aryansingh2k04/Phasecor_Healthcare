@@ -32,7 +32,7 @@ export default function QualityCertifications() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Quality Narrative */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-md bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Quality Assurance & Rigor</span>
             </div>
@@ -48,7 +48,7 @@ export default function QualityCertifications() {
             {/* Standards List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {standards.map((std) => (
-                <div key={std.title} className="p-4 rounded-2xl bg-[#f7faf8] border border-[#e1ece7] space-y-1">
+                <div key={std.title} className="p-4 rounded-md bg-[#f7faf8] border border-[#e1ece7] space-y-1">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#2D8F7A] shrink-0" />
                     <h3 className="text-xs font-bold text-slate-900">{std.title}</h3>
@@ -63,9 +63,9 @@ export default function QualityCertifications() {
           <div className="lg:col-span-5 flex flex-col items-center">
             <div
               onClick={() => setCertModalOpen(true)}
-              className="group relative w-full max-w-sm rounded-3xl bg-white border border-slate-200 p-4 shadow-lg hover:shadow-xl hover:border-[#2D8F7A] transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative w-full max-w-sm rounded-md bg-white border border-slate-200 p-4 shadow-lg hover:shadow-xl hover:border-[#2D8F7A] transition-all duration-300 cursor-pointer overflow-hidden"
             >
-              <div className="relative w-full h-72 rounded-2xl bg-[#fbfdfc] border border-slate-100 overflow-hidden flex items-center justify-center">
+              <div className="relative w-full h-72 rounded-md bg-[#fbfdfc] border border-slate-100 overflow-hidden flex items-center justify-center">
                 <Image
                   src="/images/certificates/certificate.jpg"
                   alt="Quality Certificate Phasecor"
@@ -73,7 +73,7 @@ export default function QualityCertifications() {
                   className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/20 transition-colors flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 px-4 py-2 rounded-full bg-white/95 text-slate-900 text-xs font-bold shadow-md transition-opacity duration-200 flex items-center gap-1.5">
+                  <span className="opacity-0 group-hover:opacity-100 px-4 py-2 rounded-md bg-white/95 text-slate-900 text-xs font-bold shadow-md transition-opacity duration-200 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-[#2D8F7A]" />
                     Click to View Document
                   </span>
@@ -101,7 +101,7 @@ export default function QualityCertifications() {
           onClick={() => setCertModalOpen(false)}
         >
           <div
-            className="relative max-w-3xl w-full bg-white rounded-3xl p-6 shadow-2xl space-y-4"
+            className="relative max-w-3xl w-full bg-white rounded-md p-6 shadow-2xl space-y-4"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -112,13 +112,13 @@ export default function QualityCertifications() {
               <button
                 type="button"
                 onClick={() => setCertModalOpen(false)}
-                className="p-1.5 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100"
+                className="p-1.5 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-100"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="relative w-full h-[70vh] rounded-xl overflow-hidden bg-slate-50">
+            <div className="relative w-full h-[70vh] rounded-md overflow-hidden bg-slate-50">
               <Image
                 src="/images/certificates/certificate.jpg"
                 alt="Quality Certification Detail"

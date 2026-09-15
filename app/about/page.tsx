@@ -113,9 +113,9 @@ export default function AboutPage() {
               return (
                 <div
                   key={p.title}
-                  className="p-8 rounded-3xl bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between"
+                  className="p-8 rounded-md bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
                     <Icon className="w-7 h-7" />
                   </div>
                   <div className="space-y-2">
@@ -152,10 +152,10 @@ export default function AboutPage() {
             {therapeuticAreas.map((area) => (
               <div
                 key={area.title}
-                className="p-8 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all duration-300 space-y-3 flex flex-col justify-between"
+                className="p-8 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all duration-300 space-y-3 flex flex-col justify-between"
               >
                 <div className="space-y-3">
-                  <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-[#e8f2ee] text-[#2D8F7A] uppercase tracking-wider">
+                  <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-[#e8f2ee] text-[#2D8F7A] uppercase tracking-wider">
                     {area.badge}
                   </span>
                   <h3 className="text-lg font-bold text-slate-900">{area.title}</h3>

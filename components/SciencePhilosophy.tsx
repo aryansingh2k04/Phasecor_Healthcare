@@ -36,7 +36,7 @@ export default function SciencePhilosophy() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Phasecor Core Philosophy */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-md bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Our Clinical Philosophy</span>
           </div>
@@ -53,7 +53,7 @@ export default function SciencePhilosophy() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:border-[#2D8F7A] hover:shadow-xl transition-all duration-300 flex flex-col"
+              className="group bg-white rounded-md border border-slate-200 overflow-hidden hover:border-[#2D8F7A] hover:shadow-xl transition-all duration-300 flex flex-col"
             >
               <div className="relative w-full h-56 bg-slate-100 overflow-hidden">
                 <Image
@@ -63,7 +63,7 @@ export default function SciencePhilosophy() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-bold text-[#2D8F7A] border border-[#b5d5cb]">
+                  <span className="px-3 py-1 rounded-md bg-white/90 backdrop-blur-md text-[10px] font-bold text-[#2D8F7A] border border-[#b5d5cb]">
                     {pillar.tag}
                   </span>
                 </div>
@@ -87,7 +87,7 @@ export default function SciencePhilosophy() {
         </div>
 
         {/* Principles Summary Banner */}
-        <div className="mt-12 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-12 p-6 sm:p-8 bg-white rounded-md border border-slate-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="space-y-1">
             <span className="text-2xl font-extrabold text-[#2D8F7A]">01</span>
             <h4 className="text-sm font-bold text-slate-900">Science-Backed</h4>

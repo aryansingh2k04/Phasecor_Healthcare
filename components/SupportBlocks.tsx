@@ -11,9 +11,9 @@ export default function SupportBlocks() {
           {TRUST_BADGES.map((item) => (
             <div
               key={item.title}
-              className="group p-5 sm:p-6 rounded-2xl bg-[#f9f9eb] border border-[#e8e4d2] hover:border-[#2D8F7A] hover:shadow-md transition-all duration-300 flex items-start gap-4"
+              className="group p-5 sm:p-6 rounded-md bg-[#f9f9eb] border border-[#e8e4d2] hover:border-[#2D8F7A] hover:shadow-md transition-all duration-300 flex items-start gap-4"
             >
-              <div className="relative w-12 h-12 p-2 rounded-xl bg-white border border-[#e8e4d2] shrink-0 flex items-center justify-center shadow-2xs">
+              <div className="relative w-12 h-12 p-2 rounded-md bg-white border border-[#e8e4d2] shrink-0 flex items-center justify-center shadow-2xs">
                 <Image
                   src={item.icon}
                   alt={item.title}

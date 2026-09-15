@@ -71,14 +71,14 @@ export default function Home() {
             <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/about"
-                className="px-8 py-3.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all inline-flex items-center gap-2 shadow-sm"
+                className="px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all inline-flex items-center gap-2 shadow-sm"
               >
                 <span>Discover Our Full Mission</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/certifications"
-                className="px-8 py-3.5 rounded-full border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all inline-flex items-center gap-2"
+                className="px-8 py-3.5 rounded-md border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all inline-flex items-center gap-2"
               >
                 <span>View Certifications</span>
                 <ShieldCheck className="w-4 h-4" />
