@@ -14,7 +14,12 @@ export const metadata: Metadata = {
   description:
     "Phasecor Healthcare bridges clinical science and therapeutic formulations engineered for restorative, phased skin and systemic health.",
   icons: {
-    icon: "/icon.png",
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/apple-icon.png",
+    shortcut: "/icon.png",
   },
 };
 
