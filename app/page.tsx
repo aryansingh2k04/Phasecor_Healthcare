@@ -58,11 +58,10 @@ export default function Home() {
       {/* 9. Mission & About Us Teaser */}
       <section className="py-20 bg-[#f7faf8] border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Our Phased Philosophy</span>
-            </div>
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
+              Our Phased Philosophy
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Grounded in Biology. Formulated for Enduring Cellular Health.
             </h2>

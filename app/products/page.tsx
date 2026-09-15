@@ -169,11 +169,10 @@ export default function ProductsPage() {
       {/* Medicines & Therapeutic Pipeline Section */}
       <section id="pipeline-section" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Pharmaceutical Pipeline</span>
-            </div>
+          <div className="max-w-3xl space-y-3">
+            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
+              Pharmaceutical Pipeline
+            </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Investigational Therapeutic Pipeline
             </h2>
