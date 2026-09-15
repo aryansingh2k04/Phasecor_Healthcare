@@ -1,8 +1,8 @@
 ﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f9f9eb"/>
-      <stop offset="100%" stop-color="#f3f3dd"/>
+      <stop offset="0%" stop-color="#fafbfa"/>
+      <stop offset="100%" stop-color="#f0f4f2"/>
     </linearGradient>
     <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#2D8F7A"/>
@@ -16,7 +16,7 @@
 
   <!-- Background -->
   <rect width="600" height="600" fill="url(#bgGrad)" rx="24"/>
-  <rect x="1.5" y="1.5" width="597" height="597" fill="none" stroke="#e8e4d2" stroke-width="2" rx="22.5"/>
+  <rect x="1.5" y="1.5" width="597" height="597" fill="none" stroke="#e2ece7" stroke-width="2" rx="22.5"/>
 
   <!-- Subtle Ambient Glow -->
   <circle cx="300" cy="270" r="180" fill="url(#glowGrad)"/>
@@ -24,7 +24,7 @@
   <!-- Pharmacuetical Packaging / Pill Capsule Icon Container -->
   <g transform="translate(300, 240)">
     <!-- Pill Capsule Container Graphic -->
-    <rect x="-100" y="-100" width="200" height="200" rx="36" fill="#ffffff" stroke="#e8e4d2" stroke-width="2"/>
+    <rect x="-100" y="-100" width="200" height="200" rx="36" fill="#ffffff" stroke="#e2ece7" stroke-width="2"/>
     
     <!-- Stylized Medical Cross & Molecule -->
     <g transform="translate(0, -10)">
@@ -50,7 +50,7 @@
 
   <!-- Bottom Brand Indicator -->
   <g transform="translate(300, 520)">
-    <line x1="-40" y1="0" x2="40" y2="0" stroke="#e8e4d2" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-40" y1="0" x2="40" y2="0" stroke="#dbe7e1" stroke-width="2" stroke-linecap="round"/>
     <circle cx="0" cy="0" r="3" fill="#2D8F7A"/>
   </g>
 </svg>
