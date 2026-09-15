@@ -13,13 +13,13 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
   return (
     <div className="group flex flex-col bg-[#f9f9eb] rounded-2xl border border-[#e8e4d2] overflow-hidden hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300">
       {/* Product Image Area - Clean, No Badges */}
-      <div className="relative w-full h-80 bg-white border-b border-[#e8e4d2] overflow-hidden flex items-center justify-center p-4">
+      <div className="relative w-full h-80 bg-[#f9f9eb] border-b border-[#e8e4d2] overflow-hidden flex items-center justify-center p-4">
         <Image
           src={product.mainImage}
           alt={product.name}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-contain p-3 group-hover:scale-105 transition-transform duration-500"
+          className="object-contain p-3 mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
         />
       </div>
 
