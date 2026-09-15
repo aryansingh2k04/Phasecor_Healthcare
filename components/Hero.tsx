@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -182,20 +183,20 @@ export default function Hero() {
               Next-gen dermatological formulations &amp; therapeutic medicines engineered for restorative cellular care.
             </p>
 
-            {/* Action Buttons matching Eynexa Hero layout */}
+            {/* Action Buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
-              <a
-                href="#products"
+              <Link
+                href="/products"
                 className="px-8 py-3.5 rounded-full bg-[#2D8F7A] text-white text-sm font-semibold tracking-wide hover:bg-[#237362] transition-all duration-200 shadow-lg shadow-[#2D8F7A]/25 hover:shadow-xl hover:shadow-[#2D8F7A]/40 active:scale-95"
               >
                 Explore Products
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                href="/about"
                 className="px-8 py-3.5 rounded-full bg-white/5 border border-white/30 text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#071714] transition-all duration-200 backdrop-blur-md active:scale-95"
               >
                 Discover Our Mission
-              </a>
+              </Link>
             </div>
           </div>
         </div>

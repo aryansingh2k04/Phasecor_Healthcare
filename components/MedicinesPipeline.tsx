@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export default function MedicinesPipeline() {
@@ -97,13 +98,13 @@ export default function MedicinesPipeline() {
               Phasecor Healthcare collaborates with medical practitioners, dermatologists, and clinical trial investigators.
             </p>
           </div>
-          <a
-            href="#enquiry"
+          <Link
+            href="/contact"
             className="px-6 py-3 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shrink-0 inline-flex items-center gap-2"
           >
             <span>Inquire in R&D</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

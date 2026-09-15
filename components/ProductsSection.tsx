@@ -1,23 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 import { PRODUCTS, Product } from "./data";
 import ProductCard from "./ProductCard";
 import ProductModal from "./ProductModal";
 
 interface ProductsSectionProps {
-  onSelectProductForEnquiry: (productId: string) => void;
+  onSelectProductForEnquiry?: (productId: string) => void;
 }
 
 export default function ProductsSection({ onSelectProductForEnquiry }: ProductsSectionProps) {
+  const router = useRouter();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const handleEnquire = (productId: string) => {
-    onSelectProductForEnquiry(productId);
-    const enquiryEl = document.getElementById("contact") || document.getElementById("enquiry");
-    if (enquiryEl) {
-      enquiryEl.scrollIntoView({ behavior: "smooth" });
+    if (onSelectProductForEnquiry) {
+      onSelectProductForEnquiry(productId);
     }
+    router.push(`/contact?product=${encodeURIComponent(productId)}`);
   };
 
   return (
@@ -46,6 +49,17 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
               onEnquire={handleEnquire}
             />
           ))}
+        </div>
+
+        {/* Explore All Formulations CTA */}
+        <div className="pt-12 flex justify-center">
+          <Link
+            href="/products"
+            className="px-8 py-3.5 rounded-full bg-slate-900 text-white hover:bg-[#2D8F7A] text-xs font-semibold tracking-wider uppercase transition-all inline-flex items-center gap-2 shadow-sm"
+          >
+            <span>Explore All Formulations &amp; Pipeline</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
 

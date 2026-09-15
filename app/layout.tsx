@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -31,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jakarta.variable} scroll-smooth`}>
       <body className="bg-white text-slate-900 min-h-screen flex flex-col antialiased selection:bg-[#2D8F7A]/20 selection:text-[#184a3f]">
-        {children}
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

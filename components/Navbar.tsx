@@ -3,16 +3,18 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ExternalLink } from "lucide-react";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
-    { label: "About Us", href: "#about" },
-    { label: "Products", href: "#products" },
-    { label: "Certifications", href: "#certifications" },
-    { label: "Contact Us", href: "#contact" },
+    { label: "About Us", href: "/about" },
+    { label: "Products", href: "/products" },
+    { label: "Certifications", href: "/certifications" },
+    { label: "Contact Us", href: "/contact" },
     { label: "Store", href: "https://phasecor.com", isExternal: true },
   ];
 
@@ -35,22 +37,43 @@ export default function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.isExternal ? "_blank" : undefined}
-              rel={link.isExternal ? "noopener noreferrer" : undefined}
-              className={`text-sm font-medium transition-colors duration-200 flex items-center gap-1 ${
-                link.isExternal
-                  ? "text-[#2D8F7A] font-semibold hover:text-[#237362]"
-                  : "text-slate-700 hover:text-[#2D8F7A]"
-              }`}
-            >
-              <span>{link.label}</span>
-              {link.isExternal && <ExternalLink className="w-3.5 h-3.5" />}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = !link.isExternal && (
+              pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+            );
+
+            if (link.isExternal) {
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-[#2D8F7A] hover:text-[#237362] transition-colors duration-200 flex items-center gap-1"
+                >
+                  <span>{link.label}</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              );
+            }
+
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`text-sm font-medium transition-colors duration-200 relative py-1 ${
+                  isActive
+                    ? "text-[#2D8F7A] font-semibold"
+                    : "text-slate-700 hover:text-[#2D8F7A]"
+                }`}
+              >
+                <span>{link.label}</span>
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#2D8F7A] rounded-full" />
+                )}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Right Action: Direct link to Phasecor Store */}
@@ -59,7 +82,7 @@ export default function Navbar() {
             href="https://phasecor.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all duration-200 inline-flex items-center gap-1.5 shadow-sm"
+            className="px-6 py-2.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all duration-200 inline-flex items-center gap-1.5 shadow-sm hover:shadow"
           >
             <span>Visit Store</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -83,21 +106,42 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-slate-200 bg-white px-6 pt-3 pb-6 space-y-3 shadow-lg">
           <div className="flex flex-col space-y-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.isExternal ? "_blank" : undefined}
-                rel={link.isExternal ? "noopener noreferrer" : undefined}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`text-base font-medium py-2 border-b border-slate-100 flex items-center justify-between ${
-                  link.isExternal ? "text-[#2D8F7A] font-semibold" : "text-slate-800 hover:text-[#2D8F7A]"
-                }`}
-              >
-                <span>{link.label}</span>
-                {link.isExternal && <ExternalLink className="w-4 h-4" />}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = !link.isExternal && (
+                pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+              );
+
+              if (link.isExternal) {
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-base font-semibold py-2.5 border-b border-slate-100 flex items-center justify-between text-[#2D8F7A]"
+                  >
+                    <span>{link.label}</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-base font-medium py-2.5 border-b border-slate-100 flex items-center justify-between ${
+                    isActive
+                      ? "text-[#2D8F7A] font-semibold bg-[#e8f2ee]/40 px-3 rounded-lg border-none"
+                      : "text-slate-800 hover:text-[#2D8F7A]"
+                  }`}
+                >
+                  <span>{link.label}</span>
+                </Link>
+              );
+            })}
           </div>
           <div className="pt-2">
             <a
