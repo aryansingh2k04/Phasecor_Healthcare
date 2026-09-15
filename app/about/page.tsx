@@ -170,35 +170,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Action / Next Steps Banner */}
-      <section className="py-16 bg-[#071714] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <div className="space-y-2 max-w-xl">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-              Explore Our Complete Product Portfolio
-            </h2>
-            <p className="text-sm text-slate-300">
-              Discover our multi-specialty therapeutics, clinical dermatology formulations, and pharmaceutical pipeline.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/products"
-              className="px-8 py-3.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all inline-flex items-center gap-2 shadow-lg"
-            >
-              <span>View Products</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/contact"
-              className="px-8 py-3.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold tracking-wider uppercase hover:bg-white hover:text-slate-900 transition-all inline-flex items-center gap-2"
-            >
-              <span>Contact Us</span>
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
