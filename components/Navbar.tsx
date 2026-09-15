@@ -12,6 +12,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navLinks = [
+    { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
     { label: "Products", href: "/products" },
     { label: "Certifications", href: "/certifications" },
@@ -40,7 +41,9 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = !link.isExternal && (
-              pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+              link.href === "/"
+                ? pathname === "/"
+                : (pathname === link.href || pathname.startsWith(link.href))
             );
 
             if (link.isExternal) {
@@ -72,7 +75,7 @@ export default function Navbar() {
                 {isActive && (
                   <motion.div
                     layoutId="active-navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#2D8F7A] shadow-[0_0_8px_rgba(45,143,122,0.8)] rounded-full"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#2D8F7A] rounded-full"
                     transition={{
                       type: "spring",
                       stiffness: 380,
@@ -117,7 +120,9 @@ export default function Navbar() {
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               const isActive = !link.isExternal && (
-                pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+                link.href === "/"
+                  ? pathname === "/"
+                  : (pathname === link.href || pathname.startsWith(link.href))
               );
 
               if (link.isExternal) {

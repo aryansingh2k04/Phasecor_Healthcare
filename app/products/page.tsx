@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Sparkles, ArrowRight, ShieldCheck, FileText, CheckCircle2 } from "lucide-react";
+import { Sparkles, ArrowRight, ShieldCheck, CheckCircle2, Pill, Activity } from "lucide-react";
 import { PRODUCTS, Product, MEDICINE_PIPELINE } from "@/components/data";
 import ProductCard from "@/components/ProductCard";
 import ProductModal from "@/components/ProductModal";
@@ -17,18 +17,18 @@ export default function ProductsPage() {
 
   const categories = [
     { id: "all", label: "All Formulations" },
-    { id: "topical", label: "Topical Dermaceuticals" },
-    { id: "nutricosmetic", label: "Nutricosmetics" },
-    { id: "pipeline", label: "Medicines Pipeline" },
+    { id: "therapeutic", label: "Therapeutic Medicines" },
+    { id: "derma", label: "Clinical Dermatology" },
+    { id: "pipeline", label: "R&D Pipeline" },
   ];
 
   const filteredProducts = PRODUCTS.filter((product) => {
     if (selectedCategory === "all") return true;
-    if (selectedCategory === "topical") {
-      return product.category.toLowerCase().includes("topical") || product.category.toLowerCase().includes("sunscreen");
+    if (selectedCategory === "therapeutic") {
+      return product.category === "Therapeutic Medicines";
     }
-    if (selectedCategory === "nutricosmetic") {
-      return product.category.toLowerCase().includes("oral") || product.category.toLowerCase().includes("nutri");
+    if (selectedCategory === "derma") {
+      return product.category === "Clinical Dermatology";
     }
     return true;
   });
@@ -46,16 +46,16 @@ export default function ProductsPage() {
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2D8F7A]/20 border border-[#2D8F7A]/30 text-[#45C5A9] text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Formulation Portfolio</span>
+              <span>Pharmaceutical &amp; Dermaceutical Portfolio</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Clinical Formulations &amp; <br />
+              Quality Care within Reach: <br />
               <span className="bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent">
-                Therapeutics
+                Therapeutics &amp; Formulations
               </span>
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              Physiologically calibrated topicals, dual-delivery oral nutricosmetics, and prescription therapeutics engineered for clinical efficacy without cellular stress.
+              Engineered with medical rigor, verified therapeutic dosages, and uncompromised purity &mdash; providing essential urinary, metabolic, rehydration, musculoskeletal, and dermatological healthcare solutions.
             </p>
           </div>
         </div>
@@ -111,51 +111,60 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Dual Delivery Technology Spotlight */}
+      {/* Multi-Therapy Highlights: Primary Medicines Showcase */}
       <section className="py-20 bg-[#f7faf8] border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6 space-y-5">
-              <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
-                Patented Nutricosmetic Science
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Dual Delivery Technology: Oil &amp; Powder Synchronized Uptake
-              </h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                Conventional oral supplements force a compromise: either oil-soluble lipophilic compounds or water-soluble hydrophilic vitamins. Phasecor&apos;s patented Dual Delivery technology suspends lipophilic nutrients (Evening Primrose Oil, Astaxanthin) inside sustained-release powder micro-pellets (L-Glutathione, Vitamin C, NAC) for differential intestinal absorption.
-              </p>
-              <div className="space-y-3 pt-2">
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#2D8F7A] shrink-0" />
-                  <span className="text-xs sm:text-sm text-slate-800 font-medium">
-                    Up to 3.4x higher cellular antioxidant absorption compared to standard capsules
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#2D8F7A] shrink-0" />
-                  <span className="text-xs sm:text-sm text-slate-800 font-medium">
-                    Enteric encapsulation prevents gastric acid degradation of delicate enzymes
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#2D8F7A] shrink-0" />
-                  <span className="text-xs sm:text-sm text-slate-800 font-medium">
-                    Synchronized bioavailability aligns with biological cell repair cycles
-                  </span>
-                </div>
+          <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
+              Multi-Specialty Care
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Essential Therapeutics Engineered for Maximum Bioavailability
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600">
+              Expanding healthcare access across high-incidence clinical conditions with science-backed formulations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
+              <div className="w-12 h-12 rounded-2xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
+                <Activity className="w-6 h-6" />
               </div>
+              <h3 className="text-base font-bold text-slate-900">UTI &amp; Renal Health</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Non-antibiotic urinary tract support combining PAC-rich Cranberry, D-Mannose, and urinary alkalizers.
+              </p>
             </div>
 
-            <div className="lg:col-span-6">
-              <div className="relative w-full h-80 sm:h-96 rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-50">
-                <Image
-                  src="/images/bento/primathion_dual.jpg"
-                  alt="Primathion Dual Delivery Technology"
-                  fill
-                  className="object-cover"
-                />
+            <div className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
+              <div className="w-12 h-12 rounded-2xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
+                <Sparkles className="w-6 h-6" />
               </div>
+              <h3 className="text-base font-bold text-slate-900">Cellular Bioenergetics</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Sugar-free WHO-osmolarity electrolyte formulation fortified with Co-Enzyme Q10 for rapid rehydration.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
+              <div className="w-12 h-12 rounded-2xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
+                <Pill className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Joint &amp; Bone Density</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Synergistic Calcium Orotate, Cissus Quadrangularis, and Active B12 for cartilage and neuropathic recovery.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
+              <div className="w-12 h-12 rounded-2xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h3 className="text-base font-bold text-slate-900">Women’s PCOS Care</h3>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Physiological 40:1 Myo to D-Chiro Inositol ratio to regulate ovulation, insulin sensitivity, and cycle rhythm.
+              </p>
             </div>
           </div>
         </div>
@@ -167,17 +176,17 @@ export default function ProductsPage() {
           <div className="max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Pharmaceutical Expansion</span>
+              <span>Pharmaceutical Pipeline</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Medicines &amp; Therapeutic Development Pipeline
+              Investigational Therapeutic Pipeline
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              In addition to our available clinical formulations, Phasecor Healthcare is expanding into prescription dermatology and targeted therapeutics, addressing critical dermatological pathologies through rigorous clinical trials.
+              In addition to our released formulations, Phasecor Healthcare investigates advanced liposomal systems and targeted therapeutics to meet evolving medical needs.
             </p>
           </div>
 
-          {/* Pipeline Cards Grid - Clean, No Fake Badges */}
+          {/* Pipeline Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {MEDICINE_PIPELINE.map((item) => (
               <div
@@ -230,7 +239,7 @@ export default function ProductsPage() {
               Hospital &amp; Clinic Inquiries
             </h2>
             <p className="text-sm text-slate-300">
-              Are you a dermatologist, compounding specialist, or hospital formulary committee member? Connect with our medical liaisons.
+              Are you a physician, hospital formulary officer, or pharmaceutical distributor? Connect with our medical team.
             </p>
           </div>
           <Link

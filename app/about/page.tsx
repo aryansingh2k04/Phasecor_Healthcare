@@ -1,58 +1,75 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, Target, Award, HeartHandshake, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
-import SciencePhilosophy from "@/components/SciencePhilosophy";
+import {
+  Sparkles,
+  Lightbulb,
+  ShieldCheck,
+  HeartHandshake,
+  ArrowRight,
+  CheckCircle2,
+  Activity,
+  Pill,
+  Award
+} from "lucide-react";
+import { BRAND_PHILOSOPHY } from "@/components/data";
 import Testimonials from "@/components/Testimonials";
 
 export const metadata: Metadata = {
   title: "About Us | Phasecor Healthcare",
   description:
-    "Learn about Phasecor Healthcare's science-first philosophy, clinical origins, and commitment to phased cellular skin and systemic restoration.",
+    "Discover Phasecor Healthcare's mission: Quality Care within Reach. Delivering innovative, affordable, and high-quality multi-specialty healthcare and dermatological solutions.",
 };
 
 export default function AboutPage() {
-  const corePhases = [
+  const brochurePillars = [
     {
-      step: "Phase 01",
-      title: "Barrier Stabilization & Quenching",
-      desc: "Before active cellular modulation can begin, the stratum corneum barrier must be fortified. We eliminate micro-inflammation and strengthen lipid lamellae using bio-compatible ceramides, panthenol, and fatty acids.",
-      highlight: "Barrier Integrity",
-    },
-    {
-      step: "Phase 02",
-      title: "Targeted Cellular Modulation",
-      desc: "Once the barrier is resilient, precise clinical actives (such as Tranexamic Acid, Niascobutin, and Photolyase enzymes) modulate cellular pathways without triggering rebound irritation or inflammatory cascades.",
-      highlight: "Targeted Efficacy",
-    },
-    {
-      step: "Phase 03",
-      title: "Systemic Reinforcement & Maintenance",
-      desc: "Long-term homeostasis requires systemic cellular support. Our nutricosmetic dual-delivery formulations supply synchronized lipid- and water-soluble antioxidants (Glutathione, Astaxanthin, NAC) to lock in internal resilience.",
-      highlight: "Long-Term Homeostasis",
-    },
-  ];
-
-  const values = [
-    {
-      icon: Target,
-      title: "No Fleeting Trends",
-      desc: "We do not formulate based on viral social fads or marketing hype. Every ingredient has demonstrable peer-reviewed biochemical efficacy.",
+      icon: Lightbulb,
+      title: "Innovative Products",
+      desc: "We develop advanced solutions that address evolving healthcare needs with cutting-edge active delivery mechanisms and targeted formulations.",
     },
     {
       icon: ShieldCheck,
-      title: "Clinically Verified Actives",
-      desc: "We calibrate active ingredient percentages to therapeutic, biologically effective levels that yield predictable, reproducible outcomes.",
-    },
-    {
-      icon: Award,
-      title: "Pharmaceutical-Grade Purity",
-      desc: "Manufactured in certified cGMP cleanrooms with zero parabens, endocrine disruptors, sulfates, or artificial fragrances.",
+      title: "Most Affordable High Quality Products",
+      desc: "We combine affordability with uncompromised clinical quality to deliver the best value to physicians, pharmacies, and patients.",
     },
     {
       icon: HeartHandshake,
-      title: "Physician & Patient Trust",
-      desc: "Designed in collaboration with dermatologists and clinical practitioners who prioritize long-term skin health above instant cosmetic illusion.",
+      title: "Committed to Better Health Outcomes",
+      desc: "We are dedicated to improving lives through safe, effective, and reliable healthcare solutions backed by rigorous laboratory quality control.",
+    },
+  ];
+
+  const therapeuticAreas = [
+    {
+      title: "Urinary Tract & Renal Care",
+      desc: "Targeted non-antibiotic solutions (UTIcor™) with cranberry PACs and D-Mannose to inhibit bacterial adhesion and alkalize urinary pH.",
+      badge: "Urology & Nephrology",
+    },
+    {
+      title: "Electrolyte & Rehydration Therapy",
+      desc: "Sugar-free WHO-osmolarity electrolyte formulations (Electcor™) fortified with Co-Enzyme Q10 for rapid cellular revitalisation.",
+      badge: "Critical Hydration",
+    },
+    {
+      title: "Joint, Bone & Neuropathic Health",
+      desc: "Multi-modal musculoskeletal formulations (Chronicor™) combining Calcium Orotate, Cissus Quadrangularis, and Active B12.",
+      badge: "Orthopaedics & Rheumatology",
+    },
+    {
+      title: "Women’s Hormonal & Ovulatory Care",
+      desc: "Physiological 40:1 Inositol formulations (OvaPhase™) specifically engineered for PCOS/PCOD and metabolic endocrine balance.",
+      badge: "Gynaecology & Endocrinology",
+    },
+    {
+      title: "Clinical Dermatology & Photobiology",
+      desc: "High-potency multi-action serums, dual-delivery oral nutricosmetics, and broad-spectrum SPF 60+ UV/IR shields.",
+      badge: "Cutaneous Medicine",
+    },
+    {
+      title: "Investigational R&D Pipeline",
+      desc: "Expanding prescription-grade lipid barrier repair emulsions, melanosome modulators, and DNA photolyase repair complexes.",
+      badge: "Pharmaceutical Innovation",
     },
   ];
 
@@ -68,162 +85,135 @@ export default function AboutPage() {
               <span>About Phasecor Healthcare</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-              Engineering the <br />
+              Quality Care <br />
               <span className="bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent">
-                Phases of Health
+                within Reach
               </span>
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              At Phasecor, we don&apos;t believe in quick fixes. We believe in phases. Skin doesn&apos;t transform overnight; it evolves, adapts, repairs, and strengthens over time &mdash; and that&apos;s exactly how we formulate.
+              {BRAND_PHILOSOPHY.statement}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Origin & Philosophy Narrative */}
+      {/* Official 3 Pillars from Brochure */}
       <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="max-w-3xl space-y-3">
+            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
+              Our Guiding Tenets
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Three Pillars of Healthcare Excellence
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600">
+              Guiding our product formulation, pricing ethics, and medical collaborations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {brochurePillars.map((p) => {
+              const Icon = p.icon;
+              return (
+                <div
+                  key={p.title}
+                  className="p-8 rounded-3xl bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
+                    <Icon className="w-7 h-7" />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold text-slate-900">{p.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{p.desc}</p>
+                  </div>
+                  <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-[#2D8F7A]">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <span>Phasecor Core Standard</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Evolution: From Pure Derma to Comprehensive Healthcare */}
+      <section className="py-20 bg-[#f7faf8] border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Visual Column */}
             <div className="lg:col-span-5 relative">
               <div className="relative w-full h-[450px] sm:h-[500px] rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-50">
                 <Image
-                  src="/images/bento/primathion_dual.jpg"
-                  alt="Phasecor Formulation Science"
+                  src="/images/brand/philosophy_brochure.jpg"
+                  alt="Phasecor Quality Care within Reach"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg">
-                  <p className="text-xs font-semibold text-[#2D8F7A] uppercase tracking-wider">Our Core Conviction</p>
-                  <p className="text-sm font-bold text-slate-900 mt-1">
-                    “Formulate Right. Give It Time. See Real Change.”
-                  </p>
-                </div>
               </div>
             </div>
 
             {/* Narrative Column */}
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
-                The Science of Phases
+                The Phasecor Evolution
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Why Quick Fixes Fail &mdash; And Why Biological Phases Succeed
+                Expanding Beyond Dermatology to Essential Multi-Therapy Medicine
               </h2>
               <div className="space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                 <p>
-                  The commercial skincare industry has long promoted rapid, overnight miracles. However, human epidermal cellular turnover operates on an immutable 28-day biological cycle. Forcing drastic change through aggressive peels, excessive acid percentages, and overloaded formulas frequently leads to compromised stratum corneum integrity, chronic micro-inflammation, and rebound pigmentation.
+                  Phasecor began with a profound scientific conviction: biological healing operates in distinct physiological phases, rather than overnight cosmetic shortcuts. Our pioneering work in barrier-conscious dermatology, dual-delivery nutricosmetics, and multi-spectrum photobiology established our reputation for clinical integrity.
                 </p>
                 <p>
-                  Phasecor Healthcare was established by clinical researchers and dermatological specialists with a contrary imperative: build formulations that honor human cutaneous physiology. Our solutions deliver bio-available active compounds calibrated to work synchronously with your body&apos;s natural circadian and cellular repair schedules.
+                  Recognizing the widespread need for dependable, affordable, high-efficacy therapeutics across broader medical domains, Phasecor Healthcare has systematically expanded into essential medicine categories:
                 </p>
+                <ul className="space-y-2 text-xs sm:text-sm text-slate-700 pl-4 border-l-2 border-[#2D8F7A]">
+                  <li><strong>UTI &amp; Renal Health:</strong> UTIcor™ syrup with D-Mannose and PAC-standardized cranberry.</li>
+                  <li><strong>Electrolyte Therapy:</strong> Electcor™ sugar-free WHO-osmolarity sachets fortified with Co-Enzyme Q10.</li>
+                  <li><strong>Joint &amp; Musculoskeletal Restoration:</strong> Chronicor™ tablets with Calcium Orotate, Cissus, and Active B12.</li>
+                  <li><strong>Women&apos;s Hormonal Wellness:</strong> OvaPhase™ physiological Inositol therapy for PCOS/PCOD.</li>
+                </ul>
                 <p>
-                  From topical targeted dermaceuticals to advanced oral nutricosmetics utilizing patented dual-delivery technology, Phasecor represents a rigorous, science-backed approach to enduring skin and systemic health.
+                  By uniting specialized therapeutics with clinical dermatology under a single commitment &mdash; <strong>Quality Care within Reach</strong> &mdash; Phasecor empowers physicians, hospitals, and patients with uncompromised healthcare solutions.
                 </p>
-              </div>
-
-              {/* Quick stats / Highlights */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
-                <div className="p-4 rounded-2xl bg-[#f9faf9] border border-[#e8f2ee]">
-                  <span className="text-2xl font-extrabold text-[#2D8F7A] block">28 Days</span>
-                  <span className="text-xs text-slate-600 font-medium">Physiological turnover alignment</span>
-                </div>
-                <div className="p-4 rounded-2xl bg-[#f9faf9] border border-[#e8f2ee]">
-                  <span className="text-2xl font-extrabold text-[#2D8F7A] block">100%</span>
-                  <span className="text-xs text-slate-600 font-medium">Paraben &amp; fragrance-free</span>
-                </div>
-                <div className="p-4 rounded-2xl bg-[#f9faf9] border border-[#e8f2ee]">
-                  <span className="text-2xl font-extrabold text-[#2D8F7A] block">cGMP</span>
-                  <span className="text-xs text-slate-600 font-medium">Certified cleanroom quality</span>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The 3 Phases Detail */}
-      <section className="py-20 bg-[#f7faf8] border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+      {/* Therapeutic Specialties Grid */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
-              The Formulation Methodology
+              Specialized Divisions
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Three Distinct Stages of Cellular Restoration
+              Comprehensive Therapeutic Spectrum
             </h2>
-            <p className="text-sm sm:text-base text-slate-600">
-              Every Phasecor product is categorized and formulated according to its biological role in restorative therapy.
+            <p className="text-sm text-slate-600">
+              Targeting high-burden medical and dermatological conditions with evidence-based active synergies.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {corePhases.map((phase) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {therapeuticAreas.map((area) => (
               <div
-                key={phase.step}
-                className="p-8 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6"
+                key={area.title}
+                className="p-8 rounded-3xl bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] transition-all duration-300 space-y-3 flex flex-col justify-between"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-[#e8f2ee] text-[#2D8F7A] tracking-wider uppercase">
-                      {phase.step}
-                    </span>
-                    <span className="text-xs font-semibold text-slate-400">
-                      {phase.highlight}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 leading-snug">
-                    {phase.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    {phase.desc}
-                  </p>
-                </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-[#2D8F7A]">
-                  <CheckCircle2 className="w-4 h-4" />
-                  <span>Clinical Efficacy Target Met</span>
+                <div className="space-y-3">
+                  <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-[#e8f2ee] text-[#2D8F7A] uppercase tracking-wider">
+                    {area.badge}
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-900">{area.title}</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">{area.desc}</p>
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Science Philosophy 3-Pillar Component */}
-      <SciencePhilosophy />
-
-      {/* Core Values / Commitments */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
-              Our Principles
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              The Guiding Tenets of Phasecor Healthcare
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600">
-              Commitments upheld across every batch, clinical assay, and institutional partnership.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((v) => {
-              const Icon = v.icon;
-              return (
-                <div
-                  key={v.title}
-                  className="p-6 rounded-2xl bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900">{v.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{v.desc}</p>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
@@ -236,10 +226,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="space-y-2 max-w-xl">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-              Ready to explore our therapeutic formulations?
+              Explore Our Complete Product Portfolio
             </h2>
             <p className="text-sm text-slate-300">
-              Discover our clinical topicals, nutricosmetics, and expanding pharmaceutical medicine pipeline.
+              Discover our multi-specialty therapeutics, clinical dermatology formulations, and pharmaceutical pipeline.
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4">

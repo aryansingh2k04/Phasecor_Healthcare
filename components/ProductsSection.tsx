@@ -29,13 +29,13 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
         {/* Section Header */}
         <div className="text-center space-y-2 mb-14">
           <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
-            Clinical Formulations
+            Quality Care within Reach
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-            Discover Our Products
+            Therapeutics &amp; Clinical Formulations
           </h2>
           <p className="text-sm text-slate-500">
-            Formulate right. Give it time. See real change.
+            Innovative, high-quality, and affordable healthcare solutions that empower better lives.
           </p>
         </div>
 
