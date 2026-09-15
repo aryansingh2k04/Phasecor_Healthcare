@@ -37,11 +37,11 @@ export default function Home() {
       {/* 2. Four Support Feature Blocks */}
       <SupportBlocks />
 
-      {/* 3. Featured Products Portfolio */}
-      <ProductsSection onSelectProductForEnquiry={handleSelectProductForEnquiry} />
-
-      {/* 4. Masonry Bento Grid: Science-Backed Skincare Solutions */}
+      {/* 3. Masonry Bento Grid: Science-Backed Skincare Solutions */}
       <MasonryBento />
+
+      {/* 4. Featured Products Portfolio */}
+      <ProductsSection onSelectProductForEnquiry={handleSelectProductForEnquiry} />
 
       {/* 5. Featured Deal Banner: Advanced UV Protection Sunscreen */}
       <FeaturedSpotlight
