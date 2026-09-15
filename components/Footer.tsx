@@ -10,34 +10,34 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#f9f9eb] text-slate-800 text-sm border-t border-[#ede8d8] pt-16 pb-12">
+    <footer className="bg-[#071714] text-slate-300 text-sm border-t border-slate-800/80 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main 3-Column Content */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 pb-14 border-b border-[#e8e4d2]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 pb-14 border-b border-slate-800/80">
           {/* Column 1: Logo & Philosophy */}
           <div className="md:col-span-5 space-y-5">
             <Link href="/" className="inline-block">
               <div className="relative h-10 w-44">
                 <Image
-                  src="/images/brand/logo-dark-transparent.png"
-                  alt="Phasecor"
+                  src="/images/brand/logo-white-transparent.png"
+                  alt="Phasecor Healthcare"
                   fill
                   className="object-contain object-left"
                   sizes="176px"
                 />
               </div>
             </Link>
-            <p className="text-slate-700 text-xs sm:text-sm leading-relaxed max-w-sm font-normal">
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm font-normal">
               At Phasecor, we don’t believe in quick fixes. We believe in phases. Skin doesn’t transform overnight; it evolves, adapts, repairs, and strengthens over time, and that’s exactly how we formulate.
             </p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="md:col-span-3 space-y-4">
-            <h3 className="text-sm font-bold tracking-widest uppercase text-slate-900">
+            <h3 className="text-sm font-bold tracking-widest uppercase text-white">
               Quick Links
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
+            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
               <li>
                 <Link href="/" className="hover:text-[#2D8F7A] transition-colors">
                   Home
@@ -68,10 +68,10 @@ export default function Footer() {
 
           {/* Column 3: Important Links */}
           <div className="md:col-span-4 space-y-4">
-            <h3 className="text-sm font-bold tracking-widest uppercase text-slate-900">
+            <h3 className="text-sm font-bold tracking-widest uppercase text-white">
               Important Links
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
+            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
               <li>
                 <a
                   href="https://phasecor.com/pages/privacy-policy"
@@ -118,7 +118,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-xs text-slate-600 font-normal">
+          <div className="text-xs text-slate-500 font-normal">
             &copy; 2025 Phasecor. All rights reserved.
           </div>
 
@@ -128,7 +128,7 @@ export default function Footer() {
               href="https://x.com/phasecor"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-800 hover:text-[#2D8F7A] transition-colors p-1"
+              className="text-slate-400 hover:text-[#2D8F7A] transition-colors p-1"
               aria-label="X (Twitter)"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -141,7 +141,7 @@ export default function Footer() {
               href="https://www.instagram.com/phasecor__/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-800 hover:text-[#2D8F7A] transition-colors p-1"
+              className="text-slate-400 hover:text-[#2D8F7A] transition-colors p-1"
               aria-label="Instagram"
             >
               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -152,7 +152,7 @@ export default function Footer() {
             {/* Back to top circle button */}
             <button
               onClick={scrollToTop}
-              className="w-10 h-10 rounded-full bg-black text-white hover:bg-[#2D8F7A] transition-colors flex items-center justify-center shadow-md ml-2"
+              className="w-10 h-10 rounded-full bg-slate-800 text-white hover:bg-[#2D8F7A] border border-slate-700 transition-colors flex items-center justify-center shadow-md ml-2"
               aria-label="Back to top"
             >
               <ArrowUp className="w-4 h-4" />

@@ -20,7 +20,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full bg-[#f9f9eb]/95 backdrop-blur-md border-b border-[#e8e4d2] transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo - Clean Logo Only */}
         <Link href="/" className="flex items-center group">
@@ -113,7 +113,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-200 bg-white px-6 pt-3 pb-6 space-y-3 shadow-lg">
+        <div className="md:hidden border-b border-[#e8e4d2] bg-[#f9f9eb] px-6 pt-3 pb-6 space-y-3 shadow-lg">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               const isActive = !link.isExternal && (
