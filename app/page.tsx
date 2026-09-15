@@ -41,11 +41,8 @@ export default function Home() {
       <Navbar />
 
       <main className="flex-1">
-        {/* 2. Hero Slideshow matching phasecor.com */}
-        <Hero
-          onOpenDetails={(prod) => setModalProduct(prod)}
-          onEnquire={handleSelectProductForEnquiry}
-        />
+        {/* 2. Hero Section inspired by eynexapharma.com */}
+        <Hero />
 
         {/* 3. Four Support Feature Blocks (Fragrance Free, Allergy Tested, Paraben Free, Dermatologist Tested) */}
         <SupportBlocks />
