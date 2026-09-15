@@ -43,7 +43,7 @@ export default function MedicinesPipeline() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Clean Header */}
         <div className="text-center space-y-2 mb-14">
-          <span className="text-xs uppercase tracking-widest text-[#419a85] font-semibold">
+          <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
             Pharmaceutical Expansion
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
@@ -59,10 +59,10 @@ export default function MedicinesPipeline() {
           {pipelineMedicines.map((item) => (
             <div
               key={item.title}
-              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#419a85] transition-all space-y-4"
+              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-4"
             >
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                <span className="text-xs font-semibold text-[#419a85]">
+                <span className="text-xs font-semibold text-[#2D8F7A]">
                   {item.category}
                 </span>
                 <span className="text-xs text-slate-500 font-medium">
@@ -99,7 +99,7 @@ export default function MedicinesPipeline() {
           </div>
           <a
             href="#enquiry"
-            className="px-6 py-3 rounded-full bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#2D8F7A] transition-all shrink-0 inline-flex items-center gap-2"
+            className="px-6 py-3 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shrink-0 inline-flex items-center gap-2"
           >
             <span>Inquire in R&D</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

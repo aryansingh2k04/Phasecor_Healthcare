@@ -53,7 +53,7 @@ export default function SciencePhilosophy() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:border-[#419a85] hover:shadow-xl transition-all duration-300 flex flex-col"
+              className="group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:border-[#2D8F7A] hover:shadow-xl transition-all duration-300 flex flex-col"
             >
               <div className="relative w-full h-56 bg-slate-100 overflow-hidden">
                 <Image
@@ -71,10 +71,10 @@ export default function SciencePhilosophy() {
 
               <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
-                  <span className="text-[11px] font-bold text-[#419a85] uppercase tracking-wider block">
+                  <span className="text-[11px] font-bold text-[#2D8F7A] uppercase tracking-wider block">
                     {pillar.subtitle}
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#419a85] transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#2D8F7A] transition-colors">
                     {pillar.title}
                   </h3>
                   <p className="text-xs text-slate-600 leading-relaxed">
@@ -89,22 +89,22 @@ export default function SciencePhilosophy() {
         {/* Principles Summary Banner */}
         <div className="mt-12 p-6 sm:p-8 bg-white rounded-3xl border border-slate-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="space-y-1">
-            <span className="text-2xl font-extrabold text-[#419a85]">01</span>
+            <span className="text-2xl font-extrabold text-[#2D8F7A]">01</span>
             <h4 className="text-sm font-bold text-slate-900">Science-Backed</h4>
             <p className="text-xs text-slate-500">Every active verified through peer-reviewed dermatological literature.</p>
           </div>
           <div className="space-y-1">
-            <span className="text-2xl font-extrabold text-[#419a85]">02</span>
+            <span className="text-2xl font-extrabold text-[#2D8F7A]">02</span>
             <h4 className="text-sm font-bold text-slate-900">Thoughtfully Dosed</h4>
             <p className="text-xs text-slate-500">Therapeutic concentrations calibrated to avoid cellular fatigue and irritation.</p>
           </div>
           <div className="space-y-1">
-            <span className="text-2xl font-extrabold text-[#419a85]">03</span>
+            <span className="text-2xl font-extrabold text-[#2D8F7A]">03</span>
             <h4 className="text-sm font-bold text-slate-900">Barrier-Conscious</h4>
             <p className="text-xs text-slate-500">Formulated to protect and fortify the stratum corneum at all times.</p>
           </div>
           <div className="space-y-1">
-            <span className="text-2xl font-extrabold text-[#419a85]">04</span>
+            <span className="text-2xl font-extrabold text-[#2D8F7A]">04</span>
             <h4 className="text-sm font-bold text-slate-900">Lasting Results</h4>
             <p className="text-xs text-slate-500">Cultivating sustained skin resilience and internal health over overnight illusions.</p>
           </div>

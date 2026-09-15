@@ -6,7 +6,7 @@
 }
 
 @theme {
-  --color-brand-teal: #419a85;
+  --color-brand-teal: #2D8F7A;
   --color-brand-dark: #2D8F7A;
   --color-brand-darker: #184a3f;
   --color-brand-light: #e8f2ee;
@@ -38,5 +38,5 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #419a85;
+  background: #2D8F7A;
 }

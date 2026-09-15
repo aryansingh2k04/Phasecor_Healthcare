@@ -4,12 +4,12 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-[#f9faf9] border-b border-slate-100">
+    <section id="about" className="py-20 bg-[#f9faf9] border-b border-slate-100 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column */}
           <div className="lg:col-span-6 space-y-6">
-            <span className="text-xs uppercase tracking-widest text-[#419a85] font-semibold">
+            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
               About Us
             </span>
 
@@ -28,14 +28,14 @@ export default function AboutSection() {
             {/* Mission & Vision */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div className="p-5 rounded-xl bg-white border border-slate-200 space-y-2">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#419a85]">Our Mission</h3>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">Our Mission</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   To create thoughtful, science-backed formulations that strengthen skin over time, not overnight, focusing on purposeful formulas and long-term health.
                 </p>
               </div>
 
               <div className="p-5 rounded-xl bg-white border border-slate-200 space-y-2">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#419a85]">Our Vision</h3>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">Our Vision</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
                   To become a trusted healthcare brand known for integrity, simplicity, and lasting results, built through consistency rather than trends.
                 </p>

@@ -29,7 +29,7 @@ export default function FeaturedSpotlight({ onOpenDetails, onEnquire }: Featured
 
           {/* Right Column: Copy matching phasecor.com */}
           <div className="lg:col-span-6 space-y-5">
-            <span className="text-xs uppercase tracking-widest text-[#419a85] font-semibold">
+            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
               DAILY SUN DEFENSE, HEALTHY GLOW
             </span>
 
@@ -45,14 +45,14 @@ export default function FeaturedSpotlight({ onOpenDetails, onEnquire }: Featured
               <button
                 type="button"
                 onClick={() => onEnquire(uvothera.id)}
-                className="px-8 py-3.5 rounded-full bg-[#419a85] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#2D8F7A] transition-all shadow-sm"
+                className="px-8 py-3.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all shadow-sm"
               >
                 Enquiry
               </button>
               <button
                 type="button"
                 onClick={() => onOpenDetails(uvothera.id)}
-                className="px-8 py-3.5 rounded-full border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#419a85] hover:text-[#419a85] transition-all"
+                className="px-8 py-3.5 rounded-full border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all"
               >
                 Details
               </button>

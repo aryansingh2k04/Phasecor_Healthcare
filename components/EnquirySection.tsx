@@ -26,12 +26,13 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
   };
 
   return (
-    <section id="enquiry" className="py-20 bg-white border-b border-slate-100 relative">
+    <section id="contact" className="py-20 bg-white border-b border-slate-100 relative scroll-mt-16">
+      <div id="enquiry" className="absolute -top-16 left-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Left Column */}
           <div className="lg:col-span-5 space-y-5">
-            <span className="text-xs uppercase tracking-widest text-[#419a85] font-semibold">
+            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
               Contact Us
             </span>
 
@@ -46,27 +47,27 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
             {/* Contact Info Box */}
             <div className="p-6 rounded-2xl bg-[#f9faf9] border border-slate-200 space-y-4">
               <div className="flex items-start gap-3 text-xs">
-                <Mail className="w-4 h-4 text-[#419a85] shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-[#2D8F7A] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Drop Us Email</span>
-                  <a href={`mailto:${COMPANY_CONTACT.email}`} className="text-[#419a85] font-medium hover:underline">
+                  <a href={`mailto:${COMPANY_CONTACT.email}`} className="text-[#2D8F7A] font-medium hover:underline">
                     {COMPANY_CONTACT.email}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-3 text-xs">
-                <Phone className="w-4 h-4 text-[#419a85] shrink-0 mt-0.5" />
+                <Phone className="w-4 h-4 text-[#2D8F7A] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Call Us</span>
-                  <a href={`tel:${COMPANY_CONTACT.phone}`} className="text-[#419a85] font-medium hover:underline">
+                  <a href={`tel:${COMPANY_CONTACT.phone}`} className="text-[#2D8F7A] font-medium hover:underline">
                     {COMPANY_CONTACT.phone}
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-3 text-xs">
-                <MapPin className="w-4 h-4 text-[#419a85] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#2D8F7A] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Address</span>
                   <span className="text-slate-600 leading-relaxed block">
@@ -76,7 +77,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
               </div>
 
               <div className="flex items-start gap-3 text-xs border-t border-slate-200/60 pt-3">
-                <Clock className="w-4 h-4 text-[#419a85] shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#2D8F7A] shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Operating Hours</span>
                   <span className="text-slate-500">{COMPANY_CONTACT.hours}</span>
@@ -90,7 +91,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
             <div className="p-8 sm:p-10 rounded-2xl bg-[#fbfdfc] border border-slate-200 shadow-sm">
               {submitted ? (
                 <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
-                  <div className="w-14 h-14 rounded-full bg-[#e8f2ee] text-[#419a85] flex items-center justify-center mx-auto">
+                  <div className="w-14 h-14 rounded-full bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900">Enquiry Submitted</h3>
@@ -110,7 +111,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
                         message: ""
                       });
                     }}
-                    className="mt-4 px-6 py-2.5 rounded-full bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#2D8F7A]"
+                    className="mt-4 px-6 py-2.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362]"
                   >
                     Send Another Inquiry
                   </button>
@@ -126,7 +127,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Your Name"
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#419a85] bg-white"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#2D8F7A] bg-white"
                       />
                     </div>
 
@@ -138,7 +139,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="yourname@domain.com"
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#419a85] bg-white"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#2D8F7A] bg-white"
                       />
                     </div>
                   </div>
@@ -152,7 +153,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 98765 43210"
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#419a85] bg-white"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#2D8F7A] bg-white"
                       />
                     </div>
 
@@ -161,7 +162,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
                       <select
                         value={formData.role}
                         onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#419a85] bg-white"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#2D8F7A] bg-white"
                       >
                         <option value="Practitioner / Clinic">Dermatologist / Clinic</option>
                         <option value="Pharmacy / Distribution">Pharmacy / Distribution</option>
@@ -176,7 +177,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
                     <select
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#419a85] bg-white font-medium"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#2D8F7A] bg-white font-medium"
                     >
                       <optgroup label="Clinical Formulations">
                         {PRODUCTS.map((p) => (
@@ -203,13 +204,13 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Write your inquiry or requirements here..."
-                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#419a85] bg-white resize-none"
+                      className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:border-[#2D8F7A] bg-white resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#2D8F7A] transition-all shadow-sm"
+                    className="w-full py-3.5 rounded-xl bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shadow-sm"
                   >
                     Submit Enquiry
                   </button>

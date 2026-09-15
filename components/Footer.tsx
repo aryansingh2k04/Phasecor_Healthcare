@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, ExternalLink } from "lucide-react";
 import { COMPANY_CONTACT } from "./data";
 
 export default function Footer() {
@@ -13,15 +13,16 @@ export default function Footer() {
     <footer className="bg-[#0f1a17] text-slate-400 text-xs border-t border-slate-800">
       {/* Top Footer Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Col */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="space-y-4">
             <div className="relative h-10 w-40">
               <Image
                 src="/images/brand/logo-white-transparent.png"
                 alt="Phasecor Healthcare"
                 fill
                 className="object-contain object-left"
+                sizes="160px"
               />
             </div>
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
@@ -32,7 +33,7 @@ export default function Footer() {
                 href={COMPANY_CONTACT.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#419a85] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#2D8F7A] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -43,7 +44,7 @@ export default function Footer() {
                 href={COMPANY_CONTACT.socials.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#419a85] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#2D8F7A] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
                 aria-label="X / Twitter"
               >
                 <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -53,55 +54,66 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Formulations Col */}
+          {/* Quick Links matching user's exact pages */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Formulations</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Pages</h4>
             <ul className="space-y-2 text-slate-400">
               <li>
-                <a href="#formulations" className="hover:text-[#419a85] transition-colors">
-                  Niascobutin™ Serum
+                <a href="#about" className="hover:text-[#2D8F7A] transition-colors">
+                  About Us
                 </a>
               </li>
               <li>
-                <a href="#formulations" className="hover:text-[#419a85] transition-colors">
-                  Primathion™ Nutricosmetic
+                <a href="#products" className="hover:text-[#2D8F7A] transition-colors">
+                  Products
                 </a>
               </li>
               <li>
-                <a href="#formulations" className="hover:text-[#419a85] transition-colors">
-                  UVoThera™ SPF 60++++
+                <a href="#certifications" className="hover:text-[#2D8F7A] transition-colors">
+                  Certifications
                 </a>
               </li>
               <li>
-                <a href="#science" className="hover:text-[#419a85] transition-colors">
-                  Dual-Delivery Science
+                <a href="#contact" className="hover:text-[#2D8F7A] transition-colors">
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://phasecor.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#2D8F7A] transition-colors inline-flex items-center gap-1 text-[#2D8F7A] font-semibold"
+                >
+                  <span>Store</span>
+                  <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Therapeutics Pipeline Col */}
+          {/* Formulations Products Col */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Medicines Pipeline</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Products</h4>
             <ul className="space-y-2 text-slate-400">
               <li>
-                <a href="#pipeline" className="hover:text-[#419a85] transition-colors">
-                  PHC-MED-01: Barrier Rx
+                <a href="#products" className="hover:text-[#2D8F7A] transition-colors">
+                  Niascobutin Face Serum
                 </a>
               </li>
               <li>
-                <a href="#pipeline" className="hover:text-[#419a85] transition-colors">
-                  PHC-MED-02: Melanosome Gel
+                <a href="#products" className="hover:text-[#2D8F7A] transition-colors">
+                  Primathion Oral Supplement
                 </a>
               </li>
               <li>
-                <a href="#pipeline" className="hover:text-[#419a85] transition-colors">
-                  PHC-MED-03: Liposomal Complex
+                <a href="#products" className="hover:text-[#2D8F7A] transition-colors">
+                  Uvothera Sunscreen
                 </a>
               </li>
               <li>
-                <a href="#pipeline" className="hover:text-[#419a85] transition-colors">
-                  PHC-MED-04: Actinic Repair
+                <a href="#pipeline" className="hover:text-[#2D8F7A] transition-colors">
+                  Medicines Pipeline
                 </a>
               </li>
             </ul>
@@ -109,15 +121,15 @@ export default function Footer() {
 
           {/* Corporate & Inquiries */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Healthcare Office</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Contact</h4>
             <ul className="space-y-2 text-slate-400">
               <li>
-                <a href={`mailto:${COMPANY_CONTACT.email}`} className="hover:text-[#419a85] transition-colors block truncate">
+                <a href={`mailto:${COMPANY_CONTACT.email}`} className="hover:text-[#2D8F7A] transition-colors block truncate">
                   {COMPANY_CONTACT.email}
                 </a>
               </li>
               <li>
-                <a href={`tel:${COMPANY_CONTACT.phone}`} className="hover:text-[#419a85] transition-colors">
+                <a href={`tel:${COMPANY_CONTACT.phone}`} className="hover:text-[#2D8F7A] transition-colors">
                   {COMPANY_CONTACT.phone}
                 </a>
               </li>

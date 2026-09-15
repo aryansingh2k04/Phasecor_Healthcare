@@ -22,7 +22,7 @@ export default function Home() {
 
   const handleSelectProductForEnquiry = (productId: string) => {
     setSelectedProductId(productId);
-    const enquiryEl = document.getElementById("enquiry");
+    const enquiryEl = document.getElementById("contact") || document.getElementById("enquiry");
     if (enquiryEl) {
       enquiryEl.scrollIntoView({ behavior: "smooth" });
     }
@@ -36,7 +36,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900 selection:bg-[#419a85]/20 selection:text-[#184a3f]">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900 selection:bg-[#2D8F7A]/20 selection:text-[#184a3f]">
       {/* 1. Top Navigation */}
       <Navbar />
 

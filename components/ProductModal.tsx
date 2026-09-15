@@ -47,7 +47,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
             <h2 className="text-2xl font-bold text-slate-900 leading-tight">
               {product.name}
             </h2>
-            <p className="text-sm font-semibold text-[#419a85]">
+            <p className="text-sm font-semibold text-[#2D8F7A]">
               {product.packaging}
             </p>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
@@ -81,7 +81,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
           <ul className="space-y-2">
             {product.benefits.map((benefit, i) => (
               <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed">
-                <Check className="w-4 h-4 text-[#419a85] shrink-0 mt-0.5" />
+                <Check className="w-4 h-4 text-[#2D8F7A] shrink-0 mt-0.5" />
                 <span>{benefit}</span>
               </li>
             ))}
@@ -113,7 +113,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
               onClose();
               onEnquire(product.id);
             }}
-            className="px-8 py-2.5 rounded-full bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#2D8F7A] transition-all shadow-sm"
+            className="px-8 py-2.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shadow-sm"
           >
             Enquiry
           </button>

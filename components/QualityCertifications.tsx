@@ -27,7 +27,7 @@ export default function QualityCertifications() {
   ];
 
   return (
-    <section className="py-20 bg-white border-t border-slate-100">
+    <section id="certifications" className="py-20 bg-white border-t border-slate-100 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Quality Narrative */}
@@ -50,7 +50,7 @@ export default function QualityCertifications() {
               {standards.map((std) => (
                 <div key={std.title} className="p-4 rounded-2xl bg-[#f7faf8] border border-[#e1ece7] space-y-1">
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#419a85] shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#2D8F7A] shrink-0" />
                     <h3 className="text-xs font-bold text-slate-900">{std.title}</h3>
                   </div>
                   <p className="text-xs text-slate-500 pl-6 leading-relaxed">{std.desc}</p>
@@ -63,7 +63,7 @@ export default function QualityCertifications() {
           <div className="lg:col-span-5 flex flex-col items-center">
             <div
               onClick={() => setCertModalOpen(true)}
-              className="group relative w-full max-w-sm rounded-3xl bg-white border border-slate-200 p-4 shadow-lg hover:shadow-xl hover:border-[#419a85] transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative w-full max-w-sm rounded-3xl bg-white border border-slate-200 p-4 shadow-lg hover:shadow-xl hover:border-[#2D8F7A] transition-all duration-300 cursor-pointer overflow-hidden"
             >
               <div className="relative w-full h-72 rounded-2xl bg-[#fbfdfc] border border-slate-100 overflow-hidden flex items-center justify-center">
                 <Image
@@ -74,7 +74,7 @@ export default function QualityCertifications() {
                 />
                 <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/20 transition-colors flex items-center justify-center">
                   <span className="opacity-0 group-hover:opacity-100 px-4 py-2 rounded-full bg-white/95 text-slate-900 text-xs font-bold shadow-md transition-opacity duration-200 flex items-center gap-1.5">
-                    <Eye className="w-3.5 h-3.5 text-[#419a85]" />
+                    <Eye className="w-3.5 h-3.5 text-[#2D8F7A]" />
                     Click to View Document
                   </span>
                 </div>
@@ -106,7 +106,7 @@ export default function QualityCertifications() {
           >
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
               <div className="flex items-center gap-2">
-                <FileCheck2 className="w-5 h-5 text-[#419a85]" />
+                <FileCheck2 className="w-5 h-5 text-[#2D8F7A]" />
                 <h4 className="text-sm font-bold text-slate-900">Official Quality Certification</h4>
               </div>
               <button

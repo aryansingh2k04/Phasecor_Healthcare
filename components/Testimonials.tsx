@@ -32,7 +32,7 @@ export default function Testimonials() {
     <section className="py-20 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-2 mb-14">
-          <span className="text-xs uppercase tracking-widest text-[#419a85] font-semibold">
+          <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
             Customer Reviews
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
@@ -44,7 +44,7 @@ export default function Testimonials() {
           {reviews.map((rev) => (
             <div
               key={rev.author}
-              className="p-6 rounded-2xl bg-[#f9faf9] border border-slate-200 flex flex-col justify-between space-y-4 hover:border-[#419a85] transition-colors"
+              className="p-6 rounded-2xl bg-[#f9faf9] border border-slate-200 flex flex-col justify-between space-y-4 hover:border-[#2D8F7A] transition-colors"
             >
               <p className="text-sm text-slate-600 italic leading-relaxed">
                 “{rev.quote}”
@@ -53,7 +53,7 @@ export default function Testimonials() {
                 <span className="text-sm font-bold text-slate-900 block">
                   {rev.author}
                 </span>
-                <span className="text-xs text-[#419a85] font-medium">
+                <span className="text-xs text-[#2D8F7A] font-medium">
                   {rev.city}
                 </span>
               </div>

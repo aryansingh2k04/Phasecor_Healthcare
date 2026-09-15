@@ -3,18 +3,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ExternalLink } from "lucide-react";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: "Home", href: "#" },
     { label: "About Us", href: "#about" },
-    { label: "Formulations", href: "#formulations" },
-    { label: "Medicines Pipeline", href: "#pipeline" },
-    { label: "Science", href: "#science" },
-    { label: "Contact Us", href: "#enquiry" },
+    { label: "Products", href: "#products" },
+    { label: "Certifications", href: "#certifications" },
+    { label: "Contact Us", href: "#contact" },
+    { label: "Store", href: "https://phasecor.com", isExternal: true },
   ];
 
   return (
@@ -40,20 +39,30 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-slate-700 hover:text-[#419a85] transition-colors duration-200"
+              target={link.isExternal ? "_blank" : undefined}
+              rel={link.isExternal ? "noopener noreferrer" : undefined}
+              className={`text-sm font-medium transition-colors duration-200 flex items-center gap-1 ${
+                link.isExternal
+                  ? "text-[#2D8F7A] font-semibold hover:text-[#237362]"
+                  : "text-slate-700 hover:text-[#2D8F7A]"
+              }`}
             >
-              {link.label}
+              <span>{link.label}</span>
+              {link.isExternal && <ExternalLink className="w-3.5 h-3.5" />}
             </a>
           ))}
         </nav>
 
-        {/* Right CTA */}
+        {/* Right Action: Direct link to Phasecor Store */}
         <div className="hidden md:flex items-center">
           <a
-            href="#enquiry"
-            className="px-6 py-2.5 rounded-full bg-[#419a85] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#2D8F7A] transition-all duration-200"
+            href="https://phasecor.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all duration-200 inline-flex items-center gap-1.5 shadow-sm"
           >
-            Enquiry
+            <span>Visit Store</span>
+            <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
 
@@ -62,7 +71,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-slate-700 hover:text-[#419a85] transition-colors"
+            className="p-2 rounded-lg text-slate-700 hover:text-[#2D8F7A] transition-colors"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -78,20 +87,28 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
+                target={link.isExternal ? "_blank" : undefined}
+                rel={link.isExternal ? "noopener noreferrer" : undefined}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-medium text-slate-800 hover:text-[#419a85] py-2 border-b border-slate-100"
+                className={`text-base font-medium py-2 border-b border-slate-100 flex items-center justify-between ${
+                  link.isExternal ? "text-[#2D8F7A] font-semibold" : "text-slate-800 hover:text-[#2D8F7A]"
+                }`}
               >
-                {link.label}
+                <span>{link.label}</span>
+                {link.isExternal && <ExternalLink className="w-4 h-4" />}
               </a>
             ))}
           </div>
           <div className="pt-2">
             <a
-              href="#enquiry"
+              href="https://phasecor.com"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center px-5 py-3 rounded-xl bg-[#419a85] text-white text-sm font-semibold tracking-wider uppercase hover:bg-[#2D8F7A]"
+              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#2D8F7A] text-white text-sm font-semibold tracking-wider uppercase hover:bg-[#237362]"
             >
-              Enquiry
+              <span>Visit Store</span>
+              <ExternalLink className="w-4 h-4" />
             </a>
           </div>
         </div>

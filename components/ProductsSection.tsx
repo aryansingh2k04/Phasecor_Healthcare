@@ -14,18 +14,18 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
 
   const handleEnquire = (productId: string) => {
     onSelectProductForEnquiry(productId);
-    const enquiryEl = document.getElementById("enquiry");
+    const enquiryEl = document.getElementById("contact") || document.getElementById("enquiry");
     if (enquiryEl) {
       enquiryEl.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <section id="formulations" className="py-20 bg-white border-b border-slate-100">
+    <section id="products" className="py-20 bg-white border-b border-slate-100 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center space-y-2 mb-14">
-          <span className="text-xs uppercase tracking-widest text-[#419a85] font-semibold">
+          <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
             Clinical Formulations
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">

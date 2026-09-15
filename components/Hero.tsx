@@ -61,7 +61,7 @@ export default function Hero({ onOpenDetails, onEnquire }: HeroProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Content Area */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#419a85]">
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#2D8F7A]">
                 {slide.tagline}
               </span>
 
@@ -78,14 +78,14 @@ export default function Hero({ onOpenDetails, onEnquire }: HeroProps) {
                 <button
                   type="button"
                   onClick={() => onEnquire(slide.product.id)}
-                  className="px-8 py-3.5 rounded-full bg-[#419a85] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#2D8F7A] transition-all duration-200 shadow-sm"
+                  className="px-8 py-3.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all duration-200 shadow-sm"
                 >
                   Enquiry
                 </button>
                 <button
                   type="button"
                   onClick={() => onOpenDetails(slide.product)}
-                  className="px-8 py-3.5 rounded-full border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#419a85] hover:text-[#419a85] transition-all duration-200"
+                  className="px-8 py-3.5 rounded-full border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all duration-200"
                 >
                   Details
                 </button>
@@ -110,7 +110,7 @@ export default function Hero({ onOpenDetails, onEnquire }: HeroProps) {
           <div className="flex items-center justify-center gap-4 mt-8 pt-4">
             <button
               onClick={() => setCurrentSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1))}
-              className="p-2 rounded-full border border-slate-200 hover:border-[#419a85] text-slate-600 hover:text-[#419a85] transition-colors"
+              className="p-2 rounded-full border border-slate-200 hover:border-[#2D8F7A] text-slate-600 hover:text-[#2D8F7A] transition-colors"
               aria-label="Previous Slide"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -122,7 +122,7 @@ export default function Hero({ onOpenDetails, onEnquire }: HeroProps) {
                   key={s.title}
                   onClick={() => setCurrentSlide(idx)}
                   className={`h-2.5 rounded-full transition-all duration-300 ${
-                    currentSlide === idx ? "w-8 bg-[#419a85]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                    currentSlide === idx ? "w-8 bg-[#2D8F7A]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
@@ -131,7 +131,7 @@ export default function Hero({ onOpenDetails, onEnquire }: HeroProps) {
 
             <button
               onClick={() => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)}
-              className="p-2 rounded-full border border-slate-200 hover:border-[#419a85] text-slate-600 hover:text-[#419a85] transition-colors"
+              className="p-2 rounded-full border border-slate-200 hover:border-[#2D8F7A] text-slate-600 hover:text-[#2D8F7A] transition-colors"
               aria-label="Next Slide"
             >
               <ChevronRight className="w-4 h-4" />
