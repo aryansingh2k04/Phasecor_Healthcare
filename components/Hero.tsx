@@ -26,25 +26,80 @@ export default function Hero() {
 
     window.addEventListener("resize", handleResize);
 
-    // Particle nodes for molecular/clinical network
-    const particleCount = Math.min(Math.floor((width * height) / 14000), 75);
-    const particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      radius: number;
-    }> = [];
+    // Particle colors keeping Phasecor's #2D8F7A palette
+    const colors = [
+      "#2D8F7A",
+      "#45C5A9",
+      "#3ec7ab",
+      "#7ff2d9",
+      "#237362",
+      "#1a5448"
+    ];
 
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        radius: Math.random() * 2 + 1,
-      });
+    class Particle {
+      x: number = 0;
+      y: number = 0;
+      size: number = 0;
+      color: string = "";
+      vx: number = 0;
+      vy: number = 0;
+      density: number = 0;
+      opacity: number = 0;
+      pulse: number = 0;
+
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 2.5 + 0.6;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.vx = (Math.random() - 0.5) * 0.45;
+        this.vy = (Math.random() - 0.5) * 0.45;
+        this.density = Math.random() * 30 + 1;
+        this.opacity = Math.random() * 0.45 + 0.25;
+        this.pulse = Math.random() * Math.PI * 2;
+      }
+
+      draw(c: CanvasRenderingContext2D) {
+        this.pulse += 0.02;
+        const alpha = this.opacity + Math.sin(this.pulse) * 0.15;
+        c.beginPath();
+        c.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        c.fillStyle = this.color;
+        c.globalAlpha = Math.max(0.05, Math.min(1, alpha));
+        c.fill();
+      }
+
+      update(c: CanvasRenderingContext2D, mX: number, mY: number) {
+        const dx = mX - this.x;
+        const dy = mY - this.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        // Fluid magnetic influence matching portfolio behavior
+        if (dist < 200 && dist > 0) {
+          const force = (200 - dist) / 200;
+          this.x += (dx / dist) * force * this.density * 0.25;
+          this.y += (dy / dist) * force * this.density * 0.25;
+        }
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Wrap around borders
+        if (this.x < 0) this.x = width;
+        if (this.x > width) this.x = 0;
+        if (this.y < 0) this.y = height;
+        if (this.y > height) this.y = 0;
+
+        this.draw(c);
+      }
     }
+
+    const particleCount = Math.min(Math.floor((width * height) / 12000), 65);
+    const particles = Array.from({ length: particleCount }, () => new Particle());
 
     let mouseX = -1000;
     let mouseY = -1000;
@@ -63,60 +118,31 @@ export default function Hero() {
     canvas.parentElement?.addEventListener("mousemove", handleMouseMove);
     canvas.parentElement?.addEventListener("mouseleave", handleMouseLeave);
 
-    const maxDist = 130;
-
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw lines between particles
+      // Connecting constellation lines between nearby particles
       for (let i = 0; i < particles.length; i++) {
-        const p1 = particles[i];
-
-        // Move
-        p1.x += p1.vx;
-        p1.y += p1.vy;
-
-        if (p1.x < 0 || p1.x > width) p1.vx *= -1;
-        if (p1.y < 0 || p1.y > height) p1.vy *= -1;
-
-        // Draw particle dot
-        ctx.beginPath();
-        ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(45, 143, 122, 0.7)";
-        ctx.fill();
-
-        // Connect to neighbors
         for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < maxDist) {
-            const alpha = (1 - dist / maxDist) * 0.28;
+          if (dist < 120) {
             ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(45, 143, 122, ${alpha})`;
-            ctx.lineWidth = 1;
+            ctx.strokeStyle = "#45C5A9";
+            ctx.globalAlpha = (1 - dist / 120) * 0.09;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
           }
         }
-
-        // Connect to mouse
-        const mouseDx = p1.x - mouseX;
-        const mouseDy = p1.y - mouseY;
-        const mouseDist = Math.sqrt(mouseDx * mouseDx + mouseDy * mouseDy);
-        if (mouseDist < 160) {
-          const alpha = (1 - mouseDist / 160) * 0.45;
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(mouseX, mouseY);
-          ctx.strokeStyle = `rgba(69, 197, 169, ${alpha})`;
-          ctx.lineWidth = 1.2;
-          ctx.stroke();
-        }
       }
+
+      // Update and draw particles
+      particles.forEach((p) => p.update(ctx, mouseX, mouseY));
+      ctx.globalAlpha = 1;
 
       animationFrameId = requestAnimationFrame(render);
     };
@@ -137,10 +163,13 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_25%_50%,rgba(45,143,122,0.22)_0%,rgba(20,65,55,0.12)_35%,rgba(7,23,20,0)_70%)]" />
       <div className="absolute top-0 right-0 w-96 h-96 pointer-events-none bg-[radial-gradient(circle,rgba(69,197,169,0.08)_0%,transparent_70%)]" />
 
+      {/* Subtle tech grid background matching portfolio aesthetic */}
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,rgba(45,143,122,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(45,143,122,0.07)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_60%,transparent_100%)] opacity-80" />
+
       {/* Interactive Constellation Canvas */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-80"
+        className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-85"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">

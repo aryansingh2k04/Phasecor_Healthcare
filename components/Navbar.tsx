@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -69,7 +70,15 @@ export default function Navbar() {
               >
                 <span>{link.label}</span>
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#2D8F7A] rounded-full" />
+                  <motion.div
+                    layoutId="active-navbar-indicator"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#2D8F7A] shadow-[0_0_8px_rgba(45,143,122,0.8)] rounded-full"
+                    transition={{
+                      type: "spring",
+                      stiffness: 380,
+                      damping: 30,
+                    }}
+                  />
                 )}
               </Link>
             );
