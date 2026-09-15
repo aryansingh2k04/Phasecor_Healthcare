@@ -24,8 +24,8 @@ export const PRODUCTS: Product[] = [
     category: "Therapeutic Medicines",
     subCategory: "Urinary Health & Nephrology",
     badge: "Urinary Care",
-    mainImage: "/images/products/uticor_main.jpg",
-    detailImage: "/images/products/uticor_main.jpg",
+    mainImage: "/images/products/placeholder.svg",
+    detailImage: "/images/products/placeholder.svg",
     summary:
       "A physician-calibrated urinary health syrup combining high-potency Cranberry Extract, D-Mannose, and Potassium Magnesium Citrate to inhibit uropathogenic bacterial adherence, alkalize urinary pH, and provide rapid soothing relief from UTIs.",
     keyActives: [
@@ -52,8 +52,8 @@ export const PRODUCTS: Product[] = [
     category: "Therapeutic Medicines",
     subCategory: "Electrolyte & Rehydration Therapy",
     badge: "With Co-Enzyme Q10",
-    mainImage: "/images/products/electcor_main.jpg",
-    detailImage: "/images/products/electcor_main.jpg",
+    mainImage: "/images/products/placeholder.svg",
+    detailImage: "/images/products/placeholder.svg",
     summary:
       "A specialized oral rehydration formulation compliant with WHO osmolarity standards (245–252 mOsm/L) and fortified with Co-Enzyme Q10 for rapid cellular rehydration, electrolyte restoration, and metabolic energy recovery.",
     keyActives: [
@@ -83,8 +83,8 @@ export const PRODUCTS: Product[] = [
     category: "Therapeutic Medicines",
     subCategory: "Musculoskeletal & Joint Care",
     badge: "Joint & Bone Care",
-    mainImage: "/images/products/chronicor_main.jpg",
-    detailImage: "/images/products/chronicor_main.jpg",
+    mainImage: "/images/products/placeholder.svg",
+    detailImage: "/images/products/placeholder.svg",
     summary:
       "An advanced multi-ingredient therapeutic tablet formulated to support joint mobility, accelerate cartilage regeneration, restore bone mineral density, and calm neuropathic inflammation in chronic musculoskeletal disorders.",
     keyActives: [
@@ -115,8 +115,8 @@ export const PRODUCTS: Product[] = [
     category: "Therapeutic Medicines",
     subCategory: "Women's Health & Gynaecology",
     badge: "Women's Health & PCOS",
-    mainImage: "/images/products/ovaphase_main.jpg",
-    detailImage: "/images/products/ovaphase_main.jpg",
+    mainImage: "/images/products/placeholder.svg",
+    detailImage: "/images/products/placeholder.svg",
     summary:
       "A physician-calibrated formulation engineered for women with PCOS/PCOD, metabolic irregularities, and ovulatory dysfunction. Combines physiological Myo-Inositol, D-Chiro Inositol (40:1 ratio), and essential co-factors to restore hormonal equilibrium.",
     keyActives: [

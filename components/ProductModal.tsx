@@ -39,7 +39,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
               src={product.detailImage || product.mainImage}
               alt={product.name}
               fill
-              className="object-cover"
+              className="object-contain p-2"
             />
           </div>
 

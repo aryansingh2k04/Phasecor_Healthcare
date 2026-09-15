@@ -13,7 +13,6 @@ import {
   Award
 } from "lucide-react";
 import { BRAND_PHILOSOPHY } from "@/components/data";
-import Testimonials from "@/components/Testimonials";
 
 export const metadata: Metadata = {
   title: "About Us | Phasecor Healthcare",
@@ -138,54 +137,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Evolution: From Pure Derma to Comprehensive Healthcare */}
-      <section className="py-20 bg-[#f7faf8] border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Visual Column */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative w-full h-[450px] sm:h-[500px] rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-50">
-                <Image
-                  src="/images/brand/philosophy_brochure.jpg"
-                  alt="Phasecor Quality Care within Reach"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Narrative Column */}
-            <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
-                The Phasecor Evolution
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Expanding Beyond Dermatology to Essential Multi-Therapy Medicine
-              </h2>
-              <div className="space-y-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                <p>
-                  Phasecor began with a profound scientific conviction: biological healing operates in distinct physiological phases, rather than overnight cosmetic shortcuts. Our pioneering work in barrier-conscious dermatology, dual-delivery nutricosmetics, and multi-spectrum photobiology established our reputation for clinical integrity.
-                </p>
-                <p>
-                  Recognizing the widespread need for dependable, affordable, high-efficacy therapeutics across broader medical domains, Phasecor Healthcare has systematically expanded into essential medicine categories:
-                </p>
-                <ul className="space-y-2 text-xs sm:text-sm text-slate-700 pl-4 border-l-2 border-[#2D8F7A]">
-                  <li><strong>UTI &amp; Renal Health:</strong> UTIcor™ syrup with D-Mannose and PAC-standardized cranberry.</li>
-                  <li><strong>Electrolyte Therapy:</strong> Electcor™ sugar-free WHO-osmolarity sachets fortified with Co-Enzyme Q10.</li>
-                  <li><strong>Joint &amp; Musculoskeletal Restoration:</strong> Chronicor™ tablets with Calcium Orotate, Cissus, and Active B12.</li>
-                  <li><strong>Women&apos;s Hormonal Wellness:</strong> OvaPhase™ physiological Inositol therapy for PCOS/PCOD.</li>
-                </ul>
-                <p>
-                  By uniting specialized therapeutics with clinical dermatology under a single commitment &mdash; <strong>Quality Care within Reach</strong> &mdash; Phasecor empowers physicians, hospitals, and patients with uncompromised healthcare solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Therapeutic Specialties Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#f7faf8] border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
@@ -203,7 +156,7 @@ export default function AboutPage() {
             {therapeuticAreas.map((area) => (
               <div
                 key={area.title}
-                className="p-8 rounded-3xl bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] transition-all duration-300 space-y-3 flex flex-col justify-between"
+                className="p-8 rounded-3xl bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all duration-300 space-y-3 flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <span className="text-[10px] font-bold px-3 py-1 rounded-full bg-[#e8f2ee] text-[#2D8F7A] uppercase tracking-wider">
@@ -217,9 +170,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials */}
-      <Testimonials />
 
       {/* Action / Next Steps Banner */}
       <section className="py-16 bg-[#071714] text-white">

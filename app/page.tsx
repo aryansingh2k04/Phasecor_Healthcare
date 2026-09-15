@@ -10,7 +10,6 @@ import ProductsSection from "@/components/ProductsSection";
 import MasonryBento from "@/components/MasonryBento";
 import FeaturedSpotlight from "@/components/FeaturedSpotlight";
 import MedicinesPipeline from "@/components/MedicinesPipeline";
-import Testimonials from "@/components/Testimonials";
 import BrandStatement from "@/components/BrandStatement";
 import ProductModal from "@/components/ProductModal";
 import { PRODUCTS, Product } from "@/components/data";
@@ -53,10 +52,7 @@ export default function Home() {
       {/* 6. Medicines & Therapeutic Pipeline */}
       <MedicinesPipeline />
 
-      {/* 7. Testimonials */}
-      <Testimonials />
-
-      {/* 8. Brand Statement & Philosophy */}
+      {/* 7. Brand Statement & Philosophy */}
       <BrandStatement />
 
       {/* 9. Mission & About Us Teaser */}
