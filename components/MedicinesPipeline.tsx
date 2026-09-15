@@ -1,8 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
 export default function MedicinesPipeline() {
   const pipelineMedicines = [
     {
@@ -86,25 +83,6 @@ export default function MedicinesPipeline() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Collaboration Callout */}
-        <div className="mt-10 p-6 sm:p-8 rounded-md bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center sm:text-left">
-            <h3 className="text-base font-bold text-slate-900">
-              Clinical &amp; Research Partnerships
-            </h3>
-            <p className="text-xs text-slate-600">
-              Phasecor Healthcare collaborates with medical practitioners, dermatologists, and clinical trial investigators.
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="px-6 py-3 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shrink-0 inline-flex items-center gap-2"
-          >
-            <span>Inquire in R&D</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </Link>
         </div>
       </div>
     </section>
