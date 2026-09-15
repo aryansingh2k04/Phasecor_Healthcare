@@ -31,7 +31,7 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f3;
+  background: #f9f9eb;
 }
 ::-webkit-scrollbar-thumb {
   background: #b5d5cb;

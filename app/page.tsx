@@ -93,27 +93,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 10. Direct Healthcare Partnerships & Contact Banner */}
-      <section className="py-16 bg-[#071714] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <div className="space-y-2 max-w-xl">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-              Connect with Phasecor Healthcare
-            </h2>
-            <p className="text-sm text-slate-300 font-normal">
-              Have clinical questions, formulation inquiries, or require institutional hospital supply?
-            </p>
-          </div>
-          <Link
-            href="/contact"
-            className="px-8 py-3.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all inline-flex items-center gap-2 shadow-lg"
-          >
-            <span>Contact Healthcare Team</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </section>
-
       {/* Global Product Details Modal */}
       <ProductModal
         product={modalProduct}
