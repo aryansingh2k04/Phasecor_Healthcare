@@ -50,7 +50,7 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
           <button
             type="button"
             onClick={() => onEnquire(product.id)}
-            className="w-full py-2.5 rounded-xl bg-[#419a85] text-white hover:bg-[#256658] text-xs font-semibold tracking-wider uppercase transition-all duration-200 shadow-2xs"
+            className="w-full py-2.5 rounded-xl bg-[#419a85] text-white hover:bg-[#2D8F7A] text-xs font-semibold tracking-wider uppercase transition-all duration-200 shadow-2xs"
           >
             Enquiry
           </button>

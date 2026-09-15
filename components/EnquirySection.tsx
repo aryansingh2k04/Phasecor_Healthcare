@@ -110,7 +110,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
                         message: ""
                       });
                     }}
-                    className="mt-4 px-6 py-2.5 rounded-full bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#256658]"
+                    className="mt-4 px-6 py-2.5 rounded-full bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#2D8F7A]"
                   >
                     Send Another Inquiry
                   </button>
@@ -209,7 +209,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#256658] transition-all shadow-sm"
+                    className="w-full py-3.5 rounded-xl bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#2D8F7A] transition-all shadow-sm"
                   >
                     Submit Enquiry
                   </button>

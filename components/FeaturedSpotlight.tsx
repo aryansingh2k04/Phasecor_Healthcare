@@ -45,7 +45,7 @@ export default function FeaturedSpotlight({ onOpenDetails, onEnquire }: Featured
               <button
                 type="button"
                 onClick={() => onEnquire(uvothera.id)}
-                className="px-8 py-3.5 rounded-full bg-[#419a85] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#256658] transition-all shadow-sm"
+                className="px-8 py-3.5 rounded-full bg-[#419a85] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#2D8F7A] transition-all shadow-sm"
               >
                 Enquiry
               </button>

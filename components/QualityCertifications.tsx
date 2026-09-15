@@ -32,7 +32,7 @@ export default function QualityCertifications() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Quality Narrative */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#e8f2ee] text-[#256658] text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Quality Assurance & Rigor</span>
             </div>
@@ -85,7 +85,7 @@ export default function QualityCertifications() {
                   <h3 className="text-xs font-bold text-slate-900">Certificate of Analysis & Compliance</h3>
                   <p className="text-[11px] text-slate-500">Official Laboratory Testing Documentation</p>
                 </div>
-                <span className="px-2.5 py-1 rounded-md bg-[#e8f2ee] text-[10px] font-bold text-[#256658]">
+                <span className="px-2.5 py-1 rounded-md bg-[#e8f2ee] text-[10px] font-bold text-[#2D8F7A]">
                   VERIFIED
                 </span>
               </div>

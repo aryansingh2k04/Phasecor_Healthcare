@@ -78,7 +78,7 @@ export default function Hero({ onOpenDetails, onEnquire }: HeroProps) {
                 <button
                   type="button"
                   onClick={() => onEnquire(slide.product.id)}
-                  className="px-8 py-3.5 rounded-full bg-[#419a85] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#256658] transition-all duration-200 shadow-sm"
+                  className="px-8 py-3.5 rounded-full bg-[#419a85] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#2D8F7A] transition-all duration-200 shadow-sm"
                 >
                   Enquiry
                 </button>

@@ -51,7 +51,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center">
           <a
             href="#enquiry"
-            className="px-6 py-2.5 rounded-full bg-[#419a85] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#256658] transition-all duration-200"
+            className="px-6 py-2.5 rounded-full bg-[#419a85] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#2D8F7A] transition-all duration-200"
           >
             Enquiry
           </a>
@@ -89,7 +89,7 @@ export default function Navbar() {
             <a
               href="#enquiry"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center px-5 py-3 rounded-xl bg-[#419a85] text-white text-sm font-semibold tracking-wider uppercase hover:bg-[#256658]"
+              className="w-full flex items-center justify-center px-5 py-3 rounded-xl bg-[#419a85] text-white text-sm font-semibold tracking-wider uppercase hover:bg-[#2D8F7A]"
             >
               Enquiry
             </a>

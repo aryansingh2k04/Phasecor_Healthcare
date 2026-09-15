@@ -99,7 +99,7 @@ export default function MedicinesPipeline() {
           </div>
           <a
             href="#enquiry"
-            className="px-6 py-3 rounded-full bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#256658] transition-all shrink-0 inline-flex items-center gap-2"
+            className="px-6 py-3 rounded-full bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#2D8F7A] transition-all shrink-0 inline-flex items-center gap-2"
           >
             <span>Inquire in R&D</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

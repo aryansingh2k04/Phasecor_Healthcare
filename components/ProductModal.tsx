@@ -113,7 +113,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
               onClose();
               onEnquire(product.id);
             }}
-            className="px-8 py-2.5 rounded-full bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#256658] transition-all shadow-sm"
+            className="px-8 py-2.5 rounded-full bg-[#419a85] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#2D8F7A] transition-all shadow-sm"
           >
             Enquiry
           </button>
