@@ -22,23 +22,23 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#f9f9eb]/95 backdrop-blur-md border-b border-[#e8e4d2] transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[68px] flex items-center justify-between">
         {/* Brand Logo - Clean Logo Only */}
-        <Link href="/" className="flex items-center group">
-          <div className="relative h-10 w-40 sm:h-11 sm:w-48 transition-transform duration-200 group-hover:opacity-90">
+        <Link href="/" className="flex items-center group shrink-0">
+          <div className="relative h-9 w-36 sm:h-10 sm:w-44 transition-transform duration-200 group-hover:opacity-90">
             <Image
               src="/images/brand/logo-dark-transparent.png"
               alt="Phasecor"
               fill
               className="object-contain object-left"
               priority
-              sizes="160px"
+              sizes="176px"
             />
           </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Desktop Navigation Links - Right Aligned */}
+        <nav className="hidden md:flex items-center gap-7 lg:gap-9">
           {navLinks.map((link) => {
             const isActive = !link.isExternal && (
               link.href === "/"
@@ -53,10 +53,10 @@ export default function Navbar() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-semibold text-[#2D8F7A] hover:text-[#237362] transition-colors duration-200 flex items-center gap-1"
+                  className="text-base font-semibold text-[#2D8F7A] hover:text-[#237362] transition-colors duration-200 flex items-center gap-1"
                 >
                   <span>{link.label}</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-4 h-4" />
                 </a>
               );
             }
@@ -65,10 +65,10 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-200 relative py-1 ${
+                className={`text-base transition-colors duration-200 relative py-1 ${
                   isActive
-                    ? "text-[#2D8F7A] font-semibold"
-                    : "text-slate-700 hover:text-[#2D8F7A]"
+                    ? "text-[#2D8F7A] font-bold"
+                    : "text-slate-800 font-semibold hover:text-[#2D8F7A]"
                 }`}
               >
                 <span>{link.label}</span>
@@ -87,19 +87,6 @@ export default function Navbar() {
             );
           })}
         </nav>
-
-        {/* Right Action: Direct link to Phasecor Store */}
-        <div className="hidden md:flex items-center">
-          <a
-            href="https://phasecor.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2.5 rounded-full bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all duration-200 inline-flex items-center gap-1.5 shadow-sm hover:shadow"
-          >
-            <span>Visit Store</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-        </div>
 
         {/* Mobile Hamburger Toggle */}
         <div className="flex md:hidden">
@@ -133,7 +120,7 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-base font-semibold py-2.5 border-b border-slate-100 flex items-center justify-between text-[#2D8F7A]"
+                    className="text-base font-bold py-2.5 border-b border-[#e8e4d2] flex items-center justify-between text-[#2D8F7A]"
                   >
                     <span>{link.label}</span>
                     <ExternalLink className="w-4 h-4" />
@@ -146,28 +133,16 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-base font-medium py-2.5 border-b border-slate-100 flex items-center justify-between ${
+                  className={`text-base py-2.5 border-b border-[#e8e4d2] flex items-center justify-between ${
                     isActive
-                      ? "text-[#2D8F7A] font-semibold bg-[#e8f2ee]/40 px-3 rounded-lg border-none"
-                      : "text-slate-800 hover:text-[#2D8F7A]"
+                      ? "text-[#2D8F7A] font-bold bg-[#e8f2ee]/50 px-3 rounded-lg border-none"
+                      : "text-slate-800 font-semibold hover:text-[#2D8F7A]"
                   }`}
                 >
                   <span>{link.label}</span>
                 </Link>
               );
             })}
-          </div>
-          <div className="pt-2">
-            <a
-              href="https://phasecor.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#2D8F7A] text-white text-sm font-semibold tracking-wider uppercase hover:bg-[#237362]"
-            >
-              <span>Visit Store</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
           </div>
         </div>
       )}
