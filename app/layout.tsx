@@ -1,54 +1,32 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sans',
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Phasecor Healthcare | Evidence-Based Pharmaceutical Formulations & Nutricosmetics',
-    template: '%s | Phasecor Healthcare',
-  },
+  title: "Phasecor Healthcare | Clinical Formulations & Therapeutics",
   description:
-    'Phasecor Healthcare is a research-driven pharmaceutical entity developing clinically proven topical dermatology and dual-delivery nutricosmetic formulations. Verified under IS 4011:2018 and ISO 9001:2015 protocols.',
-  keywords: [
-    'Phasecor Healthcare',
-    'Niascobutin Serum',
-    'Primathion Glutathione',
-    'Uvothera Sunscreen',
-    'Dual Delivery Technology',
-    'Nutricosmetics India',
-    'Dermatological Formulations',
-    'IS 4011:2018',
-    'FSSAI 12124999000251',
-  ],
-  authors: [{ name: 'Phasecor Healthcare' }],
+    "Phasecor Healthcare bridges clinical science and therapeutic formulations engineered for restorative, phased skin and systemic health.",
   icons: {
-    icon: '/icon.png',
+    icon: "/icon.png",
   },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} h-full scroll-smooth`}
-      data-scroll-behavior="smooth"
-    >
-      <body className="font-sans antialiased min-h-full flex flex-col bg-white text-[#0E221E] selection:bg-[#2D8F7A] selection:text-white">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html lang="en" className={`${jakarta.variable} scroll-smooth`}>
+      <body className="bg-white text-slate-900 min-h-screen flex flex-col antialiased selection:bg-[#419a85]/20 selection:text-[#184a3f]">
+        {children}
       </body>
     </html>
   );

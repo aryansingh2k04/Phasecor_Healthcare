@@ -1,85 +1,42 @@
 @import "tailwindcss";
 
-@theme {
-  --color-primary: #2D8F7A;
-  --color-primary-dark: #1F6959;
-  --color-primary-deep: #14493E;
-  --color-primary-light: #3BA68F;
-  --color-primary-soft: #EEF8F5;
-  --color-primary-muted: #D9EFE9;
-  --color-spruce: #0E221E;
-  --color-spruce-light: #25423B;
-  --color-muted-text: #4C655F;
-  --color-surface-subtle: #F8FBFA;
-  --color-surface-card: #FFFFFF;
-  --color-border-subtle: #E3ECE9;
-  --color-phasecor-cream: #F9F9EB;
-  --color-phasecor-teal: #419A85;
-  --color-phasecor-sage: #E4ECE6;
-  --color-phasecor-border: #ECECD8;
-  --color-phasecor-dark: #111111;
-  --font-sans: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
 :root {
   --background: #ffffff;
-  --foreground: #0E221E;
+  --foreground: #0f172a;
+}
+
+@theme {
+  --color-brand-teal: #419a85;
+  --color-brand-dark: #256658;
+  --color-brand-darker: #184a3f;
+  --color-brand-light: #e8f2ee;
+  --color-brand-surface: #f7faf8;
+  --color-brand-border: #dbe7e1;
+  --color-brand-accent: #378b77;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: #ffffff;
-  color: #0E221E;
 }
 
 body {
   background-color: #ffffff;
-  color: #0E221E;
-  overflow-x: hidden;
+  color: #0f172a;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar for clinical feel */
+/* Custom subtle scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8fbfa;
+  background: #f1f5f3;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c3dad4;
+  background: #b5d5cb;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2D8F7A;
-}
-
-/* Clean glassmorphism */
-.glass-nav {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(227, 236, 233, 0.8);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(227, 236, 233, 0.9);
-}
-
-/* Subtle scientific grid texture */
-.clinical-grid {
-  background-image: radial-gradient(rgba(45, 143, 122, 0.12) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-/* Subtle gradient heading text */
-.text-gradient-teal {
-  background: linear-gradient(135deg, #0E221E 30%, #2D8F7A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: #419a85;
 }

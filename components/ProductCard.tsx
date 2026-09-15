@@ -1,125 +1,61 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight, FileText, Eye } from 'lucide-react';
-import { Product } from '@/data/products';
-import ProductInquiryModal from './ProductInquiryModal';
+import Image from "next/image";
+import { Product } from "./data";
 
 interface ProductCardProps {
   product: Product;
+  onOpenDetails: (product: Product) => void;
+  onEnquire: (productId: string) => void;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [showDetailImage, setShowDetailImage] = useState(false);
-
+export default function ProductCard({ product, onOpenDetails, onEnquire }: ProductCardProps) {
   return (
-    <>
-      <div className="group relative bg-white rounded-2xl border border-[#E3ECE9] hover:border-[#2D8F7A]/60 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden">
-
-        {/* Top Header */}
-        <div className="p-6 pb-2 flex items-center justify-between">
-          <span className="text-[11px] uppercase font-bold tracking-widest text-[#2D8F7A]">
-            {product.category}
-          </span>
-          <span className="text-xs font-mono text-[#789991]">
-            {product.specifications.netContent}
-          </span>
-        </div>
-
-        {/* Product Studio Visual Frame */}
-        <div className="relative h-64 sm:h-72 w-full px-6 py-4 flex items-center justify-center bg-gradient-to-b from-[#F8FBFA]/40 to-[#F8FBFA]">
-          <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-105">
-            <Image
-              src={showDetailImage ? product.images.detail : product.images.main}
-              alt={product.name}
-              fill
-              className="object-contain transition-all duration-300"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </div>
-
-          {/* Quick View Angle Switcher */}
-          <button
-            onClick={() => setShowDetailImage(!showDetailImage)}
-            className="absolute bottom-3 right-4 px-2.5 py-1 rounded-md bg-white/90 hover:bg-white text-[#4C655F] hover:text-[#0E221E] text-[10px] font-semibold border border-[#E3ECE9] shadow-xs flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-all duration-200"
-            title="Toggle between pack shot and clinical detail"
-          >
-            <Eye className="w-3 h-3 text-[#2D8F7A]" />
-            <span>{showDetailImage ? 'Pack Shot' : 'Inspect'}</span>
-          </button>
-        </div>
-
-        {/* Content Section */}
-        <div className="p-6 pt-5 flex-1 flex flex-col justify-between space-y-4">
-          <div className="space-y-2">
-            <h3 className="text-xl font-bold text-[#0E221E] group-hover:text-[#2D8F7A] transition-colors">
-              {product.name}
-            </h3>
-            <p className="text-xs font-medium text-[#2D8F7A]">
-              {product.subtitle}
-            </p>
-            
-            {/* Clinical Certification Row */}
-            <div className="text-[11px] font-medium text-[#1F6959] bg-[#EEF8F5] px-3 py-1.5 rounded-lg border border-[#D9EFE9] flex items-center justify-between">
-              <span>{product.heroBadge}</span>
-              <span className="text-[10px] text-[#2D8F7A] font-semibold">Validated</span>
-            </div>
-
-            <p className="text-xs text-[#4C655F] line-clamp-3 leading-relaxed pt-1">
-              {product.description}
-            </p>
-          </div>
-
-          {/* Key Actives Pill Matrix */}
-          <div className="space-y-1.5 pt-2 border-t border-[#E3ECE9]/70">
-            <span className="text-[10px] uppercase font-bold tracking-wider text-[#789991]">
-              Primary Molecules:
-            </span>
-            <div className="flex flex-wrap gap-1.5">
-              {product.keyActives.slice(0, 3).map((active) => (
-                <span
-                  key={active.name}
-                  className="text-[10px] px-2 py-0.5 rounded bg-[#F8FBFA] border border-[#E3ECE9] text-[#0E221E] font-medium"
-                >
-                  {active.name.split(' (')[0]}
-                </span>
-              ))}
-              {product.keyActives.length > 3 && (
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#EEF8F5] text-[#2D8F7A] font-medium">
-                  +{product.keyActives.length - 3} more
-                </span>
-              )}
-            </div>
-          </div>
-
-          {/* Bottom Action Grid */}
-          <div className="pt-4 border-t border-[#E3ECE9] grid grid-cols-2 gap-2.5">
-            <Link
-              href={`/products/${product.slug}`}
-              className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-semibold text-[#0E221E] bg-[#F8FBFA] hover:bg-[#EEF8F5] hover:text-[#2D8F7A] border border-[#E3ECE9] transition-all group/btn"
-            >
-              <span>View Product</span>
-              <ArrowRight className="w-3.5 h-3.5 ml-1.5 transition-transform group-hover/btn:translate-x-0.5" />
-            </Link>
-            <button
-              onClick={() => setModalOpen(true)}
-              className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#2D8F7A] hover:bg-[#1F6959] transition-all shadow-xs"
-            >
-              <FileText className="w-3.5 h-3.5 mr-1.5" />
-              <span>Inquire</span>
-            </button>
-          </div>
-        </div>
+    <div className="group flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-[#419a85] hover:shadow-lg transition-all duration-300">
+      {/* Product Image Area - Clean, No Badges */}
+      <div className="relative w-full h-80 bg-[#f9faf9] overflow-hidden flex items-center justify-center p-6">
+        <Image
+          src={product.mainImage}
+          alt={product.name}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+        />
       </div>
 
-      <ProductInquiryModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        preselectedProduct={`${product.name} (${product.specifications.netContent})`}
-      />
-    </>
+      {/* Card Content */}
+      <div className="flex flex-col flex-1 p-6 space-y-4">
+        <div className="space-y-1">
+          <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#419a85] transition-colors leading-snug">
+            {product.name}
+          </h3>
+          <p className="text-xs text-[#419a85] font-medium">
+            {product.packaging}
+          </p>
+        </div>
+
+        <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+          {product.summary}
+        </p>
+
+        {/* 2 Buttons Only: Details and Enquiry */}
+        <div className="pt-4 mt-auto border-t border-slate-100 grid grid-cols-2 gap-3">
+          <button
+            type="button"
+            onClick={() => onOpenDetails(product)}
+            className="w-full py-2.5 rounded-xl border border-slate-300 text-slate-800 hover:border-[#419a85] hover:text-[#419a85] text-xs font-semibold tracking-wider uppercase transition-all duration-200"
+          >
+            Details
+          </button>
+
+          <button
+            type="button"
+            onClick={() => onEnquire(product.id)}
+            className="w-full py-2.5 rounded-xl bg-[#419a85] text-white hover:bg-[#256658] text-xs font-semibold tracking-wider uppercase transition-all duration-200 shadow-2xs"
+          >
+            Enquiry
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1,165 +1,158 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+"use client";
+
+import Image from "next/image";
+import { ArrowUp } from "lucide-react";
+import { COMPANY_CONTACT } from "./data";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-[#0E221E] text-white pt-16 pb-12 border-t border-[#1F6959]/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-white/10">
-          
-          {/* Brand Column */}
+    <footer className="bg-[#0f1a17] text-slate-400 text-xs border-t border-slate-800">
+      {/* Top Footer Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block">
-              <div className="relative h-12 w-52 bg-white/95 px-3 py-1 rounded-lg">
-                <Image
-                  src="/images/brand/logo-dark-transparent.png"
-                  alt="Phasecor Healthcare"
-                  fill
-                  className="object-contain p-1"
-                />
-              </div>
-            </Link>
-            <p className="text-sm text-[#C3DAD4] leading-relaxed max-w-sm">
-              Phasecor Healthcare is a research-driven pharmaceutical entity specializing in bioavailability-engineered nutricosmetics and clinically proven topical dermatological formulations.
+            <div className="relative h-10 w-40">
+              <Image
+                src="/images/brand/logo-white-transparent.png"
+                alt="Phasecor Healthcare"
+                fill
+                className="object-contain object-left"
+              />
+            </div>
+            <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
+              Phasecor Healthcare bridges dermatological science and physiological healing. We engineer evidence-based formulations that restore skin barrier integrity in sustainable phases.
             </p>
-            
-            <div className="pt-2 text-xs text-[#789991] flex flex-wrap gap-x-3 gap-y-1">
-              <span>IS 4011:2018 Validated</span>
-              <span>&bull;</span>
-              <span>ISO 9001:2015 Protocol</span>
-              <span>&bull;</span>
-              <span>FSSAI Central Licensed</span>
+            <div className="flex items-center gap-3 pt-2">
+              <a
+                href={COMPANY_CONTACT.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#419a85] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
+                aria-label="Instagram"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+              </a>
+              <a
+                href={COMPANY_CONTACT.socials.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#419a85] text-slate-300 hover:text-white flex items-center justify-center transition-colors"
+                aria-label="X / Twitter"
+              >
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
             </div>
           </div>
 
-          {/* Quick Links: Formulations */}
+          {/* Formulations Col */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#89CEBF]">
-              Formulations
-            </h4>
-            <ul className="space-y-2 text-sm text-[#C3DAD4]">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Formulations</h4>
+            <ul className="space-y-2 text-slate-400">
               <li>
-                <Link
-                  href="/products/niascobutin"
-                  className="hover:text-white transition-colors flex items-center justify-between group"
-                >
-                  <span>Niascobutin Serum</span>
-                  <span className="text-[10px] text-[#2D8F7A] group-hover:text-white">Topical</span>
-                </Link>
+                <a href="#formulations" className="hover:text-[#419a85] transition-colors">
+                  Niascobutin™ Serum
+                </a>
               </li>
               <li>
-                <Link
-                  href="/products/primathion"
-                  className="hover:text-white transition-colors flex items-center justify-between group"
-                >
-                  <span>Primathion Oral</span>
-                  <span className="text-[10px] text-[#2D8F7A] group-hover:text-white">Dual Delivery</span>
-                </Link>
+                <a href="#formulations" className="hover:text-[#419a85] transition-colors">
+                  Primathion™ Nutricosmetic
+                </a>
               </li>
               <li>
-                <Link
-                  href="/products/uvothera"
-                  className="hover:text-white transition-colors flex items-center justify-between group"
-                >
-                  <span>Uvothera SPF 60++++</span>
-                  <span className="text-[10px] text-[#2D8F7A] group-hover:text-white">SPF 96.78</span>
-                </Link>
+                <a href="#formulations" className="hover:text-[#419a85] transition-colors">
+                  UVoThera™ SPF 60++++
+                </a>
               </li>
               <li>
-                <Link
-                  href="/products"
-                  className="text-xs text-[#2D8F7A] hover:text-white font-medium inline-flex items-center mt-2"
-                >
-                  View Complete Catalog
-                  <ArrowUpRight className="w-3 h-3 ml-1" />
-                </Link>
+                <a href="#science" className="hover:text-[#419a85] transition-colors">
+                  Dual-Delivery Science
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Corporate & Standards */}
+          {/* Therapeutics Pipeline Col */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#89CEBF]">
-              Company & Standards
-            </h4>
-            <ul className="space-y-2 text-sm text-[#C3DAD4]">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Medicines Pipeline</h4>
+            <ul className="space-y-2 text-slate-400">
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  About Us
-                </Link>
+                <a href="#pipeline" className="hover:text-[#419a85] transition-colors">
+                  PHC-MED-01: Barrier Rx
+                </a>
               </li>
               <li>
-                <Link href="/about#dual-delivery" className="hover:text-white transition-colors">
-                  Dual Delivery Innovation
-                </Link>
+                <a href="#pipeline" className="hover:text-[#419a85] transition-colors">
+                  PHC-MED-02: Melanosome Gel
+                </a>
               </li>
               <li>
-                <Link href="/certifications" className="hover:text-white transition-colors">
-                  Compliance & Quality
-                </Link>
+                <a href="#pipeline" className="hover:text-[#419a85] transition-colors">
+                  PHC-MED-03: Liposomal Complex
+                </a>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Contact Us
-                </Link>
+                <a href="#pipeline" className="hover:text-[#419a85] transition-colors">
+                  PHC-MED-04: Actinic Repair
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Headquarters & Care */}
+          {/* Corporate & Inquiries */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#89CEBF]">
-              Registered Office
-            </h4>
-            <div className="space-y-2 text-xs text-[#C3DAD4]">
-              <div className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-[#2D8F7A] shrink-0 mt-0.5" />
-                <span>
-                  Phasecor Healthcare Operations<br />
-                  Mumbai, Maharashtra, India
-                </span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-[#2D8F7A] shrink-0" />
-                <a href="tel:+919326421312" className="hover:text-white">
-                  +91 9326421312
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white">Healthcare Office</h4>
+            <ul className="space-y-2 text-slate-400">
+              <li>
+                <a href={`mailto:${COMPANY_CONTACT.email}`} className="hover:text-[#419a85] transition-colors block truncate">
+                  {COMPANY_CONTACT.email}
                 </a>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-[#2D8F7A] shrink-0" />
-                <a href="mailto:support@phasecor.com" className="hover:text-white">
-                  support@phasecor.com
+              </li>
+              <li>
+                <a href={`tel:${COMPANY_CONTACT.phone}`} className="hover:text-[#419a85] transition-colors">
+                  {COMPANY_CONTACT.phone}
                 </a>
-              </div>
-              <div className="pt-2 text-[11px] text-[#789991]">
-                FSSAI Central Lic No: <span className="text-white font-mono">12124999000251</span>
-              </div>
-            </div>
+              </li>
+              <li className="text-[11px] text-slate-500 pt-1 leading-relaxed">
+                Shop No. 4, Royal Residency Chs, Katemanevali, Kalyan, Maharashtra 421306
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Regulatory & Institutional Notice */}
-        <div className="py-6 border-b border-white/10 text-xs text-[#789991] leading-relaxed">
+        {/* Regulatory Medical Disclaimer Box */}
+        <div className="mt-12 pt-8 border-t border-slate-800/80 text-[11px] text-slate-500 space-y-2 leading-relaxed">
           <p>
-            <strong className="text-white font-medium">Regulatory & Institutional Notice:</strong> This website is an informational and corporate dossier portal maintained by Phasecor Healthcare for medical practitioners, clinical researchers, pharmacists, and institutional distribution partners. In compliance with commercial and healthcare governance, Phasecor Healthcare does not conduct direct retail consumer transactions on this portal. All clinical trial claims reference verified independent testing protocols (IS 4011:2018 / ISO 9001:2015 by Mascot Spincontrol India).
+            <strong className="text-slate-400">Medical Notice:</strong> This website serves corporate and clinical informational purposes for healthcare practitioners, researchers, institutional distributors, and patients. Phasecor Healthcare does not operate an open consumer storefront on this portal.
+          </p>
+          <p>
+            Statements regarding dietary nutricosmetics and topical formulations are based on independent dermatological evaluations and analytical assays. Always consult a licensed dermatologist or medical practitioner for specific clinical conditions.
           </p>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-[#789991] space-y-3 sm:space-y-0">
-          <p>&copy; {new Date().getFullYear()} Phasecor Healthcare. All rights reserved.</p>
-          <div className="flex items-center space-x-6">
-            <Link href="/about" className="hover:text-white transition-colors">
-              Quality Policy
-            </Link>
-            <Link href="/certifications" className="hover:text-white transition-colors">
-              Compliance Registry
-            </Link>
-            <Link href="/contact" className="hover:text-white transition-colors">
-              Institutional Contact
-            </Link>
+      {/* Bottom Bar */}
+      <div className="border-t border-slate-900 bg-[#09110f] py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+          <div>
+            © {new Date().getFullYear()} Phasecor Healthcare. All rights reserved.
+          </div>
+          <div className="flex items-center gap-6">
+            <button
+              onClick={scrollToTop}
+              className="inline-flex items-center gap-1.5 hover:text-white transition-colors"
+            >
+              <span>Back to top</span>
+              <ArrowUp className="w-3 h-3" />
+            </button>
           </div>
         </div>
       </div>
