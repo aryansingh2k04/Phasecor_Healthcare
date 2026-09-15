@@ -12,9 +12,10 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Phasecor Healthcare | Clinical Formulations & Therapeutics",
+  metadataBase: new URL("https://phasecor.com"),
+  title: "Phasecor Healthcare | Quality Care within Reach",
   description:
-    "Phasecor Healthcare bridges clinical science and therapeutic formulations engineered for restorative, phased skin and systemic health.",
+    "Phasecor Healthcare bridges clinical science and therapeutic formulations engineered for restorative, phased systemic and skin health.",
   icons: {
     icon: [
       { url: "/icon.png", type: "image/png" },
@@ -22,6 +23,30 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
     shortcut: "/icon.png",
+  },
+  openGraph: {
+    title: "Phasecor Healthcare | Quality Care within Reach",
+    description:
+      "Innovative, high-quality, and affordable multi-specialty therapeutics and clinical formulations.",
+    url: "https://phasecor.com",
+    siteName: "Phasecor Healthcare",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Phasecor Healthcare",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Phasecor Healthcare | Quality Care within Reach",
+    description:
+      "Innovative, high-quality, and affordable multi-specialty therapeutics and clinical formulations.",
+    images: ["/og-image.png"],
   },
 };
 
