@@ -5,28 +5,28 @@ import { TRUST_BADGES } from "./data";
 
 export default function SupportBlocks() {
   return (
-    <section className="py-12 sm:py-14 bg-white border-b border-slate-100">
+    <section className="py-12 sm:py-16 bg-[#fbfdfc] border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {TRUST_BADGES.map((item) => (
             <div
               key={item.title}
-              className="group p-5 sm:p-6 rounded-md bg-[#f9f9eb] border border-[#e8e4d2] hover:border-[#2D8F7A] hover:shadow-md transition-all duration-300 flex items-start gap-4"
+              className="p-7 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1"
             >
-              <div className="relative w-12 h-12 p-2 rounded-md bg-white border border-[#e8e4d2] shrink-0 flex items-center justify-center shadow-2xs">
+              <div className="w-14 h-14 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 shrink-0">
                 <Image
                   src={item.icon}
                   alt={item.title}
-                  fill
-                  className="object-contain p-2"
-                  sizes="48px"
+                  width={28}
+                  height={28}
+                  className="object-contain brightness-0 invert"
                 />
               </div>
-              <div className="space-y-1 flex-1">
-                <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#2D8F7A] transition-colors">
+              <div className="space-y-2">
+                <h3 className="text-base font-bold text-white leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
                   {item.description}
                 </p>
               </div>

@@ -113,17 +113,17 @@ export default function AboutPage() {
               return (
                 <div
                   key={p.title}
-                  className="p-8 rounded-md bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between"
+                  className="p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1"
                 >
-                  <div className="w-14 h-14 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
-                    <Icon className="w-7 h-7" />
+                  <div className="w-14 h-14 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20">
+                    <Icon className="w-7 h-7 text-white" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-slate-900">{p.title}</h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{p.desc}</p>
+                    <h3 className="text-xl font-bold text-white leading-snug">{p.title}</h3>
+                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">{p.desc}</p>
                   </div>
-                  <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-[#2D8F7A]">
-                    <CheckCircle2 className="w-4 h-4" />
+                  <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-white/90">
+                    <CheckCircle2 className="w-4 h-4 text-white" />
                     <span>Phasecor Core Standard</span>
                   </div>
                 </div>

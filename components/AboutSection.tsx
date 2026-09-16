@@ -27,16 +27,16 @@ export default function AboutSection() {
 
             {/* Mission & Vision */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-5 rounded-md bg-white border border-slate-200 space-y-2">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">Our Mission</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+              <div className="p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 space-y-2">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-white">Our Mission</h3>
+                <p className="text-xs text-white/90 leading-relaxed">
                   To create thoughtful, science-backed formulations that strengthen skin over time, not overnight, focusing on purposeful formulas and long-term health.
                 </p>
               </div>
 
-              <div className="p-5 rounded-md bg-white border border-slate-200 space-y-2">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">Our Vision</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+              <div className="p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 space-y-2">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-white">Our Vision</h3>
+                <p className="text-xs text-white/90 leading-relaxed">
                   To become a trusted healthcare brand known for integrity, simplicity, and lasting results, built through consistency rather than trends.
                 </p>
               </div>

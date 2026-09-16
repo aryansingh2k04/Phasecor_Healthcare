@@ -173,13 +173,13 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
-          {/* Left Content: Headline, Subtitle, and 2 CTA Buttons (Occupies space up to the red line) */}
-          <div className="lg:col-span-7 xl:col-span-8 space-y-6 text-center lg:text-left z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10 items-center">
+          {/* Left Content: Headline, Subtitle, and 2 CTA Buttons (Shifted right closer to spiral) */}
+          <div className="lg:col-span-7 xl:col-span-7 space-y-6 text-center lg:text-left z-10 lg:pl-10 xl:pl-16">
             <h1 className="text-4xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] max-w-2xl">
               Engineering the{" "}
               <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)]">
-                Phases of Health
+                Future of Healthcare
               </span>
             </h1>
 
@@ -204,8 +204,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Graphic: Animated Rotating Phasecor Spiral Emblem (To the right of the red line) */}
-          <div className="lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-end items-center z-10">
+          {/* Right Graphic: Animated Rotating Phasecor Spiral Emblem (Brought closer to left content) */}
+          <div className="lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-start items-center z-10">
             <div className="relative w-72 sm:w-88 md:w-96 lg:w-[390px] xl:w-[430px] aspect-square max-w-full flex items-center justify-center">
               <HeroSpiralLogo className="w-full h-full" />
             </div>
