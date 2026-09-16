@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
+import HeroSpiralLogo from "./HeroSpiralLogo";
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -159,9 +159,9 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[620px] lg:min-h-[720px] flex items-center bg-[#071714] text-white overflow-hidden">
-      {/* Deep Radial Glow background matching Phasecor teal palette */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_25%_50%,rgba(45,143,122,0.22)_0%,rgba(20,65,55,0.12)_35%,rgba(7,23,20,0)_70%)]" />
-      <div className="absolute top-0 right-0 w-96 h-96 pointer-events-none bg-[radial-gradient(circle,rgba(69,197,169,0.08)_0%,transparent_70%)]" />
+      {/* Deep Radial Glow background matching Phasecor teal palette centered around spiral on the right */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_78%_50%,rgba(45,143,122,0.24)_0%,rgba(20,65,55,0.12)_38%,rgba(7,23,20,0)_70%)]" />
+      <div className="absolute top-0 left-0 w-96 h-96 pointer-events-none bg-[radial-gradient(circle,rgba(69,197,169,0.06)_0%,transparent_70%)]" />
 
       {/* Subtle tech grid background matching portfolio aesthetic */}
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,rgba(45,143,122,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(45,143,122,0.07)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_60%,transparent_100%)] opacity-80" />
@@ -172,48 +172,23 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-85"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Graphic: Floating Illuminated Phasecor Emblem */}
-          <div className="lg:col-span-5 flex justify-center items-center">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center">
-              {/* Pulsing Backlight Glows */}
-              <div className="absolute inset-0 rounded-full bg-[#2D8F7A]/25 blur-3xl animate-pulse" />
-              <div className="absolute w-48 h-48 rounded-full bg-[#45C5A9]/20 blur-2xl" />
-
-              {/* Glowing Outer Rings */}
-              <div className="absolute inset-2 rounded-full border border-[#2D8F7A]/30 scale-95" />
-              <div className="absolute inset-6 rounded-full border border-[#45C5A9]/20 scale-90 border-dashed animate-[spin_60s_linear_infinite]" />
-
-              {/* Central Floating Phasecor Emblem */}
-              <div className="relative w-52 h-52 sm:w-64 sm:h-64 z-10 drop-shadow-[0_10px_35px_rgba(45,143,122,0.6)] animate-float">
-                <Image
-                  src="/images/brand/mark-teal-transparent.png"
-                  alt="Phasecor Emblem"
-                  fill
-                  className="object-contain"
-                  priority
-                  sizes="(max-width: 768px) 240px, 320px"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Right Content: Headline, Subtitle, and 2 CTA Buttons */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
+          {/* Left Content: Headline, Subtitle, and 2 CTA Buttons (Occupies space up to the red line) */}
+          <div className="lg:col-span-7 xl:col-span-8 space-y-6 text-center lg:text-left z-10">
+            <h1 className="text-4xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] max-w-2xl">
               Engineering the{" "}
               <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)]">
                 Phases of Health
               </span>
             </h1>
 
-            <p className="text-base sm:text-xl text-slate-300 font-normal leading-relaxed max-w-xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Next-gen dermatological formulations &amp; therapeutic medicines engineered for restorative cellular care.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
               <Link
                 href="/products"
                 className="px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-sm font-semibold tracking-wide hover:bg-[#237362] transition-all duration-200 shadow-lg shadow-[#2D8F7A]/25 hover:shadow-xl hover:shadow-[#2D8F7A]/40 active:scale-95"
@@ -226,6 +201,13 @@ export default function Hero() {
               >
                 Discover Our Mission
               </Link>
+            </div>
+          </div>
+
+          {/* Right Graphic: Animated Rotating Phasecor Spiral Emblem (To the right of the red line) */}
+          <div className="lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-end items-center z-10">
+            <div className="relative w-72 h-72 sm:w-88 sm:h-88 md:w-96 md:h-96 lg:w-[380px] lg:h-[380px] xl:w-[420px] xl:h-[420px] flex items-center justify-center">
+              <HeroSpiralLogo className="w-full h-full" />
             </div>
           </div>
         </div>
