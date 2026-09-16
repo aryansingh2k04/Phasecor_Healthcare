@@ -48,12 +48,15 @@ export default function QualityCertifications() {
             {/* Standards List */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {standards.map((std) => (
-                <div key={std.title} className="p-4 rounded-md bg-[#f7faf8] border border-[#e1ece7] space-y-1">
+                <div
+                  key={std.title}
+                  className="p-5 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md space-y-2 hover:-translate-y-0.5 transition-transform"
+                >
                   <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#2D8F7A] shrink-0" />
-                    <h3 className="text-xs font-bold text-slate-900">{std.title}</h3>
+                    <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
+                    <h3 className="text-xs font-bold text-white">{std.title}</h3>
                   </div>
-                  <p className="text-xs text-slate-500 pl-6 leading-relaxed">{std.desc}</p>
+                  <p className="text-xs text-white/90 pl-6 leading-relaxed font-normal">{std.desc}</p>
                 </div>
               ))}
             </div>
@@ -63,9 +66,9 @@ export default function QualityCertifications() {
           <div className="lg:col-span-5 flex flex-col items-center">
             <div
               onClick={() => setCertModalOpen(true)}
-              className="group relative w-full max-w-sm rounded-md bg-white border border-slate-200 p-4 shadow-lg hover:shadow-xl hover:border-[#2D8F7A] transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative w-full max-w-sm rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white p-4 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden hover:-translate-y-1"
             >
-              <div className="relative w-full h-72 rounded-md bg-[#fbfdfc] border border-slate-100 overflow-hidden flex items-center justify-center">
+              <div className="relative w-full h-72 rounded-md bg-white border border-white/20 overflow-hidden flex items-center justify-center">
                 <Image
                   src="/images/certificates/certificate.jpg"
                   alt="Quality Certificate Phasecor"
@@ -73,7 +76,7 @@ export default function QualityCertifications() {
                   className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/20 transition-colors flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 px-4 py-2 rounded-md bg-white/95 text-slate-900 text-xs font-bold shadow-md transition-opacity duration-200 flex items-center gap-1.5">
+                  <span className="opacity-0 group-hover:opacity-100 px-4 py-2 rounded-md bg-white text-slate-900 text-xs font-bold shadow-md transition-opacity duration-200 flex items-center gap-1.5">
                     <Eye className="w-3.5 h-3.5 text-[#2D8F7A]" />
                     Click to View Document
                   </span>
@@ -82,10 +85,10 @@ export default function QualityCertifications() {
 
               <div className="pt-4 flex items-center justify-between">
                 <div>
-                  <h3 className="text-xs font-bold text-slate-900">Certificate of Analysis & Compliance</h3>
-                  <p className="text-[11px] text-slate-500">Official Laboratory Testing Documentation</p>
+                  <h3 className="text-xs font-bold text-white">Certificate of Analysis &amp; Compliance</h3>
+                  <p className="text-[11px] text-white/80">Official Laboratory Testing Documentation</p>
                 </div>
-                <span className="px-2.5 py-1 rounded-md bg-[#e8f2ee] text-[10px] font-bold text-[#2D8F7A]">
+                <span className="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-[10px] font-bold text-white">
                   VERIFIED
                 </span>
               </div>

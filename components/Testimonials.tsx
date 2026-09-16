@@ -44,16 +44,16 @@ export default function Testimonials() {
           {reviews.map((rev) => (
             <div
               key={rev.author}
-              className="p-6 rounded-md bg-[#f9faf9] border border-slate-200 flex flex-col justify-between space-y-4 hover:border-[#2D8F7A] transition-colors"
+              className="p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1"
             >
-              <p className="text-sm text-slate-600 italic leading-relaxed">
+              <p className="text-sm text-white/95 italic leading-relaxed font-normal">
                 “{rev.quote}”
               </p>
-              <div className="pt-2 border-t border-slate-200/60">
-                <span className="text-sm font-bold text-slate-900 block">
+              <div className="pt-3 border-t border-white/20">
+                <span className="text-sm font-bold text-white block">
                   {rev.author}
                 </span>
-                <span className="text-xs text-[#2D8F7A] font-medium">
+                <span className="text-xs text-white/80 font-medium">
                   {rev.city}
                 </span>
               </div>

@@ -152,14 +152,14 @@ export default function AboutPage() {
             {therapeuticAreas.map((area) => (
               <div
                 key={area.title}
-                className="p-8 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all duration-300 space-y-3 flex flex-col justify-between"
+                className="p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 space-y-3 flex flex-col justify-between"
               >
                 <div className="space-y-3">
-                  <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-[#e8f2ee] text-[#2D8F7A] uppercase tracking-wider">
+                  <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
                     {area.badge}
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900">{area.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{area.desc}</p>
+                  <h3 className="text-lg font-bold text-white">{area.title}</h3>
+                  <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
                 </div>
               </div>
             ))}

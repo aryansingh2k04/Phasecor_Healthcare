@@ -53,3 +53,58 @@ body {
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
+
+/* Hero Onload Staggered Entrance Animations */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroGlowIn {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+    filter: blur(4px) drop-shadow(0 0 0px rgba(45, 143, 122, 0));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px) drop-shadow(0 4px 25px rgba(45, 143, 122, 0.45));
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-hero-title {
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.animate-hero-gradient {
+  animation: heroGlowIn 1.05s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+}
+
+.animate-hero-desc {
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.52s both;
+}
+
+.animate-hero-actions {
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.72s both;
+}
+
+.animate-gradient-shift {
+  background-size: 200% auto;
+  animation: gradientShift 6s ease-in-out infinite;
+}

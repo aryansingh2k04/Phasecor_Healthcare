@@ -123,44 +123,52 @@ export default function ProductsPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-6 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
-                <Activity className="w-6 h-6" />
+            <div className="p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
+                <Activity className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-base font-bold text-slate-900">UTI &amp; Renal Health</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Non-antibiotic urinary tract support combining PAC-rich Cranberry, D-Mannose, and urinary alkalizers.
-              </p>
+              <div className="space-y-1.5">
+                <h3 className="text-base font-bold text-white">UTI &amp; Renal Health</h3>
+                <p className="text-xs text-white/90 leading-relaxed font-normal">
+                  Non-antibiotic urinary tract support combining PAC-rich Cranberry, D-Mannose, and urinary alkalizers.
+                </p>
+              </div>
             </div>
 
-            <div className="p-6 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
-                <Sparkles className="w-6 h-6" />
+            <div className="p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
+                <Sparkles className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-base font-bold text-slate-900">Cellular Bioenergetics</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Sugar-free WHO-osmolarity electrolyte formulation fortified with Co-Enzyme Q10 for rapid rehydration.
-              </p>
+              <div className="space-y-1.5">
+                <h3 className="text-base font-bold text-white">Cellular Bioenergetics</h3>
+                <p className="text-xs text-white/90 leading-relaxed font-normal">
+                  Sugar-free WHO-osmolarity electrolyte formulation fortified with Co-Enzyme Q10 for rapid rehydration.
+                </p>
+              </div>
             </div>
 
-            <div className="p-6 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
-                <Pill className="w-6 h-6" />
+            <div className="p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
+                <Pill className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-base font-bold text-slate-900">Joint &amp; Bone Density</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Synergistic Calcium Orotate, Cissus Quadrangularis, and Active B12 for cartilage and neuropathic recovery.
-              </p>
+              <div className="space-y-1.5">
+                <h3 className="text-base font-bold text-white">Joint &amp; Bone Density</h3>
+                <p className="text-xs text-white/90 leading-relaxed font-normal">
+                  Synergistic Calcium Orotate, Cissus Quadrangularis, and Active B12 for cartilage and neuropathic recovery.
+                </p>
+              </div>
             </div>
 
-            <div className="p-6 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-3 shadow-xs">
-              <div className="w-12 h-12 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center">
-                <ShieldCheck className="w-6 h-6" />
+            <div className="p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+              <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
+                <ShieldCheck className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-base font-bold text-slate-900">Women’s PCOS Care</h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Physiological 40:1 Myo to D-Chiro Inositol ratio to regulate ovulation, insulin sensitivity, and cycle rhythm.
-              </p>
+              <div className="space-y-1.5">
+                <h3 className="text-base font-bold text-white">Women’s PCOS Care</h3>
+                <p className="text-xs text-white/90 leading-relaxed font-normal">
+                  Physiological 40:1 Myo to D-Chiro Inositol ratio to regulate ovulation, insulin sensitivity, and cycle rhythm.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -186,35 +194,35 @@ export default function ProductsPage() {
             {MEDICINE_PIPELINE.map((item) => (
               <div
                 key={item.name}
-                className="p-8 rounded-md bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300 space-y-5 flex flex-col justify-between"
+                className="p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 space-y-5 flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#2D8F7A] uppercase tracking-wider">
+                    <span className="text-xs font-bold text-white uppercase tracking-wider px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20">
                       {item.therapeuticArea}
                     </span>
-                    <span className="text-[11px] font-semibold text-slate-500 px-3 py-1 rounded-md bg-slate-100">
+                    <span className="text-[11px] font-semibold text-white/90 px-3 py-1 rounded-md bg-white/10 border border-white/20">
                       {item.deliveryMethod}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-xl font-bold text-white">
                     {item.name}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <div className="text-xs text-slate-500">
-                    Target: <span className="font-semibold text-slate-800">{item.target}</span>
+                <div className="pt-4 border-t border-white/20 flex items-center justify-between">
+                  <div className="text-xs text-white/80">
+                    Target: <span className="font-semibold text-white">{item.target}</span>
                   </div>
                   <button
                     type="button"
                     onClick={() => router.push(`/contact?product=${encodeURIComponent(item.name)}`)}
-                    className="text-xs font-bold text-[#2D8F7A] hover:text-[#237362] transition-colors inline-flex items-center gap-1"
+                    className="px-4 py-2 rounded-md bg-white text-[#237362] hover:bg-white/90 text-xs font-bold transition-all duration-200 inline-flex items-center gap-1 shadow-sm"
                   >
                     <span>Clinical Inquiry</span>
                     <ArrowRight className="w-3.5 h-3.5" />

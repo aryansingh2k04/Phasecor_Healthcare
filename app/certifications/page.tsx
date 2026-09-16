@@ -120,9 +120,9 @@ export default function CertificationsPage() {
             <div className="lg:col-span-5 flex justify-center">
               <div
                 onClick={() => setCertModalOpen(true)}
-                className="group relative w-full max-w-md rounded-md bg-white border border-slate-200 p-6 shadow-xl hover:shadow-2xl hover:border-[#2D8F7A] transition-all duration-300 cursor-pointer overflow-hidden"
+                className="group relative w-full max-w-md rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white p-6 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden hover:-translate-y-1"
               >
-                <div className="relative w-full h-80 sm:h-96 rounded-md bg-[#fbfdfc] border border-slate-100 overflow-hidden flex items-center justify-center">
+                <div className="relative w-full h-80 sm:h-96 rounded-md bg-white border border-white/20 overflow-hidden flex items-center justify-center">
                   <Image
                     src="/images/certificates/certificate.jpg"
                     alt="Phasecor Quality Certification"
@@ -139,10 +139,10 @@ export default function CertificationsPage() {
 
                 <div className="pt-5 flex items-center justify-between">
                   <div>
-                    <h3 className="text-sm font-bold text-slate-900">Certificate of Analysis &amp; Compliance</h3>
-                    <p className="text-xs text-slate-500">Official Laboratory Testing Documentation</p>
+                    <h3 className="text-sm font-bold text-white">Certificate of Analysis &amp; Compliance</h3>
+                    <p className="text-xs text-white/80">Official Laboratory Testing Documentation</p>
                   </div>
-                  <span className="px-3 py-1 rounded-md bg-[#e8f2ee] text-[10px] font-bold text-[#2D8F7A] tracking-wider">
+                  <span className="px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-[10px] font-bold text-white tracking-wider">
                     VERIFIED
                   </span>
                 </div>
@@ -162,25 +162,25 @@ export default function CertificationsPage() {
               </p>
 
               <div className="space-y-4 pt-2">
-                <div className="p-4 rounded-md bg-[#f7faf8] border border-[#e1ece7] flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#2D8F7A] shrink-0 mt-0.5" />
+                <div className="p-5 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-white shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                       Third-Party Laboratory Verification
                     </h4>
-                    <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                    <p className="text-xs text-white/90 leading-relaxed mt-1 font-normal">
                       Independent analytical laboratories verify our active assay percentages (e.g. 5% Niacinamide, 2% Alpha Arbutin, 1.5% Tranexamic Acid) to prevent batch-to-batch variability.
                     </p>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-md bg-[#f7faf8] border border-[#e1ece7] flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#2D8F7A] shrink-0 mt-0.5" />
+                <div className="p-5 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-white shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                       Photostability &amp; Broad-Spectrum IR Shielding
                     </h4>
-                    <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                    <p className="text-xs text-white/90 leading-relaxed mt-1 font-normal">
                       Sun protection products undergo rigorous in-vitro and in-vivo spectrophotometry to ensure sustained SPF 60+ and PA++++ protection against UVA, UVB, and High Energy Visible (HEV) screen light.
                     </p>
                   </div>
@@ -210,27 +210,27 @@ export default function CertificationsPage() {
             {certifications.map((cert) => (
               <div
                 key={cert.title}
-                className="p-8 rounded-md bg-white border border-slate-200 hover:border-[#2D8F7A] hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-4"
+                className="p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-[#e8f2ee] text-[#2D8F7A] tracking-wider uppercase">
+                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white tracking-wider uppercase">
                       {cert.badge}
                     </span>
-                    <FileCheck2 className="w-4 h-4 text-[#2D8F7A]" />
+                    <FileCheck2 className="w-4 h-4 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 leading-snug">
+                  <h3 className="text-lg font-bold text-white leading-snug">
                     {cert.title}
                   </h3>
-                  <p className="text-xs font-semibold text-[#2D8F7A]">
+                  <p className="text-xs font-semibold text-white/80">
                     {cert.agency}
                   </p>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-white/90 leading-relaxed font-normal">
                     {cert.desc}
                   </p>
                 </div>
-                <div className="pt-3 border-t border-slate-100 text-[11px] font-medium text-slate-500 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2D8F7A]" />
+                <div className="pt-3 border-t border-white/20 text-[11px] font-medium text-white/85 flex items-center gap-1.5">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-white" />
                   <span>Compliant &amp; Active</span>
                 </div>
               </div>
@@ -260,15 +260,15 @@ export default function CertificationsPage() {
               return (
                 <div
                   key={stage.step}
-                  className="p-6 rounded-md bg-[#fbfdfc] border border-slate-200 hover:border-[#2D8F7A] transition-all space-y-4 flex flex-col justify-between"
+                  className="p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 space-y-4 flex flex-col justify-between"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl font-extrabold text-[#2D8F7A]">{stage.step}</span>
-                      <Icon className="w-5 h-5 text-slate-400" />
+                      <span className="text-2xl font-extrabold text-white/40">{stage.step}</span>
+                      <Icon className="w-5 h-5 text-white" />
                     </div>
-                    <h3 className="text-sm font-bold text-slate-900">{stage.title}</h3>
-                    <p className="text-xs text-slate-500 leading-relaxed">{stage.desc}</p>
+                    <h3 className="text-sm font-bold text-white">{stage.title}</h3>
+                    <p className="text-xs text-white/90 leading-relaxed font-normal">{stage.desc}</p>
                   </div>
                 </div>
               );

@@ -53,9 +53,9 @@ export default function SciencePhilosophy() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group bg-white rounded-md border border-slate-200 overflow-hidden hover:border-[#2D8F7A] hover:shadow-xl transition-all duration-300 flex flex-col"
+              className="group rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 flex flex-col"
             >
-              <div className="relative w-full h-56 bg-slate-100 overflow-hidden">
+              <div className="relative w-full h-56 bg-white overflow-hidden">
                 <Image
                   src={pillar.image}
                   alt={pillar.title}
@@ -63,7 +63,7 @@ export default function SciencePhilosophy() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-md bg-white/90 backdrop-blur-md text-[10px] font-bold text-[#2D8F7A] border border-[#b5d5cb]">
+                  <span className="px-3 py-1 rounded-md bg-white/20 backdrop-blur-md text-[10px] font-bold text-white border border-white/20">
                     {pillar.tag}
                   </span>
                 </div>
@@ -71,13 +71,13 @@ export default function SciencePhilosophy() {
 
               <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
-                  <span className="text-[11px] font-bold text-[#2D8F7A] uppercase tracking-wider block">
+                  <span className="text-[11px] font-bold text-white/80 uppercase tracking-wider block">
                     {pillar.subtitle}
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#2D8F7A] transition-colors">
+                  <h3 className="text-lg font-bold text-white">
                     {pillar.title}
                   </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-white/90 leading-relaxed font-normal">
                     {pillar.description}
                   </p>
                 </div>
@@ -87,26 +87,26 @@ export default function SciencePhilosophy() {
         </div>
 
         {/* Principles Summary Banner */}
-        <div className="mt-12 p-6 sm:p-8 bg-white rounded-md border border-slate-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-12 p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="space-y-1">
-            <span className="text-2xl font-extrabold text-[#2D8F7A]">01</span>
-            <h4 className="text-sm font-bold text-slate-900">Science-Backed</h4>
-            <p className="text-xs text-slate-500">Every active verified through peer-reviewed dermatological literature.</p>
+            <span className="text-2xl font-extrabold text-white/40">01</span>
+            <h4 className="text-sm font-bold text-white">Science-Backed</h4>
+            <p className="text-xs text-white/85">Every active verified through peer-reviewed dermatological literature.</p>
           </div>
           <div className="space-y-1">
-            <span className="text-2xl font-extrabold text-[#2D8F7A]">02</span>
-            <h4 className="text-sm font-bold text-slate-900">Thoughtfully Dosed</h4>
-            <p className="text-xs text-slate-500">Therapeutic concentrations calibrated to avoid cellular fatigue and irritation.</p>
+            <span className="text-2xl font-extrabold text-white/40">02</span>
+            <h4 className="text-sm font-bold text-white">Thoughtfully Dosed</h4>
+            <p className="text-xs text-white/85">Therapeutic concentrations calibrated to avoid cellular fatigue and irritation.</p>
           </div>
           <div className="space-y-1">
-            <span className="text-2xl font-extrabold text-[#2D8F7A]">03</span>
-            <h4 className="text-sm font-bold text-slate-900">Barrier-Conscious</h4>
-            <p className="text-xs text-slate-500">Formulated to protect and fortify the stratum corneum at all times.</p>
+            <span className="text-2xl font-extrabold text-white/40">03</span>
+            <h4 className="text-sm font-bold text-white">Barrier-Conscious</h4>
+            <p className="text-xs text-white/85">Formulated to protect and fortify the stratum corneum at all times.</p>
           </div>
           <div className="space-y-1">
-            <span className="text-2xl font-extrabold text-[#2D8F7A]">04</span>
-            <h4 className="text-sm font-bold text-slate-900">Lasting Results</h4>
-            <p className="text-xs text-slate-500">Cultivating sustained skin resilience and internal health over overnight illusions.</p>
+            <span className="text-2xl font-extrabold text-white/40">04</span>
+            <h4 className="text-sm font-bold text-white">Lasting Results</h4>
+            <p className="text-xs text-white/85">Cultivating sustained skin resilience and internal health over overnight illusions.</p>
           </div>
         </div>
       </div>

@@ -177,18 +177,20 @@ export default function Hero() {
           {/* Left Content: Headline, Subtitle, and 2 CTA Buttons (Shifted right closer to spiral) */}
           <div className="lg:col-span-7 xl:col-span-7 space-y-6 text-center lg:text-left z-10 lg:pl-10 xl:pl-16">
             <h1 className="text-4xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] max-w-2xl">
-              Engineering the{" "}
-              <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)]">
+              <span className="block animate-hero-title">
+                Engineering the
+              </span>
+              <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)] animate-hero-gradient animate-gradient-shift">
                 Future of Healthcare
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-hero-desc">
               Next-gen dermatological formulations &amp; therapeutic medicines engineered for restorative cellular care.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3 animate-hero-actions">
               <Link
                 href="/products"
                 className="px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-sm font-semibold tracking-wide hover:bg-[#237362] transition-all duration-200 shadow-lg shadow-[#2D8F7A]/25 hover:shadow-xl hover:shadow-[#2D8F7A]/40 active:scale-95"
