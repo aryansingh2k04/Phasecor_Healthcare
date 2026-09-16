@@ -34,7 +34,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
 
         {/* Modal Header */}
         <div className="flex flex-col sm:flex-row gap-6 items-start">
-          <div className="relative w-full sm:w-44 h-52 rounded-md bg-[#f9faf9] border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center">
+          <div className="relative w-full sm:w-44 h-52 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] border border-white/20 overflow-hidden shrink-0 flex items-center justify-center">
             <Image
               src={product.detailImage || product.mainImage}
               alt={product.name}

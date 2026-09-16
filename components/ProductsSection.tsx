@@ -40,7 +40,7 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
         </div>
 
         {/* 3-Column Product Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {PRODUCTS.map((product) => (
             <ProductCard
               key={product.id}

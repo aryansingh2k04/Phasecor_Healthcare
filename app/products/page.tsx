@@ -94,7 +94,7 @@ export default function ProductsPage() {
           </div>
 
           {/* Product Cards Grid: Exactly 2 buttons per card, no badges */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}

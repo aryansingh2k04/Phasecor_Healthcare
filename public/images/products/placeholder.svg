@@ -1,56 +1,47 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fafbfa"/>
-      <stop offset="100%" stop-color="#f0f4f2"/>
-    </linearGradient>
-    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2D8F7A"/>
-      <stop offset="100%" stop-color="#237362"/>
-    </linearGradient>
-    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2D8F7A" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#2D8F7A" stop-opacity="0.0"/>
-    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="600" height="600" fill="url(#bgGrad)" rx="24"/>
-  <rect x="1.5" y="1.5" width="597" height="597" fill="none" stroke="#e2ece7" stroke-width="2" rx="22.5"/>
+  <!-- Transparent Background -->
+  <rect width="600" height="600" fill="none"/>
 
   <!-- Subtle Ambient Glow -->
-  <circle cx="300" cy="270" r="180" fill="url(#glowGrad)"/>
+  <circle cx="300" cy="270" r="200" fill="url(#glowGrad)"/>
 
-  <!-- Pharmacuetical Packaging / Pill Capsule Icon Container -->
+  <!-- Pharmaceutical Packaging / Pill Capsule Icon Container -->
   <g transform="translate(300, 240)">
-    <!-- Pill Capsule Container Graphic -->
-    <rect x="-100" y="-100" width="200" height="200" rx="36" fill="#ffffff" stroke="#e2ece7" stroke-width="2"/>
+    <!-- Pill Capsule Container Graphic (Frosted Glass Badge) -->
+    <rect x="-100" y="-100" width="200" height="200" rx="36" fill="rgba(255,255,255,0.14)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
     
     <!-- Stylized Medical Cross & Molecule -->
     <g transform="translate(0, -10)">
       <!-- Central Pill / Shield -->
-      <path d="M-30,-20 C-30,-35 30,-35 30,-20 L30,20 C30,35 -30,35 -30,20 Z" fill="none" stroke="url(#tealGrad)" stroke-width="4" stroke-linejoin="round"/>
-      <line x1="-30" y1="0" x2="30" y2="0" stroke="url(#tealGrad)" stroke-width="3"/>
-      <circle cx="-12" cy="-10" r="4" fill="#2D8F7A"/>
-      <circle cx="12" cy="10" r="4" fill="#3ec7ab"/>
+      <path d="M-30,-20 C-30,-35 30,-35 30,-20 L30,20 C30,35 -30,35 -30,20 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+      <line x1="-30" y1="0" x2="30" y2="0" stroke="#ffffff" stroke-width="3"/>
+      <circle cx="-12" cy="-10" r="4" fill="#ffffff"/>
+      <circle cx="12" cy="10" r="4" fill="#7ff2d9"/>
 
       <!-- Cross sparkle accents -->
-      <path d="M-50, -40 L-50, -20 M-60, -30 L-40, -30" stroke="#2D8F7A" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
-      <path d="M50, 20 L50, 40 M40, 30 L60, 30" stroke="#3ec7ab" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+      <path d="M-50, -40 L-50, -20 M-60, -30 L-40, -30" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+      <path d="M50, 20 L50, 40 M40, 30 L60, 30" stroke="#7ff2d9" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
     </g>
     
     <!-- Clean Badge Tag -->
-    <rect x="-70" y="55" width="140" height="24" rx="12" fill="#e8f2ee"/>
-    <text x="0" y="71" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#2D8F7A" text-anchor="middle" letter-spacing="1.5">OFFICIAL FORMULATION</text>
+    <rect x="-75" y="55" width="150" height="26" rx="13" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="0" y="72" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1.5">OFFICIAL FORMULATION</text>
   </g>
 
-  <!-- Typography -->
-  <text x="300" y="420" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#0f172a" text-anchor="middle" letter-spacing="0.5">Packaging Visual Coming Soon</text>
-  <text x="300" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#64748b" text-anchor="middle" letter-spacing="0.2">Phasecor Healthcare Formulation</text>
+  <!-- Typography in crisp white -->
+  <text x="300" y="420" font-family="system-ui, -apple-system, sans-serif" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">Packaging Visual Coming Soon</text>
+  <text x="300" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="rgba(255,255,255,0.85)" text-anchor="middle" letter-spacing="0.2">Phasecor Healthcare Formulation</text>
 
   <!-- Bottom Brand Indicator -->
   <g transform="translate(300, 520)">
-    <line x1="-40" y1="0" x2="40" y2="0" stroke="#dbe7e1" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="0" cy="0" r="3" fill="#2D8F7A"/>
+    <line x1="-40" y1="0" x2="40" y2="0" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="3" fill="#ffffff"/>
   </g>
 </svg>
