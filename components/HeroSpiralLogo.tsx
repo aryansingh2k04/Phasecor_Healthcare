@@ -89,6 +89,11 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
       const delta = Math.min((time - lastTime) / 1000, 0.1);
       lastTime = time;
 
+      if (width <= 20 || height <= 20) {
+        animationFrameId = requestAnimationFrame(render);
+        return;
+      }
+
       ctx.clearRect(0, 0, width, height);
 
       const centerX = width / 2;
@@ -116,13 +121,14 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
       globalRotation += delta * 0.196;
 
       // Draw subtle background glowing radial aura
-      const aura = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, width * 0.44);
+      const auraRadius = Math.max(30, width * 0.44);
+      const aura = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, auraRadius);
       aura.addColorStop(0, "rgba(45, 143, 122, 0.18)");
       aura.addColorStop(0.55, "rgba(69, 197, 169, 0.06)");
       aura.addColorStop(1, "rgba(7, 23, 20, 0)");
       ctx.fillStyle = aura;
       ctx.beginPath();
-      ctx.arc(centerX, centerY, width * 0.44, 0, Math.PI * 2);
+      ctx.arc(centerX, centerY, auraRadius, 0, Math.PI * 2);
       ctx.fill();
 
       // Precision background measurement rings (concentric tech/biology calibration)
@@ -200,13 +206,17 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
         const finalAlpha = Math.max(0.12, Math.min(1, (dotAlpha * (0.86 + 0.14 * wave)) + hoverBoost));
 
         // Draw dot with luminous teal radial gradient
+        const safeRadius = Math.max(1, radiusPulse);
+        const r0 = Math.max(0, safeRadius * 0.1);
+        const r1 = Math.max(r0 + 0.5, safeRadius);
+
         const dotGrad = ctx.createRadialGradient(
-          drawX - radiusPulse * 0.28,
-          drawY - radiusPulse * 0.28,
-          radiusPulse * 0.08,
+          drawX - safeRadius * 0.25,
+          drawY - safeRadius * 0.25,
+          r0,
           drawX,
           drawY,
-          radiusPulse
+          r1
         );
 
         if (hoverBoost > 0.1) {
