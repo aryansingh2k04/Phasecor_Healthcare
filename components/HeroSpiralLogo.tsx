@@ -11,7 +11,6 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const reassembleTriggerRef = useRef(0);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [isFormed, setIsFormed] = useState(false);
 
   // Trigger assembly animation
@@ -35,10 +34,14 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
       if (!canvas || !containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       dpr = Math.max(window.devicePixelRatio || 1, 2);
-      width = rect.width;
-      height = rect.height;
-      canvas.width = Math.round(width * dpr);
-      canvas.height = Math.round(height * dpr);
+      const side = Math.floor(Math.min(rect.width, rect.height));
+      if (side <= 0) return;
+      width = side;
+      height = side;
+      canvas.width = Math.round(side * dpr);
+      canvas.height = Math.round(side * dpr);
+      canvas.style.width = `${side}px`;
+      canvas.style.height = `${side}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
@@ -49,32 +52,6 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
     let globalRotation = 0;
     let assembleStartTime = performance.now();
     let currentTriggerId = reassembleTriggerRef.current;
-    let mouseX = -1000;
-    let mouseY = -1000;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!canvas) return;
-      const rect = canvas.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
-
-      // 3D perspective tilt
-      const normX = (mouseX / rect.width) * 2 - 1;
-      const normY = (mouseY / rect.height) * 2 - 1;
-      setTilt({ x: -normY * 8, y: normX * 8 });
-    };
-
-    const handleMouseLeave = () => {
-      mouseX = -1000;
-      mouseY = -1000;
-      setTilt({ x: 0, y: 0 });
-    };
-
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener("mousemove", handleMouseMove);
-      container.addEventListener("mouseleave", handleMouseLeave);
-    }
 
     // Smooth ease-out curve with subtle overshoot for biological springiness
     const easeOutCubic = (t: number) => {
@@ -98,7 +75,7 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
       const centerX = width / 2;
       const centerY = height / 2;
       // Coordinate scale from 1000x1000 viewBox with comfortable margin
-      const scale = (Math.min(width, height) / 1000) * 0.96;
+      const scale = (Math.min(width, height) / 1000) * 0.985;
 
       // Check if user clicked to re-assemble
       if (reassembleTriggerRef.current !== currentTriggerId) {
@@ -140,13 +117,13 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
         let currentR = baseR;
         let dotAlpha = 1;
 
-        // Dynamic vortex swirl when assembling (opening movement matches continuous rotation direction)
+        // Dynamic vortex swirl when assembling (unwinds strictly clockwise matching continuous rotation)
         if (rawProgress < 1) {
           const invProg = 1 - assembleProgress;
-          // Negative sign ensures opening spiral unwinds in the exact same clockwise direction as globalRotation
-          const swirlAngle = -invProg * (Math.PI * 2.4 + (dot.dist / 460) * 1.2);
-          // Swirls from inner core outward, never exceeding 100% of radius so dots are never cut off
-          const distMultiplier = 0.35 + 0.65 * Math.pow(assembleProgress, 0.85);
+          // Smooth clockwise sweep (~120 deg) with outer lead to completely align spiral unwinding with rotation
+          const swirlAngle = -invProg * (Math.PI * (2 / 3) - (dot.dist / 460) * 0.7);
+          // Expands smoothly from 45% radius to 100% with power 1.4 for clean, non-abrupt expansion
+          const distMultiplier = 0.45 + 0.55 * Math.pow(assembleProgress, 1.4);
 
           const sCos = Math.cos(swirlAngle);
           const sSin = Math.sin(swirlAngle);
@@ -178,10 +155,6 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
 
     return () => {
       window.removeEventListener("resize", resize);
-      if (container) {
-        container.removeEventListener("mousemove", handleMouseMove);
-        container.removeEventListener("mouseleave", handleMouseLeave);
-      }
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -189,12 +162,8 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
   return (
     <div
       ref={containerRef}
-      className={`relative flex items-center justify-center select-none group cursor-pointer ${className}`}
+      className={`relative flex items-center justify-center select-none group cursor-pointer aspect-square ${className}`}
       onClick={handleReassemble}
-      style={{
-        transform: `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-        transition: "transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1)",
-      }}
       title="Phasecor Healthcare Emblem • Click to Re-form Logo"
     >
       {/* Background radial backlight glow matching hero */}
@@ -203,7 +172,7 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
       {/* Main Interactive Canvas */}
       <canvas
         ref={canvasRef}
-        className="w-full h-full relative z-10 block"
+        className="w-full h-full aspect-square relative z-10 block"
         style={{ touchAction: "none" }}
       />
     </div>

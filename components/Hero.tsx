@@ -206,7 +206,7 @@ export default function Hero() {
 
           {/* Right Graphic: Animated Rotating Phasecor Spiral Emblem (To the right of the red line) */}
           <div className="lg:col-span-5 xl:col-span-4 flex justify-center lg:justify-end items-center z-10">
-            <div className="relative w-72 h-72 sm:w-88 sm:h-88 md:w-96 md:h-96 lg:w-[380px] lg:h-[380px] xl:w-[420px] xl:h-[420px] flex items-center justify-center">
+            <div className="relative w-72 sm:w-88 md:w-96 lg:w-[390px] xl:w-[430px] aspect-square max-w-full flex items-center justify-center">
               <HeroSpiralLogo className="w-full h-full" />
             </div>
           </div>
