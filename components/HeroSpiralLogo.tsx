@@ -98,7 +98,7 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
       const centerX = width / 2;
       const centerY = height / 2;
       // Coordinate scale from 1000x1000 viewBox with comfortable margin
-      const scale = (Math.min(width, height) / 1000) * 0.92;
+      const scale = (Math.min(width, height) / 1000) * 0.96;
 
       // Check if user clicked to re-assemble
       if (reassembleTriggerRef.current !== currentTriggerId) {
@@ -140,10 +140,11 @@ export default function HeroSpiralLogo({ className = "" }: HeroSpiralLogoProps) 
         let currentR = baseR;
         let dotAlpha = 1;
 
-        // Dynamic vortex swirl when assembling (always stays inside canvas bounds)
+        // Dynamic vortex swirl when assembling (opening movement matches continuous rotation direction)
         if (rawProgress < 1) {
           const invProg = 1 - assembleProgress;
-          const swirlAngle = invProg * (Math.PI * 2.4 + (dot.dist / 460) * 1.2);
+          // Negative sign ensures opening spiral unwinds in the exact same clockwise direction as globalRotation
+          const swirlAngle = -invProg * (Math.PI * 2.4 + (dot.dist / 460) * 1.2);
           // Swirls from inner core outward, never exceeding 100% of radius so dots are never cut off
           const distMultiplier = 0.35 + 0.65 * Math.pow(assembleProgress, 0.85);
 
