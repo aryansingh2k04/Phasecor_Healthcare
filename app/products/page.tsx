@@ -45,7 +45,7 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Quality Care within Reach: <br />
+              Quality Healthcare within Reach: <br />
               <span className="bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent">
                 Therapeutics &amp; Formulations
               </span>

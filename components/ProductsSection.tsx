@@ -29,7 +29,7 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
         {/* Section Header */}
         <div className="text-center space-y-2 mb-14">
           <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
-            Quality Care within Reach
+            Quality Healthcare within Reach
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
             Therapeutics &amp; Clinical Formulations

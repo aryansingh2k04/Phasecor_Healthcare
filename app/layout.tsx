@@ -13,7 +13,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://phasecor.com"),
-  title: "Phasecor Healthcare | Quality Care within Reach",
+  title: "Phasecor Healthcare | Quality Healthcare within Reach",
   description:
     "Phasecor Healthcare bridges clinical science and therapeutic formulations engineered for restorative, phased systemic and skin health.",
   icons: {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     shortcut: "/icon.png",
   },
   openGraph: {
-    title: "Phasecor Healthcare | Quality Care within Reach",
+    title: "Phasecor Healthcare | Quality Healthcare within Reach",
     description:
       "Innovative, high-quality, and affordable multi-specialty therapeutics and clinical formulations.",
     url: "https://phasecor.com",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Phasecor Healthcare | Quality Care within Reach",
+    title: "Phasecor Healthcare | Quality Healthcare within Reach",
     description:
       "Innovative, high-quality, and affordable multi-specialty therapeutics and clinical formulations.",
     images: ["/og-image.png"],

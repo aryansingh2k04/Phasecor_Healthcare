@@ -295,7 +295,7 @@ export const MEDICINE_PIPELINE: PipelineItem[] = [
 
 // Phasecor Healthcare Core Philosophy & Pillars (from Official Brochure)
 export const BRAND_PHILOSOPHY = {
-  tagline: "Quality Care within Reach",
+  tagline: "Quality Healthcare within Reach",
   statement:
     "Phasecor is committed to delivering innovative, high-quality, and affordable healthcare solutions that empower better lives.",
   pillars: [

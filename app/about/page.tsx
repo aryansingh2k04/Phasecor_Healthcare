@@ -17,7 +17,7 @@ import { BRAND_PHILOSOPHY } from "@/components/data";
 export const metadata: Metadata = {
   title: "About Us | Phasecor Healthcare",
   description:
-    "Discover Phasecor Healthcare's mission: Quality Care within Reach. Delivering innovative, affordable, and high-quality multi-specialty healthcare and dermatological solutions.",
+    "Discover Phasecor Healthcare's mission: Quality Healthcare within Reach. Delivering innovative, affordable, and high-quality multi-specialty healthcare and dermatological solutions.",
 };
 
 export default function AboutPage() {
@@ -80,7 +80,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-5">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-              Quality Care <br />
+              Quality Healthcare <br />
               <span className="bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent">
                 within Reach
               </span>
