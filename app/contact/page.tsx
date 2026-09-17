@@ -48,7 +48,7 @@ function ContactForm() {
   };
 
   return (
-    <div className="p-8 sm:p-10 rounded-md bg-[#fbfdfc] border border-slate-200 shadow-sm">
+    <div className="p-5 sm:p-8 md:p-10 rounded-md bg-[#fbfdfc] border border-slate-200 shadow-sm">
       {submitted ? (
         <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
           <div className="w-16 h-16 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center mx-auto">
@@ -215,11 +215,11 @@ export default function ContactPage() {
   return (
     <div className="bg-white">
       {/* Header Banner */}
-      <section className="relative bg-[#071714] text-white py-20 lg:py-24 overflow-hidden text-center">
+      <section className="relative bg-[#071714] text-white py-16 sm:py-20 lg:py-24 overflow-hidden text-center">
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,rgba(45,143,122,0.25)_0%,rgba(7,23,20,0)_65%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
               Connect with <br />
               <span className="bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent">
                 Phasecor Healthcare
@@ -233,16 +233,16 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content: Form & Direct Contact Info */}
-      <section className="py-20 bg-white">
+      <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Left Column: Direct Coordinates */}
-            <div className="lg:col-span-5 space-y-8">
-              <div className="space-y-3">
+            <div className="lg:col-span-5 space-y-6 sm:space-y-8">
+              <div className="space-y-2 sm:space-y-3">
                 <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
                   Corporate Coordinates
                 </span>
-                <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                   Reach Our Healthcare Advisory Team
                 </h2>
                 <p className="text-sm text-slate-600 leading-relaxed">
@@ -252,7 +252,7 @@ export default function ContactPage() {
 
               {/* Information Cards */}
               <div className="space-y-4">
-                <div className="p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
+                <div className="p-4 sm:p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-3.5 sm:gap-4">
                   <div className="w-10 h-10 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
@@ -268,7 +268,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
+                <div className="p-4 sm:p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-3.5 sm:gap-4">
                   <div className="w-10 h-10 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
@@ -284,7 +284,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
+                <div className="p-4 sm:p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-3.5 sm:gap-4">
                   <div className="w-10 h-10 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
@@ -296,7 +296,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-4">
+                <div className="p-4 sm:p-6 rounded-md bg-[#fbfdfc] border border-slate-200 flex items-start gap-3.5 sm:gap-4">
                   <div className="w-10 h-10 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
@@ -313,7 +313,7 @@ export default function ContactPage() {
               </div>
 
               {/* Retail store link callout */}
-              <div className="p-6 rounded-md bg-[#e8f2ee]/50 border border-[#b5d5cb] space-y-2">
+              <div className="p-4 sm:p-6 rounded-md bg-[#e8f2ee]/50 border border-[#b5d5cb] space-y-2">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">
                   Looking for the Retail Storefront?
                 </h4>
@@ -345,18 +345,18 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-[#f7faf8] border-t border-slate-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <section className="py-14 sm:py-20 bg-[#f7faf8] border-t border-slate-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
           <div className="text-center space-y-2">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
               Frequently Asked Questions
             </span>
-            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               Clinical &amp; Corporate Inquiries FAQ
             </h2>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
               return (
@@ -367,7 +367,7 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="w-full p-6 text-left flex items-center justify-between gap-4"
+                    className="w-full p-4 sm:p-6 text-left flex items-center justify-between gap-3 sm:gap-4"
                   >
                     <span className="text-sm sm:text-base font-bold text-slate-900">
                       {faq.q}
@@ -379,7 +379,7 @@ export default function ContactPage() {
                     />
                   </button>
                   {isOpen && (
-                    <div className="px-6 pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                    <div className="px-4 pb-4 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 sm:pt-4">
                       {faq.a}
                     </div>
                   )}

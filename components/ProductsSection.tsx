@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowRight } from "lucide-react";
 import { PRODUCTS, Product } from "./data";
 import ProductCard from "./ProductCard";
 import ProductModal from "./ProductModal";
@@ -16,6 +15,12 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
   const router = useRouter();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  // Exactly 3 featured formulations on homepage: ORS (Electcor) + 2 with photos (Niascobutin & UVoThera)
+  const featuredIds = ["electcor", "niascobutin", "uvothera"];
+  const featuredProducts = featuredIds
+    .map((id) => PRODUCTS.find((p) => p.id === id))
+    .filter((p): p is Product => Boolean(p));
+
   const handleEnquire = (productId: string) => {
     if (onSelectProductForEnquiry) {
       onSelectProductForEnquiry(productId);
@@ -24,14 +29,14 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
   };
 
   return (
-    <section id="products" className="py-20 bg-white border-b border-slate-100 scroll-mt-16">
+    <section id="products" className="py-14 sm:py-20 bg-white border-b border-slate-100 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center space-y-2 mb-14">
+        <div className="text-center space-y-2 mb-10 sm:mb-14">
           <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
             Quality Healthcare within Reach
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
             Therapeutics &amp; Clinical Formulations
           </h2>
           <p className="text-sm text-slate-500">
@@ -39,9 +44,9 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
           </p>
         </div>
 
-        {/* 3-Column Product Cards Grid */}
+        {/* 3-Column Product Cards Grid (Exactly 3 Products) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-          {PRODUCTS.map((product) => (
+          {featuredProducts.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
@@ -52,13 +57,12 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
         </div>
 
         {/* Explore All Formulations CTA */}
-        <div className="pt-12 flex justify-center">
+        <div className="pt-10 sm:pt-12 flex justify-center">
           <Link
             href="/products"
-            className="px-8 py-3.5 rounded-md bg-slate-900 text-white hover:bg-[#2D8F7A] text-xs font-semibold tracking-wider uppercase transition-all inline-flex items-center gap-2 shadow-sm"
+            className="w-full sm:w-auto text-center justify-center px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white hover:bg-[#237362] text-xs font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center shadow-sm hover:shadow-md"
           >
-            <span>Explore All Formulations &amp; Pipeline</span>
-            <ArrowRight className="w-4 h-4" />
+            Explore All Formulations
           </Link>
         </div>
       </div>

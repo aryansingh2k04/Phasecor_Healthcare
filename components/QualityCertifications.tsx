@@ -27,17 +27,17 @@ export default function QualityCertifications() {
   ];
 
   return (
-    <section id="certifications" className="py-20 bg-white border-t border-slate-100 scroll-mt-16">
+    <section id="certifications" className="py-14 sm:py-20 bg-white border-t border-slate-100 scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Quality Narrative */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-md bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Quality Assurance & Rigor</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Verified Testing Protocols for Uncompromising Safety
             </h2>
 
@@ -100,11 +100,11 @@ export default function QualityCertifications() {
       {/* Certificate Lightbox Modal */}
       {certModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={() => setCertModalOpen(false)}
         >
           <div
-            className="relative max-w-3xl w-full bg-white rounded-md p-6 shadow-2xl space-y-4"
+            className="relative max-w-3xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-md p-4 sm:p-6 shadow-2xl space-y-4"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -121,7 +121,7 @@ export default function QualityCertifications() {
               </button>
             </div>
 
-            <div className="relative w-full h-[70vh] rounded-md overflow-hidden bg-slate-50">
+            <div className="relative w-full h-[55vh] sm:h-[70vh] rounded-md overflow-hidden bg-slate-50">
               <Image
                 src="/images/certificates/certificate.jpg"
                 alt="Quality Certification Detail"

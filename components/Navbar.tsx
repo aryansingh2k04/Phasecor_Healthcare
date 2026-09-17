@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,7 +9,59 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let accumulatedUp = 0;
+    let accumulatedDown = 0;
+    // Industry standard: deliberate scroll up requires at least 25px of intentional upward movement
+    const SCROLL_UP_THRESHOLD = 25;
+    const SCROLL_DOWN_THRESHOLD = 15;
+    const TOP_THRESHOLD = 40;
+
+    const handleScroll = () => {
+      const currentScrollY = Math.max(0, window.scrollY);
+      const deltaY = currentScrollY - lastScrollY;
+
+      setIsScrolled(currentScrollY > 20);
+
+      // Always visible near top of page
+      if (currentScrollY <= TOP_THRESHOLD) {
+        setVisible(true);
+        accumulatedUp = 0;
+        accumulatedDown = 0;
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      if (deltaY > 0) {
+        // Scrolling down -> hide navbar after crossing threshold
+        accumulatedDown += deltaY;
+        accumulatedUp = 0;
+
+        if (accumulatedDown >= SCROLL_DOWN_THRESHOLD) {
+          setVisible(false);
+          setMobileMenuOpen(false);
+        }
+      } else if (deltaY < 0) {
+        // Scrolling up -> reappear only on deliberate, intentional upward scroll
+        accumulatedUp += Math.abs(deltaY);
+        accumulatedDown = 0;
+
+        if (accumulatedUp >= SCROLL_UP_THRESHOLD) {
+          setVisible(true);
+        }
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { label: "Home", href: "/" },
@@ -21,7 +73,13 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#f9f9eb]/95 backdrop-blur-md border-b border-[#e8e4d2] transition-all duration-300">
+    <header
+      className={`sticky top-0 z-50 w-full bg-[#f9f9eb]/95 backdrop-blur-md border-b border-[#e8e4d2] transition-transform duration-300 ease-in-out will-change-transform ${
+        visible || mobileMenuOpen
+          ? "translate-y-0 pointer-events-auto"
+          : "-translate-y-full pointer-events-none"
+      } ${isScrolled ? "shadow-sm" : ""}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[68px] flex items-center justify-between">
         {/* Brand Logo - Clean Logo Only */}
         <Link href="/" className="flex items-center group shrink-0">
@@ -93,7 +151,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg text-slate-700 hover:text-[#2D8F7A] transition-colors"
+            className="p-2.5 rounded-lg text-slate-700 hover:text-[#2D8F7A] transition-colors cursor-pointer"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -103,7 +161,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#e8e4d2] bg-[#f9f9eb] px-6 pt-3 pb-6 space-y-3 shadow-lg">
+        <div className="md:hidden border-b border-[#e8e4d2] bg-[#f9f9eb] px-6 pt-3 pb-6 space-y-3 shadow-lg max-h-[calc(100vh-4.5rem)] overflow-y-auto">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               const isActive = !link.isExternal && (

@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
   // --- CORE THERAPEUTIC HEALTHCARE MEDICINES (MAIN FOCUS) ---
   {
     id: "uticor",
-    name: "UTIcor™ Syrup",
+    name: "UTIcor™",
     subtitle: "Cranberry Extract, D-Mannose & Potassium Magnesium Citrate Syrup",
     category: "Therapeutic Medicines",
     subCategory: "Urinary Health & Nephrology",
@@ -47,8 +47,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "electcor",
-    name: "Electcor™ Oral Rehydration & Electrolytes",
-    subtitle: "Sugar-Free WHO Osmolarity Electrolyte Sachet with Co-Enzyme Q10",
+    name: "Electcor™",
+    subtitle: "Sugar-Free WHO Osmolarity Oral Rehydration Sachet with Co-Enzyme Q10",
     category: "Therapeutic Medicines",
     subCategory: "Electrolyte & Rehydration Therapy",
     badge: "With Co-Enzyme Q10",
@@ -78,8 +78,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "chronicor",
-    name: "Chronicor™ Joint & Musculoskeletal Tablets",
-    subtitle: "Comprehensive Cartilage, Bone & Neuropathic Restoration",
+    name: "Chronicor™",
+    subtitle: "Comprehensive Cartilage, Bone & Neuropathic Joint Restoration Tablets",
     category: "Therapeutic Medicines",
     subCategory: "Musculoskeletal & Joint Care",
     badge: "Joint & Bone Care",
@@ -110,8 +110,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "ovaphase",
-    name: "OvaPhase™ Women's Hormonal & PCOS Tablets",
-    subtitle: "Targeted Inositol & Ovulatory Regulation Formula",
+    name: "OvaPhase™",
+    subtitle: "Physiological 40:1 Inositol Formula for Women's Hormonal & PCOS Support",
     category: "Therapeutic Medicines",
     subCategory: "Women's Health & Gynaecology",
     badge: "Women's Health & PCOS",
@@ -143,8 +143,8 @@ export const PRODUCTS: Product[] = [
   // --- CLINICAL DERMATOLOGY & NUTRICOSMETIC RANGE ---
   {
     id: "niascobutin",
-    name: "Niascobutin™ Face Serum",
-    subtitle: "High-Potency Multi-Action Restorative Serum",
+    name: "Niascobutin™",
+    subtitle: "High-Potency Multi-Action Restorative Face Serum with Niacinamide",
     category: "Clinical Dermatology",
     subCategory: "Topical Dermaceuticals",
     badge: "Derma Formulation",
@@ -174,8 +174,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "primathion",
-    name: "Primathion™ Oral Nutricosmetic",
-    subtitle: "Advanced Dual-Delivery Cellular Rejuvenation Supplement",
+    name: "Primathion™",
+    subtitle: "Advanced Dual-Delivery Cellular Rejuvenation Oral Nutricosmetic",
     category: "Clinical Dermatology",
     subCategory: "Oral Nutricosmetics",
     badge: "Nutricosmetic",
@@ -205,8 +205,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "uvothera",
-    name: "UVoThera™ SPF 60++++ Sunscreen",
-    subtitle: "Broad-Spectrum Photoprotective Ultra-Light Gel",
+    name: "UVoThera™",
+    subtitle: "Broad-Spectrum SPF 60+ PA++++ Photoprotective Ultra-Light Gel",
     category: "Clinical Dermatology",
     subCategory: "Photoprotection",
     badge: "Photoprotection",

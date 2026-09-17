@@ -32,15 +32,15 @@ export default function SciencePhilosophy() {
   ];
 
   return (
-    <section id="science" className="py-20 sm:py-28 bg-[#f7faf8] border-t border-slate-100">
+    <section id="science" className="py-14 sm:py-20 lg:py-28 bg-[#f7faf8] border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with Phasecor Core Philosophy */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-md bg-[#e8f2ee] text-[#2D8F7A] text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Our Clinical Philosophy</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
             “Formulate Right. Give It Time. See Real Change.”
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -49,7 +49,7 @@ export default function SciencePhilosophy() {
         </div>
 
         {/* 3 Scientific Pillar Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
@@ -69,7 +69,7 @@ export default function SciencePhilosophy() {
                 </div>
               </div>
 
-              <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
+              <div className="p-5 sm:p-6 space-y-3 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
                   <span className="text-[11px] font-bold text-white/80 uppercase tracking-wider block">
                     {pillar.subtitle}
@@ -87,7 +87,7 @@ export default function SciencePhilosophy() {
         </div>
 
         {/* Principles Summary Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-10 sm:mt-12 p-5 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           <div className="space-y-1">
             <span className="text-2xl font-extrabold text-white/40">01</span>
             <h4 className="text-sm font-bold text-white">Science-Backed</h4>

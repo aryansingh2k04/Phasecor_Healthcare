@@ -26,17 +26,17 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
   };
 
   return (
-    <section id="contact" className="py-20 bg-white border-b border-slate-100 relative scroll-mt-16">
+    <section id="contact" className="py-14 sm:py-20 bg-white border-b border-slate-100 relative scroll-mt-16">
       <div id="enquiry" className="absolute -top-16 left-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Left Column */}
           <div className="lg:col-span-5 space-y-5">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
               Contact Us
             </span>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
               Clinical &amp; Product Inquiries
             </h2>
 
@@ -45,7 +45,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
             </p>
 
             {/* Contact Info Box */}
-            <div className="p-6 rounded-md bg-[#f9faf9] border border-slate-200 space-y-4">
+            <div className="p-5 sm:p-6 rounded-md bg-[#f9faf9] border border-slate-200 space-y-4">
               <div className="flex items-start gap-3 text-xs">
                 <Mail className="w-4 h-4 text-[#2D8F7A] shrink-0 mt-0.5" />
                 <div>
@@ -88,7 +88,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
 
           {/* Right Column: Clean Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-md bg-[#fbfdfc] border border-slate-200 shadow-sm">
+            <div className="p-5 sm:p-8 md:p-10 rounded-md bg-[#fbfdfc] border border-slate-200 shadow-sm">
               {submitted ? (
                 <div className="py-12 text-center space-y-4 animate-in fade-in duration-300">
                   <div className="w-14 h-14 rounded-md bg-[#e8f2ee] text-[#2D8F7A] flex items-center justify-center mx-auto">

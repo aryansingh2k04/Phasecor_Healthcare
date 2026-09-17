@@ -19,14 +19,14 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-md shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-md shadow-2xl border border-slate-200 p-5 sm:p-7 md:p-8 space-y-5 sm:space-y-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2.5 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
           aria-label="Close details"
         >
           <X className="w-5 h-5" />
@@ -43,14 +43,17 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
             />
           </div>
 
-          <div className="space-y-2 flex-1">
+          <div className="space-y-1.5 flex-1">
             <h2 className="text-2xl font-bold text-slate-900 leading-tight">
               {product.name}
             </h2>
             <p className="text-sm font-semibold text-[#2D8F7A]">
+              {product.subtitle}
+            </p>
+            <p className="text-xs font-medium text-slate-500">
               {product.packaging}
             </p>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1 border-t border-slate-100">
               {product.summary}
             </p>
           </div>
@@ -99,11 +102,11 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
         </div>
 
         {/* Modal Action Buttons */}
-        <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+        <div className="pt-4 border-t border-slate-100 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-2.5 sm:gap-3">
           <button
             type="button"
             onClick={onClose}
-            className="px-6 py-2.5 rounded-md border border-slate-200 text-xs font-semibold uppercase tracking-wider text-slate-700 hover:bg-slate-50 transition-colors"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-md border border-slate-200 text-xs font-semibold uppercase tracking-wider text-slate-700 hover:bg-slate-50 transition-colors text-center"
           >
             Close
           </button>
@@ -113,7 +116,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
               onClose();
               onEnquire(product.id);
             }}
-            className="px-8 py-2.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shadow-sm"
+            className="w-full sm:w-auto px-8 py-2.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shadow-sm text-center"
           >
             Enquiry
           </button>

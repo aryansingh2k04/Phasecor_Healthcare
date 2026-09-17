@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
+import { Sparkles, ShieldCheck } from "lucide-react";
 import Hero from "@/components/Hero";
 import SupportBlocks from "@/components/SupportBlocks";
 import ProductsSection from "@/components/ProductsSection";
@@ -74,7 +74,6 @@ export default function Home() {
                 className="px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all inline-flex items-center gap-2 shadow-sm"
               >
                 <span>Discover Our Full Mission</span>
-                <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/certifications"

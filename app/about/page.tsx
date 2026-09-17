@@ -6,7 +6,6 @@ import {
   Lightbulb,
   ShieldCheck,
   HeartHandshake,
-  ArrowRight,
   CheckCircle2,
   Activity,
   Pill,
@@ -75,11 +74,11 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       {/* Page Header Hero */}
-      <section className="relative bg-[#071714] text-white py-20 lg:py-28 overflow-hidden text-center">
+      <section className="relative bg-[#071714] text-white py-16 sm:py-20 lg:py-28 overflow-hidden text-center">
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,rgba(45,143,122,0.25)_0%,rgba(7,23,20,0)_65%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-5">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
               Quality Healthcare <br />
               <span className="bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent">
                 within Reach
@@ -93,13 +92,13 @@ export default function AboutPage() {
       </section>
 
       {/* Official 3 Pillars from Brochure */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-14 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
           <div className="max-w-3xl space-y-3">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
               Our Guiding Tenets
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
               Three Pillars of Healthcare Excellence
             </h2>
             <p className="text-sm sm:text-base text-slate-600">
@@ -107,13 +106,13 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {brochurePillars.map((p) => {
               const Icon = p.icon;
               return (
                 <div
                   key={p.title}
-                  className="p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1"
+                  className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="w-14 h-14 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20">
                     <Icon className="w-7 h-7 text-white" />
@@ -134,13 +133,13 @@ export default function AboutPage() {
       </section>
 
       {/* Therapeutic Specialties Grid */}
-      <section className="py-20 bg-[#f7faf8] border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section className="py-14 sm:py-20 bg-[#f7faf8] border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
               Specialized Divisions
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
               Comprehensive Therapeutic Spectrum
             </h2>
             <p className="text-sm text-slate-600">
@@ -148,11 +147,11 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {therapeuticAreas.map((area) => (
               <div
                 key={area.title}
-                className="p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 space-y-3 flex flex-col justify-between"
+                className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 space-y-3 flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">

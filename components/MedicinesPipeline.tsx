@@ -37,14 +37,14 @@ export default function MedicinesPipeline() {
   ];
 
   return (
-    <section id="pipeline" className="py-20 bg-[#f9faf9] border-b border-slate-100">
+    <section id="pipeline" className="py-14 sm:py-20 bg-[#f9faf9] border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Clean Header */}
-        <div className="text-center space-y-2 mb-14">
+        <div className="text-center space-y-2 mb-10 sm:mb-14">
           <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
             Pharmaceutical Expansion
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight">
             Medicines & Therapeutic Pipeline
           </h2>
           <p className="text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
@@ -53,13 +53,13 @@ export default function MedicinesPipeline() {
         </div>
 
         {/* Clean Cards - No Fake Numbers, No Badges */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {pipelineMedicines.map((item) => (
             <div
               key={item.title}
-              className="p-7 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1"
+              className="p-5 sm:p-7 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-3 sm:space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1"
             >
-              <div className="flex items-center justify-between border-b border-white/20 pb-3">
+              <div className="flex items-center justify-between gap-2 flex-wrap border-b border-white/20 pb-3">
                 <span className="px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-xs font-semibold text-white">
                   {item.category}
                 </span>
@@ -69,7 +69,7 @@ export default function MedicinesPipeline() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-white leading-snug">
+                <h3 className="text-lg sm:text-xl font-bold text-white leading-snug">
                   {item.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-white/90 leading-relaxed mt-2 font-normal">

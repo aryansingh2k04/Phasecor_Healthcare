@@ -42,10 +42,10 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
         {/* Product Info Section - Seamlessly connected with no dead empty space */}
         <div className="flex flex-col flex-1 p-5 pt-3">
           <div className="space-y-1.5">
-            <h3 className="text-xl font-bold text-white leading-snug line-clamp-1">
+            <h3 className="text-xl font-bold text-white leading-snug">
               {product.name}
             </h3>
-            <p className="text-xs sm:text-sm text-white/90 leading-relaxed line-clamp-2 min-h-[2.25rem]">
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed line-clamp-2 min-h-[2.5rem]">
               {product.subtitle}
             </p>
             <div>
@@ -75,7 +75,7 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
             setShowOverlay(false);
           }
         }}
-        className={`absolute inset-0 z-20 bg-[#071c17]/95 backdrop-blur-md border border-white/20 text-white p-5 rounded-xl flex flex-col justify-between transition-all duration-300 ease-out cursor-default ${
+        className={`absolute inset-0 z-20 bg-[#071c17]/95 backdrop-blur-md border border-white/20 text-white p-4 sm:p-5 rounded-xl flex flex-col justify-between transition-all duration-300 ease-out cursor-default ${
           showOverlay
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 translate-y-6 pointer-events-none"
@@ -84,7 +84,7 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
         {/* Overlay Header: Product Title & Close Button */}
         <div>
           <div className="flex items-center justify-between pb-2 border-b border-white/20">
-            <h4 className="text-lg sm:text-xl font-bold text-[#7ff2d9] line-clamp-1">
+            <h4 className="text-lg sm:text-xl font-bold text-[#7ff2d9]">
               {product.name}
             </h4>
             <button
@@ -93,7 +93,7 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
                 e.stopPropagation();
                 setShowOverlay(false);
               }}
-              className="p-1 text-white/70 hover:text-white rounded-full hover:bg-white/10 transition-colors shrink-0 ml-2 cursor-pointer"
+              className="p-2 -mr-1 text-white/70 hover:text-white rounded-full hover:bg-white/10 transition-colors shrink-0 ml-2 cursor-pointer"
               aria-label="Close details"
             >
               <X className="w-5 h-5" />
@@ -101,7 +101,7 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
           </div>
 
           {/* Middle Content Area */}
-          <div className="mt-3 space-y-2.5 max-h-[300px] overflow-y-auto pr-1 text-left scrollbar-thin">
+          <div className="mt-2.5 sm:mt-3 space-y-2 sm:space-y-2.5 max-h-[230px] sm:max-h-[270px] md:max-h-[300px] overflow-y-auto pr-1 text-left scrollbar-thin">
             {/* Composition */}
             <p className="text-xs text-white/90 leading-relaxed">
               <strong className="text-white font-semibold">Composition: </strong>

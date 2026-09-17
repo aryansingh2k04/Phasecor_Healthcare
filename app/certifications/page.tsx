@@ -13,8 +13,7 @@ import {
   FlaskConical,
   Award,
   Microscope,
-  FileText,
-  ArrowRight
+  FileText
 } from "lucide-react";
 
 export default function CertificationsPage() {
@@ -95,11 +94,11 @@ export default function CertificationsPage() {
   return (
     <div className="bg-white">
       {/* Header Banner */}
-      <section className="relative bg-[#071714] text-white py-20 lg:py-24 overflow-hidden text-center">
+      <section className="relative bg-[#071714] text-white py-16 sm:py-20 lg:py-24 overflow-hidden text-center">
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,rgba(45,143,122,0.25)_0%,rgba(7,23,20,0)_65%)]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
               Certifications &amp; <br />
               <span className="bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent">
                 Clinical Rigor
@@ -113,16 +112,16 @@ export default function CertificationsPage() {
       </section>
 
       {/* Main Certification Showcase */}
-      <section className="py-20 bg-white">
+      <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             {/* Left Column: Official Certificate Card */}
             <div className="lg:col-span-5 flex justify-center">
               <div
                 onClick={() => setCertModalOpen(true)}
-                className="group relative w-full max-w-md rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white p-6 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden hover:-translate-y-1"
+                className="group relative w-full max-w-md rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden hover:-translate-y-1"
               >
-                <div className="relative w-full h-80 sm:h-96 rounded-md bg-white border border-white/20 overflow-hidden flex items-center justify-center">
+                <div className="relative w-full h-72 sm:h-96 rounded-md bg-white border border-white/20 overflow-hidden flex items-center justify-center">
                   <Image
                     src="/images/certificates/certificate.jpg"
                     alt="Phasecor Quality Certification"
@@ -130,19 +129,19 @@ export default function CertificationsPage() {
                     className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/30 transition-colors flex items-center justify-center">
-                    <span className="opacity-0 group-hover:opacity-100 px-5 py-2.5 rounded-md bg-white text-slate-900 text-xs font-bold shadow-lg transition-opacity duration-200 flex items-center gap-2">
+                    <span className="opacity-0 group-hover:opacity-100 px-4 sm:px-5 py-2 sm:py-2.5 rounded-md bg-white text-slate-900 text-xs font-bold shadow-lg transition-opacity duration-200 flex items-center gap-2">
                       <Eye className="w-4 h-4 text-[#2D8F7A]" />
                       Click to View Document
                     </span>
                   </div>
                 </div>
 
-                <div className="pt-5 flex items-center justify-between">
+                <div className="pt-4 sm:pt-5 flex items-center justify-between">
                   <div>
                     <h3 className="text-sm font-bold text-white">Certificate of Analysis &amp; Compliance</h3>
                     <p className="text-xs text-white/80">Official Laboratory Testing Documentation</p>
                   </div>
-                  <span className="px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-[10px] font-bold text-white tracking-wider">
+                  <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-[10px] font-bold text-white tracking-wider">
                     VERIFIED
                   </span>
                 </div>
@@ -150,11 +149,11 @@ export default function CertificationsPage() {
             </div>
 
             {/* Right Column: Narrative */}
-            <div className="lg:col-span-7 space-y-6">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
               <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
                 Uncompromising Standards
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 Verified Testing Protocols for Guaranteed Biocompatibility
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
@@ -192,13 +191,13 @@ export default function CertificationsPage() {
       </section>
 
       {/* Grid of Certifications */}
-      <section className="py-20 bg-[#f7faf8] border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section className="py-14 sm:py-20 bg-[#f7faf8] border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
               Compliance Frameworks
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
               Recognized Manufacturing &amp; Safety Accreditations
             </h2>
             <p className="text-sm text-slate-600">
@@ -206,11 +205,11 @@ export default function CertificationsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {certifications.map((cert) => (
               <div
                 key={cert.title}
-                className="p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between space-y-4"
+                className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -240,13 +239,13 @@ export default function CertificationsPage() {
       </section>
 
       {/* 5-Step Quality Assurance Lifecycle */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="py-14 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-16">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
               The Quality Assurance Pipeline
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
               5-Stage Batch Testing Lifecycle
             </h2>
             <p className="text-sm text-slate-600">
@@ -254,13 +253,13 @@ export default function CertificationsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6">
             {qualityStages.map((stage) => {
               const Icon = stage.icon;
               return (
                 <div
                   key={stage.step}
-                  className="p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 space-y-4 flex flex-col justify-between"
+                  className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 space-y-4 flex flex-col justify-between"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
@@ -280,11 +279,11 @@ export default function CertificationsPage() {
       {/* Certificate Lightbox Modal */}
       {certModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200"
           onClick={() => setCertModalOpen(false)}
         >
           <div
-            className="relative max-w-3xl w-full bg-white rounded-md p-6 shadow-2xl space-y-4"
+            className="relative max-w-3xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-md p-4 sm:p-6 shadow-2xl space-y-4"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between pb-3 border-b border-slate-100">
@@ -301,7 +300,7 @@ export default function CertificationsPage() {
               </button>
             </div>
 
-            <div className="relative w-full h-[70vh] rounded-md overflow-hidden bg-slate-50">
+            <div className="relative w-full h-[55vh] sm:h-[70vh] rounded-md overflow-hidden bg-slate-50">
               <Image
                 src="/images/certificates/certificate.jpg"
                 alt="Quality Certification Detail"

@@ -159,8 +159,8 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[620px] lg:min-h-[720px] flex items-center bg-[#071714] text-white overflow-hidden">
-      {/* Deep Radial Glow background matching Phasecor teal palette centered around spiral on the right */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_78%_50%,rgba(45,143,122,0.24)_0%,rgba(20,65,55,0.12)_38%,rgba(7,23,20,0)_70%)]" />
+      {/* Deep Radial Glow background matching Phasecor teal palette (centered on spiral on mobile top & desktop right) */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_22%,rgba(45,143,122,0.30)_0%,rgba(20,65,55,0.12)_40%,rgba(7,23,20,0)_70%)] lg:bg-[radial-gradient(circle_at_78%_50%,rgba(45,143,122,0.24)_0%,rgba(20,65,55,0.12)_38%,rgba(7,23,20,0)_70%)]" />
       <div className="absolute top-0 left-0 w-96 h-96 pointer-events-none bg-[radial-gradient(circle,rgba(69,197,169,0.06)_0%,transparent_70%)]" />
 
       {/* Subtle tech grid background matching portfolio aesthetic */}
@@ -172,11 +172,18 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-85"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10 items-center">
-          {/* Left Content: Headline, Subtitle, and 2 CTA Buttons (Shifted right closer to spiral) */}
-          <div className="lg:col-span-7 xl:col-span-7 space-y-6 text-center lg:text-left z-10 lg:pl-10 xl:pl-16">
-            <h1 className="text-4xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] max-w-2xl">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-14 sm:py-16 lg:py-24 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 xl:gap-10 items-center">
+          {/* Graphic: Animated Rotating Phasecor Spiral Emblem (Order 1 on mobile: above text; Order 2 on desktop: right side) */}
+          <div className="order-1 lg:order-2 lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-start items-center z-10">
+            <div className="relative w-48 sm:w-64 md:w-80 lg:w-[390px] xl:w-[430px] aspect-square max-w-[75vw] sm:max-w-[85vw] flex items-center justify-center">
+              <HeroSpiralLogo className="w-full h-full" />
+            </div>
+          </div>
+
+          {/* Content: Headline, Subtitle, and 2 CTA Buttons (Order 2 on mobile: below SVG; Order 1 on desktop: left side) */}
+          <div className="order-2 lg:order-1 lg:col-span-7 xl:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left z-10 lg:pl-10 xl:pl-16">
+            <h1 className="text-3xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] max-w-2xl">
               <span className="block animate-hero-title">
                 Engineering the
               </span>
@@ -185,31 +192,24 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-hero-desc">
+            <p className="text-sm sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-hero-desc">
               Next-gen dermatological formulations &amp; therapeutic medicines engineered for restorative cellular care.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3 animate-hero-actions">
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3.5 sm:gap-4 pt-2 sm:pt-3 animate-hero-actions w-full sm:w-auto">
               <Link
                 href="/products"
-                className="px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-sm font-semibold tracking-wide hover:bg-[#237362] transition-all duration-200 shadow-lg shadow-[#2D8F7A]/25 hover:shadow-xl hover:shadow-[#2D8F7A]/40 active:scale-95"
+                className="w-full sm:w-auto text-center px-6 sm:px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-sm font-semibold tracking-wide hover:bg-[#237362] transition-all duration-200 shadow-lg shadow-[#2D8F7A]/25 hover:shadow-xl hover:shadow-[#2D8F7A]/40 active:scale-95"
               >
                 Explore Products
               </Link>
               <Link
                 href="/about"
-                className="px-8 py-3.5 rounded-md bg-white/5 border border-white/30 text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#071714] transition-all duration-200 backdrop-blur-md active:scale-95"
+                className="w-full sm:w-auto text-center px-6 sm:px-8 py-3.5 rounded-md bg-white/5 border border-white/30 text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#071714] transition-all duration-200 backdrop-blur-md active:scale-95"
               >
                 Discover Our Mission
               </Link>
-            </div>
-          </div>
-
-          {/* Right Graphic: Animated Rotating Phasecor Spiral Emblem (Brought closer to left content) */}
-          <div className="lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-start items-center z-10">
-            <div className="relative w-72 sm:w-88 md:w-96 lg:w-[390px] xl:w-[430px] aspect-square max-w-full flex items-center justify-center">
-              <HeroSpiralLogo className="w-full h-full" />
             </div>
           </div>
         </div>
