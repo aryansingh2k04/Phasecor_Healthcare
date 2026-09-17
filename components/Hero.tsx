@@ -176,14 +176,14 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-8 xl:gap-10 items-center">
           {/* Graphic: Animated Rotating Phasecor Spiral Emblem (Order 1 on mobile: above text; Order 2 on desktop: right side) */}
           <div className="order-1 lg:order-2 lg:col-span-5 xl:col-span-5 flex justify-center lg:justify-start items-center z-10">
-            <div className="relative w-48 sm:w-64 md:w-80 lg:w-[390px] xl:w-[430px] aspect-square max-w-[75vw] sm:max-w-[85vw] flex items-center justify-center">
+            <div className="relative w-56 sm:w-64 md:w-80 lg:w-[390px] xl:w-[430px] aspect-square max-w-[75vw] sm:max-w-[85vw] flex items-center justify-center">
               <HeroSpiralLogo className="w-full h-full" />
             </div>
           </div>
 
           {/* Content: Headline, Subtitle, and 2 CTA Buttons (Order 2 on mobile: below SVG; Order 1 on desktop: left side) */}
           <div className="order-2 lg:order-1 lg:col-span-7 xl:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left z-10 lg:pl-10 xl:pl-16">
-            <h1 className="text-3xl sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] max-w-2xl">
+            <h1 className="text-[34px] sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] max-w-2xl">
               <span className="block animate-hero-title">
                 Engineering the
               </span>
@@ -192,7 +192,7 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="text-sm sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0 animate-hero-desc">
+            <p className="text-[15px] sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-[300px] sm:max-w-2xl mx-auto lg:mx-0 animate-hero-desc">
               Next-gen dermatological formulations &amp; therapeutic medicines engineered for restorative cellular care.
             </p>
 
