@@ -23,9 +23,9 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
   };
 
   return (
-    <div className="relative group flex flex-col w-full max-w-[320px] h-[490px] mx-auto rounded-xl bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden justify-between">
+    <div className="relative group flex flex-col w-full max-w-[320px] mx-auto rounded-xl bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
       {/* ── DEFAULT CARD VIEW ── */}
-      <div className="flex flex-col h-full justify-between">
+      <div className="flex flex-col flex-1">
         {/* Product Image Area - Seamlessly connected with rounded corners and no dividing line */}
         <div className="p-3 pb-0">
           <div className="relative w-full h-[220px] rounded-xl overflow-hidden flex items-center justify-center">
@@ -39,13 +39,13 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
           </div>
         </div>
 
-        {/* Product Info Section - Seamlessly connected */}
-        <div className="flex flex-col flex-1 p-5 pt-3 justify-between">
+        {/* Product Info Section - Seamlessly connected with no dead empty space */}
+        <div className="flex flex-col flex-1 p-5 pt-3">
           <div className="space-y-1.5">
             <h3 className="text-xl font-bold text-white leading-snug line-clamp-1">
               {product.name}
             </h3>
-            <p className="text-xs sm:text-sm text-white/90 leading-relaxed line-clamp-2">
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed line-clamp-2 min-h-[2.25rem]">
               {product.subtitle}
             </p>
             <div>
@@ -55,8 +55,8 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
             </div>
           </div>
 
-          {/* Single Full-Width "View Details" Button */}
-          <div className="pt-4">
+          {/* Single Full-Width "View Details" Button - Sits directly below packaging without huge gap */}
+          <div className="mt-4 pt-1">
             <button
               type="button"
               onClick={() => setShowOverlay(true)}
