@@ -102,11 +102,11 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
         </div>
 
         {/* Modal Action Buttons */}
-        <div className="pt-4 border-t border-slate-100 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-2.5 sm:gap-3">
+        <div className="pt-4 border-t border-slate-100 flex flex-col-reverse sm:flex-row items-center justify-end gap-2.5 sm:gap-3">
           <button
             type="button"
             onClick={onClose}
-            className="w-full sm:w-auto px-6 py-2.5 rounded-md border border-slate-200 text-xs font-semibold uppercase tracking-wider text-slate-700 hover:bg-slate-50 transition-colors text-center"
+            className="w-auto min-w-[140px] sm:min-w-0 px-6 py-2.5 rounded-md border border-slate-200 text-xs font-semibold uppercase tracking-wider text-slate-700 hover:bg-slate-50 transition-colors text-center"
           >
             Close
           </button>
@@ -116,7 +116,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
               onClose();
               onEnquire(product.id);
             }}
-            className="w-full sm:w-auto px-8 py-2.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shadow-sm text-center"
+            className="w-auto min-w-[160px] sm:min-w-0 px-8 py-2.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#237362] transition-all shadow-sm text-center"
           >
             Enquiry
           </button>

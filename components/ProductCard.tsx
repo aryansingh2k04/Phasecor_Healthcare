@@ -55,12 +55,12 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
             </div>
           </div>
 
-          {/* Single Full-Width "View Details" Button - Sits directly below packaging without huge gap */}
-          <div className="mt-4 pt-1">
+          {/* Centered Sleek "View Details" Button */}
+          <div className="mt-4 pt-1 flex justify-center">
             <button
               type="button"
               onClick={() => setShowOverlay(true)}
-              className="w-full py-2.5 px-4 rounded-md bg-white text-[#237362] hover:bg-white/95 font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center cursor-pointer"
+              className="w-auto min-w-[170px] max-w-[210px] py-2.5 px-6 rounded-md bg-white text-[#237362] hover:bg-white/95 font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center cursor-pointer"
             >
               View Details
             </button>
@@ -134,14 +134,14 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
         </div>
 
         {/* Bottom Button: Send Inquiry */}
-        <div className="pt-3">
+        <div className="pt-3 flex justify-center">
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               onEnquire(product.id);
             }}
-            className="w-full py-2.5 px-4 rounded-md bg-white text-[#237362] hover:bg-white/95 font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md flex items-center justify-center tracking-wide cursor-pointer"
+            className="w-auto min-w-[170px] max-w-[210px] py-2.5 px-6 rounded-md bg-white text-[#237362] hover:bg-white/95 font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-md flex items-center justify-center tracking-wide cursor-pointer"
           >
             Send Inquiry
           </button>

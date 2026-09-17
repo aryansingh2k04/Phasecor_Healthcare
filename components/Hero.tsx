@@ -200,13 +200,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3.5 sm:gap-4 pt-2 sm:pt-3 animate-hero-actions w-full sm:w-auto">
               <Link
                 href="/products"
-                className="w-full sm:w-auto text-center px-6 sm:px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-sm font-semibold tracking-wide hover:bg-[#237362] transition-all duration-200 shadow-lg shadow-[#2D8F7A]/25 hover:shadow-xl hover:shadow-[#2D8F7A]/40 active:scale-95"
+                className="w-auto min-w-[210px] max-w-[250px] text-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-md bg-[#2D8F7A] text-white text-sm font-semibold tracking-wide hover:bg-[#237362] transition-all duration-200 shadow-lg shadow-[#2D8F7A]/25 hover:shadow-xl hover:shadow-[#2D8F7A]/40 active:scale-95"
               >
                 Explore Products
               </Link>
               <Link
                 href="/about"
-                className="w-full sm:w-auto text-center px-6 sm:px-8 py-3.5 rounded-md bg-white/5 border border-white/30 text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#071714] transition-all duration-200 backdrop-blur-md active:scale-95"
+                className="w-auto min-w-[210px] max-w-[250px] text-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-md bg-white/5 border border-white/30 text-white text-sm font-semibold tracking-wide hover:bg-white hover:text-[#071714] transition-all duration-200 backdrop-blur-md active:scale-95"
               >
                 Discover Our Mission
               </Link>

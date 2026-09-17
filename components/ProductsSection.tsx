@@ -60,7 +60,7 @@ export default function ProductsSection({ onSelectProductForEnquiry }: ProductsS
         <div className="pt-10 sm:pt-12 flex justify-center">
           <Link
             href="/products"
-            className="w-full sm:w-auto text-center justify-center px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white hover:bg-[#237362] text-xs font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center shadow-sm hover:shadow-md"
+            className="w-auto min-w-[210px] max-w-[260px] text-center justify-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-md bg-[#2D8F7A] text-white hover:bg-[#237362] text-xs font-semibold tracking-wider uppercase transition-all duration-200 inline-flex items-center shadow-sm hover:shadow-md"
           >
             Explore All Formulations
           </Link>

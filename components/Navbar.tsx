@@ -17,10 +17,10 @@ export default function Navbar() {
     let lastScrollY = window.scrollY;
     let accumulatedUp = 0;
     let accumulatedDown = 0;
-    // Industry standard: deliberate scroll up requires at least 25px of intentional upward movement
-    const SCROLL_UP_THRESHOLD = 25;
-    const SCROLL_DOWN_THRESHOLD = 15;
-    const TOP_THRESHOLD = 40;
+    // Deliberate scroll-up: 8px filters touch micro-bounce while immediately responding to user scroll-up
+    const SCROLL_UP_THRESHOLD = 8;
+    const SCROLL_DOWN_THRESHOLD = 20;
+    const TOP_THRESHOLD = 50;
 
     const handleScroll = () => {
       const currentScrollY = Math.max(0, window.scrollY);
@@ -73,13 +73,14 @@ export default function Navbar() {
   ];
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full bg-[#f9f9eb]/95 backdrop-blur-md border-b border-[#e8e4d2] transition-transform duration-300 ease-in-out will-change-transform ${
-        visible || mobileMenuOpen
-          ? "translate-y-0 pointer-events-auto"
-          : "-translate-y-full pointer-events-none"
-      } ${isScrolled ? "shadow-sm" : ""}`}
-    >
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 w-full bg-[#f9f9eb]/95 backdrop-blur-md border-b border-[#e8e4d2] transition-transform duration-300 ease-in-out will-change-transform ${
+          visible || mobileMenuOpen
+            ? "translate-y-0 pointer-events-auto"
+            : "-translate-y-full pointer-events-none"
+        } ${isScrolled ? "shadow-sm" : ""}`}
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-[68px] flex items-center justify-between">
         {/* Brand Logo - Clean Logo Only */}
         <Link href="/" className="flex items-center group shrink-0">
@@ -205,5 +206,8 @@ export default function Navbar() {
         </div>
       )}
     </header>
+    {/* Spacer to preserve natural document flow so content never shifts */}
+    <div className="h-16 sm:h-[68px] w-full shrink-0" aria-hidden="true" />
+  </>
   );
 }

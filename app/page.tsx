@@ -68,16 +68,16 @@ export default function Home() {
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
               Unlike superficial cosmetic brands promising overnight transformation, Phasecor Healthcare respects the 28-day cutaneous turnover cycle. Our formulations operate in calibrated phases to deliver sustainable resilience.
             </p>
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3.5 sm:gap-4">
               <Link
                 href="/about"
-                className="px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all inline-flex items-center gap-2 shadow-sm"
+                className="w-auto min-w-[210px] max-w-[260px] justify-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all inline-flex items-center gap-2 shadow-sm"
               >
                 <span>Discover Our Full Mission</span>
               </Link>
               <Link
                 href="/certifications"
-                className="px-8 py-3.5 rounded-md border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all inline-flex items-center gap-2"
+                className="w-auto min-w-[210px] max-w-[260px] justify-center px-6 sm:px-8 py-3 sm:py-3.5 rounded-md border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all inline-flex items-center gap-2"
               >
                 <span>View Certifications</span>
                 <ShieldCheck className="w-4 h-4" />

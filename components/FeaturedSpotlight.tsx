@@ -41,18 +41,18 @@ export default function FeaturedSpotlight({ onOpenDetails, onEnquire }: Featured
               Shield your skin with Phasecor’s UVothera Sunscreen, formulated with skin-loving ingredients to protect against harmful UVA &amp; UVB rays. Lightweight, non-greasy, and suitable for all skin types, it helps prevent sun damage, premature aging, and pigmentation while keeping your skin hydrated, smooth, and healthy every day.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
               <button
                 type="button"
                 onClick={() => onEnquire(uvothera.id)}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all shadow-sm text-center"
+                className="w-auto min-w-[180px] sm:min-w-[160px] px-8 py-3 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all shadow-sm text-center"
               >
                 Enquiry
               </button>
               <button
                 type="button"
                 onClick={() => onOpenDetails(uvothera.id)}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-md border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all text-center"
+                className="w-auto min-w-[180px] sm:min-w-[160px] px-8 py-3 rounded-md border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all text-center"
               >
                 Details
               </button>

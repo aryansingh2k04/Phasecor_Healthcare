@@ -215,7 +215,7 @@ export default function ProductsPage() {
                   <button
                     type="button"
                     onClick={() => router.push(`/contact?product=${encodeURIComponent(item.name)}`)}
-                    className="w-full sm:w-auto px-4 py-2 rounded-md bg-white text-[#237362] hover:bg-white/90 text-xs font-bold transition-all duration-200 inline-flex items-center justify-center shadow-sm"
+                    className="w-auto px-5 py-2 rounded-md bg-white text-[#237362] hover:bg-white/90 text-xs font-bold transition-all duration-200 inline-flex items-center justify-center shadow-sm self-start sm:self-auto"
                   >
                     <span>Clinical Inquiry</span>
                   </button>
