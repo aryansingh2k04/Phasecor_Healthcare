@@ -83,44 +83,36 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm sm:text-[15px] font-medium text-slate-700">
               <li>
-                <a
-                  href="https://phasecor.com/pages/privacy-policy"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/privacy-policy"
                   className="hover:text-[#2D8F7A] transition-colors"
                 >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://phasecor.com/pages/terms-conditions"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/terms-conditions"
                   className="hover:text-[#2D8F7A] transition-colors"
                 >
                   Terms &amp; Conditions
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://phasecor.com/pages/shipping-return-policy"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/shipping-return-policy"
                   className="hover:text-[#2D8F7A] transition-colors"
                 >
                   Shipping &amp; Return policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="https://phasecor.com/pages/disclaimer"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/disclaimer"
                   className="hover:text-[#2D8F7A] transition-colors"
                 >
                   Disclaimer
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

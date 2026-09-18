@@ -344,7 +344,7 @@ export const COMPANY_CONTACT = {
   name: "Phasecor Healthcare",
   email: "support@phasecor.com",
   phone: "+91-9326421312",
-  address: "Shop No. 4, Royal Residency Chs, Katemanevali, Opp. Vitthalwadi Station, Kalyan (E), Vitthalwadi, Kalyan, Maharashtra 421306, India",
+  address: "Shop No. A1/01, Building No. B, Twinkle Apartment, Katemanivali, Katemanivali Naka, Kalyan East, Thane, Maharashtra – 421306, India",
   hours: "Monday – Saturday: 9:00 AM – 7:00 PM IST",
   socials: {
     instagram: "https://www.instagram.com/phasecor__/",
