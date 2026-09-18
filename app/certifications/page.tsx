@@ -119,7 +119,7 @@ export default function CertificationsPage() {
             <div className="lg:col-span-5 flex justify-center">
               <div
                 onClick={() => setCertModalOpen(true)}
-                className="group relative w-full max-w-md rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white p-4 sm:p-6 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden hover:-translate-y-1"
+                className="group relative w-full max-w-md rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white p-4 sm:p-6 shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.55),0_8px_16px_-4px_rgba(45,143,122,0.3)] transition-all duration-300 cursor-pointer overflow-hidden hover:-translate-y-1.5"
               >
                 <div className="relative w-full h-72 sm:h-96 rounded-md bg-white border border-white/20 overflow-hidden flex items-center justify-center">
                   <Image
@@ -209,7 +209,7 @@ export default function CertificationsPage() {
             {certifications.map((cert) => (
               <div
                 key={cert.title}
-                className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between space-y-4"
+                className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -259,7 +259,7 @@ export default function CertificationsPage() {
               return (
                 <div
                   key={stage.step}
-                  className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 space-y-4 flex flex-col justify-between"
+                  className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-4 flex flex-col justify-between"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">

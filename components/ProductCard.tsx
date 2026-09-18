@@ -23,7 +23,7 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
   };
 
   return (
-    <div className="relative group flex flex-col w-full max-w-[320px] mx-auto rounded-xl bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+    <div className="relative group flex flex-col w-full max-w-[320px] mx-auto rounded-xl bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.55),0_8px_16px_-4px_rgba(45,143,122,0.3)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden">
       {/* ── DEFAULT CARD VIEW ── */}
       <div className="flex flex-col flex-1">
         {/* Product Image Area - Seamlessly connected with rounded corners and no dividing line */}

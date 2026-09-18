@@ -11,7 +11,29 @@ import {
   ChevronDown,
   ExternalLink
 } from "lucide-react";
-import { COMPANY_CONTACT } from "@/components/data";
+import { COMPANY_CONTACT, PRODUCTS, MEDICINE_PIPELINE } from "@/components/data";
+
+function formatProductName(param: string): string {
+  if (!param) return "";
+  const foundProduct = PRODUCTS.find(
+    (p) =>
+      p.id.toLowerCase() === param.toLowerCase() ||
+      p.name.toLowerCase() === param.toLowerCase()
+  );
+  if (foundProduct) return foundProduct.name;
+
+  const foundMed = MEDICINE_PIPELINE.find(
+    (m) =>
+      m.code.toLowerCase() === param.toLowerCase() ||
+      m.name.toLowerCase() === param.toLowerCase()
+  );
+  if (foundMed) return foundMed.name;
+
+  return param
+    .split(/[-_\s]+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+}
 
 function ContactForm() {
   const searchParams = useSearchParams();
@@ -21,16 +43,17 @@ function ContactForm() {
     name: "",
     email: "",
     phone: "",
-    subject: "",
+    subject: initialProductParam ? `Product Enquiry for ${formatProductName(initialProductParam)}` : "",
     message: "",
   });
 
   useEffect(() => {
     if (initialProductParam) {
+      const productName = formatProductName(initialProductParam);
       setFormData((prev) => ({
         ...prev,
-        subject: initialProductParam,
-        message: `I would like to enquire about clinical specifications, bulk supply, or prescribing details for ${initialProductParam}.`,
+        subject: `Product Enquiry for ${productName}`,
+        message: "",
       }));
     }
   }, [initialProductParam]);
@@ -223,7 +246,7 @@ export default function ContactPage() {
 
             {/* Right Column: Contact Details Panel (Standard Green Card Design) */}
             <div className="lg:col-span-5">
-              <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-6">
+              <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-6">
                 <div>
                   <h2 className="text-2xl font-bold text-white tracking-tight">
                     Contact Details
@@ -291,7 +314,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Embedded Google Maps for Rxpert Pharma at Twinkle Apartment */}
+                {/* Embedded Google Maps for Rxpert Pharma */}
                 <div className="pt-2 border-t border-white/20">
                   <div className="rounded-md overflow-hidden border border-white/20 shadow-md">
                     <iframe
@@ -301,7 +324,7 @@ export default function ContactPage() {
                       loading="lazy"
                       allowFullScreen
                       referrerPolicy="no-referrer-when-downgrade"
-                      src="https://maps.google.com/maps?q=Rxpert%20Pharma,%20Twinkle%20Apartment,%20Katemanivali,%20Kalyan%20East,%20Maharashtra%20421306&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                      src="https://maps.google.com/maps?q=Rxperts%20Pharma,%20Katemanivali,%20Kalyan%20East&t=&z=17&ie=UTF8&iwloc=&output=embed"
                       title="Rxpert Pharma Location Map"
                     />
                   </div>
@@ -310,7 +333,7 @@ export default function ContactPage() {
                       Rxpert Pharma &bull; Kalyan East
                     </span>
                     <a
-                      href="https://www.google.com/maps/search/?api=1&query=Rxpert+Pharma+Twinkle+Apartment+Kalyan"
+                      href="https://www.google.com/maps/search/?api=1&query=Rxperts+Pharma+Katemanivali+Kalyan+East"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-xs font-semibold text-white hover:underline"

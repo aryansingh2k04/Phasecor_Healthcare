@@ -53,7 +53,7 @@ export default function SciencePhilosophy() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="group rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 flex flex-col"
+              className="group rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] overflow-hidden hover:-translate-y-1.5 transition-all duration-300 flex flex-col"
             >
               <div className="relative w-full h-56 bg-white overflow-hidden">
                 <Image

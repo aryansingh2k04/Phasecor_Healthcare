@@ -182,7 +182,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             {/* 8. Grievance Redressal & Contact Info */}
-            <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white space-y-4 shadow-md">
+            <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white space-y-4 shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5">
               <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
                 <Mail className="w-5 h-5 text-white" />
                 <span>Grievance Redressal &amp; Data Privacy Inquiries</span>

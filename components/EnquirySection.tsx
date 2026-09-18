@@ -4,6 +4,28 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Clock, CheckCircle2 } from "lucide-react";
 import { COMPANY_CONTACT, PRODUCTS, MEDICINE_PIPELINE } from "./data";
 
+function formatProductName(param: string): string {
+  if (!param) return "";
+  const foundProduct = PRODUCTS.find(
+    (p) =>
+      p.id.toLowerCase() === param.toLowerCase() ||
+      p.name.toLowerCase() === param.toLowerCase()
+  );
+  if (foundProduct) return foundProduct.name;
+
+  const foundMed = MEDICINE_PIPELINE.find(
+    (m) =>
+      m.code.toLowerCase() === param.toLowerCase() ||
+      m.name.toLowerCase() === param.toLowerCase()
+  );
+  if (foundMed) return foundMed.name;
+
+  return param
+    .split(/[-_\s]+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+}
+
 interface EnquirySectionProps {
   initialProductId?: string;
 }
@@ -14,7 +36,7 @@ export default function EnquirySection({ initialProductId = "niascobutin" }: Enq
     email: "",
     phone: "",
     role: "Practitioner / Clinic",
-    subject: initialProductId,
+    subject: initialProductId ? `Product Enquiry for ${formatProductName(initialProductId)}` : "",
     message: ""
   });
 

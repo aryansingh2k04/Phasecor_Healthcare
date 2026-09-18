@@ -50,7 +50,7 @@ export default function QualityCertifications() {
               {standards.map((std) => (
                 <div
                   key={std.title}
-                  className="p-5 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md space-y-2 hover:-translate-y-0.5 transition-transform"
+                  className="p-5 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-2 hover:-translate-y-1.5 transition-all duration-300"
                 >
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-white shrink-0" />

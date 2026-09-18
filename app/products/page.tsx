@@ -116,7 +116,7 @@ export default function ProductsPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
               <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
                 <Activity className="w-6 h-6 text-white" />
               </div>
@@ -128,7 +128,7 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
               <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
@@ -140,7 +140,7 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
               <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
                 <Pill className="w-6 h-6 text-white" />
               </div>
@@ -152,7 +152,7 @@ export default function ProductsPage() {
               </div>
             </div>
 
-            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg space-y-4 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
+            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
               <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
                 <ShieldCheck className="w-6 h-6 text-white" />
               </div>
@@ -187,7 +187,7 @@ export default function ProductsPage() {
             {MEDICINE_PIPELINE.map((item) => (
               <div
                 key={item.name}
-                className="p-5 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 space-y-4 sm:space-y-5 flex flex-col justify-between"
+                className="p-5 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-4 sm:space-y-5 flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between gap-2 flex-wrap">
