@@ -4,11 +4,32 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Sparkles, ShieldCheck, CheckCircle2, Pill, Activity } from "lucide-react";
+import { Sparkles, ShieldCheck, CheckCircle2, Pill, Activity, FileCheck2 } from "lucide-react";
 import { PRODUCTS, Product } from "@/components/data";
 import ProductCard from "@/components/ProductCard";
 import ProductModal from "@/components/ProductModal";
 import SupportBlocks from "@/components/SupportBlocks";
+
+const therapeuticCertifications = [
+  {
+    title: "cGMP Certified Production",
+    agency: "Good Manufacturing Practices",
+    desc: "All Phasecor formulations are compounded and packaged in cGMP certified cleanroom environments with strictly monitored air filtration, particulate control, and sterile handling.",
+    badge: "ISO CLEANROOM",
+  },
+  {
+    title: "ISO 9001:2015 Quality Standards",
+    agency: "International Organization for Standardization",
+    desc: "Comprehensive quality management system protocols covering raw ingredient verification, batch manufacturing records, traceability, and post-market pharmacovigilance.",
+    badge: "QUALITY ASSURED",
+  },
+  {
+    title: "100% Cruelty-Free & Ethical Testing",
+    agency: "Ethical Research Guidelines",
+    desc: "Zero testing on animals at any stage of active development, formulation, or finished batch evaluation, adhering to global ethical cosmetics and therapeutics directives.",
+    badge: "ETHICAL FORMULATION",
+  },
+];
 
 export default function ProductsPage() {
   const router = useRouter();
@@ -56,9 +77,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* Support Quality Trust Blocks */}
-      <SupportBlocks />
-
       {/* Filter Tabs & Catalog */}
       <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
@@ -100,6 +118,47 @@ export default function ProductsPage() {
         </div>
       </section>
 
+      {/* Support Quality Trust Blocks - Visible only when Clinical Dermatology is active */}
+      {selectedCategory === "derma" && <SupportBlocks />}
+
+      {/* Therapeutic Quality Certifications - Visible only when Therapeutic Medicines is active */}
+      {selectedCategory === "therapeutic" && (
+        <section className="py-12 sm:py-16 bg-[#fbfdfc] border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+              {therapeuticCertifications.map((cert) => (
+                <div
+                  key={cert.title}
+                  className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between space-y-4"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white tracking-wider uppercase">
+                        {cert.badge}
+                      </span>
+                      <FileCheck2 className="w-4 h-4 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white leading-snug">
+                      {cert.title}
+                    </h3>
+                    <p className="text-xs font-semibold text-white/80">
+                      {cert.agency}
+                    </p>
+                    <p className="text-xs text-white/90 leading-relaxed font-normal">
+                      {cert.desc}
+                    </p>
+                  </div>
+                  <div className="pt-3 border-t border-white/20 text-[11px] font-medium text-white/85 flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-white" />
+                    <span>Compliant &amp; Active</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Multi-Therapy Highlights: Primary Medicines Showcase */}
       <section className="py-14 sm:py-20 bg-[#f7faf8] border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +167,7 @@ export default function ProductsPage() {
               Multi-Specialty Care
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Essential Therapeutics Engineered for Maximum Bioavailability
+              Essential Therapeutics Formulated for Maximum Bioavailability
             </h2>
             <p className="text-sm sm:text-base text-slate-600">
               Expanding healthcare access across high-incidence clinical conditions with science-backed formulations.
@@ -135,7 +194,7 @@ export default function ProductsPage() {
               <div className="space-y-1.5">
                 <h3 className="text-base font-bold text-white">Cellular Bioenergetics</h3>
                 <p className="text-xs text-white/90 leading-relaxed font-normal">
-                  Sugar-free WHO-osmolarity electrolyte formulation fortified with Co-Enzyme Q10 for rapid rehydration.
+                  WHO-osmolarity electrolyte formulation fortified with Co-Enzyme Q10 for rapid rehydration.
                 </p>
               </div>
             </div>

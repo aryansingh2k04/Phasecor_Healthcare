@@ -46,7 +46,7 @@ export default function AboutPage() {
     },
     {
       title: "Electrolyte & Rehydration Therapy",
-      desc: "Sugar-free WHO-osmolarity electrolyte formulations (Electcor™) fortified with Co-Enzyme Q10 for rapid cellular revitalisation.",
+      desc: "WHO-osmolarity electrolyte formulations (Electcor™) fortified with Co-Enzyme Q10 for rapid cellular revitalisation.",
       badge: "Critical Hydration",
     },
     {

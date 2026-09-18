@@ -1,24 +1,6 @@
-"use client";
-
-import { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import {
-  ShieldCheck,
-  FileCheck2,
-  CheckCircle2,
-  Eye,
-  X,
-  Sparkles,
-  FlaskConical,
-  Award,
-  Microscope,
-  FileText
-} from "lucide-react";
+import { FileCheck2, CheckCircle2 } from "lucide-react";
 
 export default function CertificationsPage() {
-  const [certModalOpen, setCertModalOpen] = useState(false);
-
   const certifications = [
     {
       title: "cGMP Certified Production",
@@ -58,39 +40,6 @@ export default function CertificationsPage() {
     },
   ];
 
-  const qualityStages = [
-    {
-      step: "01",
-      title: "Active Compound Assay",
-      desc: "Raw ingredients undergo High-Performance Liquid Chromatography (HPLC) to verify active purity, molecular weight, and absence of heavy metals.",
-      icon: FlaskConical,
-    },
-    {
-      step: "02",
-      title: "Cleanroom Compounding",
-      desc: "Formulations are homogenized under laminar flow hoods in cleanrooms meeting ISO-classified environmental standards.",
-      icon: ShieldCheck,
-    },
-    {
-      step: "03",
-      title: "Microbiological Screening",
-      desc: "Every batch is incubated for aerobic microbial count, yeast, mold, and pathogenic organisms prior to packaging.",
-      icon: Microscope,
-    },
-    {
-      step: "04",
-      title: "Real-Time Stability Validation",
-      desc: "Samples from every commercial run are archived in climate-controlled stability chambers for continuous long-term monitoring.",
-      icon: Award,
-    },
-    {
-      step: "05",
-      title: "Certificate of Analysis Release",
-      desc: "An individualized batch COA is signed off by certified quality control officers before distribution to clinics and pharmacies.",
-      icon: FileText,
-    },
-  ];
-
   return (
     <div className="bg-white">
       {/* Header Banner */}
@@ -105,87 +54,25 @@ export default function CertificationsPage() {
               </span>
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl">
-              Every Phasecor Healthcare formulation undergoes analytical chromatography, independent clinical dermatology patch testing, and certified cGMP quality control prior to clinical release.
+              Every Phasecor Healthcare formulation undergoes analytical chromatography, independent clinical testing, and certified cGMP quality control prior to clinical release.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Main Certification Showcase */}
+      {/* Narrative Section */}
       <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-            {/* Left Column: Official Certificate Card */}
-            <div className="lg:col-span-5 flex justify-center">
-              <div
-                onClick={() => setCertModalOpen(true)}
-                className="group relative w-full max-w-md rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white p-4 sm:p-6 shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.55),0_8px_16px_-4px_rgba(45,143,122,0.3)] transition-all duration-300 cursor-pointer overflow-hidden hover:-translate-y-1.5"
-              >
-                <div className="relative w-full h-72 sm:h-96 rounded-md bg-white border border-white/20 overflow-hidden flex items-center justify-center">
-                  <Image
-                    src="/images/certificates/certificate.jpg"
-                    alt="Phasecor Quality Certification"
-                    fill
-                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/30 transition-colors flex items-center justify-center">
-                    <span className="opacity-0 group-hover:opacity-100 px-4 sm:px-5 py-2 sm:py-2.5 rounded-md bg-white text-slate-900 text-xs font-bold shadow-lg transition-opacity duration-200 flex items-center gap-2">
-                      <Eye className="w-4 h-4 text-[#2D8F7A]" />
-                      Click to View Document
-                    </span>
-                  </div>
-                </div>
-
-                <div className="pt-4 sm:pt-5 flex items-center justify-between">
-                  <div>
-                    <h3 className="text-sm font-bold text-white">Certificate of Analysis &amp; Compliance</h3>
-                    <p className="text-xs text-white/80">Official Laboratory Testing Documentation</p>
-                  </div>
-                  <span className="px-2.5 sm:px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-[10px] font-bold text-white tracking-wider">
-                    VERIFIED
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Narrative */}
-            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
-              <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
-                Uncompromising Standards
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Verified Testing Protocols for Guaranteed Biocompatibility
-              </h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                Phasecor Healthcare bridges pharmaceutical diligence with dermatological cosmetics. We test every commercial batch beyond statutory regulatory baselines to ensure zero degradation of delicate actives, stable pH buffers, and complete microbiological safety.
-              </p>
-
-              <div className="space-y-4 pt-2">
-                <div className="p-5 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-white shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                      Third-Party Laboratory Verification
-                    </h4>
-                    <p className="text-xs text-white/90 leading-relaxed mt-1 font-normal">
-                      Independent analytical laboratories verify our active assay percentages (e.g. 5% Niacinamide, 2% Alpha Arbutin, 1.5% Tranexamic Acid) to prevent batch-to-batch variability.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="p-5 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-white shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                      Photostability &amp; Broad-Spectrum IR Shielding
-                    </h4>
-                    <p className="text-xs text-white/90 leading-relaxed mt-1 font-normal">
-                      Sun protection products undergo rigorous in-vitro and in-vivo spectrophotometry to ensure sustained SPF 60+ and PA++++ protection against UVA, UVB, and High Energy Visible (HEV) screen light.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
+              Uncompromising Standards
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Verified Testing Protocols for Guaranteed Biocompatibility
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              Phasecor Healthcare bridges pharmaceutical diligence with dermatological cosmetics. We test every commercial batch beyond statutory regulatory baselines to ensure zero degradation of delicate actives, stable pH buffers, and complete microbiological safety.
+            </p>
           </div>
         </div>
       </section>
@@ -237,80 +124,6 @@ export default function CertificationsPage() {
           </div>
         </div>
       </section>
-
-      {/* 5-Step Quality Assurance Lifecycle */}
-      <section className="py-14 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-16">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
-              The Quality Assurance Pipeline
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
-              5-Stage Batch Testing Lifecycle
-            </h2>
-            <p className="text-sm text-slate-600">
-              How Phasecor guarantees zero-defect medical formulation safety from raw chemical active to patient bottle.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6">
-            {qualityStages.map((stage) => {
-              const Icon = stage.icon;
-              return (
-                <div
-                  key={stage.step}
-                  className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-4 flex flex-col justify-between"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl font-extrabold text-white/40">{stage.step}</span>
-                      <Icon className="w-5 h-5 text-white" />
-                    </div>
-                    <h3 className="text-sm font-bold text-white">{stage.title}</h3>
-                    <p className="text-xs text-white/90 leading-relaxed font-normal">{stage.desc}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Certificate Lightbox Modal */}
-      {certModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200"
-          onClick={() => setCertModalOpen(false)}
-        >
-          <div
-            className="relative max-w-3xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-md p-4 sm:p-6 shadow-2xl space-y-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-              <div className="flex items-center gap-2">
-                <FileCheck2 className="w-5 h-5 text-[#2D8F7A]" />
-                <h4 className="text-sm font-bold text-slate-900">Official Quality Certification</h4>
-              </div>
-              <button
-                type="button"
-                onClick={() => setCertModalOpen(false)}
-                className="p-1.5 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-100"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <div className="relative w-full h-[55vh] sm:h-[70vh] rounded-md overflow-hidden bg-slate-50">
-              <Image
-                src="/images/certificates/certificate.jpg"
-                alt="Quality Certification Detail"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
