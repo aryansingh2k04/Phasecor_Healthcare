@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Sparkles, ShieldCheck, CheckCircle2, Pill, Activity } from "lucide-react";
-import { PRODUCTS, Product, MEDICINE_PIPELINE } from "@/components/data";
+import { PRODUCTS, Product } from "@/components/data";
 import ProductCard from "@/components/ProductCard";
 import ProductModal from "@/components/ProductModal";
 import SupportBlocks from "@/components/SupportBlocks";
@@ -163,65 +163,6 @@ export default function ProductsPage() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Medicines & Therapeutic Pipeline Section */}
-      <section id="pipeline-section" className="py-14 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
-          <div className="max-w-3xl space-y-3">
-            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
-              Pharmaceutical Pipeline
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Investigational Therapeutic Pipeline
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              In addition to our released formulations, Phasecor Healthcare investigates advanced liposomal systems and targeted therapeutics to meet evolving medical needs.
-            </p>
-          </div>
-
-          {/* Pipeline Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {MEDICINE_PIPELINE.map((item) => (
-              <div
-                key={item.name}
-                className="p-5 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-4 sm:space-y-5 flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between gap-2 flex-wrap">
-                    <span className="text-xs font-bold text-white uppercase tracking-wider px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20">
-                      {item.therapeuticArea}
-                    </span>
-                    <span className="text-[11px] font-semibold text-white/90 px-3 py-1 rounded-md bg-white/10 border border-white/20">
-                      {item.deliveryMethod}
-                    </span>
-                  </div>
-
-                  <h3 className="text-lg sm:text-xl font-bold text-white">
-                    {item.name}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
-                    {item.description}
-                  </p>
-                </div>
-
-                <div className="pt-4 border-t border-white/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                  <div className="text-xs text-white/80">
-                    Target: <span className="font-semibold text-white">{item.target}</span>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => router.push(`/contact?product=${encodeURIComponent(item.name)}`)}
-                    className="w-auto px-5 py-2 rounded-md bg-white text-[#237362] hover:bg-white/90 text-xs font-bold transition-all duration-200 inline-flex items-center justify-center shadow-sm self-start sm:self-auto"
-                  >
-                    <span>Clinical Inquiry</span>
-                  </button>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

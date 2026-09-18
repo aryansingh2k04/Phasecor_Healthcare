@@ -9,7 +9,6 @@ import SupportBlocks from "@/components/SupportBlocks";
 import ProductsSection from "@/components/ProductsSection";
 import MasonryBento from "@/components/MasonryBento";
 import FeaturedSpotlight from "@/components/FeaturedSpotlight";
-import MedicinesPipeline from "@/components/MedicinesPipeline";
 import BrandStatement from "@/components/BrandStatement";
 import ProductModal from "@/components/ProductModal";
 import { PRODUCTS, Product } from "@/components/data";
@@ -49,25 +48,16 @@ export default function Home() {
         onEnquire={handleSelectProductForEnquiry}
       />
 
-      {/* 6. Medicines & Therapeutic Pipeline */}
-      <MedicinesPipeline />
-
-      {/* 7. Brand Statement & Philosophy */}
+      {/* 6. Brand Statement & Philosophy */}
       <BrandStatement />
 
       {/* 9. Mission & About Us Teaser */}
       <section className="py-20 bg-[#f7faf8] border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
-              Our Phased Philosophy
-            </span>
+          <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Grounded in Biology. Formulated for Enduring Cellular Health.
+              Grounded in Biology. Formulated for Enduring Overall Health.
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Unlike superficial cosmetic brands promising overnight transformation, Phasecor Healthcare respects the 28-day cutaneous turnover cycle. Our formulations operate in calibrated phases to deliver sustainable resilience.
-            </p>
             <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3.5 sm:gap-4">
               <Link
                 href="/about"

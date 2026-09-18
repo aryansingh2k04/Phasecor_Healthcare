@@ -185,15 +185,15 @@ export default function Hero() {
           <div className="order-2 lg:order-1 lg:col-span-7 xl:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left z-10 lg:pl-10 xl:pl-16">
             <h1 className="text-[34px] sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] max-w-2xl">
               <span className="block animate-hero-title">
-                Engineering the
+                Precision in
               </span>
               <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)] animate-hero-gradient animate-gradient-shift">
-                Future of Healthcare
+                Every Formulation
               </span>
             </h1>
 
-            <p className="text-[15px] sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-[300px] sm:max-w-2xl mx-auto lg:mx-0 animate-hero-desc">
-              Next-gen dermatological formulations &amp; therapeutic medicines engineered for restorative cellular care.
+            <p className="text-[15px] sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-md sm:max-w-2xl mx-auto lg:mx-0 animate-hero-desc">
+              Quality-focused pharmaceutical solutions developed with scientific rigor and a commitment to consistency.
             </p>
 
             {/* Action Buttons */}
