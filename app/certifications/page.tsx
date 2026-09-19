@@ -27,12 +27,6 @@ export default function CertificationsPage() {
       badge: "CLEAN CLINICAL",
     },
     {
-      title: "Tropical Climate Stability Chamber Tested",
-      agency: "ICH Q1A Accelerated Stability Protocols",
-      desc: "Batches are subjected to 40°C / 75% relative humidity testing over extended periods to ensure active ingredient molecular potency remains stable throughout the product shelf life.",
-      badge: "ICH STABILITY",
-    },
-    {
       title: "100% Cruelty-Free & Ethical Testing",
       agency: "Ethical Research Guidelines",
       desc: "Zero testing on animals at any stage of active development, formulation, or finished batch evaluation, adhering to global ethical cosmetics and therapeutics directives.",

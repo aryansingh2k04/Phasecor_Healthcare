@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Sparkles, ShieldCheck } from "lucide-react";
 import Hero from "@/components/Hero";
-import SupportBlocks from "@/components/SupportBlocks";
 import ProductsSection from "@/components/ProductsSection";
 import MasonryBento from "@/components/MasonryBento";
 import FeaturedSpotlight from "@/components/FeaturedSpotlight";
@@ -33,10 +32,7 @@ export default function Home() {
       {/* 1. Hero Section inspired by eynexapharma.com */}
       <Hero />
 
-      {/* 2. Four Support Feature Blocks */}
-      <SupportBlocks />
-
-      {/* 3. Masonry Bento Grid: Science-Backed Skincare Solutions */}
+      {/* 2. Masonry Bento Grid: Science-Backed Skincare Solutions */}
       <MasonryBento />
 
       {/* 4. Featured Products Portfolio */}
