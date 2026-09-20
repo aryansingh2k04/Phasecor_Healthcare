@@ -28,13 +28,17 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
       <div className="flex flex-col flex-1">
         {/* Product Image Area - Seamlessly connected with rounded corners and no dividing line */}
         <div className="p-3 pb-0">
-          <div className="relative w-full h-[220px] rounded-xl overflow-hidden flex items-center justify-center">
+          <div className="relative w-full h-[220px] rounded-xl overflow-hidden flex items-center justify-center bg-white">
             <Image
               src={product.mainImage}
               alt={product.name}
               fill
               sizes="320px"
-              className="object-contain group-hover:scale-105 transition-transform duration-500 rounded-xl"
+              className={`${
+                product.category === "Therapeutic Medicines"
+                  ? "object-cover"
+                  : "object-contain p-2"
+              } group-hover:scale-105 transition-transform duration-500 rounded-xl`}
             />
           </div>
         </div>
@@ -45,7 +49,7 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
             <h3 className="text-xl font-bold text-white leading-snug">
               {product.name}
             </h3>
-            <p className="text-xs sm:text-sm text-white/90 leading-relaxed line-clamp-2 min-h-[2.5rem]">
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed min-h-[2.5rem]">
               {product.subtitle}
             </p>
             <div>
@@ -59,7 +63,13 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
           <div className="mt-4 pt-1 flex justify-center">
             <button
               type="button"
-              onClick={() => setShowOverlay(true)}
+              onClick={() => {
+                if (onOpenDetails) {
+                  onOpenDetails(product);
+                } else {
+                  setShowOverlay(true);
+                }
+              }}
               className="w-auto min-w-[170px] max-w-[210px] py-2.5 px-6 rounded-md bg-white text-[#237362] hover:bg-white/95 font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center cursor-pointer"
             >
               View Details
@@ -103,10 +113,12 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
           {/* Middle Content Area */}
           <div className="mt-2.5 sm:mt-3 space-y-2 sm:space-y-2.5 max-h-[230px] sm:max-h-[270px] md:max-h-[300px] overflow-y-auto pr-1 text-left scrollbar-thin">
             {/* Composition */}
-            <p className="text-xs text-white/90 leading-relaxed">
-              <strong className="text-white font-semibold">Composition: </strong>
-              {product.keyActives.join(" + ")}
-            </p>
+            {product.keyActives && product.keyActives.length > 0 && (
+              <p className="text-xs text-white/90 leading-relaxed">
+                <strong className="text-white font-semibold">Composition: </strong>
+                {product.keyActives.join(" + ")}
+              </p>
+            )}
 
             {/* Formulation Badge */}
             <div>
@@ -121,13 +133,13 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
               {product.benefits.slice(0, 3).map((benefit, idx) => (
                 <li key={idx} className="flex items-start gap-2 text-xs text-white/90">
                   <span className="mt-0.5">{getBenefitIcon(idx)}</span>
-                  <span className="line-clamp-1 leading-snug">{benefit}</span>
+                  <span className="leading-snug">{benefit}</span>
                 </li>
               ))}
             </ul>
 
             {/* Short Summary */}
-            <p className="text-xs text-white/80 leading-relaxed line-clamp-3 pt-1 border-t border-white/15">
+            <p className="text-xs text-white/80 leading-relaxed pt-1 border-t border-white/15">
               {product.summary}
             </p>
           </div>

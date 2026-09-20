@@ -32,7 +32,7 @@ export default function Home() {
       {/* 1. Hero Section inspired by eynexapharma.com */}
       <Hero />
 
-      {/* 2. Masonry Bento Grid: Science-Backed Skincare Solutions */}
+      {/* 2. Masonry Bento Grid: Science-Backed Healthcare Solutions */}
       <MasonryBento />
 
       {/* 4. Featured Products Portfolio */}

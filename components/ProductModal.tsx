@@ -34,12 +34,16 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
 
         {/* Modal Header */}
         <div className="flex flex-col sm:flex-row gap-6 items-start">
-          <div className="relative w-full sm:w-44 h-52 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] border border-white/20 overflow-hidden shrink-0 flex items-center justify-center">
+          <div className="relative w-full sm:w-56 h-52 rounded-xl bg-white border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center shadow-sm">
             <Image
               src={product.detailImage || product.mainImage}
               alt={product.name}
               fill
-              className="object-contain p-2"
+              className={
+                product.category === "Therapeutic Medicines"
+                  ? "object-cover"
+                  : "object-contain p-3"
+              }
             />
           </div>
 
@@ -60,21 +64,23 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
         </div>
 
         {/* Key Actives */}
-        <div className="space-y-2">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900">
-            Key Ingredients & Actives
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {product.keyActives.map((active) => (
-              <span
-                key={active}
-                className="px-3 py-1 rounded-md bg-[#f4f8f6] text-slate-800 text-xs font-medium border border-[#dbe7e1]"
-              >
-                {active}
-              </span>
-            ))}
+        {product.keyActives && product.keyActives.length > 0 && (
+          <div className="space-y-2">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900">
+              Key Ingredients & Actives
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {product.keyActives.map((active) => (
+                <span
+                  key={active}
+                  className="px-3 py-1 rounded-md bg-[#f4f8f6] text-slate-800 text-xs font-medium border border-[#dbe7e1]"
+                >
+                  {active}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Benefits */}
         <div className="space-y-2.5">
@@ -100,6 +106,18 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
             {product.howToUse}
           </p>
         </div>
+
+        {/* Clinical Indications */}
+        {product.indications && (
+          <div className="p-4 rounded-md bg-[#f4f8f6] border border-[#dbe7e1] space-y-1">
+            <h4 className="text-xs font-bold text-[#237362] uppercase tracking-wider">
+              Clinical Indications
+            </h4>
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              {product.indications}
+            </p>
+          </div>
+        )}
 
         {/* Modal Action Buttons */}
         <div className="pt-4 border-t border-slate-100 flex flex-col-reverse sm:flex-row items-center justify-end gap-2.5 sm:gap-3">

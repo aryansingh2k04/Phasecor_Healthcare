@@ -27,9 +27,17 @@ export default function Footer() {
                 />
               </div>
             </Link>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed max-w-md font-normal">
-              At Phasecor, we don’t believe in quick fixes. We believe in phases. Skin doesn’t transform overnight; it evolves, adapts, repairs, and strengthens over time, and that’s exactly how we formulate.
-            </p>
+            <div className="space-y-2 max-w-md">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#2D8F7A]">
+                About Phasecor Healthcare
+              </h3>
+              <p className="text-slate-700 text-xs sm:text-[13px] leading-relaxed font-normal">
+                Phasecor Healthcare is a pharmaceutical brand focused on delivering thoughtfully formulated, quality-driven products that address evolving healthcare needs.
+              </p>
+              <p className="text-slate-700 text-xs sm:text-[13px] leading-relaxed font-normal">
+                Built on quality, accessibility, and purposeful innovation, we bridge the gap between science and affordability &mdash; combining carefully selected ingredients and stringent standards to deliver dependable formulations. Quality healthcare within reach.
+              </p>
+            </div>
           </div>
 
           {/* Column 2: Quick Links */}

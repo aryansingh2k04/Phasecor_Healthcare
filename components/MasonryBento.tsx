@@ -1,106 +1,288 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+interface SlideItem {
+  id: string;
+  name: string;
+  badge: string;
+  image: string;
+  alt: string;
+  href: string;
+}
+
+const MEDICAL_SLIDES: SlideItem[] = [
+  {
+    id: "uticor",
+    name: "UTIcor™",
+    badge: "UTICOR™ · URINARY HEALTH",
+    image: "/images/products/uticor.png",
+    alt: "UTIcor Syrup & Formulation Box",
+    href: "/products?category=therapeutic",
+  },
+  {
+    id: "electcor",
+    name: "Electcor™",
+    badge: "ELECTCOR™ · REHYDRATION THERAPY",
+    image: "/images/products/electcor.png",
+    alt: "Electcor Oral Rehydration Sachet & Box",
+    href: "/products?category=therapeutic",
+  },
+  {
+    id: "chronicor",
+    name: "Chronicor™",
+    badge: "CHRONICOR™ · JOINT RESTORATION",
+    image: "/images/products/chronicor.png",
+    alt: "Chronicor Tablets & Packaging Box",
+    href: "/products?category=therapeutic",
+  },
+  {
+    id: "ovaphase",
+    name: "OvaPhase™",
+    badge: "OVAPHASE™ · HORMONAL WELLNESS",
+    image: "/images/products/ovaphase.png",
+    alt: "OvaPhase 40:1 Inositol Tablets & Box",
+    href: "/products?category=therapeutic",
+  },
+];
+
+const DERMA_SLIDES: SlideItem[] = [
+  {
+    id: "niascobutin",
+    name: "Niascobutin™",
+    badge: "SERUM · RESTORATIVE FORMULA",
+    image: "/images/bento/niascobutin_serum.jpg",
+    alt: "Niascobutin Face Serum",
+    href: "/products?category=derma",
+  },
+  {
+    id: "uvothera",
+    name: "UVoThera™",
+    badge: "SUNSCREEN · SPF 60+ PA++++",
+    image: "/images/bento/uvothera_sunscreen.jpg",
+    alt: "UVoThera Photoprotective Sunscreen",
+    href: "/products?category=derma",
+  },
+  {
+    id: "primathion-nutri",
+    name: "Primathion™ Nutricosmetic",
+    badge: "NUTRICOSMETIC · CELLULAR DEFENSE",
+    image: "/images/bento/primathion_nutricosmetic.jpg",
+    alt: "Primathion Cellular Nutricosmetic Pack",
+    href: "/products?category=derma",
+  },
+];
 
 export default function MasonryBento() {
+  const [medicalIndex, setMedicalIndex] = useState(0);
+  const [dermaIndex, setDermaIndex] = useState(0);
+
+  // Autoscroll for medical products (slides every 3.5s without requiring hover)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setMedicalIndex((prev) => (prev + 1) % MEDICAL_SLIDES.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Autoscroll for derma products (slides every 4.0s with slight offset for dynamic rhythm)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDermaIndex((prev) => (prev + 1) % DERMA_SLIDES.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handlePrevMedical = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setMedicalIndex((prev) => (prev - 1 + MEDICAL_SLIDES.length) % MEDICAL_SLIDES.length);
+  };
+
+  const handleNextMedical = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setMedicalIndex((prev) => (prev + 1) % MEDICAL_SLIDES.length);
+  };
+
+  const handlePrevDerma = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDermaIndex((prev) => (prev - 1 + DERMA_SLIDES.length) % DERMA_SLIDES.length);
+  };
+
+  const handleNextDerma = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDermaIndex((prev) => (prev + 1) % DERMA_SLIDES.length);
+  };
+
   return (
-    <section className="py-8 sm:py-12 bg-white border-b border-slate-100">
+    <section className="py-6 sm:py-8 lg:py-10 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* 3-Column Asymmetric Bento Grid matching phasecor.com exactly */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 sm:gap-2.5 lg:gap-3 items-stretch">
-          {/* Column 1 (Left): Full-Height Dual Delivery Feature Card */}
-          <Link
-            href="/products"
-            className="group relative block w-full h-[380px] sm:h-[460px] md:h-auto min-h-[360px] sm:min-h-[460px] md:min-h-[640px] lg:min-h-[680px] rounded-none overflow-hidden bg-black border border-slate-200"
-          >
-            <Image
-              src="/images/bento/primathion_dual.jpg"
-              alt="Dual Delivery System"
-              fill
-              sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-            />
-            {/* Bottom Floating Sharp Black Badge */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-4 sm:px-6 py-2.5 bg-black text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] shadow-md whitespace-nowrap rounded-none group-hover:bg-[#2D8F7A] transition-colors duration-300 max-w-[90%] text-center">
-              DUAL DELIVERY SYSTEM
-            </div>
-          </Link>
-
-          {/* Column 2 (Middle): Text Callout (Top) + Sunscreen Card (Bottom) */}
-          <div className="flex flex-col gap-2 sm:gap-2.5 lg:gap-3 justify-between">
-            {/* Middle Top: Science-Backed Skincare Solutions Text Card */}
-            <div className="w-full h-[260px] sm:h-[300px] md:h-[310px] lg:h-[334px] rounded-none bg-white border border-slate-200 p-6 sm:p-8 flex flex-col items-center justify-center text-center space-y-3 sm:space-y-4">
-              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#2D8F7A]">
-                ADVANCED SKINCARE
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug max-w-xs">
-                Science-Backed Skincare Solutions
-              </h3>
-              <a
-                href="https://phasecor.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 px-6 sm:px-8 py-3 bg-black text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2D8F7A] transition-colors duration-200 rounded-none shadow-sm"
+        {/* Symmetrical Bento Grid with maximum space allocated to product cards */}
+        <div className="grid grid-cols-1 md:grid-cols-[1.3fr_0.8fr_1.3fr] lg:grid-cols-[1.35fr_0.75fr_1.35fr] gap-2 sm:gap-2.5 lg:gap-3 items-stretch">
+          
+          {/* ── COLUMN 1 (LEFT): ALL MEDICAL PRODUCTS AUTOSCROLL SLIDESHOW ── */}
+          <div className="group relative block w-full h-[260px] sm:h-[280px] md:h-[300px] lg:h-[325px] rounded-none overflow-hidden bg-white border border-slate-200 shadow-sm">
+            {MEDICAL_SLIDES.map((slide, idx) => (
+              <Link
+                key={slide.id}
+                href={slide.href}
+                className={`absolute inset-0 block transition-opacity duration-700 ease-in-out ${
+                  idx === medicalIndex
+                    ? "opacity-100 z-10 pointer-events-auto"
+                    : "opacity-0 z-0 pointer-events-none"
+                }`}
+                aria-label={`View ${slide.name}`}
               >
-                SHOP NOW
-              </a>
+                <Image
+                  src={slide.image}
+                  alt={slide.alt}
+                  fill
+                  priority={idx === 0}
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </Link>
+            ))}
+
+            {/* Top Slide Indicators */}
+            <div className="absolute top-3 sm:top-3.5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/10">
+              {MEDICAL_SLIDES.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setMedicalIndex(i);
+                  }}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === medicalIndex ? "w-5 bg-white" : "w-1.5 bg-white/40 hover:bg-white/70"
+                  }`}
+                  aria-label={`Slide ${i + 1}`}
+                />
+              ))}
             </div>
 
-            {/* Middle Bottom: Sunscreen Card */}
-            <Link
-              href="/products"
-              className="group relative block w-full h-[260px] sm:h-[300px] md:h-[310px] lg:h-[334px] rounded-none overflow-hidden bg-slate-50 border border-slate-200"
+            {/* Subtle Prev/Next Navigation Controls on Hover */}
+            <button
+              type="button"
+              onClick={handlePrevMedical}
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-black/40 hover:bg-black/80 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 backdrop-blur-sm"
+              aria-label="Previous medicinal formulation"
             >
-              <Image
-                src="/images/bento/uvothera_sunscreen.jpg"
-                alt="Sunscreen"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 px-6 py-2.5 bg-black text-white text-[11px] font-bold uppercase tracking-[0.2em] shadow-md whitespace-nowrap rounded-none group-hover:bg-[#2D8F7A] transition-colors duration-300">
-                SUNSCREEN
-              </div>
+              <ChevronLeft className="w-3.5 h-3.5" />
+            </button>
+            <button
+              type="button"
+              onClick={handleNextMedical}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-black/40 hover:bg-black/80 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 backdrop-blur-sm"
+              aria-label="Next medicinal formulation"
+            >
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+
+            {/* Bottom Floating Sharp Black Badge */}
+            <Link
+              href={MEDICAL_SLIDES[medicalIndex].href}
+              className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 px-4 sm:px-5 py-2 bg-black text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] shadow-md whitespace-nowrap rounded-none hover:bg-[#2D8F7A] transition-colors duration-300 max-w-[90%] text-center"
+            >
+              THERAPEUTIC RANGE
             </Link>
           </div>
 
-          {/* Column 3 (Right): Serum Card (Top) + Nutricosmetic Card (Bottom) */}
-          <div className="flex flex-col gap-2 sm:gap-2.5 lg:gap-3 justify-between">
-            {/* Right Top: Serum Card */}
+          {/* ── COLUMN 2 (CENTER): COMPACT CENTER BRAND BANNER (PARAGRAPH REMOVED) ── */}
+          <div className="w-full h-[240px] sm:h-[260px] md:h-auto rounded-none bg-white border border-slate-200 p-5 sm:p-6 lg:p-7 flex flex-col items-center justify-center text-center space-y-3 sm:space-y-3.5 shadow-sm">
+            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D8F7A]">
+              ADVANCED HEALTHCARE
+            </span>
+            <h3 className="text-xl sm:text-2xl lg:text-[25px] font-extrabold text-slate-900 tracking-tight leading-snug max-w-[240px] sm:max-w-xs">
+              Science-Backed Healthcare Solutions
+            </h3>
+            <div className="w-8 h-0.5 bg-[#2D8F7A]/40 my-0.5" />
             <Link
               href="/products"
-              className="group relative block w-full h-[260px] sm:h-[300px] md:h-[310px] lg:h-[334px] rounded-none overflow-hidden bg-slate-50 border border-slate-200"
+              className="mt-1 px-6 sm:px-8 py-2.5 sm:py-3 bg-black text-white text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2D8F7A] transition-colors duration-200 rounded-none shadow-sm inline-block"
             >
-              <Image
-                src="/images/bento/niascobutin_serum.jpg"
-                alt="Serum"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 px-6 py-2.5 bg-black text-white text-[11px] font-bold uppercase tracking-[0.2em] shadow-md whitespace-nowrap rounded-none group-hover:bg-[#2D8F7A] transition-colors duration-300">
-                SERUM
-              </div>
-            </Link>
-
-            {/* Right Bottom: Nutricosmetic Card */}
-            <Link
-              href="/products"
-              className="group relative block w-full h-[260px] sm:h-[300px] md:h-[310px] lg:h-[334px] rounded-none overflow-hidden bg-slate-50 border border-slate-200"
-            >
-              <Image
-                src="/images/bento/primathion_nutricosmetic.jpg"
-                alt="Nutricosmetic"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 px-6 py-2.5 bg-black text-white text-[11px] font-bold uppercase tracking-[0.2em] shadow-md whitespace-nowrap rounded-none group-hover:bg-[#2D8F7A] transition-colors duration-300">
-                NUTRICOSMETIC
-              </div>
+              SHOP NOW
             </Link>
           </div>
+
+          {/* ── COLUMN 3 (RIGHT): ALL DERMA PRODUCTS AUTOSCROLL SLIDESHOW ── */}
+          <div className="group relative block w-full h-[260px] sm:h-[280px] md:h-[300px] lg:h-[325px] rounded-none overflow-hidden bg-white border border-slate-200 shadow-sm">
+            {DERMA_SLIDES.map((slide, idx) => (
+              <Link
+                key={slide.id}
+                href={slide.href}
+                className={`absolute inset-0 block transition-opacity duration-700 ease-in-out ${
+                  idx === dermaIndex
+                    ? "opacity-100 z-10 pointer-events-auto"
+                    : "opacity-0 z-0 pointer-events-none"
+                }`}
+                aria-label={`View ${slide.name}`}
+              >
+                <Image
+                  src={slide.image}
+                  alt={slide.alt}
+                  fill
+                  priority={idx === 0}
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </Link>
+            ))}
+
+            {/* Top Slide Indicators */}
+            <div className="absolute top-3 sm:top-3.5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/10">
+              {DERMA_SLIDES.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setDermaIndex(i);
+                  }}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === dermaIndex ? "w-5 bg-white" : "w-1.5 bg-white/40 hover:bg-white/70"
+                  }`}
+                  aria-label={`Slide ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Subtle Prev/Next Navigation Controls on Hover */}
+            <button
+              type="button"
+              onClick={handlePrevDerma}
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-black/40 hover:bg-black/80 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 backdrop-blur-sm"
+              aria-label="Previous derma formulation"
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+            </button>
+            <button
+              type="button"
+              onClick={handleNextDerma}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-black/40 hover:bg-black/80 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 backdrop-blur-sm"
+              aria-label="Next derma formulation"
+            >
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+
+            {/* Bottom Floating Sharp Black Badge */}
+            <Link
+              href={DERMA_SLIDES[dermaIndex].href}
+              className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 px-4 sm:px-5 py-2 bg-black text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] shadow-md whitespace-nowrap rounded-none hover:bg-[#2D8F7A] transition-colors duration-300 max-w-[90%] text-center"
+            >
+              DERMATOLOGICAL RANGE
+            </Link>
+          </div>
+
         </div>
       </div>
     </section>

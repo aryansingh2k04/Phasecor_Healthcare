@@ -265,7 +265,7 @@ export default function ContactPage() {
                     <div className="space-y-1">
                       <h3 className="text-xs font-bold uppercase tracking-wider text-white/80">Address</h3>
                       <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-medium">
-                        Shop No. A1/01, Building No. B, Twinkle Apartment, Katemanivali, Katemanivali Naka, Kalyan East, Thane, Maharashtra – 421306
+                        Shop No. 4, Royal Residency Chs, Katemanevali, Opp. Vitthalwadi Station, Kalyan (E), Vitthalwadi, Kalyan, Maharashtra 421306, India
                       </p>
                     </div>
                   </div>
@@ -308,13 +308,13 @@ export default function ContactPage() {
                     <div className="space-y-1">
                       <h3 className="text-xs font-bold uppercase tracking-wider text-white/80">Operating Hours</h3>
                       <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-medium">
-                        Monday – Saturday: 9:00 AM – 7:00 PM IST
+                        Monday – Saturday: 10:00 AM – 7:00 PM IST
                       </p>
                     </div>
                   </div>
                 </div>
 
-                {/* Embedded Google Maps for Rxpert Pharma */}
+                {/* Embedded Google Maps for Phasecor */}
                 <div className="pt-2 border-t border-white/20">
                   <div className="rounded-md overflow-hidden border border-white/20 shadow-md">
                     <iframe
@@ -324,16 +324,16 @@ export default function ContactPage() {
                       loading="lazy"
                       allowFullScreen
                       referrerPolicy="no-referrer-when-downgrade"
-                      src="https://maps.google.com/maps?q=Rxperts%20Pharma,%20Katemanivali,%20Kalyan%20East&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                      title="Rxpert Pharma Location Map"
+                      src="https://maps.google.com/maps?q=Royal%20Residency%20Chs,%20Opp.%20Vitthalwadi%20Station,%20Kalyan%20East,%20Maharashtra%20421306&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                      title="Phasecor Location Map"
                     />
                   </div>
                   <div className="pt-2.5 flex items-center justify-between">
                     <span className="text-[11px] text-white/80 font-medium">
-                      Rxpert Pharma &bull; Kalyan East
+                      Phasecor &bull; Vitthalwadi Station, Kalyan (E)
                     </span>
                     <a
-                      href="https://www.google.com/maps/search/?api=1&query=Rxperts+Pharma+Katemanivali+Kalyan+East"
+                      href="https://www.google.com/maps/search/?api=1&query=Royal+Residency+Chs+Vitthalwadi+Station+Kalyan+East"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-xs font-semibold text-white hover:underline"
