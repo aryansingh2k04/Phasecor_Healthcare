@@ -123,8 +123,8 @@ export default function MasonryBento() {
   return (
     <section className="py-6 sm:py-8 lg:py-10 bg-white border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Symmetrical Bento Grid with maximum space allocated to product cards */}
-        <div className="grid grid-cols-1 md:grid-cols-[1.3fr_0.8fr_1.3fr] lg:grid-cols-[1.35fr_0.75fr_1.35fr] gap-2 sm:gap-2.5 lg:gap-3 items-stretch">
+        {/* Symmetrical Bento Grid with balanced width for laptop and desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr_1.15fr] lg:grid-cols-[1.15fr_1fr_1.15fr] gap-2 sm:gap-2.5 lg:gap-3 items-stretch">
           
           {/* ── COLUMN 1 (LEFT): ALL MEDICAL PRODUCTS AUTOSCROLL SLIDESHOW ── */}
           <div className="group relative block w-full h-[260px] sm:h-[280px] md:h-[300px] lg:h-[325px] rounded-none overflow-hidden bg-white border border-slate-200 shadow-sm">
@@ -144,7 +144,7 @@ export default function MasonryBento() {
                   alt={slide.alt}
                   fill
                   priority={idx === 0}
-                  sizes="(max-width: 768px) 100vw, 42vw"
+                  sizes="(max-width: 768px) 100vw, 38vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </Link>
@@ -197,14 +197,14 @@ export default function MasonryBento() {
           </div>
 
           {/* ── COLUMN 2 (CENTER): COMPACT CENTER BRAND BANNER (PARAGRAPH REMOVED) ── */}
-          <div className="w-full h-[240px] sm:h-[260px] md:h-auto rounded-none bg-white border border-slate-200 p-5 sm:p-6 lg:p-7 flex flex-col items-center justify-center text-center space-y-3 sm:space-y-3.5 shadow-sm">
+          <div className="w-full h-[240px] sm:h-[260px] md:h-auto rounded-none bg-white border border-slate-200 p-5 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center space-y-3 sm:space-y-4 shadow-sm">
             <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D8F7A]">
               ADVANCED HEALTHCARE
             </span>
-            <h3 className="text-xl sm:text-2xl lg:text-[25px] font-extrabold text-slate-900 tracking-tight leading-snug max-w-[240px] sm:max-w-xs">
+            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-slate-900 tracking-tight leading-snug max-w-sm">
               Science-Backed Healthcare Solutions
             </h3>
-            <div className="w-8 h-0.5 bg-[#2D8F7A]/40 my-0.5" />
+            <div className="w-10 h-0.5 bg-[#2D8F7A]/40 my-0.5" />
             <Link
               href="/products"
               className="mt-1 px-6 sm:px-8 py-2.5 sm:py-3 bg-black text-white text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2D8F7A] transition-colors duration-200 rounded-none shadow-sm inline-block"
