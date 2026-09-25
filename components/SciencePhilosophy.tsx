@@ -10,7 +10,7 @@ export default function SciencePhilosophy() {
       subtitle: "Patented Synchronized Uptake",
       description:
         "Conventional oral supplements struggle with simultaneous lipid and aqueous nutrient absorption. Our Dual Delivery Technology encapsulates oil-based actives in powder alongside water-soluble nutrients for differential sustained release and elevated cellular bioavailability.",
-      image: "/images/bento/primathion_dual.jpg",
+      image: "/images/products/primathion.png",
       tag: "Nutricosmetic Innovation"
     },
     {
@@ -18,7 +18,7 @@ export default function SciencePhilosophy() {
       subtitle: "Beyond Standard UV Filters",
       description:
         "Modern photodamage is not limited to UV rays. Phasecor photoprotection creates a non-greasy silica shield against UVA (photo-aging), UVB (erythema), Infrared Radiation (thermal shock), and high-energy visible screen blue light.",
-      image: "/images/bento/uvothera_sunscreen.jpg",
+      image: "/images/products/uvothera.png",
       tag: "Photoprotection"
     },
     {
@@ -26,7 +26,7 @@ export default function SciencePhilosophy() {
       subtitle: "Strength Over Harsh Exfoliation",
       description:
         "Rather than overloading skin with aggressive stripping acids, Phasecor pairs clinical brightening actives like Niacinamide and Tranexamic Acid with barrier lipids, Centella, and Panthenol for sustained cellular repair.",
-      image: "/images/bento/niascobutin_serum.jpg",
+      image: "/images/products/niascobutin.png",
       tag: "Cutaneous Biology"
     }
   ];

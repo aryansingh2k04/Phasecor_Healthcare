@@ -324,16 +324,16 @@ export default function ContactPage() {
                       loading="lazy"
                       allowFullScreen
                       referrerPolicy="no-referrer-when-downgrade"
-                      src="https://maps.google.com/maps?q=Royal%20Residency%20Chs,%20Opp.%20Vitthalwadi%20Station,%20Kalyan%20East,%20Maharashtra%20421306&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                      src="https://maps.google.com/maps?q=19.2274628,73.1477833&hl=en&z=17&output=embed"
                       title="Phasecor Location Map"
                     />
                   </div>
                   <div className="pt-2.5 flex items-center justify-between">
                     <span className="text-[11px] text-white/80 font-medium">
-                      Phasecor &bull; Vitthalwadi Station, Kalyan (E)
+                      Phasecor &bull; Royal Residency, Opp. Vitthalwadi Station, Kalyan (E)
                     </span>
                     <a
-                      href="https://www.google.com/maps/search/?api=1&query=Royal+Residency+Chs+Vitthalwadi+Station+Kalyan+East"
+                      href="https://maps.app.goo.gl/CizgU2pm6aXqY1Y98"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-xs font-semibold text-white hover:underline"

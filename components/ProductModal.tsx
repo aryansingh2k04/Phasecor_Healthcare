@@ -39,11 +39,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
               src={product.detailImage || product.mainImage}
               alt={product.name}
               fill
-              className={
-                product.category === "Therapeutic Medicines"
-                  ? "object-cover"
-                  : "object-contain p-3"
-              }
+              className="object-cover"
             />
           </div>
 

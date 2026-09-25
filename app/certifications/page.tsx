@@ -86,11 +86,21 @@ export default function CertificationsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {certifications.map((cert) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 sm:gap-8">
+            {certifications.map((cert, index) => (
               <div
                 key={cert.title}
-                className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between space-y-4"
+                className={`p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between space-y-4 ${
+                  index < 3
+                    ? "lg:col-span-2"
+                    : index === 3
+                    ? "lg:col-span-2 lg:col-start-2"
+                    : "lg:col-span-2"
+                } ${
+                  index === 4
+                    ? "md:col-span-2 md:max-w-md md:mx-auto w-full lg:max-w-none"
+                    : "md:col-span-1"
+                }`}
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">

@@ -54,24 +54,24 @@ const DERMA_SLIDES: SlideItem[] = [
     id: "niascobutin",
     name: "Niascobutin™",
     badge: "SERUM · RESTORATIVE FORMULA",
-    image: "/images/bento/niascobutin_serum.jpg",
-    alt: "Niascobutin Face Serum",
+    image: "/images/bento/niascobutin.png",
+    alt: "Niascobutin Face Serum & Packaging Box",
     href: "/products?category=derma",
   },
   {
     id: "uvothera",
     name: "UVoThera™",
     badge: "SUNSCREEN · SPF 60+ PA++++",
-    image: "/images/bento/uvothera_sunscreen.jpg",
-    alt: "UVoThera Photoprotective Sunscreen",
+    image: "/images/bento/uvothera.png",
+    alt: "UVoThera Sunscreen Tube & Packaging Box",
     href: "/products?category=derma",
   },
   {
-    id: "primathion-nutri",
+    id: "primathion",
     name: "Primathion™ Nutricosmetic",
     badge: "NUTRICOSMETIC · CELLULAR DEFENSE",
-    image: "/images/bento/primathion_nutricosmetic.jpg",
-    alt: "Primathion Cellular Nutricosmetic Pack",
+    image: "/images/bento/primathion.png",
+    alt: "Primathion Oral Supplement Bottle & Packaging Box",
     href: "/products?category=derma",
   },
 ];
@@ -122,9 +122,9 @@ export default function MasonryBento() {
 
   return (
     <section className="py-6 sm:py-8 lg:py-10 bg-white border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Symmetrical Bento Grid with balanced width for laptop and desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr_1.15fr] lg:grid-cols-[1.15fr_1fr_1.15fr] gap-2 sm:gap-2.5 lg:gap-3 items-stretch">
+      <div className="max-w-7xl lg:max-w-[1360px] xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Symmetrical Bento Grid with expanded central card and preserved slideshow width */}
+        <div className="grid grid-cols-1 md:grid-cols-[1.25fr_0.9fr_1.25fr] lg:grid-cols-[1.2fr_0.95fr_1.2fr] xl:grid-cols-[1.2fr_1fr_1.2fr] gap-2 sm:gap-2.5 lg:gap-3 items-stretch">
           
           {/* ── COLUMN 1 (LEFT): ALL MEDICAL PRODUCTS AUTOSCROLL SLIDESHOW ── */}
           <div className="group relative block w-full h-[260px] sm:h-[280px] md:h-[300px] lg:h-[325px] rounded-none overflow-hidden bg-white border border-slate-200 shadow-sm">
@@ -144,7 +144,7 @@ export default function MasonryBento() {
                   alt={slide.alt}
                   fill
                   priority={idx === 0}
-                  sizes="(max-width: 768px) 100vw, 38vw"
+                  sizes="(max-width: 768px) 100vw, 42vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </Link>
@@ -196,12 +196,12 @@ export default function MasonryBento() {
             </Link>
           </div>
 
-          {/* ── COLUMN 2 (CENTER): COMPACT CENTER BRAND BANNER (PARAGRAPH REMOVED) ── */}
-          <div className="w-full h-[240px] sm:h-[260px] md:h-auto rounded-none bg-white border border-slate-200 p-5 sm:p-6 lg:p-8 flex flex-col items-center justify-center text-center space-y-3 sm:space-y-4 shadow-sm">
+          {/* ── COLUMN 2 (CENTER): EXPANDED CENTER BRAND BANNER ── */}
+          <div className="w-full h-[240px] sm:h-[260px] md:h-auto rounded-none bg-white border border-slate-200 p-5 sm:p-6 lg:px-8 lg:py-7 flex flex-col items-center justify-center text-center space-y-3 sm:space-y-3.5 lg:space-y-4 shadow-sm">
             <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D8F7A]">
               ADVANCED HEALTHCARE
             </span>
-            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-slate-900 tracking-tight leading-snug max-w-sm">
+            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-extrabold text-slate-900 tracking-tight leading-snug max-w-[260px] sm:max-w-sm lg:max-w-md">
               Science-Backed Healthcare Solutions
             </h3>
             <div className="w-10 h-0.5 bg-[#2D8F7A]/40 my-0.5" />

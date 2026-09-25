@@ -34,11 +34,7 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
               alt={product.name}
               fill
               sizes="320px"
-              className={`${
-                product.category === "Therapeutic Medicines"
-                  ? "object-cover"
-                  : "object-contain p-2"
-              } group-hover:scale-105 transition-transform duration-500 rounded-xl`}
+              className="object-cover group-hover:scale-105 transition-transform duration-500 rounded-xl"
             />
           </div>
         </div>
@@ -59,8 +55,8 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
             </div>
           </div>
 
-          {/* Centered Sleek "View Details" Button */}
-          <div className="mt-4 pt-1 flex justify-center">
+          {/* Side-by-Side Action Buttons: View Details & Enquiry */}
+          <div className="mt-4 pt-1 grid grid-cols-2 gap-2 sm:gap-2.5">
             <button
               type="button"
               onClick={() => {
@@ -70,9 +66,16 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
                   setShowOverlay(true);
                 }
               }}
-              className="w-auto min-w-[170px] max-w-[210px] py-2.5 px-6 rounded-md bg-white text-[#237362] hover:bg-white/95 font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center cursor-pointer"
+              className="w-full py-2.5 px-2 rounded-md bg-white text-[#237362] hover:bg-white/95 font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center cursor-pointer text-center whitespace-nowrap"
             >
               View Details
+            </button>
+            <button
+              type="button"
+              onClick={() => onEnquire(product.id)}
+              className="w-full py-2.5 px-2 rounded-md bg-white text-[#237362] hover:bg-white/95 font-bold text-[11px] sm:text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center cursor-pointer text-center whitespace-nowrap"
+            >
+              Enquiry
             </button>
           </div>
         </div>
