@@ -41,7 +41,7 @@ export const PRODUCTS: Product[] = [
       "Refreshing sugar-free formulation for comfortable daily compliance"
     ],
     howToUse:
-      "Take 15 ml diluted in a glass of water twice daily, or as advised by your healthcare physician.",
+      "Take 10 ml diluted in a glass of water twice daily, or as advised by your healthcare physician.",
     packaging: "100 ml Amber Bottle with Measuring Cup",
     indications: "Acute and recurrent urinary tract infections (UTIs), burning micturition, dysuria, prophylactic urinary wellness"
   },
@@ -89,7 +89,6 @@ export const PRODUCTS: Product[] = [
       "Advanced therapeutic tablet formulated to support joint mobility, cartilage renewal, bone mineral density, and calm neuropathic inflammation in chronic musculoskeletal disorders.",
     keyActives: [
       "Calcium Orotate",
-      "Cissus Quadrangularis",
       "Methylcobalamin (Active B12)",
       "L-Methyl Folate",
       "Vitamin D3",
@@ -98,15 +97,15 @@ export const PRODUCTS: Product[] = [
       "Alpha Lipoic Acid & Calcium Pantothenate"
     ],
     benefits: [
-      "Accelerates bone mineralization and osteoblast activity with Cissus Quadrangularis",
       "High-bioavailability Calcium Orotate delivers calcium directly to bone matrix",
-      "Methylcobalamin, L-Methyl Folate, and ALA support nerve myelin sheath renewal",
-      "Omega-3 fatty acids help alleviate joint stiffness, inflammation, and fatigue"
+      "Methylcobalamin, L-Methyl Folate, and ALA support nerve myelin sheath renewal and soothe burning feet sensations",
+      "Omega-3 fatty acids help alleviate joint stiffness, inflammation, and fatigue",
+      "Vitamin D3 and L-Carnitine optimize musculoskeletal strength and physical recovery"
     ],
     howToUse:
       "Take 1 tablet daily after main meals with water, or as directed by an orthopaedic specialist or physician.",
-    packaging: "10 x 1 x 10 Tablets / Blister Box",
-    indications: "Osteoarthritis, joint pain, osteoporosis, rheumatoid stiffness, post-trauma bone healing, peripheral neuropathy"
+    packaging: "1 x 10 Tab",
+    indications: "Osteoarthritis, joint pain, osteoporosis, rheumatoid stiffness, post-trauma bone healing, peripheral neuropathy, burning feet syndrome"
   },
   {
     id: "ovaphase",
@@ -135,7 +134,7 @@ export const PRODUCTS: Product[] = [
     ],
     howToUse:
       "Take 1 to 2 tablets daily after meals with water, or as recommended by your gynaecologist.",
-    packaging: "10 x 1 x 10 Tablets / Blister Box",
+    packaging: "1 x 10 Tab",
     indications: "Polycystic Ovary Syndrome (PCOS/PCOD), irregular menstrual cycles, insulin resistance, hyperandrogenism, ovulatory wellness"
   },
 
@@ -199,7 +198,7 @@ export const PRODUCTS: Product[] = [
     ],
     howToUse:
       "Take 1 capsule in the morning and 1 capsule in the evening after meals with water, or as directed by your healthcare physician.",
-    packaging: "60 Capsules / Pharmaceutical Pack",
+    packaging: "60 Capsules",
     indications: "Deep cellular hyperpigmentation, photo-aging, environmental oxidative stress, skin fatigue"
   },
   {

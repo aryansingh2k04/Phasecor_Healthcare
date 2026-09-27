@@ -42,17 +42,18 @@ export default function FeaturedSpotlight({ onOpenDetails, onEnquire }: Featured
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
-              <button
-                type="button"
-                onClick={() => onEnquire(uvothera.id)}
-                className="w-auto min-w-[180px] sm:min-w-[160px] px-8 py-3 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all shadow-sm text-center"
+              <a
+                href="https://phasecor.com/products/uvothera"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-auto min-w-[180px] sm:min-w-[160px] px-8 py-3 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all shadow-sm text-center inline-flex items-center justify-center"
               >
-                Enquiry
-              </button>
+                Shop Now
+              </a>
               <button
                 type="button"
                 onClick={() => onOpenDetails(uvothera.id)}
-                className="w-auto min-w-[180px] sm:min-w-[160px] px-8 py-3 rounded-md border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all text-center"
+                className="w-auto min-w-[180px] sm:min-w-[160px] px-8 py-3 rounded-md border border-slate-300 text-slate-800 text-xs font-semibold tracking-wider uppercase hover:border-[#2D8F7A] hover:text-[#2D8F7A] transition-all text-center cursor-pointer"
               >
                 Details
               </button>

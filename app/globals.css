@@ -112,3 +112,63 @@ body {
   background-size: 200% auto;
   animation: gradientShift 6s ease-in-out infinite;
 }
+
+@keyframes orbFloat1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.28;
+  }
+  33% {
+    transform: translate(45px, -25px) scale(1.18);
+    opacity: 0.55;
+  }
+  66% {
+    transform: translate(-35px, 20px) scale(0.92);
+    opacity: 0.3;
+  }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+  }
+  33% {
+    transform: translate(-50px, 35px) scale(1.22);
+    opacity: 0.48;
+  }
+  66% {
+    transform: translate(38px, -20px) scale(0.95);
+    opacity: 0.32;
+  }
+}
+
+@keyframes lightBeamSweep {
+  0% {
+    transform: rotate(-25deg) translateY(-20%) translateX(-120%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.25;
+  }
+  60% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: rotate(-25deg) translateY(-20%) translateX(220%);
+    opacity: 0;
+  }
+}
+
+.animate-orb-1 {
+  animation: orbFloat1 9s ease-in-out infinite;
+}
+
+.animate-orb-2 {
+  animation: orbFloat2 12s ease-in-out infinite;
+}
+
+.animate-light-beam {
+  animation: lightBeamSweep 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+

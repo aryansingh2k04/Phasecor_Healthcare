@@ -12,6 +12,7 @@ import {
   Award
 } from "lucide-react";
 import { BRAND_PHILOSOPHY } from "@/components/data";
+import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
 
 export const metadata: Metadata = {
   title: "About Us | Phasecor Healthcare",
@@ -51,7 +52,7 @@ export default function AboutPage() {
     },
     {
       title: "Joint, Bone & Neuropathic Health",
-      desc: "Multi-modal musculoskeletal formulations (Chronicor™) combining Calcium Orotate, Cissus Quadrangularis, and Active B12.",
+      desc: "Multi-modal musculoskeletal formulations (Chronicor™) combining Calcium Orotate and Active B12.",
       badge: "Orthopaedics & Rheumatology",
     },
     {
@@ -70,16 +71,18 @@ export default function AboutPage() {
     <div className="bg-white">
       {/* Page Header Hero */}
       <section className="relative bg-[#071714] text-white py-16 sm:py-20 lg:py-28 overflow-hidden text-center">
-        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,rgba(45,143,122,0.25)_0%,rgba(7,23,20,0)_65%)]" />
+        <HeroBackgroundEffect />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-5">
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-              Quality Healthcare <br />
-              <span className="bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent">
+              <span className="block animate-hero-title">
+                Quality Healthcare
+              </span>
+              <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)] animate-hero-gradient animate-gradient-shift">
                 within Reach
               </span>
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl">
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl animate-hero-desc">
               {BRAND_PHILOSOPHY.statement}
             </p>
           </div>

@@ -9,6 +9,7 @@ import { PRODUCTS, Product } from "@/components/data";
 import ProductCard from "@/components/ProductCard";
 import ProductModal from "@/components/ProductModal";
 import SupportBlocks from "@/components/SupportBlocks";
+import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
 
 const therapeuticCertifications = [
   {
@@ -61,17 +62,19 @@ export default function ProductsPage() {
     <div className="bg-white">
       {/* Header Banner */}
       <section className="relative bg-[#071714] text-white py-16 sm:py-20 lg:py-24 overflow-hidden text-center">
-        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,rgba(45,143,122,0.22)_0%,rgba(7,23,20,0)_65%)]" />
+        <HeroBackgroundEffect />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Quality Healthcare within Reach: <br />
-              <span className="bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent">
+              <span className="block animate-hero-title">
+                Quality Healthcare within Reach:
+              </span>
+              <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)] animate-hero-gradient animate-gradient-shift">
                 Therapeutics &amp; Formulations
               </span>
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl">
-              Engineered with medical rigor, verified therapeutic dosages, and uncompromised purity &mdash; providing essential urinary, metabolic, rehydration, musculoskeletal, and dermatological healthcare solutions.
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl animate-hero-desc">
+              Engineered with medical rigor, verified therapeutic dosages, and uncompromised purity, providing essential urinary, metabolic, rehydration, musculoskeletal, and dermatological healthcare solutions.
             </p>
           </div>
         </div>
@@ -206,7 +209,7 @@ export default function ProductsPage() {
               <div className="space-y-1.5">
                 <h3 className="text-base font-bold text-white">Joint &amp; Bone Density</h3>
                 <p className="text-xs text-white/90 leading-relaxed font-normal">
-                  Synergistic Calcium Orotate, Cissus Quadrangularis, and Active B12 for cartilage and neuropathic recovery.
+                  Synergistic Calcium Orotate and Active B12 for cartilage and neuropathic recovery.
                 </p>
               </div>
             </div>

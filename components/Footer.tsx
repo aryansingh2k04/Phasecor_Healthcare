@@ -32,10 +32,10 @@ export default function Footer() {
                 About Phasecor Healthcare
               </h3>
               <p className="text-slate-700 text-xs sm:text-[13px] leading-relaxed font-normal">
-                Phasecor Healthcare is a pharmaceutical brand focused on delivering thoughtfully formulated, quality-driven products that address evolving healthcare needs.
+                Phasecor Healthcare is a pharmaceutical brand focused on delivering thoughtfully formulated, quality driven products that address evolving healthcare needs.
               </p>
               <p className="text-slate-700 text-xs sm:text-[13px] leading-relaxed font-normal">
-                Built on quality, accessibility, and purposeful innovation, we bridge the gap between science and affordability &mdash; combining carefully selected ingredients and stringent standards to deliver dependable formulations. Quality healthcare within reach.
+                Built on quality, accessibility, and purposeful innovation, we bridge the gap between science and affordability, combining carefully selected ingredients and stringent standards to deliver dependable formulations. Quality healthcare within reach.
               </p>
             </div>
           </div>

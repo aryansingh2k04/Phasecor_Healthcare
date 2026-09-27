@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AlertTriangle, Stethoscope, ShieldCheck, Sparkles, HeartPulse, Mail, MapPin } from "lucide-react";
+import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
 
 export const metadata: Metadata = {
   title: "Disclaimer | Phasecor Healthcare",
@@ -13,13 +14,18 @@ export default function DisclaimerPage() {
     <div className="flex flex-col bg-white text-slate-900 selection:bg-[#2D8F7A]/20 selection:text-[#184a3f]">
       {/* ── Page Hero Header ── */}
       <section className="relative bg-[#071714] text-white py-16 sm:py-20 lg:py-24 overflow-hidden text-center">
-        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,rgba(45,143,122,0.25)_0%,rgba(7,23,20,0)_65%)]" />
+        <HeroBackgroundEffect />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Medical &amp; Product Disclaimer
+              <span className="block animate-hero-title">
+                Medical &amp; Product
+              </span>
+              <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)] animate-hero-gradient animate-gradient-shift">
+                Disclaimer
+              </span>
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl">
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl animate-hero-desc">
               Please read this disclaimer carefully before exploring our therapeutic formulations, dermatological solutions, or scientific literature.
             </p>
           </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Scale, FileCheck, ShieldAlert, CheckCircle2, RotateCcw, Mail, MapPin } from "lucide-react";
+import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | Phasecor Healthcare",
@@ -13,13 +14,18 @@ export default function TermsConditionsPage() {
     <div className="flex flex-col bg-white text-slate-900 selection:bg-[#2D8F7A]/20 selection:text-[#184a3f]">
       {/* ── Page Hero Header ── */}
       <section className="relative bg-[#071714] text-white py-16 sm:py-20 lg:py-24 overflow-hidden text-center">
-        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,rgba(45,143,122,0.25)_0%,rgba(7,23,20,0)_65%)]" />
+        <HeroBackgroundEffect />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Terms &amp; Conditions
+              <span className="block animate-hero-title">
+                Terms &amp;
+              </span>
+              <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)] animate-hero-gradient animate-gradient-shift">
+                Conditions
+              </span>
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl">
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl animate-hero-desc">
               By accessing or using the Phasecor Healthcare website, you enter into a legally binding contract with Phasecor. Please read these guidelines, rights, and responsibilities carefully.
             </p>
           </div>
@@ -122,7 +128,7 @@ export default function TermsConditionsPage() {
             <div className="p-6 rounded-xl bg-gradient-to-br from-[#f7faf8] to-[#e8f2ee]/50 border border-[#2D8F7A]/30 space-y-4">
               <h3 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
                 <RotateCcw className="w-5 h-5 text-[#2D8F7A]" />
-                <span>Return &amp; Refund Policy &ndash; Phasecor</span>
+                <span>Return &amp; Refund Policy</span>
               </h3>
               <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                 At Phasecor, every formulation is developed with precision and dermatological rigor. If an issue occurs with your purchase, our customer care process ensures prompt resolution:

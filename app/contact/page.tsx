@@ -8,10 +8,10 @@ import {
   MapPin,
   Clock,
   CheckCircle2,
-  ChevronDown,
   ExternalLink
 } from "lucide-react";
 import { COMPANY_CONTACT, PRODUCTS, MEDICINE_PIPELINE } from "@/components/data";
+import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
 
 function formatProductName(param: string): string {
   if (!param) return "";
@@ -194,38 +194,22 @@ function ContactForm() {
 }
 
 export default function ContactPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const faqs = [
-    {
-      q: "Where can retail consumers purchase Phasecor formulations?",
-      a: "Phasecor Healthcare operates as a corporate and clinical information platform without a direct consumer storefront here. Retail patients and individual consumers can purchase our released formulations through our official retail storefront at phasecor.com.",
-    },
-    {
-      q: "How can clinics, dermatologists, and hospitals place institutional orders?",
-      a: "Practitioners and formulary procurement officers can submit the inquiry form above with their practice details or contact info@phasecor.com directly. Our institutional team provides batch dossiers, practitioner pricing, and sample packages.",
-    },
-    {
-      q: "How does Phasecor verify formulation biocompatibility?",
-      a: "Every formulation undergoes rigorous repeated patch testing under independent board-certified dermatologists across Fitzpatrick skin types I through VI, alongside HPLC purity assays and accelerated stability testing in cGMP certified environments.",
-    },
-    {
-      q: "Can researchers or healthcare institutions request a Certificate of Analysis (COA)?",
-      a: "Yes. Every commercial production batch is issued an individualized Certificate of Analysis documenting chemical assay purity, microbiological incubation, and active stability. You may request specific batch records via our contact form.",
-    },
-  ];
-
   return (
     <div className="bg-white">
       {/* ── Page Header Hero (Exact standard across all pages) ── */}
       <section className="relative bg-[#071714] text-white py-16 sm:py-20 lg:py-24 overflow-hidden text-center">
-        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_40%,rgba(45,143,122,0.25)_0%,rgba(7,23,20,0)_65%)]" />
+        <HeroBackgroundEffect />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              Get in Touch
+              <span className="block animate-hero-title">
+                Get in
+              </span>
+              <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)] animate-hero-gradient animate-gradient-shift">
+                Touch
+              </span>
             </h1>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl">
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal mx-auto max-w-2xl animate-hero-desc">
               Whether you have an inquiry about our products, want to explore a partnership, or need support, our global team is ready to assist you.
             </p>
           </div>
@@ -347,52 +331,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQ Section (Clean Cards) ── */}
-      <section className="py-14 sm:py-20 bg-[#f9faf9] border-t border-slate-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
-          <div className="text-center space-y-2">
-            <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
-              Frequently Asked Questions
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              Clinical &amp; Corporate Inquiries FAQ
-            </h2>
-          </div>
-
-          <div className="space-y-3 sm:space-y-4">
-            {faqs.map((faq, index) => {
-              const isOpen = openFaq === index;
-              return (
-                <div
-                  key={faq.q}
-                  className="rounded-md bg-white border border-slate-200 overflow-hidden transition-all"
-                >
-                  <button
-                    type="button"
-                    onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="w-full p-4 sm:p-6 text-left flex items-center justify-between gap-3 sm:gap-4"
-                  >
-                    <span className="text-sm sm:text-base font-bold text-slate-900">
-                      {faq.q}
-                    </span>
-                    <ChevronDown
-                      className={`w-5 h-5 text-slate-500 transition-transform duration-200 shrink-0 ${
-                        isOpen ? "rotate-180 text-[#2D8F7A]" : ""
-                      }`}
-                    />
-                  </button>
-                  {isOpen && (
-                    <div className="px-4 pb-4 sm:px-6 sm:pb-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 sm:pt-4">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>
