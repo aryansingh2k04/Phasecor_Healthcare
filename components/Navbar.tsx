@@ -64,13 +64,23 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // When navigating to any new page, ensure navbar is immediately visible and scroll to top
+  // When navigating to any new page, ensure navbar is immediately visible and smoothly scroll to top
   useEffect(() => {
     setVisible(true);
     setIsScrolled(false);
     setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [pathname]);
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      setVisible(true);
+      setIsScrolled(false);
+      setMobileMenuOpen(false);
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  };
 
   const navLinks = [
     { label: "Home", href: "/" },
@@ -106,7 +116,11 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.45, delay: shouldReduceMotion ? 0 : 0.05, ease: [0.21, 0.47, 0.32, 0.98] }}
           >
-            <Link href="/" className="flex items-center group shrink-0">
+            <Link
+              href="/"
+              onClick={handleLogoClick}
+              className="flex items-center group shrink-0"
+            >
               <div className="relative h-9 w-36 sm:h-10 sm:w-44 transition-transform duration-200 group-hover:opacity-90">
                 <Image
                   src="/images/brand/logo-dark-transparent.png"
@@ -153,6 +167,12 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={link.href}
+                      onClick={(e) => {
+                        if (pathname === link.href) {
+                          e.preventDefault();
+                          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                        }
+                      }}
                       className={`text-base transition-colors duration-200 relative py-1 ${
                         isActive
                           ? "text-[#2D8F7A] font-bold"
@@ -235,7 +255,13 @@ export default function Navbar() {
                       ) : (
                         <Link
                           href={link.href}
-                          onClick={() => setMobileMenuOpen(false)}
+                          onClick={(e) => {
+                            setMobileMenuOpen(false);
+                            if (pathname === link.href) {
+                              e.preventDefault();
+                              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                            }
+                          }}
                           className={`text-base py-2.5 border-b border-[#e8e4d2] flex items-center justify-between transition-colors ${
                             isActive
                               ? "text-[#2D8F7A] font-bold"
