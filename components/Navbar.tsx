@@ -64,6 +64,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // When navigating to any new page, ensure navbar is immediately visible and scroll to top
+  useEffect(() => {
+    setVisible(true);
+    setIsScrolled(false);
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
+
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },

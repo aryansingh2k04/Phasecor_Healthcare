@@ -100,8 +100,8 @@ export default function AboutPage() {
 
   return (
     <div className="bg-white">
-      {/* Page Header Hero */}
-      <section className="relative bg-[#071714] text-white py-16 sm:py-20 lg:py-28 overflow-hidden text-center">
+      {/* Page Header Hero (Exact standard across all pages) */}
+      <section className="relative bg-[#071714] text-white py-16 sm:py-20 lg:py-24 overflow-hidden text-center">
         <HeroBackgroundEffect />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center">
           <div className="max-w-3xl space-y-5">
