@@ -68,7 +68,7 @@ function ContactForm() {
     setIsSubmitting(true);
     setErrorMessage("");
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
+    const accessKey = "377d23dd-1993-4a7f-beca-cf791e7b77fe";
 
     try {
       const payload = {
