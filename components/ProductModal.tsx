@@ -22,14 +22,14 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
         className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-md shadow-2xl border border-slate-200 p-5 sm:p-7 md:p-8 space-y-5 sm:space-y-6"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
+        {/* Close Button - prominent, elevated touch target, high contrast on mobile & desktop */}
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2.5 rounded-md text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+          className="absolute top-3 right-3 sm:top-5 sm:right-5 z-30 p-2 sm:p-2.5 rounded-full bg-slate-900/10 hover:bg-slate-900/20 active:bg-slate-900/30 text-slate-800 hover:text-slate-950 backdrop-blur-md transition-all shadow-sm border border-slate-200/80 cursor-pointer"
           aria-label="Close details"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 sm:w-5 sm:h-5" />
         </button>
 
         {/* Modal Header */}
