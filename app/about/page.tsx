@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import {
-  Sparkles,
   Lightbulb,
   ShieldCheck,
   HeartHandshake,
   CheckCircle2,
-  Activity,
-  Pill,
-  Award
 } from "lucide-react";
 import { BRAND_PHILOSOPHY } from "@/components/data";
 import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
@@ -183,93 +177,51 @@ export default function AboutPage() {
             </p>
           </FadeIn>
 
-          {/* Symmetrical 5-Card Layout: 2 on Left, 1 in Center, 2 on Right */}
-          <StaggerContainer className="hidden lg:grid lg:grid-cols-3 gap-6 sm:gap-8 items-center max-w-6xl mx-auto">
-            {/* Left Column (2 cards) */}
-            <div className="flex flex-col gap-6 sm:gap-8">
-              {[therapeuticAreas[0], therapeuticAreas[1]].map((area) => (
-                <StaggerItem key={area.title}>
-                  <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between">
-                    <div className="space-y-3">
-                      <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
-                        {area.badge}
-                      </span>
-                      <h3 className="text-lg font-bold text-white leading-snug">{area.title}</h3>
-                      <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
-            </div>
-
-            {/* Center Column (1 card in the center) */}
-            <StaggerItem className="flex flex-col justify-center h-full">
-              <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between border border-white/10">
-                <div className="space-y-3">
-                  <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
-                    {therapeuticAreas[2].badge}
-                  </span>
-                  <h3 className="text-lg font-bold text-white leading-snug">{therapeuticAreas[2].title}</h3>
-                  <p className="text-xs text-white/90 leading-relaxed font-normal">{therapeuticAreas[2].desc}</p>
-                </div>
-              </div>
-            </StaggerItem>
-
-            {/* Right Column (2 cards) */}
-            <div className="flex flex-col gap-6 sm:gap-8">
-              {[therapeuticAreas[3], therapeuticAreas[4]].map((area) => (
-                <StaggerItem key={area.title}>
-                  <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between">
-                    <div className="space-y-3">
-                      <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
-                        {area.badge}
-                      </span>
-                      <h3 className="text-lg font-bold text-white leading-snug">{area.title}</h3>
-                      <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
-            </div>
-          </StaggerContainer>
-
-          {/* Responsive Layout for Mobile & Tablet (< lg): 2 on top, 1 in center, 2 on bottom */}
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden max-w-3xl mx-auto">
-            {[therapeuticAreas[0], therapeuticAreas[1]].map((area) => (
-              <StaggerItem key={area.title}>
-                <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
+          {/* Helper function or direct rendering for therapeutic cards */}
+          {/* Desktop 2-Row Layout (lg and above): 3 cards in Row 1, 2 cards centered in Row 2 */}
+          <StaggerContainer className="hidden lg:grid lg:grid-cols-6 gap-6 sm:gap-8 max-w-6xl mx-auto">
+            {therapeuticAreas.map((area, idx) => (
+              <StaggerItem
+                key={area.title}
+                className={`h-full ${
+                  idx === 3 ? "lg:col-start-2 lg:col-span-2" : "lg:col-span-2"
+                }`}
+              >
+                <div className="h-full p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+                  <div>
+                    <span className="inline-flex items-center text-[10px] font-bold px-3 py-1.5 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
                       {area.badge}
                     </span>
-                    <h3 className="text-lg font-bold text-white leading-snug">{area.title}</h3>
-                    <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
+                    <h3 className="mt-3.5 sm:mt-4 text-lg font-bold text-white leading-snug">
+                      {area.title}
+                    </h3>
+                    <p className="mt-2.5 text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+                      {area.desc}
+                    </p>
                   </div>
                 </div>
               </StaggerItem>
             ))}
+          </StaggerContainer>
 
-            <StaggerItem className="md:col-span-2 md:max-w-md md:mx-auto w-full">
-              <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between">
-                <div className="space-y-3">
-                  <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
-                    {therapeuticAreas[2].badge}
-                  </span>
-                  <h3 className="text-lg font-bold text-white leading-snug">{therapeuticAreas[2].title}</h3>
-                  <p className="text-xs text-white/90 leading-relaxed font-normal">{therapeuticAreas[2].desc}</p>
-                </div>
-              </div>
-            </StaggerItem>
-
-            {[therapeuticAreas[3], therapeuticAreas[4]].map((area) => (
-              <StaggerItem key={area.title}>
-                <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
+          {/* Mobile & Tablet Layout (< lg): Clean Responsive Grid */}
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden max-w-3xl mx-auto">
+            {therapeuticAreas.map((area, idx) => (
+              <StaggerItem
+                key={area.title}
+                className={idx === 4 ? "md:col-span-2 md:max-w-md md:mx-auto w-full h-full" : "h-full"}
+              >
+                <div className="h-full p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
+                  <div>
+                    <span className="inline-flex items-center text-[10px] font-bold px-3 py-1.5 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
                       {area.badge}
                     </span>
-                    <h3 className="text-lg font-bold text-white leading-snug">{area.title}</h3>
-                    <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
+                    <h3 className="mt-3.5 sm:mt-4 text-lg font-bold text-white leading-snug">
+                      {area.title}
+                    </h3>
+                    <p className="mt-2.5 text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+                      {area.desc}
+                    </p>
                   </div>
                 </div>
               </StaggerItem>

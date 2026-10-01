@@ -112,10 +112,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${jakarta.variable} scroll-smooth`}>
-      <body className="bg-white text-slate-900 min-h-screen flex flex-col antialiased selection:bg-[#2D8F7A]/20 selection:text-[#184a3f]">
+      <body className="bg-[#f9f9eb] text-slate-900 min-h-screen flex flex-col antialiased selection:bg-[#2D8F7A]/20 selection:text-[#184a3f]">
         <JsonLd />
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 bg-white">{children}</main>
         <Footer />
         <Analytics />
         <SpeedInsights />

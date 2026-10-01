@@ -245,8 +245,8 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </motion.header>
-      {/* Spacer to preserve natural document flow so content never shifts */}
-      <div className="h-16 sm:h-[68px] w-full shrink-0" aria-hidden="true" />
+      {/* Spacer to preserve natural document flow and ensure seamless yellow (#f9f9eb) underlay during navbar entrance animation */}
+      <div className="h-16 sm:h-[68px] w-full shrink-0 bg-[#f9f9eb] border-b border-[#e8e4d2]" aria-hidden="true" />
     </>
   );
 }
