@@ -188,14 +188,14 @@ export default function AboutPage() {
                 }`}
               >
                 <div className="h-full p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
-                  <div>
-                    <span className="inline-flex items-center text-[10px] font-bold px-3 py-1.5 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
+                  <div className="space-y-3">
+                    <span className="inline-block text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white tracking-wider uppercase">
                       {area.badge}
                     </span>
-                    <h3 className="mt-3.5 sm:mt-4 text-lg font-bold text-white leading-snug">
+                    <h3 className="text-lg font-bold text-white leading-snug">
                       {area.title}
                     </h3>
-                    <p className="mt-2.5 text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+                    <p className="text-xs text-white/90 leading-relaxed font-normal">
                       {area.desc}
                     </p>
                   </div>
@@ -212,14 +212,14 @@ export default function AboutPage() {
                 className={idx === 4 ? "md:col-span-2 md:max-w-md md:mx-auto w-full h-full" : "h-full"}
               >
                 <div className="h-full p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
-                  <div>
-                    <span className="inline-flex items-center text-[10px] font-bold px-3 py-1.5 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
+                  <div className="space-y-3">
+                    <span className="inline-block text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white tracking-wider uppercase">
                       {area.badge}
                     </span>
-                    <h3 className="mt-3.5 sm:mt-4 text-lg font-bold text-white leading-snug">
+                    <h3 className="text-lg font-bold text-white leading-snug">
                       {area.title}
                     </h3>
-                    <p className="mt-2.5 text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
+                    <p className="text-xs text-white/90 leading-relaxed font-normal">
                       {area.desc}
                     </p>
                   </div>
