@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AlertTriangle, Stethoscope, ShieldCheck, Sparkles, HeartPulse, Mail, MapPin } from "lucide-react";
 import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
+import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata: Metadata = {
   title: "Disclaimer | Phasecor Healthcare",
   description:
     "Read Phasecor Healthcare's medical and regulatory disclaimers concerning therapeutic formulations, dermatological care, and clinical consultations.",
+  alternates: {
+    canonical: "/disclaimer",
+  },
 };
 
 export default function DisclaimerPage() {
@@ -35,7 +39,7 @@ export default function DisclaimerPage() {
       {/* ── Main Disclaimer Content ── */}
       <section className="py-12 sm:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base">
+          <FadeIn className="space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base">
 
             {/* Crucial Notice Banner */}
             <div className="p-5 sm:p-6 rounded-md bg-amber-50/70 border border-amber-200 space-y-3">
@@ -203,7 +207,7 @@ export default function DisclaimerPage() {
               </div>
             </div>
 
-          </div>
+          </FadeIn>
         </div>
       </section>
     </div>

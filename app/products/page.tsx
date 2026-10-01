@@ -10,6 +10,8 @@ import ProductCard from "@/components/ProductCard";
 import ProductModal from "@/components/ProductModal";
 import SupportBlocks from "@/components/SupportBlocks";
 import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
+import FadeIn from "@/components/animations/FadeIn";
+import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 
 const therapeuticCertifications = [
   {
@@ -84,7 +86,7 @@ export default function ProductsPage() {
       <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
           {/* Filter Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-6">
+          <FadeIn direction="none" className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-6">
             <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
               {categories.map((cat) => (
                 <button
@@ -105,19 +107,23 @@ export default function ProductsPage() {
             <div className="text-xs text-slate-500 font-medium">
               Showing {filteredProducts.length} Formulations
             </div>
-          </div>
+          </FadeIn>
 
           {/* Product Cards Grid: Exactly 2 buttons per card, no badges */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <StaggerContainer
+            key={selectedCategory}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
+          >
             {filteredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onOpenDetails={(prod) => setModalProduct(prod)}
-                onEnquire={handleEnquire}
-              />
+              <StaggerItem key={product.id} className="w-full flex justify-center">
+                <ProductCard
+                  product={product}
+                  onOpenDetails={(prod) => setModalProduct(prod)}
+                  onEnquire={handleEnquire}
+                />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -128,36 +134,35 @@ export default function ProductsPage() {
       {selectedCategory === "therapeutic" && (
         <section className="py-12 sm:py-16 bg-[#fbfdfc] border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               {therapeuticCertifications.map((cert) => (
-                <div
-                  key={cert.title}
-                  className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between space-y-4"
-                >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white tracking-wider uppercase">
-                        {cert.badge}
-                      </span>
-                      <FileCheck2 className="w-4 h-4 text-white" />
+                <StaggerItem key={cert.title} className="h-full">
+                  <div className="h-full p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between space-y-4">
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white tracking-wider uppercase">
+                          {cert.badge}
+                        </span>
+                        <FileCheck2 className="w-4 h-4 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white leading-snug">
+                        {cert.title}
+                      </h3>
+                      <p className="text-xs font-semibold text-white/80">
+                        {cert.agency}
+                      </p>
+                      <p className="text-xs text-white/90 leading-relaxed font-normal">
+                        {cert.desc}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-bold text-white leading-snug">
-                      {cert.title}
-                    </h3>
-                    <p className="text-xs font-semibold text-white/80">
-                      {cert.agency}
-                    </p>
-                    <p className="text-xs text-white/90 leading-relaxed font-normal">
-                      {cert.desc}
-                    </p>
+                    <div className="pt-3 border-t border-white/20 text-[11px] font-medium text-white/85 flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-white" />
+                      <span>Compliant &amp; Active</span>
+                    </div>
                   </div>
-                  <div className="pt-3 border-t border-white/20 text-[11px] font-medium text-white/85 flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-white" />
-                    <span>Compliant &amp; Active</span>
-                  </div>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </section>
       )}
@@ -165,7 +170,7 @@ export default function ProductsPage() {
       {/* Multi-Therapy Highlights: Primary Medicines Showcase */}
       <section className="py-14 sm:py-20 bg-[#f7faf8] border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 mb-10 sm:mb-16">
+          <FadeIn className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4 mb-10 sm:mb-16">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
               Multi-Specialty Care
             </span>
@@ -175,57 +180,65 @@ export default function ProductsPage() {
             <p className="text-sm sm:text-base text-slate-600">
               Expanding healthcare access across high-incidence clinical conditions with science-backed formulations.
             </p>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
-              <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
-                <Activity className="w-6 h-6 text-white" />
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            <StaggerItem className="h-full">
+              <div className="h-full p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
+                <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
+                  <Activity className="w-6 h-6 text-white" />
+                </div>
+                <div className="space-y-1.5">
+                  <h3 className="text-base font-bold text-white">UTI &amp; Renal Health</h3>
+                  <p className="text-xs text-white/90 leading-relaxed font-normal">
+                    Non-antibiotic urinary tract support combining PAC-rich Cranberry, D-Mannose, and urinary alkalizers.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-1.5">
-                <h3 className="text-base font-bold text-white">UTI &amp; Renal Health</h3>
-                <p className="text-xs text-white/90 leading-relaxed font-normal">
-                  Non-antibiotic urinary tract support combining PAC-rich Cranberry, D-Mannose, and urinary alkalizers.
-                </p>
-              </div>
-            </div>
+            </StaggerItem>
 
-            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
-              <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
-                <Sparkles className="w-6 h-6 text-white" />
+            <StaggerItem className="h-full">
+              <div className="h-full p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
+                <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
+                  <Sparkles className="w-6 h-6 text-white" />
+                </div>
+                <div className="space-y-1.5">
+                  <h3 className="text-base font-bold text-white">Cellular Bioenergetics</h3>
+                  <p className="text-xs text-white/90 leading-relaxed font-normal">
+                    WHO-osmolarity electrolyte formulation fortified with Co-Enzyme Q10 for rapid rehydration.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-1.5">
-                <h3 className="text-base font-bold text-white">Cellular Bioenergetics</h3>
-                <p className="text-xs text-white/90 leading-relaxed font-normal">
-                  WHO-osmolarity electrolyte formulation fortified with Co-Enzyme Q10 for rapid rehydration.
-                </p>
-              </div>
-            </div>
+            </StaggerItem>
 
-            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
-              <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
-                <Pill className="w-6 h-6 text-white" />
+            <StaggerItem className="h-full">
+              <div className="h-full p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
+                <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
+                  <Pill className="w-6 h-6 text-white" />
+                </div>
+                <div className="space-y-1.5">
+                  <h3 className="text-base font-bold text-white">Joint &amp; Bone Density</h3>
+                  <p className="text-xs text-white/90 leading-relaxed font-normal">
+                    Synergistic Calcium Orotate and Active B12 for cartilage and neuropathic recovery.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-1.5">
-                <h3 className="text-base font-bold text-white">Joint &amp; Bone Density</h3>
-                <p className="text-xs text-white/90 leading-relaxed font-normal">
-                  Synergistic Calcium Orotate and Active B12 for cartilage and neuropathic recovery.
-                </p>
-              </div>
-            </div>
+            </StaggerItem>
 
-            <div className="p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
-              <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
-                <ShieldCheck className="w-6 h-6 text-white" />
+            <StaggerItem className="h-full">
+              <div className="h-full p-5 sm:p-6 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5">
+                <div className="w-12 h-12 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20 text-white shrink-0">
+                  <ShieldCheck className="w-6 h-6 text-white" />
+                </div>
+                <div className="space-y-1.5">
+                  <h3 className="text-base font-bold text-white">Women’s PCOS Care</h3>
+                  <p className="text-xs text-white/90 leading-relaxed font-normal">
+                    Physiological 40:1 Myo to D-Chiro Inositol ratio to regulate ovulation, insulin sensitivity, and cycle rhythm.
+                  </p>
+                </div>
               </div>
-              <div className="space-y-1.5">
-                <h3 className="text-base font-bold text-white">Women’s PCOS Care</h3>
-                <p className="text-xs text-white/90 leading-relaxed font-normal">
-                  Physiological 40:1 Myo to D-Chiro Inositol ratio to regulate ovulation, insulin sensitivity, and cycle rhythm.
-                </p>
-              </div>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 

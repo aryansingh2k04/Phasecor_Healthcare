@@ -31,7 +31,7 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
           <div className="relative w-full h-[220px] rounded-xl overflow-hidden flex items-center justify-center bg-white">
             <Image
               src={product.mainImage}
-              alt={product.name}
+              alt={`${product.name} - ${product.subtitle} | Phasecor Healthcare`}
               fill
               sizes="320px"
               className="object-cover group-hover:scale-105 transition-transform duration-500 rounded-xl"

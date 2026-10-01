@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { Sparkles } from "lucide-react";
 import HeroSpiralLogo from "./HeroSpiralLogo";
 
 export default function Hero() {
@@ -183,6 +184,11 @@ export default function Hero() {
 
           {/* Content: Headline, Subtitle, and 2 CTA Buttons (Order 2 on mobile: below SVG; Order 1 on desktop: left side) */}
           <div className="order-2 lg:order-1 lg:col-span-7 xl:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left z-10 lg:pl-10 xl:pl-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#7ff2d9] text-xs font-semibold uppercase tracking-wider animate-hero-title">
+              <Sparkles className="w-3.5 h-3.5 text-[#3ec7ab]" />
+              <span>Phasecor Healthcare &bull; Quality Healthcare within Reach</span>
+            </div>
+
             <h1 className="text-[34px] sm:text-5xl lg:text-[48px] xl:text-[54px] font-extrabold text-white tracking-tight leading-[1.14] max-w-2xl">
               <span className="block animate-hero-title">
                 Precision in
@@ -190,6 +196,7 @@ export default function Hero() {
               <span className="block mt-1 bg-gradient-to-r from-[#2D8F7A] via-[#3ec7ab] to-[#7ff2d9] bg-clip-text text-transparent drop-shadow-[0_4px_25px_rgba(45,143,122,0.45)] animate-hero-gradient animate-gradient-shift">
                 Every Formulation
               </span>
+              <span className="sr-only"> - Phasecor Healthcare</span>
             </h1>
 
             <p className="text-[15px] sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-md sm:max-w-2xl mx-auto lg:mx-0 animate-hero-desc">

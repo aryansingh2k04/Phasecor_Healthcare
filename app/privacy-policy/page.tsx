@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldCheck, Lock, FileText, CheckCircle2, Mail, MapPin } from "lucide-react";
 import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
+import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Phasecor Healthcare",
   description:
     "Learn how Phasecor Healthcare collects, safeguards, and processes personal and clinical inquiry information under the Digital Personal Data Protection Act, 2023.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -35,7 +39,7 @@ export default function PrivacyPolicyPage() {
       {/* ── Main Policy Content ── */}
       <section className="py-12 sm:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base">
+          <FadeIn className="space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base">
 
             {/* Introductory Notice */}
             <div className="p-5 sm:p-6 rounded-md bg-[#fbfdfc] border border-slate-200 space-y-3">
@@ -239,7 +243,7 @@ export default function PrivacyPolicyPage() {
               </div>
             </div>
 
-          </div>
+          </FadeIn>
         </div>
       </section>
     </div>

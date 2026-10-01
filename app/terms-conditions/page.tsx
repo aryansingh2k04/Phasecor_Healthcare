@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Scale, FileCheck, ShieldAlert, CheckCircle2, RotateCcw, Mail, MapPin } from "lucide-react";
 import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
+import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | Phasecor Healthcare",
   description:
     "Review the terms, conditions, and user agreements governing your access to Phasecor Healthcare digital platforms, clinical formulations, and services.",
+  alternates: {
+    canonical: "/terms-conditions",
+  },
 };
 
 export default function TermsConditionsPage() {
@@ -35,7 +39,7 @@ export default function TermsConditionsPage() {
       {/* ── Main Terms Content ── */}
       <section className="py-12 sm:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base">
+          <FadeIn className="space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base">
 
             {/* Introductory Agreement Box */}
             <div className="p-5 sm:p-6 rounded-md bg-[#fbfdfc] border border-slate-200 space-y-3">
@@ -275,7 +279,7 @@ export default function TermsConditionsPage() {
               </div>
             </div>
 
-          </div>
+          </FadeIn>
         </div>
       </section>
     </div>

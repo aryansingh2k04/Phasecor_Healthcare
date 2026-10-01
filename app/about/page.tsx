@@ -13,11 +13,48 @@ import {
 } from "lucide-react";
 import { BRAND_PHILOSOPHY } from "@/components/data";
 import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
+import FadeIn from "@/components/animations/FadeIn";
+import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 
 export const metadata: Metadata = {
-  title: "About Us | Phasecor Healthcare",
+  title: "About Us | Brand Philosophy & Mission",
   description:
-    "Discover Phasecor Healthcare's mission: Quality Healthcare within Reach. Delivering innovative, affordable, and high-quality multi-specialty healthcare and dermatological solutions.",
+    "Discover Phasecor Healthcare's mission: Quality Healthcare within Reach. Delivering innovative, affordable, and high-quality multi-specialty healthcare and dermatological solutions across India.",
+  keywords: [
+    "About Phasecor Healthcare",
+    "Phasecor mission",
+    "Quality Healthcare within Reach",
+    "Phasecor philosophy",
+    "affordable healthcare India",
+    "innovative formulations Kalyan"
+  ],
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Us | Brand Philosophy & Mission | Phasecor Healthcare",
+    description:
+      "Discover Phasecor Healthcare's mission: Quality Healthcare within Reach. Delivering innovative, affordable, and high-quality multi-specialty therapeutics.",
+    url: "https://phasecor.com/about",
+    siteName: "Phasecor Healthcare",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About Phasecor Healthcare",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Brand Philosophy & Mission | Phasecor Healthcare",
+    description:
+      "Discover Phasecor Healthcare's mission: Quality Healthcare within Reach.",
+    images: ["/twitter-image.png"],
+  },
 };
 
 export default function AboutPage() {
@@ -92,7 +129,7 @@ export default function AboutPage() {
       {/* Official 3 Pillars from Brochure */}
       <section className="py-14 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
-          <div className="max-w-3xl space-y-3">
+          <FadeIn className="max-w-3xl space-y-3">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
               Our Guiding Tenets
             </span>
@@ -102,38 +139,39 @@ export default function AboutPage() {
             <p className="text-sm sm:text-base text-slate-600">
               Guiding our product formulation, pricing ethics, and medical collaborations.
             </p>
-          </div>
+          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {brochurePillars.map((p) => {
               const Icon = p.icon;
               return (
-                <div
-                  key={p.title}
-                  className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5"
-                >
-                  <div className="w-14 h-14 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20">
-                    <Icon className="w-7 h-7 text-white" />
+                <StaggerItem key={p.title} className="h-full">
+                  <div
+                    className="h-full p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] space-y-4 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5"
+                  >
+                    <div className="w-14 h-14 rounded-md bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20">
+                      <Icon className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-bold text-white leading-snug">{p.title}</h3>
+                      <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">{p.desc}</p>
+                    </div>
+                    <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-white/90">
+                      <CheckCircle2 className="w-4 h-4 text-white" />
+                      <span>Phasecor Core Standard</span>
+                    </div>
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-white leading-snug">{p.title}</h3>
-                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">{p.desc}</p>
-                  </div>
-                  <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-white/90">
-                    <CheckCircle2 className="w-4 h-4 text-white" />
-                    <span>Phasecor Core Standard</span>
-                  </div>
-                </div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Therapeutic Specialties Grid */}
       <section className="py-14 sm:py-20 bg-[#f7faf8] border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
+          <FadeIn className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-bold">
               Specialized Divisions
             </span>
@@ -143,33 +181,30 @@ export default function AboutPage() {
             <p className="text-sm text-slate-600">
               Targeting high-burden medical and dermatological conditions with evidence-based active synergies.
             </p>
-          </div>
+          </FadeIn>
 
           {/* Symmetrical 5-Card Layout: 2 on Left, 1 in Center, 2 on Right */}
-          <div className="hidden lg:grid lg:grid-cols-3 gap-6 sm:gap-8 items-center max-w-6xl mx-auto">
+          <StaggerContainer className="hidden lg:grid lg:grid-cols-3 gap-6 sm:gap-8 items-center max-w-6xl mx-auto">
             {/* Left Column (2 cards) */}
             <div className="flex flex-col gap-6 sm:gap-8">
               {[therapeuticAreas[0], therapeuticAreas[1]].map((area) => (
-                <div
-                  key={area.title}
-                  className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between"
-                >
-                  <div className="space-y-3">
-                    <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
-                      {area.badge}
-                    </span>
-                    <h3 className="text-lg font-bold text-white leading-snug">{area.title}</h3>
-                    <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
+                <StaggerItem key={area.title}>
+                  <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
+                        {area.badge}
+                      </span>
+                      <h3 className="text-lg font-bold text-white leading-snug">{area.title}</h3>
+                      <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
+                    </div>
                   </div>
-                </div>
+                </StaggerItem>
               ))}
             </div>
 
             {/* Center Column (1 card in the center) */}
-            <div className="flex flex-col justify-center h-full">
-              <div
-                className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between border border-white/10"
-              >
+            <StaggerItem className="flex flex-col justify-center h-full">
+              <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between border border-white/10">
                 <div className="space-y-3">
                   <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
                     {therapeuticAreas[2].badge}
@@ -178,15 +213,31 @@ export default function AboutPage() {
                   <p className="text-xs text-white/90 leading-relaxed font-normal">{therapeuticAreas[2].desc}</p>
                 </div>
               </div>
-            </div>
+            </StaggerItem>
 
             {/* Right Column (2 cards) */}
             <div className="flex flex-col gap-6 sm:gap-8">
               {[therapeuticAreas[3], therapeuticAreas[4]].map((area) => (
-                <div
-                  key={area.title}
-                  className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between"
-                >
+                <StaggerItem key={area.title}>
+                  <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between">
+                    <div className="space-y-3">
+                      <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
+                        {area.badge}
+                      </span>
+                      <h3 className="text-lg font-bold text-white leading-snug">{area.title}</h3>
+                      <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
+                    </div>
+                  </div>
+                </StaggerItem>
+              ))}
+            </div>
+          </StaggerContainer>
+
+          {/* Responsive Layout for Mobile & Tablet (< lg): 2 on top, 1 in center, 2 on bottom */}
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden max-w-3xl mx-auto">
+            {[therapeuticAreas[0], therapeuticAreas[1]].map((area) => (
+              <StaggerItem key={area.title}>
+                <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between">
                   <div className="space-y-3">
                     <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
                       {area.badge}
@@ -195,31 +246,11 @@ export default function AboutPage() {
                     <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Responsive Layout for Mobile & Tablet (< lg): 2 on top, 1 in center, 2 on bottom */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden max-w-3xl mx-auto">
-            {[therapeuticAreas[0], therapeuticAreas[1]].map((area) => (
-              <div
-                key={area.title}
-                className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
-                    {area.badge}
-                  </span>
-                  <h3 className="text-lg font-bold text-white leading-snug">{area.title}</h3>
-                  <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
-                </div>
-              </div>
+              </StaggerItem>
             ))}
 
-            <div className="md:col-span-2 md:max-w-md md:mx-auto w-full">
-              <div
-                className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between"
-              >
+            <StaggerItem className="md:col-span-2 md:max-w-md md:mx-auto w-full">
+              <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between">
                 <div className="space-y-3">
                   <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
                     {therapeuticAreas[2].badge}
@@ -228,23 +259,22 @@ export default function AboutPage() {
                   <p className="text-xs text-white/90 leading-relaxed font-normal">{therapeuticAreas[2].desc}</p>
                 </div>
               </div>
-            </div>
+            </StaggerItem>
 
             {[therapeuticAreas[3], therapeuticAreas[4]].map((area) => (
-              <div
-                key={area.title}
-                className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
-                    {area.badge}
-                  </span>
-                  <h3 className="text-lg font-bold text-white leading-snug">{area.title}</h3>
-                  <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
+              <StaggerItem key={area.title}>
+                <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-3 flex flex-col justify-between">
+                  <div className="space-y-3">
+                    <span className="text-[10px] font-bold px-3 py-1 rounded-md bg-white/15 backdrop-blur-md border border-white/20 text-white uppercase tracking-wider">
+                      {area.badge}
+                    </span>
+                    <h3 className="text-lg font-bold text-white leading-snug">{area.title}</h3>
+                    <p className="text-xs text-white/90 leading-relaxed font-normal">{area.desc}</p>
+                  </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
     </div>

@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { COMPANY_CONTACT, PRODUCTS, MEDICINE_PIPELINE } from "@/components/data";
 import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
+import FadeIn from "@/components/animations/FadeIn";
 
 function formatProductName(param: string): string {
   if (!param) return "";
@@ -58,11 +59,53 @@ function ContactForm() {
     }
   }, [initialProductParam]);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    const accessKey =
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "377d23dd-1993-4a7f-beca-cf791e7b77fe";
+
+    try {
+      const payload = {
+        access_key: accessKey,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || "Not provided",
+        subject: formData.subject || "General Inquiry - Phasecor Healthcare",
+        message: formData.message,
+        from_name: "Phasecor Healthcare Inquiries",
+        botcheck: "",
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(
+          result.message || "Failed to submit inquiry. Please check your network or try again."
+        );
+      }
+    } catch {
+      setErrorMessage("A network error occurred while submitting. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -81,8 +124,9 @@ function ContactForm() {
           </div>
           <h3 className="text-2xl font-bold text-slate-900">Inquiry Received</h3>
           <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-            Thank you for contacting Phasecor Healthcare. Our team will review your inquiry and respond within 24 business hours.
+            Thank you, <strong className="text-slate-800">{formData.name}</strong>. Your message has been received by the Phasecor Healthcare team. We will review your inquiry and respond within 24 business hours.
           </p>
+
           <div className="pt-4">
             <button
               type="button"
@@ -104,6 +148,15 @@ function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Honeypot Botcheck (Spam Protection) */}
+          <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+
+          {errorMessage && (
+            <div className="p-4 rounded-md bg-rose-50 border border-rose-200 text-rose-800 text-xs leading-relaxed">
+              <strong>Submission note:</strong> {errorMessage}
+            </div>
+          )}
+
           <div className="space-y-1.5">
             <label htmlFor="name" className="text-xs font-bold text-slate-800 uppercase tracking-wider">
               Full Name <span className="text-rose-500">*</span>
@@ -179,13 +232,17 @@ function ContactForm() {
             />
           </div>
 
-          <div>
+          <div className="flex flex-col sm:flex-row items-center gap-3">
             <button
               type="submit"
-              className="w-auto min-w-[200px] max-w-[240px] py-3.5 px-6 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] transition-all shadow-md block text-center"
+              disabled={isSubmitting}
+              className="w-full sm:w-auto min-w-[200px] max-w-[240px] py-3.5 px-6 rounded-md bg-[#2D8F7A] text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#237362] disabled:opacity-60 disabled:cursor-not-allowed transition-all shadow-md block text-center"
             >
-              Submit Inquiry
+              {isSubmitting ? "Submitting Inquiry..." : "Submit Inquiry"}
             </button>
+            <span className="text-[11px] text-slate-500">
+              Direct email notification to Phasecor Team
+            </span>
           </div>
         </form>
       )}
@@ -222,14 +279,14 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
             {/* Left Column: Contact Form */}
-            <div className="lg:col-span-7">
+            <FadeIn delay={0.1} className="lg:col-span-7">
               <Suspense fallback={<div className="p-8 text-center text-xs text-slate-500">Loading form...</div>}>
                 <ContactForm />
               </Suspense>
-            </div>
+            </FadeIn>
 
             {/* Right Column: Contact Details Panel (Standard Green Card Design) */}
-            <div className="lg:col-span-5">
+            <FadeIn delay={0.2} className="lg:col-span-5">
               <div className="p-6 sm:p-8 rounded-md bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.5),0_8px_16px_-4px_rgba(45,143,122,0.25)] transition-all duration-300 hover:-translate-y-1.5 space-y-6">
                 <div>
                   <h2 className="text-2xl font-bold text-white tracking-tight">
@@ -329,7 +386,7 @@ export default function ContactPage() {
                 </div>
 
               </div>
-            </div>
+            </FadeIn>
 
           </div>
         </div>

@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUp } from "lucide-react";
+import FadeIn from "@/components/animations/FadeIn";
+import { StaggerContainer, StaggerItem } from "@/components/animations/StaggerContainer";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -13,14 +15,14 @@ export default function Footer() {
     <footer className="bg-[#f9f9eb] text-slate-800 border-t border-[#ede8d8] pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main 3-Column Content */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 pb-14 border-b border-[#e8e4d2]">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 pb-14 border-b border-[#e8e4d2]">
           {/* Column 1: Logo & Philosophy */}
-          <div className="md:col-span-5 space-y-5">
+          <StaggerItem className="md:col-span-5 space-y-5">
             <Link href="/" className="inline-block">
               <div className="relative h-11 w-48">
                 <Image
                   src="/images/brand/logo-dark-transparent.png"
-                  alt="Phasecor Healthcare"
+                  alt="Phasecor Healthcare - Quality Healthcare within Reach"
                   fill
                   className="object-contain object-left"
                   sizes="192px"
@@ -38,10 +40,10 @@ export default function Footer() {
                 Built on quality, accessibility, and purposeful innovation, we bridge the gap between science and affordability, combining carefully selected ingredients and stringent standards to deliver dependable formulations. Quality healthcare within reach.
               </p>
             </div>
-          </div>
+          </StaggerItem>
 
           {/* Column 2: Quick Links */}
-          <div className="md:col-span-3 space-y-4">
+          <StaggerItem className="md:col-span-3 space-y-4">
             <h3 className="text-sm sm:text-base font-bold tracking-wider uppercase text-slate-900">
               Quick Links
             </h3>
@@ -82,10 +84,10 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </StaggerItem>
 
           {/* Column 3: Important Links */}
-          <div className="md:col-span-4 space-y-4">
+          <StaggerItem className="md:col-span-4 space-y-4">
             <h3 className="text-sm sm:text-base font-bold tracking-wider uppercase text-slate-900">
               Important Links
             </h3>
@@ -123,11 +125,11 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
-        </div>
+          </StaggerItem>
+        </StaggerContainer>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <FadeIn direction="none" delay={0.2} className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-sm text-slate-600 font-medium">
             &copy; 2025 Phasecor. All rights reserved.
           </div>
@@ -168,7 +170,7 @@ export default function Footer() {
               <ArrowUp className="w-5 h-5" />
             </button>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </footer>
   );

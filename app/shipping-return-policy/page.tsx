@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Truck, RotateCcw, Clock, ShieldCheck, CheckCircle2, AlertCircle, Mail, MapPin } from "lucide-react";
 import HeroBackgroundEffect from "@/components/HeroBackgroundEffect";
+import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata: Metadata = {
   title: "Shipping & Return Policy | Phasecor Healthcare",
   description:
     "Review Phasecor Healthcare's nationwide shipping timelines, order fulfillment, 7-day return policy, and doorstep reverse pickup procedure.",
+  alternates: {
+    canonical: "/shipping-return-policy",
+  },
 };
 
 export default function ShippingReturnPolicyPage() {
@@ -35,7 +39,7 @@ export default function ShippingReturnPolicyPage() {
       {/* ── Main Policy Content ── */}
       <section className="py-12 sm:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12 text-slate-700 leading-relaxed text-sm sm:text-base">
+          <FadeIn className="space-y-12 text-slate-700 leading-relaxed text-sm sm:text-base">
 
             {/* Introductory Commitment */}
             <div className="p-5 sm:p-6 rounded-md bg-[#fbfdfc] border border-slate-200 space-y-3">
@@ -275,7 +279,7 @@ export default function ShippingReturnPolicyPage() {
               </div>
             </div>
 
-          </div>
+          </FadeIn>
         </div>
       </section>
     </div>

@@ -11,6 +11,7 @@ import FeaturedSpotlight from "@/components/FeaturedSpotlight";
 import BrandStatement from "@/components/BrandStatement";
 import ProductModal from "@/components/ProductModal";
 import { PRODUCTS, Product } from "@/components/data";
+import FadeIn from "@/components/animations/FadeIn";
 
 export default function Home() {
   const router = useRouter();
@@ -50,7 +51,7 @@ export default function Home() {
       {/* 9. Mission & About Us Teaser */}
       <section className="py-20 bg-[#f7faf8] border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
+          <FadeIn className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Grounded in Biology. Formulated for Enduring Overall Health.
             </h2>
@@ -69,7 +70,7 @@ export default function Home() {
                 <ShieldCheck className="w-4 h-4" />
               </Link>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { PRODUCTS } from "./data";
+import FadeIn from "./animations/FadeIn";
 
 interface FeaturedSpotlightProps {
   onOpenDetails: (productId: string) => void;
@@ -16,19 +17,19 @@ export default function FeaturedSpotlight({ onOpenDetails, onEnquire }: Featured
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Left Column: Image Banner */}
-          <div className="lg:col-span-6 relative">
+          <FadeIn direction="up" distance={24} className="lg:col-span-6 relative">
             <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-md overflow-hidden border border-slate-200 shadow-md">
               <Image
                 src="/images/bento/uvothera_banner.png"
-                alt="Uvothera Sunscreen Banner"
+                alt="UVoThera SPF 60++++ Broad Spectrum Sunscreen Gel | Phasecor Healthcare"
                 fill
                 className="object-cover"
               />
             </div>
-          </div>
+          </FadeIn>
 
           {/* Right Column: Copy matching phasecor.com */}
-          <div className="lg:col-span-6 space-y-4 sm:space-y-5">
+          <FadeIn direction="up" distance={24} delay={0.12} className="lg:col-span-6 space-y-4 sm:space-y-5">
             <span className="text-xs uppercase tracking-widest text-[#2D8F7A] font-semibold">
               DAILY SUN DEFENSE, HEALTHY GLOW
             </span>
@@ -58,7 +59,7 @@ export default function FeaturedSpotlight({ onOpenDetails, onEnquire }: Featured
                 Details
               </button>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>
