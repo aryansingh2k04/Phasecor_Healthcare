@@ -20,7 +20,7 @@ export default function FeaturedSpotlight({ onOpenDetails, onEnquire }: Featured
           <FadeIn direction="up" distance={24} className="lg:col-span-6 relative">
             <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-md overflow-hidden border border-slate-200 shadow-md">
               <Image
-                src="/images/bento/uvothera_banner.png"
+                src="/images/bento/uvothera_banner.webp"
                 alt="UVoThera SPF 60++++ Broad Spectrum Sunscreen Gel | Phasecor Healthcare"
                 fill
                 className="object-cover"

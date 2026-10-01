@@ -70,7 +70,7 @@ export default function QualityCertifications() {
             >
               <div className="relative w-full h-72 rounded-md bg-white border border-white/20 overflow-hidden flex items-center justify-center">
                 <Image
-                  src="/images/certificates/certificate.jpg"
+                  src="/images/certificates/certificate.webp"
                   alt="Quality Certificate Phasecor"
                   fill
                   className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
@@ -123,7 +123,7 @@ export default function QualityCertifications() {
 
             <div className="relative w-full h-[55vh] sm:h-[70vh] rounded-md overflow-hidden bg-slate-50">
               <Image
-                src="/images/certificates/certificate.jpg"
+                src="/images/certificates/certificate.webp"
                 alt="Quality Certification Detail"
                 fill
                 className="object-contain"

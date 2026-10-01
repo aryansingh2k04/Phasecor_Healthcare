@@ -47,7 +47,7 @@ export default function AboutSection() {
           <div className="lg:col-span-6 flex justify-center">
             <div className="relative w-full max-w-lg h-64 sm:h-80 md:h-96 rounded-md overflow-hidden border border-slate-200 shadow-md">
               <Image
-                src="/images/bento/uvothera_banner.png"
+                src="/images/bento/uvothera_banner.webp"
                 alt="Phasecor Philosophy"
                 fill
                 className="object-cover"

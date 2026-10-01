@@ -24,8 +24,8 @@ export const PRODUCTS: Product[] = [
     category: "Therapeutic Medicines",
     subCategory: "Urinary Health & Nephrology",
     badge: "Urinary Care",
-    mainImage: "/images/products/uticor.png",
-    detailImage: "/images/products/uticor.png",
+    mainImage: "/images/products/uticor.webp",
+    detailImage: "/images/products/uticor.webp",
     summary:
       "Physician-calibrated urinary health syrup combining high-potency Cranberry Extract, D-Mannose, NAC, and Potassium Magnesium Citrate to inhibit bacterial adhesion, alkalize urinary pH, and soothe urinary tract discomfort.",
     keyActives: [
@@ -52,8 +52,8 @@ export const PRODUCTS: Product[] = [
     category: "Therapeutic Medicines",
     subCategory: "Electrolyte & Rehydration Therapy",
     badge: "With Co-Enzyme Q10",
-    mainImage: "/images/products/electcor.png",
-    detailImage: "/images/products/electcor.png",
+    mainImage: "/images/products/electcor.webp",
+    detailImage: "/images/products/electcor.webp",
     summary:
       "Specialized oral rehydration formula calibrated to WHO osmolarity standards (245 mOsm/L) and fortified with Co-Enzyme Q10 for rapid cellular rehydration, electrolyte restoration, and metabolic energy recovery.",
     keyActives: [
@@ -83,8 +83,8 @@ export const PRODUCTS: Product[] = [
     category: "Therapeutic Medicines",
     subCategory: "Musculoskeletal & Joint Care",
     badge: "Joint & Bone Care",
-    mainImage: "/images/products/chronicor.png",
-    detailImage: "/images/products/chronicor.png",
+    mainImage: "/images/products/chronicor.webp",
+    detailImage: "/images/products/chronicor.webp",
     summary:
       "Advanced therapeutic tablet formulated to support joint mobility, cartilage renewal, bone mineral density, and calm neuropathic inflammation in chronic musculoskeletal disorders.",
     keyActives: [
@@ -114,8 +114,8 @@ export const PRODUCTS: Product[] = [
     category: "Therapeutic Medicines",
     subCategory: "Women's Health & Gynaecology",
     badge: "Women's Health & PCOS",
-    mainImage: "/images/products/ovaphase.png",
-    detailImage: "/images/products/ovaphase.png",
+    mainImage: "/images/products/ovaphase.webp",
+    detailImage: "/images/products/ovaphase.webp",
     summary:
       "Physician-calibrated formulation combining physiological Myo-Inositol and D-Chiro Inositol (40:1 ratio) with NAC and Berberine to restore hormonal balance, ovarian wellness, and metabolic rhythm.",
     keyActives: [
@@ -146,8 +146,8 @@ export const PRODUCTS: Product[] = [
     category: "Clinical Dermatology",
     subCategory: "Topical Dermaceuticals",
     badge: "Derma Formulation",
-    mainImage: "/images/products/niascobutin.png",
-    detailImage: "/images/products/niascobutin.png",
+    mainImage: "/images/products/niascobutin.webp",
+    detailImage: "/images/products/niascobutin.webp",
     summary:
       "Dermatologist-formulated treatment combining Niacinamide, Vitamin C, Tranexamic Acid, Peptides, Hyaluronic Acid, and Bakuchiol to visibly brighten skin, reduce hyperpigmentation, and fortify the barrier.",
     keyActives: [
@@ -177,8 +177,8 @@ export const PRODUCTS: Product[] = [
     category: "Clinical Dermatology",
     subCategory: "Oral Nutricosmetics",
     badge: "Nutricosmetic",
-    mainImage: "/images/products/primathion.png",
-    detailImage: "/images/products/primathion.png",
+    mainImage: "/images/products/primathion.webp",
+    detailImage: "/images/products/primathion.webp",
     summary:
       "Next-generation oral nutricosmetic engineered with Dual Delivery Technology to encapsulate oil-based actives in powder alongside water-soluble nutrients for sustained release and systemic antioxidant defense.",
     keyActives: [
@@ -208,8 +208,8 @@ export const PRODUCTS: Product[] = [
     category: "Clinical Dermatology",
     subCategory: "Photoprotection",
     badge: "Photoprotection",
-    mainImage: "/images/products/uvothera.png",
-    detailImage: "/images/products/uvothera.png",
+    mainImage: "/images/products/uvothera.webp",
+    detailImage: "/images/products/uvothera.webp",
     summary:
       "UVoThera SPF 60++++ is an advanced, gel-based sunscreen designed to provide broad-spectrum protection against UVA, UVB, Infrared Radiation (IR), and Visible Light. Its lightweight, non-greasy texture absorbs quickly, controls shine, and delivers a smooth matte finish perfect for humid and hot climates. Enriched with Niacinamide, Hyaluronic Acid, Vitamin E, and antioxidant-rich ingredients, it hydrates, brightens, and strengthens the skin while protecting it from environmental and UV-induced damage. Suitable for all skin types, including sensitive and acne-prone skin.",
     keyActives: [],
