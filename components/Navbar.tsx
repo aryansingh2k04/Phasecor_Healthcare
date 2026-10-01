@@ -236,9 +236,9 @@ export default function Navbar() {
                         <Link
                           href={link.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className={`text-base py-2.5 border-b border-[#e8e4d2] flex items-center justify-between ${
+                          className={`text-base py-2.5 border-b border-[#e8e4d2] flex items-center justify-between transition-colors ${
                             isActive
-                              ? "text-[#2D8F7A] font-bold bg-[#e8f2ee]/50 px-3 rounded-lg border-none"
+                              ? "text-[#2D8F7A] font-bold"
                               : "text-slate-800 font-semibold hover:text-[#2D8F7A]"
                           }`}
                         >
