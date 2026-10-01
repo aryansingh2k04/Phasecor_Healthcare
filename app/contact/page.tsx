@@ -68,8 +68,7 @@ function ContactForm() {
     setIsSubmitting(true);
     setErrorMessage("");
 
-    const accessKey =
-      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "377d23dd-1993-4a7f-beca-cf791e7b77fe";
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
 
     try {
       const payload = {
@@ -165,7 +164,6 @@ function ContactForm() {
               id="name"
               required
               type="text"
-              placeholder="Dr. / Mr. / Ms. Full Name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
@@ -181,7 +179,6 @@ function ContactForm() {
                 id="email"
                 required
                 type="email"
-                placeholder="name@example.com"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
@@ -195,7 +192,6 @@ function ContactForm() {
               <input
                 id="phone"
                 type="tel"
-                placeholder="+91 98765 43210"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
@@ -210,7 +206,6 @@ function ContactForm() {
             <input
               id="subject"
               type="text"
-              placeholder="Product details, distribution, or partnership inquiry"
               value={formData.subject}
               onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
               className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all"
@@ -225,14 +220,13 @@ function ContactForm() {
               id="message"
               required
               rows={5}
-              placeholder="How can our clinical or corporate team help you?"
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               className="w-full px-4 py-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2D8F7A] focus:border-transparent transition-all resize-none"
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3">
+          <div>
             <button
               type="submit"
               disabled={isSubmitting}
@@ -240,9 +234,6 @@ function ContactForm() {
             >
               {isSubmitting ? "Submitting Inquiry..." : "Submit Inquiry"}
             </button>
-            <span className="text-[11px] text-slate-500">
-              Direct email notification to Phasecor Team
-            </span>
           </div>
         </form>
       )}
