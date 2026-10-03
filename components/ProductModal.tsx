@@ -19,7 +19,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-md shadow-2xl border border-slate-200 p-5 sm:p-7 md:p-8 space-y-5 sm:space-y-6"
+        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white rounded-md shadow-2xl border border-slate-200 p-5 sm:p-7 md:p-8 space-y-5 sm:space-y-6"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button - prominent, elevated touch target, high contrast on mobile & desktop */}
@@ -33,28 +33,21 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
         </button>
 
         {/* Modal Header */}
-        <div className="flex flex-col sm:flex-row gap-6 items-start">
-          <div className="relative w-full sm:w-64 h-56 rounded-xl bg-[#f8faf9] border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center shadow-sm">
-            {/* Ambient subtle blur to soften edges */}
-            <Image
-              src={product.detailImage || product.mainImage}
-              alt=""
-              fill
-              aria-hidden="true"
-              className="object-cover blur-md scale-110 opacity-20 pointer-events-none"
-            />
-            {/* Crisp, fully-contained product packaging image */}
+        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+          {/* Exact 3:2 Product Frame matching 1200x800 image aspect ratio */}
+          <div className="relative w-full md:w-[320px] aspect-[3/2] rounded-xl overflow-hidden shrink-0 bg-[#071714]/5 shadow-sm">
             <Image
               src={product.detailImage || product.mainImage}
               alt={product.name}
               fill
-              sizes="(max-width: 640px) 100vw, 256px"
-              className="object-contain p-2.5 relative z-10 drop-shadow-sm"
+              sizes="(max-width: 768px) 100vw, 320px"
+              priority
+              className="object-cover"
             />
           </div>
 
-          <div className="space-y-1.5 flex-1">
-            <h2 className="text-2xl font-bold text-slate-900 leading-tight">
+          <div className="space-y-2 flex-1 pt-1">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
               {product.name}
             </h2>
             <p className="text-sm font-semibold text-[#2D8F7A]">
@@ -63,7 +56,7 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
             <p className="text-xs font-medium text-slate-500">
               {product.packaging}
             </p>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1 border-t border-slate-100">
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
               {product.summary}
             </p>
           </div>
