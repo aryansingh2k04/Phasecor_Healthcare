@@ -34,12 +34,22 @@ export default function ProductModal({ product, onClose, onEnquire }: ProductMod
 
         {/* Modal Header */}
         <div className="flex flex-col sm:flex-row gap-6 items-start">
-          <div className="relative w-full sm:w-56 h-52 rounded-xl bg-white border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center shadow-sm">
+          <div className="relative w-full sm:w-64 h-56 rounded-xl bg-[#f8faf9] border border-slate-200 overflow-hidden shrink-0 flex items-center justify-center shadow-sm">
+            {/* Ambient subtle blur to soften edges */}
+            <Image
+              src={product.detailImage || product.mainImage}
+              alt=""
+              fill
+              aria-hidden="true"
+              className="object-cover blur-md scale-110 opacity-20 pointer-events-none"
+            />
+            {/* Crisp, fully-contained product packaging image */}
             <Image
               src={product.detailImage || product.mainImage}
               alt={product.name}
               fill
-              className="object-cover"
+              sizes="(max-width: 640px) 100vw, 256px"
+              className="object-contain p-2.5 relative z-10 drop-shadow-sm"
             />
           </div>
 
