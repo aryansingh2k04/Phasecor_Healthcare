@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Therapeutic Medicines & Clinical Formulations Portfolio | Phasecor Healthcare",
     description:
       "Explore Phasecor Healthcare's complete formulation portfolio: UTIcor, Electcor, Chronicor, OvaPhase, and UVoThera SPF 60++++.",
-    url: "https://phasecor.com/products",
+    url: "https://healthcare.phasecor.com/products",
     siteName: "Phasecor Healthcare",
     locale: "en_IN",
     type: "website",

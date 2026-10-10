@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "About Us | Brand Philosophy & Mission | Phasecor Healthcare",
     description:
       "Discover Phasecor Healthcare's mission: Quality Healthcare within Reach. Delivering innovative, affordable, and high-quality multi-specialty therapeutics.",
-    url: "https://phasecor.com/about",
+    url: "https://healthcare.phasecor.com/about",
     siteName: "Phasecor Healthcare",
     locale: "en_IN",
     type: "website",

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Quality Certifications & cGMP Standards | Phasecor Healthcare",
     description:
       "Review Phasecor Healthcare's verified manufacturing certifications: cGMP cleanroom facilities and ISO 9001:2015 standards.",
-    url: "https://phasecor.com/certifications",
+    url: "https://healthcare.phasecor.com/certifications",
     siteName: "Phasecor Healthcare",
     locale: "en_IN",
     type: "website",

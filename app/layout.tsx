@@ -15,7 +15,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://phasecor.com"),
+  metadataBase: new URL("https://healthcare.phasecor.com"),
   title: {
     default: "Phasecor Healthcare | Quality Healthcare within Reach",
     template: "%s | Phasecor Healthcare",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "Kalyan pharmaceutical company",
     "quality healthcare within reach"
   ],
-  authors: [{ name: "Phasecor Healthcare Pvt. Ltd.", url: "https://phasecor.com" }],
+  authors: [{ name: "Phasecor Healthcare Pvt. Ltd.", url: "https://healthcare.phasecor.com" }],
   creator: "Phasecor Healthcare",
   publisher: "Phasecor Healthcare",
   formatDetection: {
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: "Phasecor Healthcare | Quality Healthcare within Reach",
     description:
       "Evidence-backed pharmaceutical formulations and clinical dermatology solutions delivering quality healthcare within reach.",
-    url: "https://phasecor.com",
+    url: "https://healthcare.phasecor.com",
     siteName: "Phasecor Healthcare",
     locale: "en_IN",
     type: "website",

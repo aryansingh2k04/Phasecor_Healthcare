@@ -1,7 +1,7 @@
 import { PRODUCTS, COMPANY_CONTACT } from "./data";
 
 export default function JsonLd() {
-  const baseUrl = "https://phasecor.com";
+  const baseUrl = "https://healthcare.phasecor.com";
 
   // 1. Organization & MedicalOrganization Schema
   const organizationSchema = {

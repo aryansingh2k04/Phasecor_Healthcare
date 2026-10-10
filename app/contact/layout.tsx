@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: "Contact Us & Distribution Inquiries | Phasecor Healthcare Kalyan",
     description:
       "Get in touch with Phasecor Healthcare for corporate and distribution inquiries in Kalyan, Maharashtra.",
-    url: "https://phasecor.com/contact",
+    url: "https://healthcare.phasecor.com/contact",
     siteName: "Phasecor Healthcare",
     locale: "en_IN",
     type: "website",

@@ -48,7 +48,7 @@ export default function DisclaimerPage() {
                 <span>Not a Substitute for Professional Medical Advice</span>
               </h2>
               <p className="text-xs sm:text-sm text-amber-900/90 leading-relaxed">
-                The information provided across Phasecor Healthcare digital platforms (including phasecor.com, phasecorhealthcare.com, packaging brochures, and digital literature) is intended strictly for general informational, educational, and scientific reference purposes. It should not be considered, relied upon, or used as a substitute for professional clinical advice, medical diagnosis, or personalized treatment plans.
+                The information provided across Phasecor Healthcare digital platforms (including healthcare.phasecor.com, phasecor.com, packaging brochures, and digital literature) is intended strictly for general informational, educational, and scientific reference purposes. It should not be considered, relied upon, or used as a substitute for professional clinical advice, medical diagnosis, or personalized treatment plans.
               </p>
             </div>
 

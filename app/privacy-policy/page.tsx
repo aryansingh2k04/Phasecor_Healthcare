@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
                 <span>Commitment to Data Privacy</span>
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                This Privacy Policy explains how Phasecor Healthcare (&ldquo;Phasecor&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) collects, uses, processes, and safeguards the personal and health-related details you provide when accessing our website (phasecor.com and phasecorhealthcare.com) or submitting inquiries.
+                This Privacy Policy explains how Phasecor Healthcare (&ldquo;Phasecor&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) collects, uses, processes, and safeguards the personal and health-related details you provide when accessing our website (healthcare.phasecor.com and phasecor.com) or submitting inquiries.
               </p>
               <div className="text-xs text-slate-500 border-t border-slate-200/80 pt-2.5">
                 <strong className="text-slate-700">Note:</strong> Our privacy policy may be updated periodically to reflect legislative updates or system improvements. We encourage you to review this page periodically to stay informed.
