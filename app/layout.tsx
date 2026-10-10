@@ -102,6 +102,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "Stg7z_gZ3bbyTfvodCSQMqDocgXsVTM7JpW6TBC-oG4",
+  },
   category: "Pharmaceuticals & Healthcare",
 };
 
