@@ -17,11 +17,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://healthcare.phasecor.com"),
   title: {
-    default: "Phasecor | Phasecor Healthcare - Quality Healthcare within Reach",
-    template: "%s | Phasecor",
+    default: "Phasecor Healthcare | Phasecor - Quality Healthcare within Reach",
+    template: "%s | Phasecor Healthcare",
   },
   description:
-    "Official Phasecor (Phasecor Healthcare) portal. Clinical therapeutic medicines & dermatological formulations: UTIcor, Electcor, Chronicor, OvaPhase, and UVoThera. Quality Healthcare within Reach.",
+    "Official Phasecor Healthcare (Phasecor) portal. Clinical therapeutic medicines & dermatological formulations: UTIcor, Electcor, Chronicor, OvaPhase, and UVoThera. Quality Healthcare within Reach.",
   keywords: [
     "Phasecor",
     "Phasecor Healthcare",
@@ -74,11 +74,11 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   openGraph: {
-    title: "Phasecor | Phasecor Healthcare - Quality Healthcare within Reach",
+    title: "Phasecor Healthcare | Phasecor - Quality Healthcare within Reach",
     description:
-      "Official Phasecor portal. Evidence-backed pharmaceutical formulations and clinical dermatology solutions: UTIcor, Electcor, Chronicor, OvaPhase, and UVoThera.",
+      "Official Phasecor Healthcare (Phasecor) portal. Evidence-backed pharmaceutical formulations and clinical dermatology solutions: UTIcor, Electcor, Chronicor, OvaPhase, and UVoThera.",
     url: "https://healthcare.phasecor.com",
-    siteName: "Phasecor",
+    siteName: "Phasecor Healthcare",
     locale: "en_IN",
     type: "website",
     images: [
@@ -86,15 +86,15 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Phasecor - Quality Healthcare within Reach",
+        alt: "Phasecor Healthcare - Quality Healthcare within Reach",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Phasecor | Phasecor Healthcare - Quality Healthcare within Reach",
+    title: "Phasecor Healthcare | Phasecor - Quality Healthcare within Reach",
     description:
-      "Official Phasecor portal. Evidence-backed pharmaceutical formulations and clinical dermatology solutions: UTIcor, Electcor, Chronicor, OvaPhase, and UVoThera.",
+      "Official Phasecor Healthcare (Phasecor) portal. Evidence-backed pharmaceutical formulations and clinical dermatology solutions: UTIcor, Electcor, Chronicor, OvaPhase, and UVoThera.",
     creator: "@phasecor",
     site: "@phasecor",
     images: ["/twitter-image.png"],

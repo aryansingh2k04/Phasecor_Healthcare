@@ -95,8 +95,8 @@ export default function JsonLd() {
     "@type": "WebSite",
     "@id": `${baseUrl}/#website`,
     url: baseUrl,
-    name: "Phasecor",
-    alternateName: ["Phasecor Healthcare", "Phasecor Pharma", "Phasecor Healthcare India", "Phasecor Formulations"],
+    name: "Phasecor Healthcare",
+    alternateName: ["Phasecor", "Phasecor Pharma", "Phasecor Healthcare India", "Phasecor Formulations"],
     publisher: {
       "@id": `${baseUrl}/#organization`,
     },

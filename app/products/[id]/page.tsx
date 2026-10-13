@@ -116,8 +116,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const cleanName = product.name.replace(/™/g, "");
-  const pageTitle = `${product.name} - ${product.subtitle} | Phasecor`;
-  const pageDescription = `${cleanName} by Phasecor: ${product.summary} Indications: ${product.indications}. Packaging: ${product.packaging}.`;
+  const pageTitle = `${product.name} - ${product.subtitle} | Phasecor Healthcare`;
+  const pageDescription = `${cleanName} by Phasecor Healthcare (Phasecor): ${product.summary} Indications: ${product.indications}. Packaging: ${product.packaging}.`;
 
   const keywords = [
     product.name,
