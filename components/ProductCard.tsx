@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { X, ShieldCheck, Activity, Sparkles, CheckCircle2, HeartPulse } from "lucide-react";
 import { Product } from "./data";
 
@@ -26,8 +27,12 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
     <div className="relative group flex flex-col w-full max-w-[320px] mx-auto rounded-xl bg-gradient-to-b from-[#2D8F7A] to-[#237362] text-white shadow-md hover:shadow-[0_16px_36px_-6px_rgba(45,143,122,0.55),0_8px_16px_-4px_rgba(45,143,122,0.3)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden">
       {/* ── DEFAULT CARD VIEW ── */}
       <div className="flex flex-col flex-1">
-        {/* Product Image Area - Seamlessly connected with rounded corners and no dividing line */}
-        <div className="p-3 pb-0">
+        {/* Product Image Area - Linked to dedicated product page for Google indexation */}
+        <Link
+          href={`/products/${product.id}`}
+          className="p-3 pb-0 block"
+          aria-label={`View ${product.name} formulation details`}
+        >
           <div className="relative w-full h-[220px] rounded-xl overflow-hidden flex items-center justify-center bg-white">
             <Image
               src={product.mainImage}
@@ -37,14 +42,16 @@ export default function ProductCard({ product, onOpenDetails, onEnquire }: Produ
               className="object-cover group-hover:scale-105 transition-transform duration-500 rounded-xl"
             />
           </div>
-        </div>
+        </Link>
 
-        {/* Product Info Section - Seamlessly connected with no dead empty space */}
+        {/* Product Info Section */}
         <div className="flex flex-col flex-1 p-5 pt-3">
           <div className="space-y-1.5">
-            <h3 className="text-xl font-bold text-white leading-snug">
-              {product.name}
-            </h3>
+            <Link href={`/products/${product.id}`} className="block hover:underline">
+              <h3 className="text-xl font-bold text-white leading-snug">
+                {product.name}
+              </h3>
+            </Link>
             <p className="text-xs sm:text-sm text-white/90 leading-relaxed min-h-[2.5rem]">
               {product.subtitle}
             </p>

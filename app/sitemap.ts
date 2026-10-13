@@ -1,8 +1,16 @@
 import { MetadataRoute } from "next";
+import { PRODUCTS } from "@/components/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://healthcare.phasecor.com";
   const now = new Date();
+
+  const productUrls: MetadataRoute.Sitemap = PRODUCTS.map((prod) => ({
+    url: `${baseUrl}/products/${prod.id}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.9,
+  }));
 
   return [
     {
@@ -17,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.95,
     },
+    ...productUrls,
     {
       url: `${baseUrl}/about`,
       lastModified: now,
